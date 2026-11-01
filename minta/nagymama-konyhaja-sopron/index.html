@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Nagymama Konyhája – kifőzde és óriáspalacsintázó Sopronban, a Várkerület 104.-ben</title>
+<meta name="description" content="Házias levesek és főételek, napi menük és óriáspalacsinták Sopronban, a Várkerület 104.-ben – helyben, a kerthelyiségben vagy a Wolton rendelve.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--dark:#5B1F24;--dark2:#6E2A2F;--accent:#F2D49B;--accent-ink:#3A1416;--cream:#FBF6EC;--ink:#2A1A17;--muted:#6A5A52;--line:#EADFCC}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 17px/1.6 "Nunito Sans",system-ui,sans-serif}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+h1,h2,h3{margin:0;font-family:"Playfair Display";font-weight:700;line-height:1.06;letter-spacing:0}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.draft{background:#222;color:#E9E9E9;font-size:13px;text-align:center;padding:7px 16px;line-height:1.4}
+.draft a{color:var(--accent)}
+
+/* HERO: tipografikus, kep nelkul */
+.hero{position:relative;background:var(--dark);color:#fff;text-align:center;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.hero::before{width:520px;height:520px;left:-180px;top:-200px;border:2px solid var(--accent);opacity:.28}
+.hero::after{width:380px;height:380px;right:-120px;bottom:-170px;border:2px solid #fff;opacity:.12}
+.hero .inner{position:relative;z-index:1;padding:96px 16px 88px;display:flex;flex-direction:column;align-items:center}
+.wordmark{font-family:"Lobster";font-weight:400;font-size:clamp(56px,9vw,112px);line-height:.95;letter-spacing:0;}
+.sub{margin-top:14px;font-size:clamp(13px,1.4vw,15px);font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--accent)}
+.slogan{font-family:"Playfair Display";font-style:italic;font-size:clamp(22px,2.6vw,30px);margin:26px 0 0;color:#F3EEE6;max-width:28ch;line-height:1.25}
+.lead{font-size:clamp(17px,1.8vw,19px);max-width:40ch;margin:12px 0 0;color:#D9D4CC}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;justify-content:center}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.acc{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{border:2px solid rgba(255,255,255,.8);color:#fff}
+.hero .meta{margin-top:30px;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#A9A39A}
+
+
+/* HERO logo variant (vilagos hatter, sajat logo) */
+.hero.lg{background:#fff;color:var(--ink);border-bottom:1px solid var(--line)}
+.hero.lg::before{border-color:var(--accent);opacity:.35}
+.hero.lg::after{border-color:var(--accent2,var(--accent));opacity:.22}
+.hero.lg .inner{padding:64px 16px 72px}
+.hero .logo{width:clamp(200px,26vw,300px);height:auto;mix-blend-mode:multiply}
+.hero.lg .sub{color:var(--accent2,var(--accent));margin-top:18px}
+.hero.lg .slogan{color:var(--ink)}
+.hero.lg .lead{color:var(--muted)}
+.hero.lg .btn.ghost{border-color:var(--ink);color:var(--ink)}
+.hero.lg .meta{color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* INTRO */
+.intro{padding:96px 0 40px}
+.intro .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.intro h2{font-size:clamp(36px,5vw,60px);margin-top:10px}
+.intro p{margin:0;color:var(--muted);font-size:19px;max-width:44ch}
+@media (max-width:820px){.intro .wrap{grid-template-columns:1fr;gap:20px}}
+
+/* MOSAIC */
+.mosaic{padding:24px 0 96px}
+.mosaic .grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:14px}
+.mosaic figure{margin:0;position:relative;overflow:hidden;border-radius:14px;background:#ddd}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.mosaic figure:hover img{transform:scale(1.04)}
+.mosaic figcaption{position:absolute;left:12px;bottom:12px;background:rgba(20,20,20,.78);color:#fff;font-size:14px;font-weight:600;padding:5px 12px;border-radius:999px}
+.g1{grid-column:1/3;grid-row:1/3}.g2{grid-column:3/4;grid-row:1/3}.g3{grid-column:4/5;grid-row:1/2}.g4{grid-column:4/5;grid-row:2/3}
+.g5{grid-column:1/2;grid-row:3/5}.g6{grid-column:2/3;grid-row:3/4}.g7{grid-column:2/3;grid-row:4/5}.g8{grid-column:3/5;grid-row:3/5}
+@media (max-width:820px){
+  .mosaic .grid{grid-template-columns:1fr 1fr;grid-auto-rows:200px;gap:10px}
+  .g1{grid-column:1/3;grid-row:auto/span 2}.g2,.g5{grid-column:auto;grid-row:auto/span 2}
+  .g3,.g4,.g6,.g7{grid-column:auto;grid-row:auto}.g8{grid-column:1/3;grid-row:auto/span 2}
+}
+
+/* OFFER */
+.offer{background:var(--dark);color:#fff;padding:96px 0}
+.offer .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px}
+.offer .kicker{color:#A9A39A}
+.offer h2{font-size:clamp(40px,5.6vw,66px);margin-top:10px}
+.price{background:var(--accent);color:var(--accent-ink);border-radius:18px;padding:14px 24px;transform:rotate(-3deg);text-align:center}
+.price small{display:block;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.price b{font-family:"Playfair Display";font-size:44px;font-weight:800;line-height:1}
+.dishes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px;list-style:none;padding:0}
+.dishes li{border-top:3px solid var(--accent);padding-top:16px}
+.dishes h3{font-family:"Nunito Sans";font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0}
+.dishes p{margin:6px 0 0;color:#A9A39A;font-size:15px}
+.offer .pics{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:52px}
+.offer .pics img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:14px}
+.offer .note{margin-top:22px;color:#A9A39A;font-size:15px}
+@media (max-width:900px){.dishes{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.dishes{grid-template-columns:1fr}.offer .pics{grid-template-columns:1fr}}
+
+/* BAND */
+.band{padding:96px 0}
+.band .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.band .stack{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.band .stack img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:14px}
+.band .stack img:nth-child(2){margin-top:56px}
+.band h2{font-size:clamp(34px,4.6vw,54px)}
+.band .tag{display:block;margin-bottom:10px;color:var(--accent2);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px}
+.band p{color:var(--muted);font-size:19px;max-width:42ch}
+@media (max-width:860px){.band .wrap{grid-template-columns:1fr;gap:36px}.band .copy{order:-1}}
+
+.strip{display:grid;grid-template-columns:repeat(5,1fr)}
+.strip img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+@media (max-width:700px){.strip{grid-template-columns:repeat(3,1fr)}.strip img:nth-child(n+4){display:none}}
+
+/* STORY */
+.story{padding:96px 0}
+.story .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.story img{border-radius:14px;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.story .big{font-family:"Playfair Display";font-size:clamp(80px,12vw,150px);font-weight:800;line-height:.9;color:var(--accent2)}
+.story h2{font-size:clamp(30px,3.8vw,44px);margin-top:8px}
+.story p{color:var(--muted);font-size:19px;max-width:44ch}
+@media (max-width:860px){.story .wrap{grid-template-columns:1fr;gap:32px}.story img{aspect-ratio:4/3}}
+
+/* VISIT */
+.visit{background:var(--dark);color:#fff;padding:96px 0}
+.visit .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.visit h2{font-size:clamp(40px,5.2vw,60px);margin-bottom:28px}
+.visit dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:14px 24px}
+.visit dt{font-weight:700;color:var(--accent)}
+.visit dd{margin:0;color:#E8E5E0}
+.visit dd a{text-underline-offset:3px}
+.visit .btn{margin-top:30px}
+.map{border:0;width:100%;min-height:400px;border-radius:14px;background:#2a2a2a}
+@media (max-width:860px){.visit .wrap{grid-template-columns:1fr}}
+
+footer{background:#0D0D0D;color:#9C978F;font-size:14px}
+footer .wrap{padding:26px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+footer a{color:var(--accent)}
+
+/* mobil: szorosabb fuggoleges terkozok (skill) */
+@media (max-width:700px){
+  .intro{padding:48px 0 16px}
+  .mosaic{padding:12px 0 48px}
+  .offer,.band,.story,.visit{padding:52px 0}
+  .dishes{margin-top:28px;gap:18px}
+  .offer .pics{margin-top:28px}
+  .band .wrap,.story .wrap{gap:24px}
+  .band .stack img:nth-child(2){margin-top:28px}
+  .visit h2{margin-bottom:18px}
+  .visit .wrap{gap:28px}
+  .map{min-height:300px}
+  .hero .inner{padding:60px 16px 56px}
+  .hero::before{width:300px;height:300px;left:-140px;top:-140px}
+  .hero::after{width:220px;height:220px;right:-100px;bottom:-110px}
+}
+:root{--accent2:#4E7A3A}.wordmark{color:#F2D49B;font-size:clamp(54px,8.4vw,104px);line-height:1.08}.wordmark small{display:block;font-family:"Nunito Sans";font-weight:700;font-size:.17em;color:#FBF6EC;letter-spacing:.2em;text-transform:uppercase;margin-top:.8em}.slogan{font-family:"Playfair Display";font-style:italic;font-weight:600}.story .big{font-family:"Playfair Display";font-weight:700;color:#4E7A3A;font-size:clamp(72px,10vw,128px);line-height:1}.offer .dishes h3{font-family:"Playfair Display";font-weight:600;font-size:21px}.offer .dishes p{color:#F2D49B;font-weight:700}.price b{font-family:"Playfair Display";font-weight:700}.price{background:#F2D49B}.band .tag{color:#4E7A3A}.band p{font-size:18px}</style>
+</head>
+<body>
+<div class="draft" role="note">Bemutató tervezet a Várkerületi Nagymama Konyhája számára – nem hivatalos oldal. Készítette: <a href="https://hozdesigns.com">hozdesigns.com</a></div>
+
+<header class="hero">
+  <div class="inner">
+    <h1 class="wordmark">Nagymama Konyhája<small>Kifőzde és óriáspalacsintázó · Sopron</small></h1>
+    <div class="sub">Helyben · kerthelyiség · Wolt</div>
+    <p class="slogan">Házias ebéd a Várkerületen</p>
+    <p class="lead">Levesek, főzelékek, pörköltek, rántott húsok, napi menük és óriáspalacsinták – helyben, a kerthelyiségben vagy a Wolton rendelve.</p>
+    <div class="btns">
+      <a class="btn acc" href="tel:+36203158730">Hívj minket: +36 20 315 8730</a>
+      <a class="btn ghost" href="#ajanlat">Étlap és árak</a>
+    </div>
+    <p class="meta">Sopron, Várkerület 104.</p>
+  </div>
+</header>
+
+<main>
+<section class="intro" aria-labelledby="intro-cim">
+  <div class="wrap">
+    <div><div class="kicker">Nagymama Konyhája · Várkerület</div><h2 id="intro-cim">Házias ételek Sopron belvárosában</h2></div>
+    <p>Kifőzde és óriáspalacsintázó Sopronban, a Várkerület 104.-ben. Levesek, főzelékek, pörköltek, rántott húsok és tészták, napi menük és óriáspalacsinták – ülj be hozzánk, a kerthelyiségben is, vagy rendeld a Wolton.</p>
+  </div>
+</section>
+
+<section class="mosaic" aria-label="Ételeink képekben">
+  <div class="wrap grid">
+<figure class="g1"><img src="porkolt.jpg" alt="Pörkölt galuskával és petrezselyemmel" loading="lazy"><figcaption>Házias ételek</figcaption></figure>
+<figure class="g2"><img src="sajtos_rantott.jpg" alt="Sajttal sült hús rizzsel" loading="lazy"></figure>
+<figure class="g3"><img src="fozelek.jpg" alt="Burgonyás étel tejföllel és lilahagymával" loading="lazy"></figure>
+<figure class="g4"><img src="paradicsomleves.jpg" alt="Paradicsomleves húsgombóccal" loading="lazy"><figcaption>Levesek</figcaption></figure>
+<figure class="g5"><img src="rizses_hus.jpg" alt="Csirke rizzsel és uborkával" loading="lazy"></figure>
+<figure class="g6"><img src="teszta2.jpg" alt="Spagetti tejszínes szósszal" loading="lazy"></figure>
+<figure class="g7"><img src="rantott_hus.jpg" alt="Rántott hús körettel" loading="lazy"><figcaption>Rántott hús</figcaption></figure>
+<figure class="g8"><img src="bolognai.jpg" alt="Bolognai spagetti sajttal" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="offer" id="ajanlat" aria-labelledby="ajanlat-cim">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="kicker">Étlap · Wolt-árak</div><h2 id="ajanlat-cim">Kedvencek a Wolt-étlapról</h2></div>
+      <div class="price"><small>Óriáspalacsinta</small><b>2 595 Ft</b></div>
+    </div>
+    <ul class="dishes"><li><h3>Roston csirkemellfilé barackkal</h3><p>3 795 Ft</p></li><li><h3>Kolbásszal, krémsajttal töltött rántott sertéskaraj</h3><p>4 395 Ft</p></li><li><h3>Camembert-rel töltött rántott csirkemell</h3><p>4 295 Ft</p></li><li><h3>Tarhonyás hús csemegeuborkával</h3><p>3 295 Ft</p></li><li><h3>Sonkás-sajtos rántott óriáspalacsinta</h3><p>2 595 Ft</p></li><li><h3>Húsleves palacsintatésztával</h3><p>1 695 Ft</p></li><li><h3>Húsleves cérnametélttel</h3><p>1 695 Ft</p></li><li><h3>Gulyásleves</h3><p>1 695 Ft</p></li><li><h3>Görög gyümölcsleves</h3><p>1 795 Ft</p></li><li><h3>Friss saláta</h3><p>1 495 Ft</p></li></ul>
+    <div class="pics"><img src="csirke_rizs.jpg" alt="Csirke rizzsel és uborkával" loading="lazy"><img src="bolognai.jpg" alt="Bolognai spagetti reszelt sajttal" loading="lazy"></div>
+    <p class="note">Árak a Wolt-étlap alapján (2026. november 1.); a helyben érvényes árak eltérhetnek.</p>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="band-cim">
+  <div class="wrap">
+    <div class="stack"><img src="leves.jpg" alt="Karfiolleves" loading="lazy"><img src="kapormartas.jpg" alt="Kapormártás főtt tojással és főtt burgonyával" loading="lazy"></div>
+    <div class="copy">
+      <span class="tag">Napi menü – példa a menütábláról</span>
+      <h2 id="band-cim">Leves és főétel, egy áron</h2>
+      <p>Karfiolleves + tökfőzelék fasírttal 2 395 Ft · Alföldi gulyásleves + gyümölcsrizs 2 695 Ft · Karfiolleves + kapormártás tojással, főtt burgonyával 2 795 Ft · Karfiolleves + rakott burgonya 2 895 Ft · Csirkeragu leves + borsos tokány rizzsel 2 895 Ft · Karfiolleves + rántott csirkemell rizzsel + gyümölcsrizs 2 995 Ft.</p>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true"><img src="gulyas.jpg" alt="" loading="lazy"><img src="rizsfelfujt.jpg" alt="" loading="lazy"><img src="sajtos_rantott.jpg" alt="" loading="lazy"><img src="porkolt.jpg" alt="" loading="lazy"><img src="teszta2.jpg" alt="" loading="lazy"></div>
+
+<section class="story" aria-labelledby="story-cim">
+  <div class="wrap">
+    <img src="gulyas.jpg" alt="Gulyásleves" loading="lazy">
+    <div>
+      <div class="big">H–V</div>
+      <h2 id="story-cim">a hét minden napján nyitva</h2>
+      <p>Hétfőn 10–19, keddtől szombatig 10–21, vasárnap 12–18 óráig. Helyben fogyasztás és kerthelyiség a Várkerület 104.-ben – vagy rendeld a Wolton.</p>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="elerhetoseg" aria-labelledby="hol-cim">
+  <div class="wrap">
+    <div>
+      <h2 id="hol-cim">Gyere el hozzánk</h2>
+      <dl><dt>Cím</dt><dd>Sopron, Várkerület 104.</dd><dt>Nyitvatartás</dt><dd>Hétfő 10–19 · kedd–szombat 10–21 · vasárnap 12–18</dd><dt>Helyben</dt><dd>Helyben fogyasztás, kerthelyiség</dd><dt>Telefon</dt><dd><a href="tel:+36203158730">+36 20 315 8730</a></dd><dt>E-mail</dt><dd><a href="mailto:nagymamasopron@gmail.com">nagymamasopron@gmail.com</a></dd><dt>Facebook</dt><dd>Nagymama Konyhája Várkerület</dd></dl>
+      <a class="btn acc" href="tel:+36203158730">Hívj minket</a>
+    </div>
+    <iframe class="map" title="Várkerületi Nagymama Konyhája a térképen" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?q=Sopron,+Várkerület+104&amp;output=embed"></iframe>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Várkerületi Nagymama Konyhája</span>
+    <span>Weboldal-tervezet: <a href="https://hozdesigns.com">hozdesigns.com</a></span>
+  </div>
+</footer>
+</body>
+</html>
