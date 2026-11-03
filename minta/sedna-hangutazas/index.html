@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sedna Hangutazás – hangfürdő hangtálakkal és gonggal, Budapest</title>
+<meta name="description" content="Hangutazások hangtálakkal és gonggal Budapesten, Kőbányán. Jelentkezés a következő alkalmakra, céges csoportos hangfürdő ajánlatkérés.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bordo:#4b0f16;
+  --bordo-2:#6a1520;
+  --bordo-3:#82212b;
+  --korall:#f08a7e;
+  --pink:#e0578a;
+  --arany:#d1a65a;
+  --rozsa:#f9ece8;
+  --rozsa-2:#f2dcd6;
+  --tinta:#2b0a0e;
+  --szurke:#6e4a4d;
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:'Jost', 'Century Gothic', system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--rozsa);color:var(--tinta);font:400 18px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--korall);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1160px,100% - 40px);margin:0 auto}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;margin:0}
+h2{font-size:clamp(38px,5vw,60px)}
+h3{font-size:clamp(28px,3vw,36px)}
+p{margin:0 0 1em}
+
+/* előnézet sáv */
+.draft{background:var(--tinta);color:#e9cfc9;font-size:13px;text-align:center;padding:7px 12px;letter-spacing:.02em}
+.draft a{color:var(--korall)}
+
+/* fejléc */
+.top{position:absolute;inset:auto 0 auto 0;z-index:5}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.top nav{display:flex;gap:28px;font-size:16px}
+.top nav a{color:#f6dcd6;text-decoration:none}
+.top nav a:hover{color:#fff}
+.top .mini{font-family:var(--serif);font-size:24px;color:#fff;text-decoration:none;letter-spacing:.06em}
+
+/* nyitóblokk: hanghullám-gyűrűk */
+.hero{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 46%,var(--bordo-3) 0%,var(--bordo-2) 34%,var(--bordo) 70%);color:#fff;text-align:center}
+.hero .inner{position:relative;z-index:2;padding:150px 20px 120px;display:flex;flex-direction:column;align-items:center}
+.rings{position:absolute;left:50%;top:44%;width:0;height:0;z-index:1}
+.rings span{position:absolute;left:50%;top:50%;width:var(--d);height:var(--d);margin:calc(var(--d) / -2) 0 0 calc(var(--d) / -2);border-radius:50%;border:1px solid rgba(240,138,126,.32)}
+.rings span:nth-child(1){--d:300px}
+.rings span:nth-child(2){--d:480px;border-color:rgba(240,138,126,.24)}
+.rings span:nth-child(3){--d:680px;border-color:rgba(240,138,126,.17)}
+.rings span:nth-child(4){--d:900px;border-color:rgba(240,138,126,.11)}
+.rings span:nth-child(5){--d:1140px;border-color:rgba(240,138,126,.07)}
+.rings span:nth-child(6){--d:1400px;border-color:rgba(240,138,126,.05)}
+@media (prefers-reduced-motion:no-preference){
+  .rings span{animation:szol 7s cubic-bezier(.2,.6,.3,1) infinite;opacity:0}
+  .rings span:nth-child(2){animation-delay:.35s}
+  .rings span:nth-child(3){animation-delay:.7s}
+  .rings span:nth-child(4){animation-delay:1.05s}
+  .rings span:nth-child(5){animation-delay:1.4s}
+  .rings span:nth-child(6){animation-delay:1.75s}
+  @keyframes szol{0%{transform:scale(.86);opacity:0}18%{opacity:1}70%{opacity:.9}100%{transform:scale(1.04);opacity:0}}
+}
+.hero .logo{width:min(520px,82vw);height:auto}
+.hero .tags{display:flex;gap:14px;margin:6px 0 28px;font-size:17px;color:#f6d3cc}
+.hero .tags span+span::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--korall);margin:0 14px 3px 0;vertical-align:middle}
+.hero .lead{font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.6vw,32px);line-height:1.3;max-width:30ch;margin:0 0 36px;color:#fff}
+.btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-block;font:500 17px/1 var(--sans);padding:17px 28px;border-radius:999px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .2s,color .2s}
+.btn.fill{background:var(--korall);color:var(--tinta)}
+.btn.fill:hover{background:#ffa598}
+.btn.line{border-color:rgba(255,255,255,.55);color:#fff}
+.btn.line:hover{background:rgba(255,255,255,.1)}
+.hero .where{margin-top:56px;font-size:15px;color:#d9aaa3}
+
+/* bemutatkozás */
+.intro{padding:110px 0 90px}
+.intro .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:72px;align-items:center}
+.intro .ph{position:relative}
+.intro .ph img{width:100%;height:auto;aspect-ratio:1040/884;object-fit:cover;border-radius:50% 50% 18px 18px / 38% 38% 18px 18px}
+.intro h2{color:var(--bordo-2);margin-bottom:26px}
+.intro p{color:var(--szurke);max-width:56ch}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:12px 40px;margin-top:30px;padding-top:26px;border-top:1px solid var(--rozsa-2)}
+.facts b{display:block;font-family:var(--serif);font-size:30px;line-height:1.1;color:var(--bordo-2)}
+.facts small{font-size:15px;color:var(--szurke)}
+
+/* ajánlat: két ág */
+.offer{background:var(--bordo);color:#fff;padding:100px 0 110px;position:relative;overflow:hidden}
+.offer::before{content:"";position:absolute;right:-380px;top:-380px;width:900px;height:900px;border-radius:50%;background:repeating-radial-gradient(circle,transparent 0 69px,rgba(240,138,126,.13) 69px 70px);pointer-events:none}
+.offer .wrap{position:relative}
+.offer .head{max-width:640px;margin-bottom:46px}
+.offer .head p{color:#f0c9c2;margin-top:16px}
+.switch{display:inline-flex;background:rgba(255,255,255,.08);border-radius:999px;padding:5px;margin-bottom:44px}
+.switch button{font:500 17px/1 var(--sans);color:#f6d3cc;background:none;border:0;border-radius:999px;padding:15px 26px;cursor:pointer}
+.switch button[aria-selected="true"]{background:var(--korall);color:var(--tinta)}
+.panel{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.panel[hidden]{display:none}
+.panel .side h3{margin-bottom:16px}
+.panel .side p{color:#f0c9c2}
+.panel .side img{width:100%;height:auto;aspect-ratio:1400/812;object-fit:cover;border-radius:14px;margin-top:26px}
+.price{display:flex;align-items:baseline;gap:12px;margin:22px 0 6px}
+.price b{font-family:var(--serif);font-size:48px;line-height:1;color:var(--korall)}
+.price span{color:#f0c9c2}
+ul.plain{list-style:none;padding:0;margin:20px 0 0}
+ul.plain li{padding:12px 0 12px 30px;border-top:1px solid rgba(255,255,255,.12);position:relative;color:#f6e1dc}
+ul.plain li::before{content:"";position:absolute;left:2px;top:21px;width:12px;height:12px;border-radius:50%;border:1.5px solid var(--korall)}
+
+/* űrlap */
+.card{background:var(--rozsa);color:var(--tinta);border-radius:22px;padding:36px}
+.card h3{color:var(--bordo-2);margin-bottom:6px}
+.card .sub{color:var(--szurke);font-size:16px;margin-bottom:22px}
+.slots{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:24px}
+.slot{position:relative}
+.slot input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.slot label{display:block;border:1.5px solid var(--rozsa-2);background:#fff;border-radius:14px;padding:12px 14px;cursor:pointer;line-height:1.3;transition:border-color .15s,background .15s}
+.slot label b{display:block;font-weight:600;font-size:17px}
+.slot label small{color:var(--szurke);font-size:15px}
+.slot input:checked+label{border-color:var(--bordo-2);background:#fff4f1;box-shadow:inset 0 0 0 1px var(--bordo-2)}
+.slot input:focus-visible+label{outline:3px solid var(--korall);outline-offset:2px}
+.nodates{grid-column:1/-1;color:var(--szurke);font-size:16px}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
+.f .full{grid-column:1/-1}
+.f label.l{display:block;font-size:15px;font-weight:500;margin-bottom:6px;color:var(--bordo)}
+.f input,.f select,.f textarea{width:100%;font:400 17px/1.4 var(--sans);color:var(--tinta);background:#fff;border:1.5px solid var(--rozsa-2);border-radius:12px;padding:12px 14px}
+.f textarea{min-height:96px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--bordo-2)}
+.f .check{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--szurke)}
+.f .check input{width:auto;margin-top:4px;accent-color:var(--bordo-2)}
+.card .btn.fill{background:var(--bordo-2);color:#fff;width:100%;margin-top:6px}
+.card .btn.fill:hover{background:var(--bordo-3)}
+.msg{margin-top:14px;font-size:16px;border-radius:12px;padding:0}
+.msg.ok{background:#e6f2e8;color:#1f5130;padding:14px 16px}
+.msg.err{background:#fbe3e1;color:#8a1f1a;padding:14px 16px}
+
+/* képsor */
+.strip{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.2fr;grid-template-rows:280px 280px;gap:10px;padding:10px}
+.strip img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.strip .a{grid-column:1;grid-row:1/3}
+.strip .d{grid-column:4;grid-row:1/3}
+
+/* menete */
+.flow{padding:100px 0}
+.flow .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start}
+.flow h2{color:var(--bordo-2)}
+.flow .fimg{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:14px;margin-top:34px}
+.flow ol{list-style:none;counter-reset:s;padding:0;margin:0}
+.flow li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;gap:6px 18px;padding:22px 0;border-top:1px solid var(--rozsa-2)}
+.flow li::before{content:counter(s);grid-row:1/3;font-family:var(--serif);font-size:42px;line-height:1;color:var(--korall)}
+.flow li b{font-weight:600;font-size:19px}
+.flow li span{color:var(--szurke)}
+
+/* elérhetőség */
+.visit{background:var(--rozsa-2);padding:96px 0}
+.visit .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:stretch}
+.visit h2{color:var(--bordo-2);margin-bottom:26px}
+.visit dl{margin:0}
+.visit dt{font-size:15px;color:var(--szurke);margin-top:18px}
+.visit dd{margin:2px 0 0;font-size:20px}
+.visit dd a{text-decoration-color:var(--korall);text-underline-offset:4px}
+.map{border:0;width:100%;min-height:380px;border-radius:18px;filter:saturate(.75)}
+
+footer{background:var(--tinta);color:#c9a7a2;font-size:15px;padding:40px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer img{width:120px;height:auto;opacity:.85}
+
+@media (max-width:900px){
+  .top nav{display:none}
+  .intro .wrap,.panel,.flow .wrap,.visit .wrap{grid-template-columns:1fr;gap:36px}
+  .intro .ph{max-width:460px}
+  .strip{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}
+  .strip .a,.strip .d{grid-row:auto;grid-column:auto}
+  .strip img:nth-child(n+7){display:none}
+}
+@media (max-width:700px){
+  body{font-size:17px}
+  .hero .inner{padding:110px 16px 84px}
+  .hero .tags{font-size:15px}
+  .hero .where{margin-top:40px}
+  .intro{padding:56px 0 48px}
+  .offer,.flow,.visit{padding:56px 0}
+  .offer .head{margin-bottom:28px}
+  .switch{display:flex;margin-bottom:28px}
+  .switch button{flex:1;padding:14px 10px;font-size:16px}
+  .card{padding:24px 18px;border-radius:18px}
+  .slots{grid-template-columns:1fr 1fr}
+  .f{grid-template-columns:1fr}
+  .facts{grid-template-columns:repeat(3,auto);gap:10px 22px}
+  .facts b{font-size:24px}
+  .strip{grid-template-rows:150px 150px 150px;gap:6px;padding:6px}
+  .map{min-height:300px}
+  .wrap{width:min(1160px,100% - 32px)}
+}
+</style>
+</head>
+<body>
+
+<div class="draft">Előnézet – az oldal még tervezet, a keresőkben nem jelenik meg.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mini" href="#">Sedna</a>
+    <nav aria-label="Fő menü">
+      <a href="#hangutazas">A hangutazás</a>
+      <a href="#idopontok">Időpontok</a>
+      <a href="#cegeknek">Cégeknek</a>
+      <a href="#elerhetoseg">Elérhetőség</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="rings" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="inner">
+    <h1><img class="logo" src="img/sedna-logo.png" width="720" height="360" alt="Sedna"></h1>
+    <div class="tags"><span>Hangutazás</span><span>hangtál és gong</span></div>
+    <p class="lead">Ellazulás és belső harmónia a hangtálak és a gong hangjában.</p>
+    <div class="btns">
+      <a class="btn fill" href="#idopontok">Jelentkezem egy alkalomra</a>
+      <a class="btn line" href="#cegeknek">Céges csoportoknak</a>
+    </div>
+    <p class="where">Budapest, Kőbánya, Kada utca</p>
+  </div>
+</section>
+
+<section class="intro" id="hangutazas">
+  <div class="wrap">
+    <div class="ph"><img src="img/oktato.jpg" width="1040" height="884" alt="A hangutazás vezetője egy hangtállal" loading="lazy"></div>
+    <div>
+      <h2>Feküdj le, és hagyd, hogy a hang vigyen</h2>
+      <p>A hangutazás alatt kényelmesen fekszel a matracon, takaróval, és nincs más dolgod, mint figyelni. A hangtálak és a gong rezgése körülölel, a gondolatok lelassulnak, a test elenged.</p>
+      <p>Az alkalmakat kis létszámban tartjuk a kőbányai teremben, nyáron a kertben is.</p>
+      <div class="facts">
+        <div><b>Kedd 18:30</b><small>esti alkalom</small></div>
+        <div><b>Szombat 10:00</b><small>délelőtti alkalom</small></div>
+        <div><b>5 000 Ft</b><small>fő / alkalom</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offer" id="ajanlat">
+  <div class="wrap">
+    <div class="head">
+      <h2>Válaszd ki, kinek szól</h2>
+      <p>Egyénileg vagy párban a heti alkalmainkra jelentkezhetsz. Cégeknek, csapatoknak nagyobb csoportos hangfürdőt tartunk, egyeztetett időpontban.</p>
+    </div>
+
+    <div class="switch" role="tablist" aria-label="Ajánlat">
+      <button role="tab" id="t-maganszemely" aria-controls="idopontok" aria-selected="true">Magánszemélyeknek</button>
+      <button role="tab" id="t-ceg" aria-controls="cegeknek" aria-selected="false" tabindex="-1">Cégeknek</button>
+    </div>
+
+    <!-- 1. Magánszemélyek -->
+    <div class="panel" id="idopontok" role="tabpanel" aria-labelledby="t-maganszemely">
+      <div class="side">
+        <h3>Heti hangutazások</h3>
+        <p>Kedden este és szombat délelőtt várunk a Kada utcai teremben. Válassz időpontot, és írd meg, hányan jöttök – visszaigazoljuk e-mailben.</p>
+        <div class="price"><b>5 000 Ft</b><span>/ fő / alkalom</span></div>
+        <ul class="plain">
+          <li>Kb. egyórás hangfürdő hangtálakkal és gonggal</li>
+          <li>Matrac, párna és takaró a helyszínen</li>
+          <li>Kényelmes ruhában gyere, pár perccel kezdés előtt</li>
+        </ul>
+        <img src="img/terem.jpg" width="1400" height="812" alt="A terem matracokkal, gyertyákkal és a gonggal" loading="lazy">
+      </div>
+
+      <form class="card" id="form-magan" action="https://api.web3forms.com/submit" method="POST">
+        <h3>Jelentkezés</h3>
+        <p class="sub">Válaszd ki az alkalmat, amelyre jönnél.</p>
+        <input type="hidden" name="access_key" value="IDE-JON-A-WEB3FORMS-KULCS">
+        <input type="hidden" name="subject" value="Új jelentkezés hangutazásra – sedna weboldal">
+        <input type="hidden" name="from_name" value="Sedna weboldal">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <fieldset style="border:0;padding:0;margin:0">
+          <legend class="sr" style="position:absolute;left:-9999px">Időpont</legend>
+          <div class="slots" id="slots"></div>
+        </fieldset>
+        <div class="f">
+          <div class="full"><label class="l" for="m-nev">Neved</label><input id="m-nev" name="nev" required autocomplete="name"></div>
+          <div><label class="l" for="m-email">E-mail</label><input id="m-email" type="email" name="email" required autocomplete="email"></div>
+          <div><label class="l" for="m-tel">Telefon</label><input id="m-tel" type="tel" name="telefon" autocomplete="tel"></div>
+          <div class="full"><label class="l" for="m-fo">Hányan jöttök?</label>
+            <select id="m-fo" name="letszam"><option>1 fő</option><option>2 fő</option><option>3 fő</option><option>4 fő</option><option>5 fő vagy több</option></select></div>
+          <div class="full"><label class="l" for="m-megj">Megjegyzés (nem kötelező)</label><textarea id="m-megj" name="megjegyzes" placeholder="Pl. első alkalom lesz, vagy van, amit tudnunk kell"></textarea></div>
+          <div class="full check"><input id="m-ok" type="checkbox" name="hozzajarulas" value="igen" required><label for="m-ok">Hozzájárulok, hogy az adataimat a jelentkezés kezeléséhez felhasználják.</label></div>
+          <div class="full"><button class="btn fill" type="submit">Jelentkezés elküldése</button></div>
+        </div>
+        <div class="msg" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+
+    <!-- 2. Cégek -->
+    <div class="panel" id="cegeknek" role="tabpanel" aria-labelledby="t-ceg" hidden>
+      <div class="side">
+        <h3>Csoportos hangfürdő cégeknek</h3>
+        <p>Egy közös lazítás a csapatnak: a munkanap végén, egy csapatnap részeként vagy céges rendezvényen. A létszámhoz és a helyszínhez igazítjuk.</p>
+        <ul class="plain">
+          <li>Nagyobb csoportoknak, egyeztetett időpontban</li>
+          <li>A ti irodátokban, rendezvényhelyszínen vagy nálunk</li>
+          <li>Ár a létszám és a helyszín alapján, egyedi ajánlattal</li>
+        </ul>
+        <img src="img/terem-lila.jpg" width="1400" height="467" alt="Matracok sorban a hangfürdő előtt, lila fényben" loading="lazy" style="aspect-ratio:1400/467">
+      </div>
+
+      <form class="card" id="form-ceg" action="https://api.web3forms.com/submit" method="POST">
+        <h3>Ajánlatkérés</h3>
+        <p class="sub">Írd meg a részleteket, és két munkanapon belül ajánlattal jelentkezünk.</p>
+        <input type="hidden" name="access_key" value="IDE-JON-A-WEB3FORMS-KULCS">
+        <input type="hidden" name="subject" value="Céges ajánlatkérés – sedna weboldal">
+        <input type="hidden" name="from_name" value="Sedna weboldal">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="f">
+          <div class="full"><label class="l" for="c-ceg">Cég neve</label><input id="c-ceg" name="ceg" required autocomplete="organization"></div>
+          <div><label class="l" for="c-nev">Kapcsolattartó</label><input id="c-nev" name="nev" required autocomplete="name"></div>
+          <div><label class="l" for="c-email">E-mail</label><input id="c-email" type="email" name="email" required autocomplete="email"></div>
+          <div><label class="l" for="c-tel">Telefon</label><input id="c-tel" type="tel" name="telefon" autocomplete="tel"></div>
+          <div><label class="l" for="c-fo">Várható létszám</label><input id="c-fo" name="letszam" inputmode="numeric" placeholder="pl. 25"></div>
+          <div><label class="l" for="c-hely">Helyszín</label>
+            <select id="c-hely" name="helyszin"><option>Nálunk, a kőbányai teremben</option><option>A cégnél / irodában</option><option>Rendezvényhelyszínen</option><option>Még nem tudjuk</option></select></div>
+          <div><label class="l" for="c-datum">Tervezett időpont</label><input id="c-datum" name="idopont" placeholder="pl. december eleje, délután"></div>
+          <div class="full"><label class="l" for="c-megj">Alkalom, kérés</label><textarea id="c-megj" name="uzenet" placeholder="Pl. csapatnap, év végi rendezvény, rendszeres alkalmak"></textarea></div>
+          <div class="full check"><input id="c-ok" type="checkbox" name="hozzajarulas" value="igen" required><label for="c-ok">Hozzájárulok, hogy az adataimat az ajánlatkérés kezeléséhez felhasználják.</label></div>
+          <div class="full"><button class="btn fill" type="submit">Ajánlatot kérek</button></div>
+        </div>
+        <div class="msg" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="strip" aria-label="Képek a hangutazásokról">
+  <img class="a" src="img/fu.jpg" alt="Hangtálak a füvön, a háttérben fekvő résztvevők" loading="lazy">
+  <img src="img/rozsa.jpg" alt="Hangtál rózsaszirmokkal és kristállyal" loading="lazy">
+  <img src="img/uto.jpg" alt="Hangtál megszólaltatása ütővel" loading="lazy">
+  <img class="d" src="img/esti.jpg" alt="Esti hangfürdő a kertben" loading="lazy">
+  <img src="img/szirom.jpg" alt="Hangtál közelről" loading="lazy">
+  <img src="img/kert.jpg" alt="Kerti hangutazás" loading="lazy">
+</section>
+
+<section class="flow">
+  <div class="wrap">
+    <div>
+      <h2>Így zajlik egy alkalom</h2>
+      <img class="fimg" src="img/ejjel.jpg" width="1300" height="975" alt="Hangtál közelről, a háttérben pihenő résztvevők" loading="lazy">
+    </div>
+    <ol>
+      <li><b>Megérkezés</b><span>Pár perccel kezdés előtt érkezz, és rendezkedj be a matracon, párnával és takaróval.</span></li>
+      <li><b>Ráhangolódás</b><span>Rövid bevezetővel lelassítunk, és figyelmünket a légzésre irányítjuk.</span></li>
+      <li><b>Hangfürdő</b><span>A hangtálak és a gong hangja körülvesz. Nincs teendőd, csak fekszel és hallgatod.</span></li>
+      <li><b>Visszatérés</b><span>Lassan visszatérünk, és van idő pár szóban megosztani az élményt.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="visit" id="elerhetoseg">
+  <div class="wrap">
+    <div>
+      <h2>Elérhetőség</h2>
+      <dl>
+        <dt>Helyszín</dt><dd>Budapest, X. kerület (Kőbánya), Kada utca</dd>
+        <dt>E-mail</dt><dd><a href="mailto:sednahangutazas@gmail.com">sednahangutazas@gmail.com</a></dd>
+        <dt>Facebook</dt><dd><a href="https://www.facebook.com/sednahangutazas" target="_blank" rel="noopener">facebook.com/sednahangutazas</a></dd>
+        <dt>Rendszeres alkalmak</dt><dd>Kedd 18:30 · Szombat 10:00</dd>
+      </dl>
+    </div>
+    <iframe class="map" title="Térkép: Kada utca, Budapest" loading="lazy" src="https://www.google.com/maps?q=Kada+utca,+Budapest&output=embed"></iframe>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/sedna-logo.png" width="720" height="360" alt="Sedna">
+    <span>© 2026 Sedna Hangutazás · Budapest</span>
+  </div>
+</footer>
+
+<script>
+/* ===== IDŐPONTOK – itt szerkeszthető: dátum (ÉÉÉÉ-HH-NN), kezdés, megjegyzés ===== */
+const IDOPONTOK = [
+  ["2026-11-07","10:00"],
+  ["2026-11-10","18:30"],
+  ["2026-11-14","10:00"],
+  ["2026-11-17","18:30"],
+  ["2026-11-21","10:00"],
+  ["2026-11-24","18:30"],
+  ["2026-11-28","10:00"],
+  ["2026-12-01","18:30"],
+  ["2026-12-05","10:00"],
+  ["2026-12-08","18:30"]
+];
+const MAX_MUTATOTT = 8;
+
+(function(){
+  const napok=["vasárnap","hétfő","kedd","szerda","csütörtök","péntek","szombat"];
+  const honap=["január","február","március","április","május","június","július","augusztus","szeptember","október","november","december"];
+  const most=new Date();
+  const box=document.getElementById('slots');
+  const jovo=IDOPONTOK.map(([d,t,m])=>({d,t,m,dt:new Date(d+"T"+t+":00")})).filter(x=>x.dt>most).slice(0,MAX_MUTATOTT);
+  if(!jovo.length){box.innerHTML='<p class="nodates">Jelenleg nincs meghirdetett alkalom. Írj nekünk, és szólunk, ha lesz új időpont.</p>';return;}
+  jovo.forEach((x,i)=>{
+    const id='s'+i, cimke=`${honap[x.dt.getMonth()]} ${x.dt.getDate()}., ${napok[x.dt.getDay()]} ${x.t}`;
+    box.insertAdjacentHTML('beforeend',`<div class="slot"><input type="radio" name="idopont" id="${id}" value="${cimke}" ${i?'':'required'}><label for="${id}"><b>${honap[x.dt.getMonth()].slice(0,3)}. ${x.dt.getDate()}. ${x.t}</b><small>${napok[x.dt.getDay()]}${x.m?' · '+x.m:''}</small></label></div>`);
+  });
+})();
+
+/* fülek */
+(function(){
+  const tabs=[...document.querySelectorAll('.switch [role=tab]')];
+  function valt(tab,focus){
+    tabs.forEach(t=>{const on=t===tab;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!on;});
+    if(focus)tab.focus();
+  }
+  tabs.forEach((t,i)=>{
+    t.addEventListener('click',()=>valt(t));
+    t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();valt(tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length],true);}});
+  });
+  function hash(){
+    const h=location.hash.slice(1);
+    const t=tabs.find(t=>t.getAttribute('aria-controls')===h);
+    if(t){valt(t);document.getElementById('ajanlat').scrollIntoView();}
+  }
+  window.addEventListener('hashchange',hash);hash();
+  document.querySelectorAll('a[href="#cegeknek"],a[href="#idopontok"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();history.replaceState(null,'',a.getAttribute('href'));hash();}));
+})();
+
+/* Web3Forms küldés oldalon belül */
+document.querySelectorAll('form.card').forEach(f=>{
+  f.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const msg=f.querySelector('.msg'), btn=f.querySelector('button[type=submit]'), eredeti=btn.textContent;
+    btn.disabled=true;btn.textContent='Küldés…';msg.className='msg';msg.textContent='';
+    try{
+      const r=await fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)});
+      const j=await r.json();
+      if(!j.success)throw new Error(j.message);
+      msg.className='msg ok';
+      msg.textContent=f.id==='form-ceg'?'Köszönjük, megkaptuk az ajánlatkérést. Két munkanapon belül jelentkezünk.':'Köszönjük, megkaptuk a jelentkezésed. Hamarosan visszaigazoljuk e-mailben.';
+      f.reset();
+    }catch(err){
+      msg.className='msg err';
+      msg.textContent='Nem sikerült elküldeni. Próbáld újra, vagy írj a sednahangutazas@gmail.com címre.';
+    }finally{btn.disabled=false;btn.textContent=eredeti;}
+  });
+});
+</script>
+</body>
+</html>
