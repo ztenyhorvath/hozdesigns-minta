@@ -198,13 +198,25 @@ table.prices td:last-child{font-family:var(--serif);font-size:20px;color:var(--k
 
 /* elérhetőség */
 .visit{background:var(--rozsa-2);padding:96px 0}
-.visit .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:stretch}
-.visit h2{color:var(--bordo-2);margin-bottom:26px}
-.visit dl{margin:0}
-.visit dt{font-size:15px;color:var(--szurke);margin-top:18px}
-.visit dd{margin:2px 0 0;font-size:20px}
-.visit dd a{text-decoration-color:var(--korall);text-underline-offset:4px}
-.map{border:0;width:100%;min-height:380px;border-radius:18px;filter:saturate(.75)}
+.visit .vhead{display:flex;justify-content:space-between;align-items:end;gap:28px;flex-wrap:wrap;margin-bottom:40px}
+.visit h2{color:var(--bordo-2)}
+.visit .vhead p{color:var(--szurke);margin:12px 0 0;max-width:44ch}
+.contact{display:flex;gap:12px;flex-wrap:wrap}
+.contact a{display:inline-flex;align-items:center;gap:10px;background:var(--bordo-2);color:#fff;text-decoration:none;border-radius:999px;padding:14px 22px;font-weight:500;font-size:16px}
+.contact a.alt{background:transparent;color:var(--bordo-2);box-shadow:inset 0 0 0 1.5px var(--bordo-2)}
+.contact a:hover{background:var(--bordo-3);color:#fff}
+.contact svg{width:18px;height:18px;flex:none}
+.places{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.place{background:var(--rozsa);border-radius:18px;padding:24px 24px 22px;display:flex;flex-direction:column;border:1.5px solid transparent;text-align:left;font:inherit;color:inherit}
+button.place{cursor:pointer}
+button.place:hover{border-color:rgba(130,33,43,.3)}
+.place[aria-pressed="true"]{border-color:var(--bordo-2)}
+.place .when{align-self:flex-start;font-size:14px;font-weight:500;color:var(--bordo-2);background:#fff;border-radius:999px;padding:5px 12px;margin-bottom:16px}
+.place h3{font-size:24px;color:var(--bordo-2);margin-bottom:6px}
+.place .addr{color:var(--szurke);font-size:16px;margin:0}
+.place .go{margin-top:auto;padding-top:18px;font-size:15px;font-weight:500;color:var(--bordo-2)}
+.place.soon{background:transparent;border:1.5px dashed rgba(130,33,43,.3)}
+.map{border:0;width:100%;height:360px;border-radius:18px;margin-top:16px;filter:saturate(.75);display:block}
 
 footer{position:relative;overflow:hidden;background:radial-gradient(90% 120% at 15% 0%,var(--bordo-2) 0%,var(--bordo) 45%,var(--tinta) 100%);color:#e9c9c3;font-size:16px;padding:84px 0 0}
 footer::before{content:"";position:absolute;left:-260px;bottom:-420px;width:820px;height:820px;border-radius:50%;background:repeating-radial-gradient(circle,transparent 0 59px,rgba(240,138,126,.12) 59px 60px);pointer-events:none}
@@ -224,7 +236,7 @@ footer .fbar a{border:0;color:#c9a7a2}
   .top{display:none}
   footer .fmain{grid-template-columns:1fr 1fr;gap:36px 28px}
   footer .brand{grid-column:1/-1}
-  .intro .wrap,.panel,.flow .wrap,.visit .wrap,.about .wrap,.gift .wrap{grid-template-columns:1fr;gap:36px}
+  .intro .wrap,.panel,.flow .wrap,.about .wrap,.gift .wrap{grid-template-columns:1fr;gap:36px}
   .about .ph{max-width:460px}
   .gift .ph{order:2}
   .intro .ph{max-width:460px}
@@ -249,7 +261,12 @@ footer .fbar a{border:0;color:#c9a7a2}
   .facts{grid-template-columns:repeat(3,auto);gap:10px 22px}
   .facts b{font-size:21px}
   .strip{grid-template-rows:150px 150px 150px;gap:6px;padding:6px}
-  .map{min-height:300px}
+  .places{grid-template-columns:1fr;gap:12px}
+  .place{padding:20px}
+  .place .go{padding-top:12px}
+  .visit .vhead{margin-bottom:28px}
+  .contact a{flex:1;justify-content:center;padding:14px 16px}
+  .map{height:280px}
   footer{padding-top:56px}
   footer .fmain{padding-bottom:44px;grid-template-columns:1fr;gap:30px}
   .hero .inner{padding-top:72px}
@@ -482,15 +499,36 @@ footer .fbar a{border:0;color:#c9a7a2}
 
 <section class="visit" id="elerhetoseg">
   <div class="wrap">
-    <div>
-      <h2>Elérhetőség</h2>
-      <dl>
-        <dt>Helyszínek</dt><dd>Kőbánya, Kada utca<br>Yogamudra jógastúdió, VI. ker., Felső erdősor 11. – havonta egyszer<br>Zugló – hamarosan</dd>
-        <dt>E-mail</dt><dd><a href="mailto:sednahangutazas@gmail.com">sednahangutazas@gmail.com</a></dd>
-        <dt>Facebook (jelentkezés privát üzenetben is)</dt><dd><a href="https://www.facebook.com/sednahangutazas" target="_blank" rel="noopener">facebook.com/sednahangutazas</a></dd>
-      </dl>
+    <div class="vhead">
+      <div>
+        <h2>Elérhetőség</h2>
+        <p>Jelentkezni az űrlapon, e-mailben vagy Facebookon privát üzenetben is tudsz.</p>
+      </div>
+      <div class="contact">
+        <a href="mailto:sednahangutazas@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>sednahangutazas@gmail.com</a>
+        <a class="alt" href="https://www.facebook.com/sednahangutazas" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3Z"/></svg>Facebook-üzenet</a>
+      </div>
     </div>
-    <iframe class="map" title="Térkép: a kőbányai helyszín, Kada utca" loading="lazy" src="https://www.google.com/maps?q=Kada+utca,+Budapest&output=embed"></iframe>
+    <div class="places">
+      <button class="place" type="button" aria-pressed="true" data-q="Kada utca, Budapest" data-t="Kőbánya, Kada utca">
+        <span class="when">Saját terem</span>
+        <h3>Kőbánya</h3>
+        <p class="addr">Budapest X. kerület, Kada utca</p>
+        <span class="go">Térkép</span>
+      </button>
+      <button class="place" type="button" aria-pressed="false" data-q="Budapest, Felső erdősor 11." data-t="Yogamudra, Felső erdősor 11.">
+        <span class="when">Havonta egyszer</span>
+        <h3>Yogamudra</h3>
+        <p class="addr">Budapest VI. kerület, Felső erdősor 11.</p>
+        <span class="go">Térkép</span>
+      </button>
+      <div class="place soon">
+        <span class="when">Hamarosan</span>
+        <h3>Zugló</h3>
+        <p class="addr">Az új helyszínt hamarosan meghirdetem.</p>
+      </div>
+    </div>
+    <iframe class="map" id="map" title="Térkép: Kőbánya, Kada utca" loading="lazy" src="https://www.google.com/maps?q=Kada+utca,+Budapest&output=embed"></iframe>
   </div>
 </section>
 
@@ -573,6 +611,17 @@ const MAX_MUTATOTT = 8;
   }
   window.addEventListener('hashchange',hash);hash();
   document.querySelectorAll('a[href="#cegeknek"],a[href="#idopontok"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();history.replaceState(null,'',a.getAttribute('href'));hash();}));
+})();
+
+/* helyszínválasztó térkép */
+(function(){
+  const map=document.getElementById('map'), bs=[...document.querySelectorAll('button.place')];
+  bs.forEach(b=>b.addEventListener('click',()=>{
+    bs.forEach(x=>x.setAttribute('aria-pressed',x===b));
+    map.src='https://www.google.com/maps?q='+encodeURIComponent(b.dataset.q)+'&output=embed';
+    map.title='Térkép: '+b.dataset.t;
+    if(innerWidth<900)map.scrollIntoView({behavior:'smooth',block:'center'});
+  }));
 })();
 
 /* Web3Forms küldés oldalon belül */
