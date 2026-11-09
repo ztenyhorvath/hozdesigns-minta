@@ -51,7 +51,9 @@ p{margin:0 0 1em}
 .top nav{display:flex;gap:28px;font-size:16px}
 .top nav a{color:#f6dcd6;text-decoration:none}
 .top nav a:hover{color:#fff}
-.top .mini{font-family:var(--serif);font-size:22px;color:#fff;text-decoration:none;letter-spacing:.06em}
+.top .mini{display:block;line-height:0}
+.top .mini img{width:118px;height:auto}
+.top .wrap{padding:16px 0}
 
 /* nyitóblokk: hanghullám-gyűrűk */
 .hero{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 46%,var(--bordo-3) 0%,var(--bordo-2) 34%,var(--bordo) 70%);color:#fff;text-align:center}
@@ -292,7 +294,7 @@ footer .fbar a{border:0;color:#fff}
 
 <header class="top">
   <div class="wrap">
-    <a class="mini" href="#">Sedna</a>
+    <a class="mini" href="#" aria-label="Sedna – vissza az oldal tetejére"><img src="img/sedna-felirat.png" width="693" height="167" alt=""></a>
     <nav aria-label="Fő menü">
       <a href="#hangutazas">A hangutazás</a>
       <a href="#rolam">Rólam</a>
