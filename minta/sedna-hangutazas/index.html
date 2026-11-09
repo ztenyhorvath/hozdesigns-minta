@@ -192,10 +192,12 @@ table.prices td:last-child{font-family:var(--serif);font-size:20px;color:#fbeeea
 .flow .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start}
 .flow h2{color:var(--bordo-2)}
 .flow .fimg{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:14px;margin-top:34px}
-.flow ol{list-style:none;counter-reset:s;padding:0;margin:0}
-.flow li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;gap:6px 18px;padding:22px 0;border-top:1px solid var(--rozsa-2)}
-.flow li::before{content:counter(s);grid-row:1/3;font-family:var(--serif);font-size:34px;line-height:1;color:var(--korall)}
-.flow li b{font-weight:600;font-size:19px}
+.flow ol{list-style:none;counter-reset:s;padding:0;margin:0;position:relative}
+.flow li{counter-increment:s;position:relative;display:grid;grid-template-columns:52px 1fr;column-gap:20px;padding:0 0 30px}
+.flow li:last-child{padding-bottom:0}
+.flow li::before{content:counter(s);grid-row:1/3;width:52px;height:52px;border-radius:50%;background:var(--bordo-2);color:#fbeeea;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;position:relative;z-index:1}
+.flow li:not(:last-child)::after{content:"";position:absolute;left:25px;top:52px;bottom:0;width:2px;background:linear-gradient(var(--korall),rgba(240,138,126,.25))}
+.flow li b{font-family:var(--serif);font-weight:600;font-size:23px;line-height:1.2;color:var(--bordo-2);padding-top:12px;margin-bottom:6px}
 .flow li span{color:var(--szurke)}
 
 /* elérhetőség */
@@ -260,6 +262,10 @@ footer .fbar a{border:0;color:#fff}
   .about .wrap,.gift .wrap,.intro .wrap,.flow .wrap{gap:26px}
   .about .quote{margin:18px 0 16px}
   .facts{margin-top:22px;padding-top:20px}
+  .flow li{grid-template-columns:44px 1fr;column-gap:16px;padding-bottom:24px}
+  .flow li::before{width:44px;height:44px;font-size:19px}
+  .flow li:not(:last-child)::after{left:21px;top:44px}
+  .flow li b{font-size:21px;padding-top:9px}
   .gift .vals{margin:20px 0 22px}
   .contact{flex-direction:column;width:100%}
   .contact a{width:100%;justify-content:center}
