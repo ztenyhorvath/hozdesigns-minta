@@ -86,7 +86,7 @@ p{margin:0 0 1em}
 .hero .where{margin-top:56px;font-size:15px;color:#d9aaa3}
 
 /* bemutatkozás */
-.intro{padding:110px 0 90px}
+.intro{padding:96px 0 80px}
 .intro .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:72px;align-items:center}
 .intro .ph{position:relative}
 .intro .ph img{width:100%;height:auto;aspect-ratio:1040/884;object-fit:cover;border-radius:50% 50% 18px 18px / 38% 38% 18px 18px}
@@ -145,13 +145,13 @@ ul.plain li::before{content:"";position:absolute;left:2px;top:21px;width:12px;he
 .msg.err{background:#fbe3e1;color:#8a1f1a;padding:14px 16px}
 
 /* rólam */
-.about{background:#fff;padding:100px 0}
+.about{background:#fff;padding:88px 0}
 .about .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
 .about .ph img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:30% 50%;border-radius:18px}
 .about h2{color:var(--bordo-2);margin-bottom:24px}
 .about p{color:var(--szurke);max-width:58ch}
 .about .quote{font-family:var(--serif);font-style:italic;font-size:clamp(21px,2.2vw,26px);line-height:1.35;color:var(--bordo-2);margin:28px 0 24px;padding-left:22px;border-left:2px solid var(--korall)}
-.about .sign{font-family:var(--serif);font-size:22px;color:var(--bordo-2);margin:0}
+.about .sign{font-family:var(--serif);font-size:22px;color:var(--bordo-2);margin:0;line-height:1.2}
 
 /* céges árak */
 .lead2{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.35;color:#fff;margin:0 0 16px}
@@ -167,15 +167,15 @@ table.prices td:last-child{font-family:var(--serif);font-size:20px;color:var(--k
 .side .h4note{font-size:15px;color:#e2b7b0;margin:6px 0 0}
 
 /* ajándék */
-.gift{padding:100px 0}
+.gift{padding:88px 0}
 .gift .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:72px;align-items:center}
 .gift img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:18px}
 .gift h2{color:var(--bordo-2);margin-bottom:24px}
 .gift p{color:var(--szurke);max-width:54ch}
 .gift .vals{display:flex;gap:14px;margin:26px 0 30px}
 .gift .vals div{background:var(--bordo);color:#fff;border-radius:14px;padding:16px 22px;min-width:150px}
-.gift .vals b{display:block;font-family:var(--serif);font-size:29px;line-height:1;color:var(--korall)}
-.gift .vals small{font-size:15px;color:#f0c9c2}
+.gift .vals b{display:block;font-family:var(--serif);font-size:29px;line-height:1;color:#fbeeea}
+.gift .vals small{font-size:15px;color:#e8bdb5}
 .gift .btn.fill{background:var(--bordo-2);color:#fff}
 .gift .btn.fill:hover{background:var(--bordo-3)}
 
@@ -202,7 +202,7 @@ table.prices td:last-child{font-family:var(--serif);font-size:20px;color:var(--k
 .visit h2{color:var(--bordo-2)}
 .visit .vhead p{color:var(--szurke);margin:12px 0 0;max-width:44ch}
 .contact{display:flex;gap:12px;flex-wrap:wrap}
-.contact a{display:inline-flex;align-items:center;gap:10px;background:var(--bordo-2);color:#fff;text-decoration:none;border-radius:999px;padding:14px 22px;font-weight:500;font-size:16px}
+.contact a{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;background:var(--bordo-2);color:#fff;text-decoration:none;border-radius:999px;padding:14px 22px;font-weight:500;font-size:16px}
 .contact a.alt{background:transparent;color:var(--bordo-2);box-shadow:inset 0 0 0 1.5px var(--bordo-2)}
 .contact a:hover{background:var(--bordo-3);color:#fff}
 .contact svg{width:18px;height:18px;flex:none}
@@ -229,8 +229,8 @@ footer ul{list-style:none;padding:0;margin:0}
 footer li{margin:0 0 10px;line-height:1.45}
 footer a{color:#f6e1dc;text-decoration:none;border-bottom:1px solid rgba(240,138,126,.35)}
 footer a:hover{color:#fff;border-color:var(--korall)}
-footer .fbar{border-top:1px solid rgba(240,138,126,.22);padding:22px 0 26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:#c9a7a2}
-footer .fbar a{border:0;color:#c9a7a2}
+footer .fbar{border-top:1px solid rgba(240,138,126,.22);padding:22px 0 26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:#fff}
+footer .fbar a{border:0;color:#fff}
 
 @media (max-width:900px){
   .top{display:none}
@@ -239,6 +239,10 @@ footer .fbar a{border:0;color:#c9a7a2}
   .intro .wrap,.panel,.flow .wrap,.about .wrap,.gift .wrap{grid-template-columns:1fr;gap:36px}
   .about .ph{max-width:460px}
   .gift .ph{order:2}
+  .facts{justify-content:center;text-align:center}
+  .gift .vals{justify-content:center}
+  .gift .btn{display:block;width:max-content;margin:0 auto}
+  .gift p,.gift h2{text-align:center;margin-left:auto;margin-right:auto}
   .intro .ph{max-width:460px}
   .strip{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}
   .strip .a,.strip .d{grid-row:auto;grid-column:auto}
@@ -249,8 +253,14 @@ footer .fbar a{border:0;color:#c9a7a2}
   .hero .inner{padding:110px 16px 84px}
   .hero .tags{font-size:15px}
   .hero .where{margin-top:40px}
-  .intro{padding:56px 0 48px}
-  .offer,.flow,.visit,.about,.gift{padding:56px 0}
+  .offer,.flow,.visit,.about,.gift{padding:44px 0}
+  .intro{padding:44px 0 36px}
+  .about .wrap,.gift .wrap,.intro .wrap,.flow .wrap{gap:26px}
+  .about .quote{margin:18px 0 16px}
+  .facts{margin-top:22px;padding-top:20px}
+  .gift .vals{margin:20px 0 22px}
+  .contact{flex-direction:column;width:100%}
+  .contact a{width:100%;justify-content:center}
   .gift .vals div{min-width:0;flex:1}
   .offer .head{margin-bottom:28px}
   .switch{display:flex;margin-bottom:28px}
@@ -511,7 +521,7 @@ footer .fbar a{border:0;color:#c9a7a2}
     </div>
     <div class="places">
       <button class="place" type="button" aria-pressed="true" data-q="Kada utca, Budapest" data-t="Kőbánya, Kada utca">
-        <span class="when">Saját terem</span>
+        <span class="when">Elsődleges helyszín</span>
         <h3>Kőbánya</h3>
         <p class="addr">Budapest X. kerület, Kada utca</p>
         <span class="go">Térkép</span>
