@@ -324,6 +324,7 @@ footer img{width:120px;height:auto;opacity:.85}
           <li>Matrac, párna és takaró a helyszínen</li>
           <li>Kényelmes ruhában gyere, pár perccel kezdés előtt</li>
         </ul>
+        <p class="note" style="margin-top:16px">A hang és a rezgés hatása intenzív lehet. Pacemaker, epilepszia, várandósság, súlyos szív- vagy érrendszeri betegség, illetve fokozott hangérzékenység esetén előtte kérdezz meg, egészségügyi kérdésben pedig orvossal egyeztess.</p>
         <img src="img/terem.jpg" width="1400" height="812" alt="A terem matracokkal, gyertyákkal és a gonggal" loading="lazy">
       </div>
 
@@ -463,7 +464,7 @@ footer img{width:120px;height:auto;opacity:.85}
     <div>
       <h2>Elérhetőség</h2>
       <dl>
-        <dt>Helyszínek</dt><dd>Kőbánya, Kada utca<br>Zugló – hamarosan<br>Yogamudra – havonta egyszer</dd>
+        <dt>Helyszínek</dt><dd>Kőbánya, Kada utca<br>Yogamudra jógastúdió, VI. ker., Felső erdősor 11. – havonta egyszer<br>Zugló – hamarosan</dd>
         <dt>E-mail</dt><dd><a href="mailto:sednahangutazas@gmail.com">sednahangutazas@gmail.com</a></dd>
         <dt>Facebook (jelentkezés privát üzenetben is)</dt><dd><a href="https://www.facebook.com/sednahangutazas" target="_blank" rel="noopener">facebook.com/sednahangutazas</a></dd>
       </dl>
@@ -482,8 +483,8 @@ footer img{width:120px;height:auto;opacity:.85}
 <script>
 /* ===== IDŐPONTOK – itt szerkeszthető: dátum (ÉÉÉÉ-HH-NN), kezdés, megjegyzés ===== */
 const IDOPONTOK = [
-  // [dátum, kezdés ("" ha még nincs), helyszín]
-  ["2026-12-05","","Yogamudra"]
+  // [dátum, kezdés ("" ha még nincs), helyszín, megjegyzés (pl. eltérő ár)]
+  ["2026-12-05","16:00","Yogamudra, VI. ker.","6 000 Ft"]
 ];
 const MAX_MUTATOTT = 8;
 
@@ -492,11 +493,11 @@ const MAX_MUTATOTT = 8;
   const honap=["január","február","március","április","május","június","július","augusztus","szeptember","október","november","december"];
   const most=new Date();
   const box=document.getElementById('slots');
-  const jovo=IDOPONTOK.map(([d,t,m])=>({d,t,m,dt:new Date(d+"T"+(t||"23:59")+":00")})).filter(x=>x.dt>most).slice(0,MAX_MUTATOTT);
+  const jovo=IDOPONTOK.map(([d,t,m,a])=>({d,t,m,a,dt:new Date(d+"T"+(t||"23:59")+":00")})).filter(x=>x.dt>most).slice(0,MAX_MUTATOTT);
   if(!jovo.length){box.innerHTML='<p class="nodates">Jelenleg nincs meghirdetett csoportos alkalom. Írj nekem, és szólok, ha lesz új időpont.</p>';return;}
   jovo.forEach((x,i)=>{
     const id='s'+i, cimke=`${honap[x.dt.getMonth()]} ${x.dt.getDate()}., ${napok[x.dt.getDay()]}${x.t?' '+x.t:''}${x.m?', '+x.m:''}`;
-    box.insertAdjacentHTML('beforeend',`<div class="slot"><input type="radio" name="idopont" id="${id}" value="${cimke}" ><label for="${id}"><b>${honap[x.dt.getMonth()].slice(0,3)}. ${x.dt.getDate()}.${x.t?' '+x.t:''}</b><small>${napok[x.dt.getDay()]}${x.m?' · '+x.m:''}</small></label></div>`);
+    box.insertAdjacentHTML('beforeend',`<div class="slot"><input type="radio" name="idopont" id="${id}" value="${cimke}" ><label for="${id}"><b>${honap[x.dt.getMonth()].slice(0,3)}. ${x.dt.getDate()}.${x.t?' '+x.t:''}</b><small>${napok[x.dt.getDay()]}${x.m?' · '+x.m:''}${x.a?' · '+x.a:''}</small></label></div>`);
   });
 })();
 
