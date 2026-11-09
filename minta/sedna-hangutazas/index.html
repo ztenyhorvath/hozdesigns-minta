@@ -266,7 +266,7 @@ footer img{width:120px;height:auto;opacity:.85}
       <a class="btn fill" href="#idopontok">Jelentkezem egy alkalomra</a>
       <a class="btn line" href="#cegeknek">Céges csoportoknak</a>
     </div>
-    <p class="where">Budapest, Kőbánya, Kada utca</p>
+    <p class="where">Budapest · Kőbánya, Zugló, Yogamudra</p>
   </div>
 </section>
 
@@ -276,11 +276,11 @@ footer img{width:120px;height:auto;opacity:.85}
     <div>
       <h2>Feküdj le, és hagyd, hogy a hang vigyen</h2>
       <p>A hangutazás alatt kényelmesen fekszel a matracon, takaróval, és nincs más dolgod, mint figyelni. A hangtálak és a gong rezgése körülölel, a gondolatok lelassulnak, a test elenged.</p>
-      <p>Az alkalmakat kis létszámban tartom a kőbányai teremben, nyáron a kertben is.</p>
+      <p>Több helyszínen tartok alkalmakat: Kőbányán, hamarosan Zuglóban, és havonta egyszer a Yogamudrában is.</p>
       <div class="facts">
-        <div><b>Kedd 18:30</b><small>esti alkalom</small></div>
-        <div><b>Szombat 10:00</b><small>délelőtti alkalom</small></div>
-        <div><b>5 000 Ft</b><small>fő / alkalom</small></div>
+        <div><b>5 000 Ft</b><small>csoportos alkalom</small></div>
+        <div><b>15 000 Ft</b><small>egyéni alkalom</small></div>
+        <div><b>3 helyszín</b><small>Budapesten</small></div>
       </div>
     </div>
   </div>
@@ -304,7 +304,7 @@ footer img{width:120px;height:auto;opacity:.85}
   <div class="wrap">
     <div class="head">
       <h2>Válaszd ki, kinek szól</h2>
-      <p>Egyénileg vagy párban a heti alkalmakra jelentkezhetsz. Cégeknek, csapatoknak kitelepülve tartok csoportos hangutazást, egyeztetett időpontban.</p>
+      <p>Csoportos alkalomra vagy egyéni hangutazásra jelentkezhetsz. Cégeknek, csapatoknak kitelepülve tartok csoportos hangutazást, egyeztetett időpontban.</p>
     </div>
 
     <div class="switch" role="tablist" aria-label="Ajánlat">
@@ -315,11 +315,12 @@ footer img{width:120px;height:auto;opacity:.85}
     <!-- 1. Magánszemélyek -->
     <div class="panel" id="idopontok" role="tabpanel" aria-labelledby="t-maganszemely">
       <div class="side">
-        <h3>Heti hangutazások</h3>
-        <p>Kedden este és szombat délelőtt várlak a Kada utcai teremben. Válassz időpontot, és írd meg, hányan jöttök – e-mailben visszaigazolom.</p>
-        <div class="price"><b>5 000 Ft</b><span>/ fő / alkalom</span></div>
+        <h3>Csoportos és egyéni hangutazás</h3>
+        <p>A csoportos alkalmakat több helyszínen tartom. Egyéni hangutazásra külön időpontot egyeztetünk. Jelentkezni itt, Facebookon privát üzenetben vagy e-mailben tudsz.</p>
+        <div class="price"><b>5 000 Ft</b><span>/ fő / csoportos alkalom</span></div>
+        <div class="price" style="margin-top:4px"><b>15 000 Ft</b><span>/ egyéni alkalom</span></div>
         <ul class="plain">
-          <li>Kb. egyórás hangfürdő hangtálakkal és gonggal</li>
+          <li>Hangutazás hangtálakkal és gonggal</li>
           <li>Matrac, párna és takaró a helyszínen</li>
           <li>Kényelmes ruhában gyere, pár perccel kezdés előtt</li>
         </ul>
@@ -328,22 +329,25 @@ footer img{width:120px;height:auto;opacity:.85}
 
       <form class="card" id="form-magan" action="https://api.web3forms.com/submit" method="POST">
         <h3>Jelentkezés</h3>
-        <p class="sub">Válaszd ki az alkalmat, amelyre jönnél.</p>
+        <p class="sub">Válaszd ki a csoportos alkalmat, vagy kérj egyéni időpontot.</p>
         <input type="hidden" name="access_key" value="IDE-JON-A-WEB3FORMS-KULCS">
         <input type="hidden" name="subject" value="Új jelentkezés hangutazásra – sedna weboldal">
         <input type="hidden" name="from_name" value="Sedna weboldal">
         <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <fieldset style="border:0;padding:0;margin:0">
           <legend class="sr" style="position:absolute;left:-9999px">Időpont</legend>
+          <p class="sub" style="margin:0 0 10px">Következő csoportos alkalmak</p>
           <div class="slots" id="slots"></div>
         </fieldset>
         <div class="f">
           <div class="full"><label class="l" for="m-nev">Neved</label><input id="m-nev" name="nev" required autocomplete="name"></div>
           <div><label class="l" for="m-email">E-mail</label><input id="m-email" type="email" name="email" required autocomplete="email"></div>
           <div><label class="l" for="m-tel">Telefon</label><input id="m-tel" type="tel" name="telefon" autocomplete="tel"></div>
+          <div class="full"><label class="l" for="m-tipus">Alkalom típusa</label>
+            <select id="m-tipus" name="tipus"><option>Csoportos alkalom (5 000 Ft / fő)</option><option>Egyéni hangutazás (15 000 Ft)</option></select></div>
           <div class="full"><label class="l" for="m-fo">Hányan jöttök?</label>
             <select id="m-fo" name="letszam"><option>1 fő</option><option>2 fő</option><option>3 fő</option><option>4 fő</option><option>5 fő vagy több</option></select></div>
-          <div class="full"><label class="l" for="m-megj">Megjegyzés (nem kötelező)</label><textarea id="m-megj" name="megjegyzes" placeholder="Pl. első alkalom lesz, vagy van, amit tudnunk kell"></textarea></div>
+          <div class="full"><label class="l" for="m-megj">Megjegyzés (nem kötelező)</label><textarea id="m-megj" name="megjegyzes" placeholder="Pl. egyéni alkalomnál a számodra jó napok, vagy amit tudnom kell"></textarea></div>
           <div class="full check"><input id="m-ok" type="checkbox" name="hozzajarulas" value="igen" required><label for="m-ok">Hozzájárulok, hogy az adataimat a jelentkezés kezeléséhez felhasználják.</label></div>
           <div class="full"><button class="btn fill" type="submit">Jelentkezés elküldése</button></div>
         </div>
@@ -421,8 +425,8 @@ footer img{width:120px;height:auto;opacity:.85}
       <h2>Ajándékozz feltöltődést</h2>
       <p>A hangutazás ajándéknak is különleges: születésnapra, karácsonyra, évfordulóra, vagy egyszerűen azért, hogy valaki időt kapjon önmagára. Az ajándékkártyát egy előre egyeztetett hangutazáson lehet felhasználni.</p>
       <div class="vals">
-        <div><b>5 000 Ft</b><small>ajándékkártya</small></div>
-        <div><b>15 000 Ft</b><small>ajándékkártya</small></div>
+        <div><b>5 000 Ft</b><small>csoportos alkalomra</small></div>
+        <div><b>15 000 Ft</b><small>egyéni hangutazásra</small></div>
       </div>
       <p>Cégek is adhatnak ajándékutalványt a munkatársaiknak, a megbecsülés jeleként.</p>
       <a class="btn fill" href="mailto:sednahangutazas@gmail.com?subject=Aj%C3%A1nd%C3%A9kk%C3%A1rtya">Ajándékkártyát kérek</a>
@@ -459,13 +463,12 @@ footer img{width:120px;height:auto;opacity:.85}
     <div>
       <h2>Elérhetőség</h2>
       <dl>
-        <dt>Helyszín</dt><dd>Budapest, X. kerület (Kőbánya), Kada utca</dd>
+        <dt>Helyszínek</dt><dd>Kőbánya, Kada utca<br>Zugló – hamarosan<br>Yogamudra – havonta egyszer</dd>
         <dt>E-mail</dt><dd><a href="mailto:sednahangutazas@gmail.com">sednahangutazas@gmail.com</a></dd>
-        <dt>Facebook</dt><dd><a href="https://www.facebook.com/sednahangutazas" target="_blank" rel="noopener">facebook.com/sednahangutazas</a></dd>
-        <dt>Rendszeres alkalmak</dt><dd>Kedd 18:30 · Szombat 10:00</dd>
+        <dt>Facebook (jelentkezés privát üzenetben is)</dt><dd><a href="https://www.facebook.com/sednahangutazas" target="_blank" rel="noopener">facebook.com/sednahangutazas</a></dd>
       </dl>
     </div>
-    <iframe class="map" title="Térkép: Kada utca, Budapest" loading="lazy" src="https://www.google.com/maps?q=Kada+utca,+Budapest&output=embed"></iframe>
+    <iframe class="map" title="Térkép: a kőbányai helyszín, Kada utca" loading="lazy" src="https://www.google.com/maps?q=Kada+utca,+Budapest&output=embed"></iframe>
   </div>
 </section>
 
@@ -479,16 +482,8 @@ footer img{width:120px;height:auto;opacity:.85}
 <script>
 /* ===== IDŐPONTOK – itt szerkeszthető: dátum (ÉÉÉÉ-HH-NN), kezdés, megjegyzés ===== */
 const IDOPONTOK = [
-  ["2026-11-07","10:00"],
-  ["2026-11-10","18:30"],
-  ["2026-11-14","10:00"],
-  ["2026-11-17","18:30"],
-  ["2026-11-21","10:00"],
-  ["2026-11-24","18:30"],
-  ["2026-11-28","10:00"],
-  ["2026-12-01","18:30"],
-  ["2026-12-05","10:00"],
-  ["2026-12-08","18:30"]
+  // [dátum, kezdés ("" ha még nincs), helyszín]
+  ["2026-12-05","","Yogamudra"]
 ];
 const MAX_MUTATOTT = 8;
 
@@ -497,11 +492,11 @@ const MAX_MUTATOTT = 8;
   const honap=["január","február","március","április","május","június","július","augusztus","szeptember","október","november","december"];
   const most=new Date();
   const box=document.getElementById('slots');
-  const jovo=IDOPONTOK.map(([d,t,m])=>({d,t,m,dt:new Date(d+"T"+t+":00")})).filter(x=>x.dt>most).slice(0,MAX_MUTATOTT);
-  if(!jovo.length){box.innerHTML='<p class="nodates">Jelenleg nincs meghirdetett alkalom. Írj nekünk, és szólunk, ha lesz új időpont.</p>';return;}
+  const jovo=IDOPONTOK.map(([d,t,m])=>({d,t,m,dt:new Date(d+"T"+(t||"23:59")+":00")})).filter(x=>x.dt>most).slice(0,MAX_MUTATOTT);
+  if(!jovo.length){box.innerHTML='<p class="nodates">Jelenleg nincs meghirdetett csoportos alkalom. Írj nekem, és szólok, ha lesz új időpont.</p>';return;}
   jovo.forEach((x,i)=>{
-    const id='s'+i, cimke=`${honap[x.dt.getMonth()]} ${x.dt.getDate()}., ${napok[x.dt.getDay()]} ${x.t}`;
-    box.insertAdjacentHTML('beforeend',`<div class="slot"><input type="radio" name="idopont" id="${id}" value="${cimke}" ${i?'':'required'}><label for="${id}"><b>${honap[x.dt.getMonth()].slice(0,3)}. ${x.dt.getDate()}. ${x.t}</b><small>${napok[x.dt.getDay()]}${x.m?' · '+x.m:''}</small></label></div>`);
+    const id='s'+i, cimke=`${honap[x.dt.getMonth()]} ${x.dt.getDate()}., ${napok[x.dt.getDay()]}${x.t?' '+x.t:''}${x.m?', '+x.m:''}`;
+    box.insertAdjacentHTML('beforeend',`<div class="slot"><input type="radio" name="idopont" id="${id}" value="${cimke}" ><label for="${id}"><b>${honap[x.dt.getMonth()].slice(0,3)}. ${x.dt.getDate()}.${x.t?' '+x.t:''}</b><small>${napok[x.dt.getDay()]}${x.m?' · '+x.m:''}</small></label></div>`);
   });
 })();
 
