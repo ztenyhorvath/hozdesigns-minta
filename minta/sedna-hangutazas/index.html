@@ -254,9 +254,9 @@ footer .fbar a{border:0;color:#f0d4ce}
 }
 @media (max-width:700px){
   body{font-size:17px}
-  .hero .inner{padding:110px 16px 84px}
+  .hero .inner{padding:110px 16px 52px}
   .hero .tags{font-size:15px}
-  .hero .where{margin-top:40px}
+  .hero .where{margin-top:32px}
   .offer,.flow,.visit,.about,.gift{padding:44px 0}
   .intro{padding:44px 0 36px}
   .about .wrap,.gift .wrap,.intro .wrap,.flow .wrap{gap:26px}
@@ -285,11 +285,22 @@ footer .fbar a{border:0;color:#f0d4ce}
   .visit .vhead{margin-bottom:28px}
   .contact a{flex:1;justify-content:center;padding:14px 16px}
   .map{height:280px}
-  footer{padding-top:56px}
-  footer .fmain{padding-bottom:44px;grid-template-columns:1fr;gap:30px}
+  footer{padding-top:44px}
+  footer .fmain{padding-bottom:30px;grid-template-columns:1fr 1fr;gap:26px 20px}
+  footer .brand{text-align:center}
+  footer .brand img{margin:0 auto}
+  footer .brand p{margin-left:auto;margin-right:auto}
+  footer .fcontact{grid-column:1/-1;border-top:1px solid rgba(240,138,126,.22);padding-top:20px;text-align:center}
+  footer .fcontact ul{display:flex;flex-direction:column;align-items:center;gap:6px}
+  footer .fcontact li{margin:0}
+  footer .fbar{text-align:center;align-items:center}
+  footer .brand p{font-size:19px;margin-top:14px}
+  footer h4{margin:0 0 10px}
+  footer li{margin:0 0 6px}
+  footer .fbar{padding:16px 0 20px;gap:2px}
   .hero .inner{padding-top:72px}
-  footer .brand img{width:180px}
-  footer .fbar{flex-direction:column;gap:6px}
+  footer .brand img{width:150px}
+  footer .fbar{flex-direction:column}
   .wrap{width:min(1160px,100% - 32px)}
 }
 </style>
@@ -574,7 +585,7 @@ footer .fbar a{border:0;color:#f0d4ce}
           <li>Zugló – hamarosan</li>
         </ul>
       </div>
-      <div>
+      <div class="fcontact">
         <h4>Kapcsolat</h4>
         <ul>
           <li>Váradi Petra</li>
