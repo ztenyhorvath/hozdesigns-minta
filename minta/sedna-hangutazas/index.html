@@ -140,6 +140,41 @@ ul.plain li::before{content:"";position:absolute;left:2px;top:21px;width:12px;he
 .msg.ok{background:#e6f2e8;color:#1f5130;padding:14px 16px}
 .msg.err{background:#fbe3e1;color:#8a1f1a;padding:14px 16px}
 
+/* rólam */
+.about{background:#fff;padding:100px 0}
+.about .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
+.about .ph img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:30% 50%;border-radius:18px}
+.about h2{color:var(--bordo-2);margin-bottom:24px}
+.about p{color:var(--szurke);max-width:58ch}
+.about .quote{font-family:var(--serif);font-style:italic;font-size:clamp(26px,2.6vw,32px);line-height:1.25;color:var(--bordo-2);margin:28px 0 24px;padding-left:22px;border-left:2px solid var(--korall)}
+.about .sign{font-family:var(--serif);font-size:26px;color:var(--bordo-2);margin:0}
+
+/* céges árak */
+.lead2{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.25;color:#fff;margin:0 0 16px}
+table.prices{width:100%;border-collapse:collapse;margin:24px 0 8px;font-size:17px}
+table.prices th{font-weight:500;text-align:left;color:#f0c9c2;font-size:15px;padding:0 0 8px}
+table.prices th:last-child,table.prices td:last-child{text-align:right}
+table.prices td{padding:11px 0;border-top:1px solid rgba(255,255,255,.12);color:#f6e1dc}
+table.prices td:last-child{font-family:var(--serif);font-size:24px;color:var(--korall);line-height:1}
+.note{font-size:15px;color:#e2b7b0}
+.durs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 4px}
+.durs span{border:1px solid rgba(240,138,126,.5);border-radius:999px;padding:6px 14px;font-size:15px;color:#f6e1dc}
+.side h4{font:600 17px/1.3 var(--sans);color:#fff;margin:30px 0 0}
+.side .h4note{font-size:15px;color:#e2b7b0;margin:6px 0 0}
+
+/* ajándék */
+.gift{padding:100px 0}
+.gift .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:72px;align-items:center}
+.gift img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:18px}
+.gift h2{color:var(--bordo-2);margin-bottom:24px}
+.gift p{color:var(--szurke);max-width:54ch}
+.gift .vals{display:flex;gap:14px;margin:26px 0 30px}
+.gift .vals div{background:var(--bordo);color:#fff;border-radius:14px;padding:16px 22px;min-width:150px}
+.gift .vals b{display:block;font-family:var(--serif);font-size:36px;line-height:1;color:var(--korall)}
+.gift .vals small{font-size:15px;color:#f0c9c2}
+.gift .btn.fill{background:var(--bordo-2);color:#fff}
+.gift .btn.fill:hover{background:var(--bordo-3)}
+
 /* képsor */
 .strip{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.2fr;grid-template-rows:280px 280px;gap:10px;padding:10px}
 .strip img{width:100%;height:100%;object-fit:cover;border-radius:12px}
@@ -173,7 +208,9 @@ footer img{width:120px;height:auto;opacity:.85}
 
 @media (max-width:900px){
   .top nav{display:none}
-  .intro .wrap,.panel,.flow .wrap,.visit .wrap{grid-template-columns:1fr;gap:36px}
+  .intro .wrap,.panel,.flow .wrap,.visit .wrap,.about .wrap,.gift .wrap{grid-template-columns:1fr;gap:36px}
+  .about .ph{max-width:460px}
+  .gift .ph{order:2}
   .intro .ph{max-width:460px}
   .strip{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}
   .strip .a,.strip .d{grid-row:auto;grid-column:auto}
@@ -185,7 +222,8 @@ footer img{width:120px;height:auto;opacity:.85}
   .hero .tags{font-size:15px}
   .hero .where{margin-top:40px}
   .intro{padding:56px 0 48px}
-  .offer,.flow,.visit{padding:56px 0}
+  .offer,.flow,.visit,.about,.gift{padding:56px 0}
+  .gift .vals div{min-width:0;flex:1}
   .offer .head{margin-bottom:28px}
   .switch{display:flex;margin-bottom:28px}
   .switch button{flex:1;padding:14px 10px;font-size:16px}
@@ -209,8 +247,10 @@ footer img{width:120px;height:auto;opacity:.85}
     <a class="mini" href="#">Sedna</a>
     <nav aria-label="Fő menü">
       <a href="#hangutazas">A hangutazás</a>
+      <a href="#rolam">Rólam</a>
       <a href="#idopontok">Időpontok</a>
       <a href="#cegeknek">Cégeknek</a>
+      <a href="#ajandek">Ajándék</a>
       <a href="#elerhetoseg">Elérhetőség</a>
     </nav>
   </div>
@@ -232,11 +272,11 @@ footer img{width:120px;height:auto;opacity:.85}
 
 <section class="intro" id="hangutazas">
   <div class="wrap">
-    <div class="ph"><img src="img/oktato.jpg" width="1040" height="884" alt="A hangutazás vezetője egy hangtállal" loading="lazy"></div>
+    <div class="ph"><img src="img/tal-kez.jpg" width="933" height="1400" alt="Hangtál megszólaltatása ütővel" loading="lazy" style="aspect-ratio:1040/884"></div>
     <div>
       <h2>Feküdj le, és hagyd, hogy a hang vigyen</h2>
       <p>A hangutazás alatt kényelmesen fekszel a matracon, takaróval, és nincs más dolgod, mint figyelni. A hangtálak és a gong rezgése körülölel, a gondolatok lelassulnak, a test elenged.</p>
-      <p>Az alkalmakat kis létszámban tartjuk a kőbányai teremben, nyáron a kertben is.</p>
+      <p>Az alkalmakat kis létszámban tartom a kőbányai teremben, nyáron a kertben is.</p>
       <div class="facts">
         <div><b>Kedd 18:30</b><small>esti alkalom</small></div>
         <div><b>Szombat 10:00</b><small>délelőtti alkalom</small></div>
@@ -246,11 +286,25 @@ footer img{width:120px;height:auto;opacity:.85}
   </div>
 </section>
 
+<section class="about" id="rolam">
+  <div class="wrap">
+    <div class="ph"><img src="img/petra.jpg" width="1400" height="909" alt="Váradi Petra a gong mellett" loading="lazy"></div>
+    <div>
+      <h2>Váradi Petra vagyok</h2>
+      <p>Körülbelül két éve találkoztam először a hangtálak világával, és már az első pillanatban magával ragadott az a különleges élmény, amit a hangok és a rezgések nyújtanak. Alig több mint egy éve elvégeztem az első hangtálas tanfolyamomat, majd újabb képzésekkel bővítettem a tudásomat.</p>
+      <p>Ma már én is hangutazásokat tartok azoknak, akik szeretnének egy kicsit megállni a rohanó hétköznapokban, letenni a feszültséget, kikapcsolódni és feltöltődni. Ahogy hetente eljárunk edzeni, úgy a lelki feltöltődésnek is helyet kellene kapnia az életünkben.</p>
+      <p class="quote">Nem luxus időt szánni magunkra, hanem szükséglet.</p>
+      <p>A hangutazásokon nyugodt, biztonságos teret szeretnék teremteni, ahol elengedheted a külvilág zaját, megpihenhetsz, és újra önmagadra figyelhetsz. Szeretettel várlak, ha úgy érzed, itt az ideje, hogy ne csak a testedre, hanem a lelkedre is időt szánj.</p>
+      <p class="sign">Petra</p>
+    </div>
+  </div>
+</section>
+
 <section class="offer" id="ajanlat">
   <div class="wrap">
     <div class="head">
       <h2>Válaszd ki, kinek szól</h2>
-      <p>Egyénileg vagy párban a heti alkalmainkra jelentkezhetsz. Cégeknek, csapatoknak nagyobb csoportos hangfürdőt tartunk, egyeztetett időpontban.</p>
+      <p>Egyénileg vagy párban a heti alkalmakra jelentkezhetsz. Cégeknek, csapatoknak kitelepülve tartok csoportos hangutazást, egyeztetett időpontban.</p>
     </div>
 
     <div class="switch" role="tablist" aria-label="Ajánlat">
@@ -262,7 +316,7 @@ footer img{width:120px;height:auto;opacity:.85}
     <div class="panel" id="idopontok" role="tabpanel" aria-labelledby="t-maganszemely">
       <div class="side">
         <h3>Heti hangutazások</h3>
-        <p>Kedden este és szombat délelőtt várunk a Kada utcai teremben. Válassz időpontot, és írd meg, hányan jöttök – visszaigazoljuk e-mailben.</p>
+        <p>Kedden este és szombat délelőtt várlak a Kada utcai teremben. Válassz időpontot, és írd meg, hányan jöttök – e-mailben visszaigazolom.</p>
         <div class="price"><b>5 000 Ft</b><span>/ fő / alkalom</span></div>
         <ul class="plain">
           <li>Kb. egyórás hangfürdő hangtálakkal és gonggal</li>
@@ -300,19 +354,41 @@ footer img{width:120px;height:auto;opacity:.85}
     <!-- 2. Cégek -->
     <div class="panel" id="cegeknek" role="tabpanel" aria-labelledby="t-ceg" hidden>
       <div class="side">
-        <h3>Csoportos hangfürdő cégeknek</h3>
-        <p>Egy közös lazítás a csapatnak: a munkanap végén, egy csapatnap részeként vagy céges rendezvényen. A létszámhoz és a helyszínhez igazítjuk.</p>
+        <h3>Céges hangutazás</h3>
+        <p class="lead2">Mert a feltöltődött munkatárs érték a cégnek is.</p>
+        <p>A határidők és a mindennapi stressz mellett a munkatársaknak is szükségük van a megállásra. A hangutazás alatt kiszakadhatnak a hétköznapokból, lelassulhatnak és elcsendesedhetnek. A kipihentebb, kiegyensúlyozottabb csapat jobb légkört és hatékonyabb együttműködést hoz.</p>
+        <table class="prices">
+          <thead><tr><th>Résztvevők</th><th>60 perces alkalom</th></tr></thead>
+          <tbody>
+            <tr><td>1–7 fő</td><td>50 000 Ft</td></tr>
+            <tr><td>8–14 fő</td><td>70 000 Ft</td></tr>
+            <tr><td>15–20 fő</td><td>90 000 Ft</td></tr>
+            <tr><td>21–30 fő</td><td>120 000 Ft</td></tr>
+            <tr><td>31–40 fő</td><td>150 000 Ft</td></tr>
+            <tr><td>41–50 fő</td><td>175 000 Ft</td></tr>
+          </tbody>
+        </table>
+        <p class="note">Az árak a kitelepülést is tartalmazzák.</p>
+        <h4>Választható időtartam</h4>
+        <div class="durs"><span>30 perc</span><span>45 perc</span><span>60 perc</span><span>90 perc</span></div>
+        <p class="h4note">Rövidebb vagy hosszabb alkalomra egyedi ajánlatot készítek.</p>
+        <h4>Mit tartalmaz az ár?</h4>
         <ul class="plain">
-          <li>Nagyobb csoportoknak, egyeztetett időpontban</li>
-          <li>A ti irodátokban, rendezvényhelyszínen vagy nálunk</li>
-          <li>Ár a létszám és a helyszín alapján, egyedi ajánlattal</li>
+          <li>Kitelepülés a cég helyszínére</li>
+          <li>A hangtálak és hangszerek szállítása</li>
+          <li>Helyszíni előkészítés és berendezés</li>
+          <li>A választott időtartamú hangutazás</li>
         </ul>
-        <img src="img/terem-lila.jpg" width="1400" height="467" alt="Matracok sorban a hangfürdő előtt, lila fényben" loading="lazy" style="aspect-ratio:1400/467">
+        <h4>A résztvevők hozzák</h4>
+        <p class="h4note">Saját matrac, párna és takaró.</p>
+        <h4>Rendszeres együttműködés</h4>
+        <p class="h4note">Ha a hangutazás visszatérő része lenne a céges jólléti programotoknak, egyedi, kedvezményes ajánlatot adok.</p>
+        <img src="img/talak-felulrol.jpg" width="1400" height="896" alt="Hangtálak sorban, gyertyák és rózsaszirmok" loading="lazy">
       </div>
 
       <form class="card" id="form-ceg" action="https://api.web3forms.com/submit" method="POST">
         <h3>Ajánlatkérés</h3>
-        <p class="sub">Írd meg a részleteket, és két munkanapon belül ajánlattal jelentkezünk.</p>
+        <p class="sub">Írd meg a részleteket, és két munkanapon belül ajánlattal jelentkezem.</p>
         <input type="hidden" name="access_key" value="IDE-JON-A-WEB3FORMS-KULCS">
         <input type="hidden" name="subject" value="Céges ajánlatkérés – sedna weboldal">
         <input type="hidden" name="from_name" value="Sedna weboldal">
@@ -322,11 +398,13 @@ footer img{width:120px;height:auto;opacity:.85}
           <div><label class="l" for="c-nev">Kapcsolattartó</label><input id="c-nev" name="nev" required autocomplete="name"></div>
           <div><label class="l" for="c-email">E-mail</label><input id="c-email" type="email" name="email" required autocomplete="email"></div>
           <div><label class="l" for="c-tel">Telefon</label><input id="c-tel" type="tel" name="telefon" autocomplete="tel"></div>
-          <div><label class="l" for="c-fo">Várható létszám</label><input id="c-fo" name="letszam" inputmode="numeric" placeholder="pl. 25"></div>
-          <div><label class="l" for="c-hely">Helyszín</label>
-            <select id="c-hely" name="helyszin"><option>Nálunk, a kőbányai teremben</option><option>A cégnél / irodában</option><option>Rendezvényhelyszínen</option><option>Még nem tudjuk</option></select></div>
+          <div><label class="l" for="c-fo">Várható létszám</label>
+            <select id="c-fo" name="letszam"><option>1–7 fő</option><option>8–14 fő</option><option>15–20 fő</option><option selected>21–30 fő</option><option>31–40 fő</option><option>41–50 fő</option><option>50 fő felett</option></select></div>
+          <div><label class="l" for="c-ido">Időtartam</label>
+            <select id="c-ido" name="idotartam"><option>30 perc</option><option>45 perc</option><option selected>60 perc</option><option>90 perc</option><option>Még nem tudjuk</option></select></div>
+          <div><label class="l" for="c-hely">Helyszín</label><input id="c-hely" name="helyszin" placeholder="pl. iroda, XIII. kerület"></div>
           <div><label class="l" for="c-datum">Tervezett időpont</label><input id="c-datum" name="idopont" placeholder="pl. december eleje, délután"></div>
-          <div class="full"><label class="l" for="c-megj">Alkalom, kérés</label><textarea id="c-megj" name="uzenet" placeholder="Pl. csapatnap, év végi rendezvény, rendszeres alkalmak"></textarea></div>
+          <div class="full"><label class="l" for="c-megj">Alkalom, kérés</label><textarea id="c-megj" name="uzenet" placeholder="Pl. csapatnap, év végi rendezvény, rendszeres alkalmak, ajándékutalvány"></textarea></div>
           <div class="full check"><input id="c-ok" type="checkbox" name="hozzajarulas" value="igen" required><label for="c-ok">Hozzájárulok, hogy az adataimat az ajánlatkérés kezeléséhez felhasználják.</label></div>
           <div class="full"><button class="btn fill" type="submit">Ajánlatot kérek</button></div>
         </div>
@@ -336,13 +414,29 @@ footer img{width:120px;height:auto;opacity:.85}
   </div>
 </section>
 
+<section class="gift" id="ajandek">
+  <div class="wrap">
+    <div class="ph"><img src="img/ajandek-1.jpg" width="1400" height="1400" alt="Sedna ajándékkártyák piros borítékban, egy hangtállal" loading="lazy"></div>
+    <div>
+      <h2>Ajándékozz feltöltődést</h2>
+      <p>A hangutazás ajándéknak is különleges: születésnapra, karácsonyra, évfordulóra, vagy egyszerűen azért, hogy valaki időt kapjon önmagára. Az ajándékkártyát egy előre egyeztetett hangutazáson lehet felhasználni.</p>
+      <div class="vals">
+        <div><b>5 000 Ft</b><small>ajándékkártya</small></div>
+        <div><b>15 000 Ft</b><small>ajándékkártya</small></div>
+      </div>
+      <p>Cégek is adhatnak ajándékutalványt a munkatársaiknak, a megbecsülés jeleként.</p>
+      <a class="btn fill" href="mailto:sednahangutazas@gmail.com?subject=Aj%C3%A1nd%C3%A9kk%C3%A1rtya">Ajándékkártyát kérek</a>
+    </div>
+  </div>
+</section>
+
 <section class="strip" aria-label="Képek a hangutazásokról">
-  <img class="a" src="img/fu.jpg" alt="Hangtálak a füvön, a háttérben fekvő résztvevők" loading="lazy">
-  <img src="img/rozsa.jpg" alt="Hangtál rózsaszirmokkal és kristállyal" loading="lazy">
-  <img src="img/uto.jpg" alt="Hangtál megszólaltatása ütővel" loading="lazy">
-  <img class="d" src="img/esti.jpg" alt="Esti hangfürdő a kertben" loading="lazy">
-  <img src="img/szirom.jpg" alt="Hangtál közelről" loading="lazy">
-  <img src="img/kert.jpg" alt="Kerti hangutazás" loading="lazy">
+  <img class="a" src="img/eletfa.jpg" alt="Életfa-minta egy hangtál belsejében, rózsaszirmokkal" loading="lazy">
+  <img src="img/talak-kozel.jpg" alt="Két díszített hangtál közelről" loading="lazy">
+  <img src="img/fu.jpg" alt="Hangtálak a füvön, a háttérben fekvő résztvevők" loading="lazy">
+  <img class="d" src="img/gong.jpg" style="object-position:82% 50%" alt="Gong lila fényben, gyertyákkal" loading="lazy">
+  <img src="img/tal-szirom.jpg" alt="Hangtál rózsaszirmokkal és csengőkkel" loading="lazy">
+  <img src="img/esti.jpg" alt="Esti hangfürdő a kertben" loading="lazy">
 </section>
 
 <section class="flow">
@@ -442,7 +536,7 @@ document.querySelectorAll('form.card').forEach(f=>{
       const j=await r.json();
       if(!j.success)throw new Error(j.message);
       msg.className='msg ok';
-      msg.textContent=f.id==='form-ceg'?'Köszönjük, megkaptuk az ajánlatkérést. Két munkanapon belül jelentkezünk.':'Köszönjük, megkaptuk a jelentkezésed. Hamarosan visszaigazoljuk e-mailben.';
+      msg.textContent=f.id==='form-ceg'?'Köszönöm, megkaptam az ajánlatkérést. Két munkanapon belül jelentkezem.':'Köszönöm, megkaptam a jelentkezésed. Hamarosan visszaigazolom e-mailben.';
       f.reset();
     }catch(err){
       msg.className='msg err';
