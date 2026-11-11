@@ -558,6 +558,13 @@ html{overflow-x:hidden}
   .k-kutya .top{position:sticky;top:0;z-index:35;background:var(--paper);box-shadow:0 0 0 100vmax var(--paper);clip-path:inset(0 -100vmax);padding-top:12px;padding-bottom:12px}
   .k-kutya section[id]{scroll-margin-top:84px !important}
 }
+.kfoot .name{display:flex;align-items:center;gap:12px}
+.kfoot .name .mark{width:46px;height:46px;flex:none}
+@media (max-width:640px){
+  .hero .meta{padding:0 16px}
+  .hero .meta>*{display:flex;align-items:center;min-height:50px;padding:0;line-height:1.2}
+  .hero .meta .ico,.hero .meta .dot{align-self:center}
+}
 </style>
 </head>
 <body class="k-kutya s-alap t-alap">
@@ -653,7 +660,7 @@ html{overflow-x:hidden}
   <svg class="dd peek" viewBox="0 0 120 60" aria-hidden="true"><use href="#d-peek"/></svg>
   <div class="wrap">
     <div class="cols">
-      <div class="id"><p class="name">Mancs Műhely</p><p class="tagl">Kutyakozmetika Zuglóban, nyugodt tempóban.</p><a class="btn" href="#foglalas">Időpontot foglalok</a></div>
+      <div class="id"><p class="name"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22.6" fill="var(--pop)" stroke="var(--ink)" stroke-width="2.4"/><g transform="translate(24 24) scale(.66) translate(-24 -25)"><g fill="var(--ink)" transform="rotate(-10 24 24)"><ellipse cx="11.6" cy="20.4" rx="4.3" ry="5.6" transform="rotate(-24 11.6 20.4)"/><ellipse cx="19.4" cy="12.4" rx="4.6" ry="6.1" transform="rotate(-8 19.4 12.4)"/><ellipse cx="28.9" cy="12.4" rx="4.6" ry="6.1" transform="rotate(8 28.9 12.4)"/><ellipse cx="36.6" cy="20.4" rx="4.3" ry="5.6" transform="rotate(24 36.6 20.4)"/><path d="M24.1 21.6c6.6 0 12.9 6.6 12.9 12.4 0 4.3-3.3 6.2-6.6 6.2-2.6 0-4-1.5-6.3-1.5s-3.7 1.5-6.3 1.5c-3.300 0-6.600-1.900-6.600-6.200 0-5.800 6.300-12.400 12.900-12.400z"/></g></g></svg>Mancs Műhely</p><p class="tagl">Kutyakozmetika Zuglóban, nyugodt tempóban.</p><a class="btn" href="#foglalas">Időpontot foglalok</a></div>
       <div><h4>Nyitvatartás</h4><ul class="hrs"><li><span>Hétfő</span><span>9:00–17:00</span></li><li><span>Kedd</span><span>9:00–17:00</span></li><li><span>Szerda</span><span>9:00–17:00</span></li><li><span>Csütörtök</span><span>9:00–18:00</span></li><li><span>Péntek</span><span>9:00–17:00</span></li><li><span>Szombat</span><span>9:00–13:00</span></li><li><span>Vasárnap</span><span>zárva</span></li></ul></div>
       <div><h4>Elérhetőség</h4><ul><li>1145 Budapest, Példa utca 12.</li><li><a href="tel:+36301234567">+36 30 123 4567</a></li><li><a href="mailto:hello@mancsmuhely.example">hello@mancsmuhely.example</a></li></ul></div>
     </div>
