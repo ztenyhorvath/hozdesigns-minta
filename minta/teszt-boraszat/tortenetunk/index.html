@@ -373,6 +373,23 @@ footer b{color:var(--ink)}
   .prose{padding-top:56px}.prose p{font-size:18px}
   .dulok{padding:56px 0}
 }
+/* teljes szélességű nyitókép (cfg hero.layout: "teljes") – csak éles, legalább ~1600 px széles fotóval */
+.hero.full{position:relative;display:flex;align-items:flex-end;min-height:min(88vh,860px);isolation:isolate}
+.hero.full .bg{position:absolute;inset:0;z-index:-2}
+.hero.full .bg img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,center)}
+.hero.full::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,color-mix(in srgb,var(--dark) 92%,transparent) 0%,color-mix(in srgb,var(--dark) 70%,transparent) 38%,color-mix(in srgb,var(--dark) 12%,transparent) 72%,transparent 100%),linear-gradient(0deg,color-mix(in srgb,var(--dark) 75%,transparent) 0%,transparent 34%),linear-gradient(180deg,color-mix(in srgb,var(--dark) 70%,transparent) 0%,transparent 22%)}
+.hero.full .wrap{display:block;width:100%}
+.hero.full .txt{max-width:660px;padding:120px 0 64px}
+.hero.full h1{font-size:clamp(46px,6.6vw,98px);text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.hero.full .lead{color:rgba(255,255,255,.9)}
+.hero.full .seal{position:absolute;right:max(28px,calc((100vw - 1200px)/2 + 28px));bottom:56px;width:150px;height:150px;color:var(--dark);background:var(--gold);border-radius:50%;padding:9px}
+.t-vilagos .hero.full{color:#fff}
+@media (max-width:1000px){
+  .hero.full{min-height:0}
+  .hero.full::before{background:linear-gradient(0deg,color-mix(in srgb,var(--dark) 94%,transparent) 0%,color-mix(in srgb,var(--dark) 72%,transparent) 50%,color-mix(in srgb,var(--dark) 18%,transparent) 100%)}
+  .hero.full .txt{padding:150px 0 44px}
+  .hero.full .seal{width:96px;height:96px;right:18px;bottom:auto;top:104px}
+}
 </style>
 </head>
 <body class="k-bor s-alap t-alap sub">
@@ -389,7 +406,7 @@ footer b{color:var(--ink)}
       <h1>Három generáció ugyanazon a domboldalon</h1>
       <p class="lead">1968 óta minden szüret ugyanazzal a mozdulattal kezdődik: a nagyapánk metszőollójával vágjuk le az első fürtöt.</p>
     </div>
-    <div class="pic"><img src="img/b0.jpg" alt="A pince boltíve" width="900" height="675"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg></div>
+    <div class="pic"><img src="img/h11.jpg" alt="Hordók a pincében" width="1400" height="930"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg></div>
   </div>
 </section>
 <section class="wrap prose"><p>A Kőhalom Pince nem befektetésnek indult. A nagyapánk, Kőhalmi József kőművesként dolgozott, és a szabad szombatjain ültette be az első fél hektárt portugieserrel.</p><p>Ma hét hektáron gazdálkodunk, de a szabályaink ugyanazok maradtak: csak saját szőlő, kézi szüret, alacsony terhelés. A borainkat nem siettetjük: a nagy vörösök legalább másfél évet töltenek tölgyfa hordóban, mielőtt palackba kerülnek.</p></section>
@@ -446,7 +463,7 @@ footer b{color:var(--ink)}
 <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8zM9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
 </defs></svg>
 
-<script type="application/json" id="hzdata">{"cats": [{"cat": "Vörösborok", "items": [{"name": "Portugieser", "year": 2025, "tags": ["száraz"], "desc": "Könnyű, gyümölcsös, hűtve is jó", "price": 2900, "badge": "Új évjárat", "id": "w0"}, {"name": "Kékfrankos", "year": 2024, "tags": ["száraz"], "desc": "Meggyes, fűszeres, nagy hordóban érlelt", "price": 3600, "id": "w1"}, {"name": "Cabernet Franc", "year": 2022, "tags": ["száraz"], "desc": "Jammertál-dűlő, 18 hónap tölgyfa hordóban", "price": 6900, "id": "w2"}, {"name": "Kőhalom Cuvée", "year": 2021, "tags": ["száraz", "prémium"], "desc": "Cabernet franc, merlot és kékfrankos házasítás", "price": 9800, "badge": "A pince zászlósbora", "id": "w3"}, {"name": "Merlot Válogatás", "year": 2020, "tags": ["száraz"], "desc": "Csak a legjobb évjáratokban készül", "price": 12500, "out": true, "id": "w4"}]}, {"cat": "Rozé és fehér", "items": [{"name": "Rozé", "year": 2025, "tags": ["száraz"], "desc": "Kékfrankosból, friss és epres", "price": 2700, "id": "w5"}, {"name": "Olaszrizling", "year": 2025, "tags": ["száraz"], "desc": "Mandulás, feszes savakkal", "price": 2900, "id": "w6"}, {"name": "Hárslevelű", "year": 2024, "tags": ["félédes"], "desc": "Mézes, hársvirágos illat", "price": 3400, "id": "w7"}]}], "slug": "teszt-boraszat", "gal": [["b9", "Szőlősorok"], ["b4", "Hordók a pincében"], ["b0", "A pince"], ["b3", "Kóstolóterem"], ["b8", "Barrique hordók"], ["b10", "A dűlő nyáron"], ["b14", "A birtok épülete"], ["b6", "A hordós érlelő"], ["b7", "Tölgyfa hordók a pincében"], ["b5", "A régi pince"], ["b12", "A borbolt"]], "hours": [null, null, null, ["12:00", "18:00"], ["12:00", "20:00"], ["10:00", "20:00"], ["10:00", "16:00"]]}</script>
+<script type="application/json" id="hzdata">{"cats": [{"cat": "Vörösborok", "items": [{"name": "Portugieser", "year": 2025, "tags": ["száraz"], "desc": "Könnyű, gyümölcsös, hűtve is jó", "price": 2900, "badge": "Új évjárat", "id": "w0"}, {"name": "Kékfrankos", "year": 2024, "tags": ["száraz"], "desc": "Meggyes, fűszeres, nagy hordóban érlelt", "price": 3600, "id": "w1"}, {"name": "Cabernet Franc", "year": 2022, "tags": ["száraz"], "desc": "Jammertál-dűlő, 18 hónap tölgyfa hordóban", "price": 6900, "id": "w2"}, {"name": "Kőhalom Cuvée", "year": 2021, "tags": ["száraz", "prémium"], "desc": "Cabernet franc, merlot és kékfrankos házasítás", "price": 9800, "badge": "A pince zászlósbora", "id": "w3"}, {"name": "Merlot Válogatás", "year": 2020, "tags": ["száraz"], "desc": "Csak a legjobb évjáratokban készül", "price": 12500, "out": true, "id": "w4"}]}, {"cat": "Rozé és fehér", "items": [{"name": "Rozé", "year": 2025, "tags": ["száraz"], "desc": "Kékfrankosból, friss és epres", "price": 2700, "id": "w5"}, {"name": "Olaszrizling", "year": 2025, "tags": ["száraz"], "desc": "Mandulás, feszes savakkal", "price": 2900, "id": "w6"}, {"name": "Hárslevelű", "year": 2024, "tags": ["félédes"], "desc": "Mézes, hársvirágos illat", "price": 3400, "id": "w7"}]}], "slug": "teszt-boraszat", "gal": [["b9", "Szőlősorok"], ["b4", "Hordók a pincében"], ["b0", "A pince"], ["b3", "Kóstolóterem"], ["b8", "Barrique hordók"], ["b10", "A dűlő nyáron"], ["b14", "A birtok épülete"], ["b6", "A hordós érlelő"], ["h6", "Szőlősorok naplementében"], ["b5", "A régi pince"], ["h11", "Hordók a pincében"], ["b12", "A borbolt"]], "hours": [null, null, null, ["12:00", "18:00"], ["12:00", "20:00"], ["10:00", "20:00"], ["10:00", "16:00"]]}</script>
 <script>/* közös segédek a szolgáltatós demókhoz (kutyakozmetika, esküvő, borászat) */
 var HZ = (function () {
   var D = JSON.parse(document.getElementById('hzdata').textContent);
