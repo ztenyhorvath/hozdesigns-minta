@@ -7,14 +7,14 @@
 
 <title>Kőhalom Pince – családi borászat Villányban</title>
 <meta name="description" content="Családi borászat a Villányi borvidéken. Rendelj bort közvetlenül a pincéből, vagy foglalj kóstolót.">
-<meta name="theme-color" content="#F5F2EC">
+<meta name="theme-color" content="#F6F3EE">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-<style>:root{--paper:#F5F2EC;--card:#FFFFFF;--ink:#1E1517;--ink2:#6A5D5F;--line:#E0D9CF;--acc:#6E1F33;--accd:#521524;--acct:#F0E3E5;--on:#FFFFFF;--dark:#1E1517;--gold:#D9B36A;--fh:'Playfair Display',system-ui,sans-serif;--fb:'DM Sans',system-ui,sans-serif;--fhw:600}
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>:root{--paper:#F6F3EE;--card:#FFFFFF;--ink:#1C1917;--ink2:#6B625C;--line:#DFD8CD;--acc:#6E1F33;--accd:#521524;--acct:#EFE6E2;--on:#FFFFFF;--dark:#191413;--gold:#C9A86A;--fh:'Cormorant Garamond',system-ui,sans-serif;--fb:'Jost',system-ui,sans-serif;--fhw:500}
 *{box-sizing:border-box}
 [hidden]{display:none !important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -130,306 +130,376 @@ footer b{color:var(--ink)}
   .form .two{grid-template-columns:1fr}
   .brand{font-size:18px}
 }
-/* borászat */
-:root{--rb:999px}
-.k-bor .top{position:relative;z-index:5;color:#fff}
-.k-bor .top .brand,.k-bor .top nav a{color:#fff}
-.k-bor .top nav a:hover{background:rgba(255,255,255,.12)}
-.k-bor .top nav a.cta{background:#fff;color:var(--dark)}
-.k-bor .top nav a.cta:hover{background:var(--acct);color:var(--dark)}
-.k-bor .brand{font-size:26px}
-.k-bor .draft{position:relative;z-index:5}
-.hero{background:var(--dark);color:#fff;margin-top:-86px;padding-top:86px;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:64px;align-items:end}
-.hero .txt{padding:64px 0 72px}
-.hero .reg{display:inline-flex;align-items:center;gap:10px;color:rgba(255,255,255,.75);font-size:16px}
-.hero .reg .ico{color:var(--gold)}
-.hero h1{font-size:clamp(44px,6vw,88px);line-height:1.02;margin-top:22px;text-wrap:balance}
-.hero .lead{color:rgba(255,255,255,.78);font-size:19px;max-width:46ch;margin-top:24px}
-.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-.hero .cta .btn{background:#fff;border-color:#fff;color:var(--dark);min-height:54px;padding:14px 26px}
-.hero .cta .btn:hover{background:var(--acct);border-color:var(--acct)}
-.hero .cta .btn.line{background:none;color:#fff;border-color:rgba(255,255,255,.5)}
-.hero .cta .btn.line:hover{background:rgba(255,255,255,.1);color:#fff;border-color:#fff}
-.hero .facts{display:flex;flex-wrap:wrap;gap:16px 44px;margin-top:52px;padding-top:26px;border-top:1px solid rgba(255,255,255,.18)}
-.hero .facts b{display:block;font-family:var(--fh);font-size:32px;line-height:1.1;font-weight:var(--fhw)}
-.hero .facts span{font-size:14px;color:rgba(255,255,255,.7)}
-.hero .pic{align-self:stretch;min-height:520px;position:relative}
-.hero .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:260px 260px 0 0}
+/* borászat – birtok-arculat: teljes képernyős nyitókép, középre zárt logó, nyugodt, levegős tipográfia */
+:root{--rb:0px;--fhs:0}
+.k-bor h1,.k-bor h2,.k-bor h3{font-weight:var(--fhw);letter-spacing:0}
+.lbl{font:600 12.5px/1.4 var(--fb);letter-spacing:.2em;text-transform:uppercase}
+.k-bor .btn{font:600 13px/1 var(--fb);letter-spacing:.16em;text-transform:uppercase;min-height:54px;padding:18px 30px;border-width:1px}
+.k-bor .btn.gold{background:var(--gold);border-color:var(--gold);color:var(--dark)}
+.k-bor .btn.gold:hover{background:#fff;border-color:#fff}
+.k-bor .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.k-bor .btn.ghost:hover{background:#fff;color:var(--dark);border-color:#fff}
+.k-bor .draft{position:relative;z-index:61}
 
-/* webshop */
-.shop{padding-top:96px;padding-bottom:72px}
-.shophead{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px}
-.shophead h2{font-size:clamp(38px,5vw,66px)}
-.shophead .note{color:var(--ink2);margin-top:12px;max-width:52ch}
-.perks{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:22px;font-size:15px;font-weight:600}
-.perks span{display:inline-flex;align-items:center;gap:8px}
-.perks .ico{color:var(--acc);width:19px;height:19px}
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin:34px 0 22px}
-.filters button{min-height:44px;border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:8px 18px;font-weight:700;font-size:15px;cursor:pointer}
-.filters button:hover{border-color:var(--ink)}
-.filters button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
-.pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.prod{background:var(--card);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);transition:box-shadow .25s,transform .25s}
-@media (hover:hover){.prod:hover{box-shadow:0 26px 50px -30px rgba(0,0,0,.4);transform:translateY(-3px)}}
-.prod .vis{position:relative;height:270px;display:grid;place-items:center;background:var(--tint,var(--acct));overflow:hidden}
-.prod .vis img{width:100%;height:100%;object-fit:cover}
-.prod .vis .seal{position:absolute;right:-34px;bottom:-34px;width:170px;height:170px;opacity:.16;color:var(--ink)}
-.bottle{position:relative;height:236px;aspect-ratio:100/320;filter:drop-shadow(0 16px 14px rgba(0,0,0,.22))}
-.bottle svg{width:100%;height:100%;display:block}
-.bottle .lab{position:absolute;left:18%;right:18%;top:53.5%;height:28%;display:grid;place-items:center;text-align:center;font-family:var(--fh);color:#2a2320;line-height:1}
-.bottle .lab b{font-size:19px;font-weight:var(--fhw)}
-.bottle .lab small{display:block;font-family:var(--fb);font-size:7px;font-weight:700;margin-top:3px;letter-spacing:.04em}
-.prod .badge{position:absolute;left:14px;top:14px;background:var(--card);border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:700}
-.prod .body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
-.prod h3{font-size:25px;line-height:1.15}
-.prod h3 small{font-family:var(--fb);font-size:14px;font-weight:600;color:var(--ink2);margin-left:8px;letter-spacing:0}
-.prod .tags{margin-top:8px}
-.tag{display:inline-block;font-size:12.5px;font-weight:700;background:var(--acct);color:var(--accd);border-radius:999px;padding:2px 10px;margin-right:6px}
-.prod p{color:var(--ink2);font-size:15px;margin-top:8px}
-.prod .buy{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:18px}
-.prod .pr{font-weight:700;font-size:20px;font-variant-numeric:tabular-nums;white-space:nowrap}
-.prod .pr span{display:block;font-size:13px;font-weight:400;color:var(--ink2)}
-.prod .btn{min-height:46px;padding:10px 20px}
-.prod.out .vis,.prod.out .body>*:not(.buy){opacity:.55}
-.soldout{font-size:14px;font-weight:700;color:var(--ink2)}
+/* fejléc: középen a logó, kétoldalt a menü; a nyitókép fölött átlátszó, görgetve tömör */
+.bhead{position:sticky;top:0;z-index:60;color:#fff;transition:background .3s,color .3s,box-shadow .3s}
+.bhead .in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;max-width:1360px;margin:0 auto;padding:0 32px;height:91px}
+.bhead nav{display:flex;align-items:center;gap:30px}
+.bhead nav.r{justify-content:flex-end}
+.bhead nav a{color:inherit;text-decoration:none;font:600 12.5px var(--fb);letter-spacing:.18em;text-transform:uppercase;padding:10px 0;border-bottom:1px solid transparent}
+.bhead nav a:hover,.bhead nav a[aria-current]{border-color:currentColor}
+.logo{display:grid;justify-items:center;text-decoration:none;color:inherit;line-height:1}
+.logo b{font:var(--fhw) 30px/1 var(--fh);letter-spacing:.04em}
+.logo small{font:600 10.5px var(--fb);letter-spacing:.34em;text-transform:uppercase;margin-top:6px;opacity:.85}
+.logo img{height:52px;width:auto}
+.cartbtn{position:relative;display:inline-flex;align-items:center;gap:8px;min-height:44px;border:0;background:none;color:inherit;font:600 12.5px var(--fb);letter-spacing:.18em;text-transform:uppercase;cursor:pointer;padding:10px 0}
+.cartbtn .ico{width:22px;height:22px}
+.cartbtn .n{min-width:20px;height:20px;border-radius:10px;background:var(--gold);color:var(--dark);font:700 12px/20px var(--fb);letter-spacing:0;text-align:center;padding:0 5px}
+.bhead.solid,.sub .bhead.solid{background:var(--paper);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.bhead.solid .logo b{font-size:25px}
+
+/* nyitókép */
+.hero{position:relative;display:grid;place-items:center;text-align:center;min-height:max(100svh,700px);margin-top:-91px;padding:150px 24px 120px;color:#fff;isolation:isolate;overflow:hidden;background:var(--dark)}
+.hero .bg{position:absolute;inset:0;z-index:-2}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,center);transform-origin:var(--pos,center);animation:hzoom 24s cubic-bezier(.2,.6,.3,1) both}
+@keyframes hzoom{from{transform:scale(1.14)}to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(12,9,8,.62) 0%,rgba(12,9,8,.22) 30%,rgba(12,9,8,.34) 62%,rgba(12,9,8,.82) 100%)}
+.hero .c{max-width:1040px}
+.hero .lbl{display:inline-flex;align-items:center;gap:16px;color:#fff;text-shadow:0 1px 14px rgba(0,0,0,.5)}
+.hero .lbl::before,.hero .lbl::after{content:"";width:44px;height:1px;background:currentColor;opacity:.7}
+.hero h1{font-size:clamp(52px,8.4vw,132px);line-height:.98;margin-top:26px;text-wrap:balance;text-shadow:0 2px 50px rgba(0,0,0,.45)}
+.hero h1 span{display:block}
+.hero h1 .it{font-style:italic}
+.hero .lead{font-size:clamp(18px,1.6vw,21px);max-width:50ch;margin:30px auto 0;color:rgba(255,255,255,.92)}
+.hero .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:40px}
+.hero .c>*{animation:hrise 1s cubic-bezier(.2,.7,.2,1) both}
+.hero .c>*:nth-child(2){animation-delay:.15s}.hero .c>*:nth-child(3){animation-delay:.32s}.hero .c>*:nth-child(4){animation-delay:.46s}
+@keyframes hrise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.hero .cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);display:grid;justify-items:center;gap:10px;color:#fff;text-decoration:none}
+.hero .cue i{width:1px;height:46px;background:linear-gradient(#fff,transparent);animation:hcue 2.4s ease-in-out infinite;transform-origin:top}
+@keyframes hcue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.hero .seal{position:absolute;right:44px;bottom:40px;width:128px;height:128px;color:#fff;animation:hspin 60s linear infinite}
+@keyframes hspin{to{transform:rotate(360deg)}}
+.seal text{font-family:var(--fb);font-weight:600;letter-spacing:.16em;fill:currentColor}
+.seal .m{font-family:var(--fh);font-weight:var(--fhw);letter-spacing:0}
+.sub .hero{min-height:max(74svh,560px)}
+
+/* bemutatkozó állítás + számok */
+.mani{max-width:900px;margin:0 auto;text-align:center;padding-top:120px;padding-bottom:40px}
+.mani .seal{width:84px;height:84px;color:var(--acc);margin:0 auto 34px}
+.mani h2{font-size:clamp(32px,4.2vw,56px);line-height:1.16}
+.mani p{font-size:19px;color:var(--ink2);max-width:60ch;margin:26px auto 0}
+.mani .sig{font:italic var(--fhw) 26px var(--fh);color:var(--ink);margin-top:30px}
+.mani .sig small{display:block;font:600 11.5px var(--fb);letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);margin-top:6px}
+.nums{display:flex;flex-wrap:wrap;justify-content:center;margin:64px auto 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.nums div{flex:1 1 180px;padding:30px 20px;text-align:center;border-left:1px solid var(--line)}
+.nums div:first-child{border-left:0}
+.nums b{display:block;font:var(--fhw) 50px/1 var(--fh)}
+.nums span{display:block;margin-top:10px;font:600 11.5px var(--fb);letter-spacing:.2em;text-transform:uppercase;color:var(--ink2)}
+
+/* zászlósbor */
+.flag{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);margin-top:110px;background:var(--dark);color:#fff}
+.flag .vis{position:relative;display:grid;place-items:center;min-height:640px;background:var(--tint);overflow:hidden}
+.flag .vis .seal{position:absolute;width:520px;height:520px;color:var(--ink);opacity:.07}
+.flag .vis .bottle{width:auto;height:540px}
+.flag .vis img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.flag .txt{align-self:center;padding:72px clamp(28px,6vw,96px)}
+.flag .lbl{color:var(--gold)}
+.flag h2{font-size:clamp(40px,5vw,72px);line-height:1.02;margin-top:18px}
+.flag h2 small{display:block;font:italic var(--fhw) 26px var(--fh);opacity:.8;margin-top:8px}
+.flag .d{color:rgba(255,255,255,.8);font-size:18px;margin-top:22px;max-width:44ch}
+.flag ul{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:10px}
+.flag li{display:flex;gap:12px;align-items:baseline;color:rgba(255,255,255,.88)}
+.flag li::before{content:"";flex:none;width:18px;height:1px;background:var(--gold);transform:translateY(-5px)}
+.flag .buy{display:flex;flex-wrap:wrap;align-items:center;gap:26px;margin-top:38px;padding-top:30px;border-top:1px solid rgba(255,255,255,.18)}
+.flag .pr{font:var(--fhw) 40px/1 var(--fh)}
+.flag .pr span{display:block;font:600 11.5px var(--fb);letter-spacing:.18em;text-transform:uppercase;opacity:.7;margin-top:8px}
+.flag .btn{background:var(--gold);border-color:var(--gold);color:var(--dark)}.flag .btn:hover{background:#fff;border-color:#fff}
+.flag .step{border-color:rgba(255,255,255,.4);background:none;border-radius:0}.flag .step button{color:#fff}.flag .step button:hover{background:rgba(255,255,255,.14)}
+
+/* borlap / webshop */
+.shop{padding-top:120px;padding-bottom:90px}
+.chead{text-align:center;max-width:760px;margin:0 auto}
+.chead .lbl{color:var(--accd)}
+.chead h2{font-size:clamp(40px,5.4vw,76px);line-height:1.02;margin-top:14px}
+.chead p{color:var(--ink2);font-size:18px;margin-top:18px}
+.perks{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 34px;margin-top:26px;font-size:14.5px;font-weight:500;color:var(--ink2)}
+.perks span{display:inline-flex;align-items:center;gap:9px}
+.perks .ico{color:var(--acc);width:18px;height:18px}
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 34px;margin:50px 0 40px;border-bottom:1px solid var(--line)}
+.filters button{border:0;background:none;padding:14px 2px;margin-bottom:-1px;font:600 12.5px var(--fb);letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);cursor:pointer;border-bottom:2px solid transparent}
+.filters button:hover{color:var(--ink)}
+.filters button[aria-pressed=true]{color:var(--ink);border-color:var(--ink)}
+.pgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:48px 28px}
+.prod{display:flex;flex-direction:column}
 .prod[hidden]{display:none}
-/* kosár gomb + fiók */
-.cartbtn{position:relative;display:inline-flex;align-items:center;gap:8px;min-height:44px;border:0;border-radius:10px;background:#fff;color:var(--dark);font-weight:700;padding:10px 16px;margin-left:8px;cursor:pointer}
-.cartbtn .n{min-width:22px;height:22px;border-radius:11px;background:var(--acc);color:#fff;font-size:13px;display:grid;place-items:center;padding:0 6px}
-.t-vilagos .cartbtn,.sub .cartbtn{background:var(--ink);color:#fff}
-.shade{position:fixed;inset:0;z-index:70;background:rgba(15,10,10,.5);opacity:0;visibility:hidden;transition:opacity .25s,visibility 0s .25s}
+.prod .vis{position:relative;aspect-ratio:3/4;display:grid;place-items:center;background:var(--tint,var(--acct));overflow:hidden}
+.prod .vis img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.prod .vis .seal{position:absolute;width:118%;height:auto;aspect-ratio:1;color:var(--ink);opacity:.06}
+.bottle{position:relative;width:30%;aspect-ratio:100/320;filter:drop-shadow(0 22px 18px rgba(0,0,0,.28));transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+@media (hover:hover){.prod:hover .bottle{transform:translateY(-10px) rotate(-2deg)}}
+.bottle svg{width:100%;height:100%;display:block}
+.bottle .lab{position:absolute;left:18%;right:18%;top:53.5%;height:28%;display:grid;place-items:center;text-align:center;font-family:var(--fh);color:#2a2320;line-height:1;container-type:inline-size}
+.bottle .lab b{font-size:42cqw;font-weight:var(--fhw)}
+.bottle .lab small{display:block;font:600 11cqw var(--fb);margin-top:6cqw;letter-spacing:.1em}
+.prod .badge{position:absolute;left:0;top:18px;background:var(--dark);color:#fff;padding:6px 12px;font:600 10.5px var(--fb);letter-spacing:.16em;text-transform:uppercase}
+.prod .body{display:flex;flex-direction:column;flex:1;padding-top:18px}
+.prod h3{font-size:27px;line-height:1.12}
+.prod h3 small{font:italic var(--fhw) 19px var(--fh);color:var(--ink2);margin-left:8px}
+.prod .tags{margin-top:6px;font:600 11px var(--fb);letter-spacing:.18em;text-transform:uppercase;color:var(--accd)}
+.prod p{color:var(--ink2);font-size:15px;margin-top:8px}
+.prod .buy{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:16px}
+.prod .pr{font:var(--fhw) 25px/1 var(--fh);white-space:nowrap}
+.prod .pr span{display:block;font:500 12px var(--fb);color:var(--ink2);margin-top:5px}
+.prod .btn{min-height:44px;padding:12px 16px;font-size:11.5px;background:transparent;color:var(--ink);border-color:var(--ink)}
+.prod .btn:hover{background:var(--ink);color:var(--paper)}
+.prod .step{border-radius:0;border-width:1px;border-color:var(--ink)}
+.prod .step button{width:38px;height:42px;border-radius:0}
+.prod.out .vis{opacity:.5}
+.soldout{font:600 11.5px var(--fb);letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+
+/* kosárfiók */
+.shade{position:fixed;inset:0;z-index:70;background:rgba(15,10,10,.55);opacity:0;visibility:hidden;transition:opacity .25s,visibility 0s .25s}
 .shade.on{opacity:1;visibility:visible;transition:opacity .25s}
-.drawer{position:fixed;top:0;right:0;bottom:0;z-index:71;width:min(460px,100vw);background:var(--paper);display:flex;flex-direction:column;transform:translateX(102%);visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s .3s;box-shadow:-30px 0 60px -30px rgba(0,0,0,.4)}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:71;width:min(470px,100vw);background:var(--paper);display:flex;flex-direction:column;transform:translateX(102%);visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s .3s;box-shadow:-30px 0 60px -30px rgba(0,0,0,.4)}
 .drawer.on{transform:none;visibility:visible;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
-.drawer header{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid var(--line)}
-.drawer header h2{font-size:28px}
-.drawer .x{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:22px;cursor:pointer}
-.drawer .scroll{flex:1;overflow-y:auto;padding:20px 24px}
-.drawer .foot{border-top:1px solid var(--line);padding:18px 24px calc(18px + env(safe-area-inset-bottom));background:var(--card)}
-.citem{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
-.citem b{font-family:var(--fh);font-size:19px;font-weight:var(--fhw)}
-.citem small{display:block;color:var(--ink2);font-size:14px}
-.citem .sub{font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
-.citem .step{justify-self:start}.citem .step button{width:36px;height:36px}
-.cempty{color:var(--ink2);padding:30px 0;text-align:center}
-.ways{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
+.drawer header{display:flex;align-items:center;justify-content:space-between;padding:24px 28px;border-bottom:1px solid var(--line)}
+.drawer header h2{font-size:34px}
+.drawer .x{width:44px;height:44px;border:1px solid var(--line);background:none;font-size:22px;cursor:pointer}
+.drawer .scroll{flex:1;overflow-y:auto;padding:14px 28px 24px}
+.drawer .foot{border-top:1px solid var(--line);padding:20px 28px calc(20px + env(safe-area-inset-bottom));background:var(--card)}
+.citem{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 14px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.citem b{font:var(--fhw) 23px/1.15 var(--fh)}
+.citem small{display:block;color:var(--ink2);font-size:14px;margin-top:2px}
+.citem .sub{font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.citem .step{justify-self:start;border-radius:0;border-width:1px}.citem .step button{width:36px;height:36px;border-radius:0}
+.cempty{color:var(--ink2);padding:40px 0;text-align:center;font:italic var(--fhw) 24px/1.3 var(--fh)}
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px}
 .ways.three{grid-template-columns:repeat(3,1fr)}
 .ways label{position:relative;display:block}
 .ways input{position:absolute;opacity:0}
-.ways span{display:block;height:100%;text-align:center;border:1.5px solid var(--line);background:var(--card);border-radius:14px;padding:10px 6px;font-weight:700;font-size:14px;cursor:pointer;line-height:1.3}
-.ways small{display:block;font-weight:400;color:var(--ink2);font-size:12.5px}
-.ways input:checked+span{border-color:var(--acc);background:var(--acct)}
+.ways span{display:block;height:100%;text-align:center;border:1px solid var(--line);background:var(--card);padding:12px 6px;font-weight:600;font-size:14px;cursor:pointer;line-height:1.3}
+.ways small{display:block;font-weight:400;color:var(--ink2);font-size:12.5px;margin-top:2px}
+.ways input:checked+span{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .ways input:focus-visible+span{outline:3px solid var(--acc);outline-offset:2px}
-.freebar{margin-top:16px;font-size:14px;font-weight:600;color:var(--accd)}
-.freebar i{display:block;height:6px;border-radius:3px;background:var(--line);margin-top:8px;overflow:hidden}
-.freebar i::after{content:"";display:block;height:100%;width:var(--w,0%);background:var(--acc);border-radius:3px;transition:width .3s}
-.lines{display:grid;gap:6px;font-size:15px}
+.freebar{margin-top:18px;font-size:14px;font-weight:600;color:var(--accd)}
+.freebar i{display:block;height:3px;background:var(--line);margin-top:9px;overflow:hidden}
+.freebar i::after{content:"";display:block;height:100%;width:var(--w,0%);background:var(--acc);transition:width .3s}
+.lines{display:grid;gap:7px;font-size:15px}
 .lines div{display:flex;justify-content:space-between}
-.lines .tot{font-weight:700;font-size:17px;align-items:baseline;margin-top:4px}
-.lines .tot b{font-family:var(--fh);font-size:30px;font-weight:var(--fhw)}
+.lines .tot{font-weight:600;align-items:baseline;margin-top:6px}
+.lines .tot b{font:var(--fhw) 38px/1 var(--fh)}
 .drawer .msg{font-size:14px;color:#A2332A;font-weight:600;margin-top:8px}
 .drawer .msg:empty{display:none}
-.drawer .foot .btn{margin-top:14px}
-.drawer h3.s{font:700 15px var(--fb);letter-spacing:0;margin:22px 0 10px}
-.age{display:flex !important;grid-template-columns:none;gap:10px;align-items:flex-start;font-weight:400 !important;font-size:14px}
+.drawer .foot .btn{margin-top:16px}
+.drawer h3.s{font:600 11.5px var(--fb);letter-spacing:.2em;text-transform:uppercase;margin:24px 0 10px}
+.k-bor .form input,.k-bor .form select,.k-bor .form textarea{border-radius:0;border-width:1px}
+.age{display:flex !important;gap:10px;align-items:flex-start;font-weight:400 !important;font-size:14px}
 .age input{width:22px !important;height:22px;min-height:0 !important;flex:none;accent-color:var(--acc);padding:0}
-.drawer .done{padding:20px 0}
+.drawer .done{padding:24px 0}
+.drawer .done h3{font-size:34px}
 
-.taste{background:var(--dark);color:#fff;padding:88px 0}
-.taste h2{font-size:clamp(36px,4.8vw,62px)}
-.taste .note{color:rgba(255,255,255,.75);margin-top:12px;max-width:54ch}
-.tcards{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:16px;margin-top:40px}
-.tcard{position:relative;display:block;cursor:pointer}
+/* kóstoló */
+.taste{position:relative;background:var(--dark);color:#fff;padding:120px 0;isolation:isolate}
+.taste .tbg{position:absolute;inset:0;z-index:-1;opacity:.22}
+.taste .tbg img{width:100%;height:100%;object-fit:cover}
+.taste .chead .lbl{color:var(--gold)}
+.taste .chead p{color:rgba(255,255,255,.78)}
+.tcards{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));margin-top:56px;border:1px solid rgba(255,255,255,.22)}
+.tcard{position:relative;display:block;cursor:pointer;border-left:1px solid rgba(255,255,255,.22)}
+.tcard:first-child{border-left:0}
 .tcard input{position:absolute;opacity:0}
-.tcard>div{height:100%;border:1.5px solid rgba(255,255,255,.2);border-radius:24px;padding:28px;transition:border-color .15s,background .15s}
-.tcard:hover>div{border-color:rgba(255,255,255,.5)}
-.tcard input:checked+div{background:#fff;color:var(--dark);border-color:#fff}
-.tcard input:focus-visible+div{outline:3px solid var(--gold);outline-offset:3px}
-.tcard h3{font-size:28px}
-.tcard .p{font-family:var(--fh);font-size:34px;margin:14px 0 2px;font-weight:var(--fhw)}
-.tcard .p small{font-family:var(--fb);font-size:15px;opacity:.75;font-weight:400}
-.tcard .d{font-size:14px;opacity:.75}
-.tcard ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px;font-size:15px}
-.tcard li{display:grid;grid-template-columns:18px 1fr;gap:10px}
-.tcard li .ico{width:17px;height:17px;margin-top:4px;color:var(--gold)}
-.tcard input:checked+div li .ico{color:var(--acc)}
-.tbook{display:grid;grid-template-columns:340px minmax(0,1fr);gap:48px;margin-top:40px;background:rgba(255,255,255,.06);border-radius:28px;padding:36px}
-.tbook h3{font-size:20px;font-family:var(--fb);font-weight:700;letter-spacing:0;margin-bottom:14px}
-.taste .calhead button{background:none;border-color:rgba(255,255,255,.3);color:#fff}
+.tcard>div{height:100%;padding:38px 34px;transition:background .2s,color .2s}
+.tcard:hover>div{background:rgba(255,255,255,.06)}
+.tcard input:checked+div{background:#fff;color:var(--dark)}
+.tcard input:focus-visible+div{outline:3px solid var(--gold);outline-offset:-3px}
+.tcard .lbl{color:var(--gold)}
+.tcard input:checked+div .lbl{color:var(--accd)}
+.tcard h3{font-size:36px;line-height:1.05;margin-top:12px}
+.tcard .p{font:var(--fhw) 34px/1 var(--fh);margin-top:22px}
+.tcard .p small{font:500 13px var(--fb);opacity:.75}
+.tcard ul{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:9px;font-size:15.5px}
+.tcard li{display:flex;gap:12px;align-items:baseline}
+.tcard li::before{content:"";flex:none;width:14px;height:1px;background:currentColor;opacity:.6;transform:translateY(-5px)}
+.tbook{display:grid;grid-template-columns:340px minmax(0,1fr);gap:64px;margin-top:0;border:1px solid rgba(255,255,255,.22);border-top:0;padding:44px;background:color-mix(in srgb,var(--dark) 70%,transparent)}
+.tbook h3{font:600 11.5px var(--fb);letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px;color:var(--gold)}
+.taste .calhead button{background:none;border-color:rgba(255,255,255,.3);color:#fff;border-radius:0}
 .taste .calgrid small{color:rgba(255,255,255,.6)}
-.taste .calgrid .day{color:#fff}
+.taste .calgrid .day{color:#fff;border-radius:0}
 .taste .calgrid .day:hover:not(:disabled){background:rgba(255,255,255,.14)}
 .taste .calgrid .day:disabled{color:rgba(255,255,255,.28)}
-.taste .calgrid .day.sel{background:#fff;color:var(--dark)}
+.taste .calgrid .day.sel{background:var(--gold);color:var(--dark)}
 .taste .form label{color:rgba(255,255,255,.88)}
-.taste .form input,.taste .form textarea{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#fff}
+.taste .form input,.taste .form textarea{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.25);color:#fff}
 .taste .form input:focus,.taste .form textarea:focus{outline-color:var(--gold)}
-.taste .step{border-color:rgba(255,255,255,.3);background:none}
-.taste .step button{color:#fff}.taste .step button:hover{background:rgba(255,255,255,.14)}
+.taste .step{border-color:rgba(255,255,255,.35);background:none;border-radius:0;border-width:1px}
+.taste .step button{color:#fff;border-radius:0}.taste .step button:hover{background:rgba(255,255,255,.14)}
 .grow{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:8px}
-.tsum{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid rgba(255,255,255,.2);padding-top:16px;margin:16px 0}
-.tsum b{font-family:var(--fh);font-size:34px;font-weight:var(--fhw)}
+.tsum{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid rgba(255,255,255,.2);padding-top:18px;margin:18px 0}
+.tsum b{font:var(--fhw) 40px/1 var(--fh)}
 .tsum span{color:rgba(255,255,255,.8)}
 .taste .hint{color:#FFB4A8}
-.taste .btn{background:#fff;border-color:#fff;color:var(--dark)}
-.taste .btn:hover{background:var(--acct);border-color:var(--acct)}
-.taste .done{margin-top:40px;background:rgba(255,255,255,.06);border-radius:28px;padding:40px}
+.taste .done{margin-top:56px;border:1px solid rgba(255,255,255,.22);padding:48px;text-align:center}
+.taste .done h3{font-size:40px}
 .taste .done small{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.65)}
 
-.estate{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center;padding-top:96px;padding-bottom:40px}
-.estate .pics{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.estate .pics button{padding:0;border:0;border-radius:20px;overflow:hidden;aspect-ratio:3/4;background:var(--acct)}
-.estate .pics button:nth-child(2){margin-top:56px}
-.estate .pics.one{grid-template-columns:1fr}.estate .pics.one button{aspect-ratio:4/3}
-.estate img,.ggrid img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+/* birtok */
+.estate{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:88px;align-items:center;padding-top:130px;padding-bottom:50px}
+.estate .pics{position:relative;padding-bottom:70px}
+.estate .pics button{display:block;padding:0;border:0;overflow:hidden;background:var(--acct)}
+.estate .pics button:first-child{width:82%;aspect-ratio:4/5}
+.estate .pics button:nth-child(2){position:absolute;right:0;bottom:0;width:46%;aspect-ratio:1;border:10px solid var(--paper)}
+.estate .pics.one{padding-bottom:0}.estate .pics.one button{width:100%}
+.estate img,.ggrid img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
 .estate button:hover img,.ggrid button:hover img{transform:scale(1.04)}
-.estate h2{font-size:clamp(32px,4.2vw,54px)}
-.estate p{font-size:18px;color:var(--ink2);margin-top:18px;max-width:54ch}
-.ggrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:220px;gap:14px}
-.ggrid button{padding:0;border:0;border-radius:18px;overflow:hidden;background:var(--acct)}
+.estate .lbl{color:var(--accd)}
+.estate h2{font-size:clamp(36px,4.6vw,62px);line-height:1.06;margin-top:14px}
+.estate p{font-size:18px;color:var(--ink2);margin-top:20px;max-width:52ch}
+.estate blockquote{margin:32px 0 0;padding-left:24px;border-left:1px solid var(--acc);font:italic var(--fhw) 28px/1.3 var(--fh)}
+.estate cite{display:block;font:600 11.5px var(--fb);letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);margin-top:12px;font-style:normal}
+.estate .more{margin-top:36px}
+.estate .more .btn{background:transparent;color:var(--ink);border-color:var(--ink)}
+.estate .more .btn:hover{background:var(--ink);color:var(--paper)}
+.ggrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:240px;gap:12px}
+.ggrid button{padding:0;border:0;overflow:hidden;background:var(--acct)}
 .ggrid button:nth-child(6n+1){grid-column:span 2;grid-row:span 2}
 .ggrid button:nth-child(6n+4),.ggrid button:nth-child(6n+5),.ggrid button:nth-child(6n){grid-column:span 2}
-.visitbox{border-top:1.5px solid var(--ink);padding-top:40px}
-.visitbox h2{font-size:clamp(32px,4.2vw,54px);margin-bottom:28px}
-.hero .wrap>*,.tbook>*,.estate>*,.tl>*,.person>*{min-width:0}
+.visitbox{padding-top:30px}
+.visitbox .chead{margin-bottom:50px}
+.k-bor .hours td{padding:13px 0}
 
-@media (max-width:1000px){
-  .hero .wrap{grid-template-columns:1fr;gap:0}.hero .txt{padding:40px 0 44px}.hero .pic{min-height:0;aspect-ratio:4/3}.hero .pic img{border-radius:200px 200px 0 0}
-  .pgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.shop{padding-top:56px;padding-bottom:48px}
-  .tcards{grid-template-columns:1fr}.tbook{grid-template-columns:1fr;gap:28px;padding:24px 18px}
-  .taste{padding:56px 0}
-  .estate{grid-template-columns:1fr;gap:32px;padding-top:56px}
-  .ggrid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px}
-}
-@media (max-width:640px){
-  .pgrid{grid-template-columns:1fr}
-  .prod{flex-direction:row}.prod .vis{height:auto;width:112px;flex:none}.bottle{height:150px}.bottle .lab b{font-size:12px}.bottle .lab small{display:none}.prod .vis .seal{display:none}
-  .prod .body{padding:16px}.prod h3{font-size:21px}.prod .badge{left:8px;top:8px;font-size:11px;padding:2px 8px}
-  .prod .buy{flex-wrap:wrap}
-  .hero .facts b{font-size:26px}
-  .cartbtn span.t{display:none}
-}
-}
-/* világos változat (cfg "theme": "vilagos") */
-.t-vilagos.k-bor .top .brand,.t-vilagos.k-bor .top nav a{color:var(--ink)}
-.t-vilagos.k-bor .top nav a:hover{background:rgba(0,0,0,.06)}
-.t-vilagos.k-bor .top nav a.cta{background:var(--ink);color:#fff}
-.t-vilagos .hero{background:var(--acct);color:var(--ink)}
-.t-vilagos .hero .reg,.t-vilagos .hero .lead,.t-vilagos .hero .facts span{color:var(--ink2)}
-.t-vilagos .hero .reg .ico{color:var(--acc)}
-.t-vilagos .hero .facts{border-color:rgba(0,0,0,.15)}
-.t-vilagos .hero .cta .btn{background:var(--acc);border-color:var(--acc);color:#fff}
-.t-vilagos .hero .cta .btn.line{background:none;color:var(--ink);border-color:var(--ink)}
-.t-vilagos .hero .cta .btn.line:hover{background:var(--ink);color:#fff}
-.s-szogletes .hero .pic img{border-radius:0}
-.s-szogletes .cart,.s-szogletes .tcard>div,.s-szogletes .tbook,.s-szogletes .estate .pics button,.s-szogletes .ggrid button{border-radius:4px}
-.s-szogletes{--rb:4px}
-/* márkajel (pecsét) */
-.hero .pic .seal{position:absolute;left:-58px;bottom:44px;width:148px;height:148px;color:var(--dark);background:var(--gold);border-radius:50%;padding:9px;z-index:2}
-.t-vilagos .hero .pic .seal{color:#fff;background:var(--acc)}
-.seal text{font-family:var(--fb);font-weight:700;letter-spacing:.14em;fill:currentColor}
-.seal .m{font-family:var(--fh);font-weight:var(--fhw);letter-spacing:0}
-.estate .more{margin-top:28px}
-.estate blockquote{margin:28px 0 0;padding-left:20px;border-left:2px solid var(--acc);font-family:var(--fh);font-size:24px;line-height:1.35;font-style:italic}
-.estate cite{display:block;font:400 15px var(--fb);color:var(--ink2);margin-top:8px;font-style:normal}
-/* Történetünk oldal */
-.sub .hero h1{font-size:clamp(44px,6.4vw,96px)}
-.crumb{color:rgba(255,255,255,.7);font-size:15px}.crumb a{color:#fff}
-.t-vilagos .crumb{color:var(--ink2)}.t-vilagos .crumb a{color:var(--ink)}
-.prose{max-width:760px;margin:0 auto;padding-top:96px;padding-bottom:24px}
-.prose p{font-size:20px;line-height:1.7;margin-top:22px}
-.prose p:first-child{font-family:var(--fh);font-size:clamp(26px,3vw,36px);line-height:1.3;margin-top:0}
-.tlwrap{padding-top:72px;padding-bottom:40px}
-.tlwrap>h2,.people>h2,.dulok>h2{font-size:clamp(34px,4.4vw,56px);margin-bottom:44px}
-.tl{display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,.8fr);gap:36px;align-items:start;padding:36px 0;border-top:1px solid var(--line)}
-.tl:first-of-type{border-top:1.5px solid var(--ink)}
-.tl .y{font-family:var(--fh);font-size:54px;line-height:1;color:var(--accd);font-weight:var(--fhw)}
-.tl h3{font-size:28px}
-.tl p{color:var(--ink2);font-size:17px;margin-top:10px;max-width:52ch}
-.tl button{padding:0;border:0;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:var(--acct)}
+/* lábléc */
+.bfoot{background:var(--dark);color:rgba(255,255,255,.75);margin-top:70px;padding:80px 0 110px;font-size:15px}
+.bfoot .seal{width:96px;height:96px;color:var(--gold);margin:0 auto}
+.bfoot .name{text-align:center;font:var(--fhw) 34px/1 var(--fh);color:#fff;margin-top:20px}
+.bfoot .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:56px;padding-top:44px;border-top:1px solid rgba(255,255,255,.16)}
+.bfoot h4{font:600 11.5px var(--fb);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.bfoot a{color:#fff}
+.bfoot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.bfoot .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 30px;margin-top:50px;font-size:13px;color:rgba(255,255,255,.55)}
+
+/* 18+ kapu */
+.gate{position:fixed;inset:0;z-index:95;display:grid;place-items:center;padding:24px;background:color-mix(in srgb,var(--dark) 88%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.gate .box{max-width:460px;text-align:center;color:#fff}
+.gate .seal{width:110px;height:110px;color:var(--gold);margin:0 auto 28px}
+.gate h2{font-size:46px;line-height:1.05}
+.gate p{color:rgba(255,255,255,.75);margin-top:14px}
+.gate .row{display:flex;justify-content:center;gap:12px;margin-top:30px}
+.gate .no{margin-top:22px;color:var(--gold);font-weight:600}
+
+/* Történetünk aloldal */
+.crumb{font:600 11.5px var(--fb);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.crumb a{color:#fff}
+.prose{max-width:780px;margin:0 auto;padding-top:110px;padding-bottom:24px}
+.prose p{font-size:20px;line-height:1.75;margin-top:24px;color:var(--ink2)}
+.prose p:first-child{font:var(--fhw) clamp(28px,3.2vw,40px)/1.28 var(--fh);margin-top:0;color:var(--ink)}
+.tlwrap{padding-top:90px;padding-bottom:40px}
+.tlwrap .chead,.people .chead{margin-bottom:60px}
+.tl{display:grid;grid-template-columns:170px minmax(0,1fr) minmax(0,.85fr);gap:44px;align-items:center;padding:44px 0;border-top:1px solid var(--line)}
+.tl .y{font:italic var(--fhw) 68px/1 var(--fh);color:var(--accd)}
+.tl h3{font-size:34px}
+.tl p{color:var(--ink2);font-size:17px;margin-top:12px;max-width:50ch}
+.tl button{padding:0;border:0;overflow:hidden;aspect-ratio:4/3;background:var(--acct)}
 .tl img,.person img{width:100%;height:100%;object-fit:cover}
-.people{padding-top:72px;padding-bottom:40px}
-.person{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:56px;align-items:center;margin-top:44px}
+.people{padding-top:90px;padding-bottom:40px}
+.person{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px;align-items:center;margin-top:56px}
 .person:nth-of-type(even) .ph{order:2}
-.person .ph{aspect-ratio:4/5;border-radius:240px 240px 20px 20px;overflow:hidden;background:var(--acct)}
-.person h3{font-size:36px}
-.person .role{color:var(--accd);font-weight:700;margin-top:4px}
-.person p.t{font-size:18px;color:var(--ink2);margin-top:16px;max-width:54ch}
-.dulok{background:var(--dark);color:#fff;padding:88px 0;margin-top:56px}
-.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0 48px}
-.dgrid div{border-top:1px solid rgba(255,255,255,.25);padding:22px 0 30px}
-.dgrid b{display:block;font-family:var(--fh);font-size:30px;font-weight:var(--fhw)}
-.dgrid span{display:block;color:var(--gold);font-size:14px;font-weight:700;margin-top:2px}
-.dgrid p{color:rgba(255,255,255,.75);margin-top:10px;font-size:16px}
-.endcta{text-align:center;padding-top:96px;padding-bottom:56px}
-.endcta h2{font-size:clamp(34px,4.6vw,60px);max-width:18ch;margin:0 auto}
-.endcta .row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
-.endcta .btn{min-height:54px;padding:14px 28px}
-@media (max-width:1000px){
-  .hero .pic .seal{left:auto;right:16px;bottom:16px;width:108px;height:108px}
-  .tl{grid-template-columns:1fr;gap:14px;padding:28px 0}.tl .y{font-size:42px}
-  .person{grid-template-columns:1fr;gap:24px}.person:nth-of-type(even) .ph{order:0}.person .ph{max-width:340px}
-  .prose{padding-top:56px}.prose p{font-size:18px}
-  .dulok{padding:56px 0}
+.person .ph{aspect-ratio:4/5;overflow:hidden;background:var(--acct)}
+.person .lbl{color:var(--accd)}
+.person h3{font-size:48px;line-height:1.05;margin-top:10px}
+.person p.t{font-size:18px;color:var(--ink2);margin-top:18px;max-width:52ch}
+.dulok{background:var(--dark);color:#fff;padding:110px 0;margin-top:70px}
+.dulok .chead .lbl{color:var(--gold)}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 56px;margin-top:60px}
+.dgrid div{border-top:1px solid rgba(255,255,255,.25);padding:26px 0 34px}
+.dgrid b{display:block;font:var(--fhw) 38px/1.1 var(--fh)}
+.dgrid span{display:block;color:var(--gold);font:600 11.5px var(--fb);letter-spacing:.18em;text-transform:uppercase;margin-top:8px}
+.dgrid p{color:rgba(255,255,255,.75);margin-top:14px;font-size:16px}
+.endcta{text-align:center;padding-top:120px;padding-bottom:50px}
+.endcta h2{font:italic var(--fhw) clamp(38px,5vw,68px)/1.08 var(--fh);max-width:18ch;margin:0 auto}
+.endcta .row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:36px}
+.endcta .btn.line{border-color:var(--ink)}
+.hero>*,.flag>*,.tbook>*,.estate>*,.tl>*,.person>*{min-width:0}
+
+/* változatok */
+.s-kerek{--rb:999px}
+.s-kerek .prod .vis,.s-kerek .ggrid button,.s-kerek .estate .pics button{border-radius:18px}
+.s-kerek .step,.s-kerek .prod .step button{border-radius:999px}
+
+@media (max-width:1100px){
+  .pgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .bhead nav{gap:20px}
 }
-/* teljes szélességű nyitókép (cfg hero.layout: "teljes") – csak éles, legalább ~1600 px széles fotóval */
-.hero.full{position:relative;display:flex;align-items:flex-end;min-height:min(88vh,860px);isolation:isolate}
-.hero.full .bg{position:absolute;inset:0;z-index:-2}
-.hero.full .bg img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,center)}
-.hero.full::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,color-mix(in srgb,var(--dark) 92%,transparent) 0%,color-mix(in srgb,var(--dark) 70%,transparent) 38%,color-mix(in srgb,var(--dark) 12%,transparent) 72%,transparent 100%),linear-gradient(0deg,color-mix(in srgb,var(--dark) 75%,transparent) 0%,transparent 34%),linear-gradient(180deg,color-mix(in srgb,var(--dark) 70%,transparent) 0%,transparent 22%)}
-.hero.full .wrap{display:block;width:100%}
-.hero.full .txt{max-width:660px;padding:120px 0 64px}
-.hero.full h1{font-size:clamp(46px,6.6vw,98px);text-shadow:0 2px 30px rgba(0,0,0,.35)}
-.hero.full .lead{color:rgba(255,255,255,.9)}
-.hero.full .seal{position:absolute;right:max(28px,calc((100vw - 1200px)/2 + 28px));bottom:56px;width:150px;height:150px;color:var(--dark);background:var(--gold);border-radius:50%;padding:9px}
-.t-vilagos .hero.full{color:#fff}
-@media (max-width:1000px){
-  .hero.full{min-height:0}
-  .hero.full::before{background:linear-gradient(0deg,color-mix(in srgb,var(--dark) 94%,transparent) 0%,color-mix(in srgb,var(--dark) 72%,transparent) 50%,color-mix(in srgb,var(--dark) 18%,transparent) 100%)}
-  .hero.full .txt{padding:150px 0 44px}
-  .hero.full .seal{width:96px;height:96px;right:18px;bottom:auto;top:104px}
+@media (max-width:900px){
+  .bhead .in{grid-template-columns:auto 1fr;padding:0 18px;height:80px}
+  .bhead nav.l{display:none}
+  .bhead nav.r a{display:none}
+  .logo{justify-items:start}.logo b{font-size:24px}.logo small{font-size:9.5px}
+  .cartbtn .t{display:none}
+  .hero{margin-top:-80px;padding:130px 20px 110px;min-height:max(100svh,640px)}
+  .hero .seal{display:none}
+  .hero .lbl{letter-spacing:.14em;font-size:11.5px}
+  .hero .lbl::before,.hero .lbl::after{width:22px}
+  .mani{padding-top:80px}
+  .nums div{flex-basis:33%;padding:22px 8px}.nums b{font-size:36px}.nums span{font-size:10px;letter-spacing:.12em}
+  .flag{grid-template-columns:1fr;margin-top:72px}.flag .vis{min-height:420px}.flag .vis .bottle{width:auto;height:360px}.flag .txt{padding:44px 20px 52px}
+  .shop{padding-top:80px;padding-bottom:60px}
+  .filters{gap:0 22px;margin:36px 0 28px}
+  .pgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 14px}
+  .prod h3{font-size:22px}.prod h3 small{font-size:16px}
+  .prod .buy{flex-direction:column;align-items:stretch}
+  .prod .btn,.prod .step{width:100%;justify-content:space-between}
+  .taste{padding:80px 0}
+  .tcards{grid-template-columns:1fr}.tcard{border-left:0;border-top:1px solid rgba(255,255,255,.22)}.tcard:first-child{border-top:0}
+  .tcard>div{padding:28px 22px}
+  .tbook{grid-template-columns:1fr;gap:32px;padding:26px 18px}
+  .estate{grid-template-columns:1fr;gap:40px;padding-top:80px}
+  .ggrid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px;gap:8px}
+  .bfoot .cols{grid-template-columns:1fr;gap:30px;text-align:center}
+  .bfoot{padding-top:60px}
+  .tl{grid-template-columns:1fr;gap:16px;padding:32px 0}.tl .y{font-size:50px}
+  .person{grid-template-columns:1fr;gap:26px}.person:nth-of-type(even) .ph{order:0}.person .ph{max-width:360px}.person h3{font-size:38px}
+  .prose{padding-top:64px}.prose p{font-size:18px}
+  .dulok{padding:70px 0}
+  .endcta{padding-top:80px}
+  .gate h2{font-size:36px}
 }
 </style>
 </head>
 <body class="k-bor s-alap t-alap">
 <div class="draft" role="note">Bemutató tervezet a Kőhalom Pince számára – nem hivatalos oldal. Készítette: <a href="https://hozdesigns.com">hozdesigns.com</a></div>
-<header class="wrap top">
-  <a class="brand" href="#" aria-label="Kőhalom Pince – kezdőlap">Kőhalom Pince</a>
-  <nav aria-label="Fő menü"><a href="#borok">Boraink</a><a href="#kostolo">Kóstoló</a><a href="tortenetunk/">Történetünk</a><a href="#kapcsolat">Kapcsolat</a><button type="button" class="cartbtn" data-cart aria-label="Kosár megnyitása"><svg class="ico" aria-hidden="true"><use href="#i-bag"/></svg><span class="t">Kosár</span><span class="n" data-n hidden>0</span></button></nav>
-</header>
+<header class="bhead" data-head><div class="in"><nav class="l" aria-label="Fő menü"><a href="#borok">Boraink</a><a href="#kostolo">Kóstoló</a></nav><a class="logo" href="#" aria-label="Kőhalom Pince – kezdőlap"><b>Kőhalom Pince</b><small>Villányi</small></a><nav class="r" aria-label="További menü"><a href="tortenetunk/">Történetünk</a><a href="#kapcsolat">Kapcsolat</a><button type="button" class="cartbtn" data-cart aria-label="Kosár megnyitása"><svg class="ico" aria-hidden="true"><use href="#i-bag"/></svg><span class="t">Kosár</span><span class="n" data-n hidden>0</span></button></nav></div></header>
 <main>
-<section class="hero full" data-shot="hero">
-  <div class="bg" style="--pos:60% 60%"><img src="img/h6.jpg" alt="Szőlősorok naplementében" width="1600" height="1067"></div>
-  <div class="wrap">
-    <div class="txt">
-      <p class="reg"><svg class="ico" aria-hidden="true"><use href="#i-grape"/></svg>Villányi borvidék, Palkonya</p>
-      <h1>Három generáció, hét hektár, egy pince</h1>
-      <p class="lead">A nagyapánk 1968-ban ültette az első portugieser tőkéket. Ma is kézzel szüretelünk, a borok pedig ugyanabban a löszfalba vájt pincében érnek.</p>
-      <div class="cta"><a class="btn" href="#borok">Irány a borlap</a><a class="btn line" href="#kostolo">Kóstolót foglalok</a></div>
-      <div class="facts"><div><b>7 hektár</b><span>saját szőlő</span></div><div><b>1968</b><span>óta a családé</span></div><div><b>18 000</b><span>palack évente</span></div></div>
-    </div>
-    
+<section class="hero" data-shot="hero">
+  <div class="bg" style="--pos:62% 55%"><img src="img/h6.jpg" alt="Szőlősorok naplementében" width="1600" height="1067"></div>
+  <div class="c">
+    <p class="lbl">Villányi borvidék, Palkonya</p>
+    <h1><span class="">Három generáció,</span><span class="it">hét hektár,</span><span class="">egy pince</span></h1>
+    <p class="lead">Családi pincészet Palkonyán, 1968 óta. Kézzel szüretelt szőlő, löszfalba vájt pince, türelemmel érlelt borok.</p>
+    <div class="cta"><a class="btn gold" href="#borok">Boraink</a><a class="btn ghost" href="#kostolo">Kóstolót foglalok</a></div>
   </div>
   <svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg>
+  <a class="cue" href="#tovabb" aria-label="Tovább az oldalon"><i></i></a>
 </section>
+<div id="tovabb"></div>
+<section class="wrap"><div class="mani"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg><h2>A jó bor a szőlőben dől el. A pincében már csak elrontani lehet.</h2><p>Nem vásárolunk szőlőt és nem palackoztatunk bérben. Hét hektáron gazdálkodunk a Jammertál és a Csillagvölgy dűlőkben, a borainkat pedig nem siettetjük.</p><p class="sig">Kőhalmi István<small>borász</small></p></div><div class="nums"><div><b>7 hektár</b><span>saját szőlő</span></div><div><b>1968</b><span>óta a családé</span></div><div><b>18 000</b><span>palack évente</span></div></div></section>
+<section class="flag" data-shot="flag"><div class="vis" style="--tint:#EFE3E2"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#231A18"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#F4EEE2"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2021</small></div></div></div></div><div class="txt"><p class="lbl">A pince zászlósbora</p><h2>Kőhalom Cuvée<small>2021</small></h2><p class="d">Cabernet franc, merlot és kékfrankos házasítása a Jammertál legöregebb tőkéiről. Tizennyolc hónapot töltött tölgyfa hordóban, további egy évet palackban.</p><ul><li>Fekete cseresznye, szilva, finom fűszerek</li><li>Bársonyos tannin, hosszú lecsengés</li><li>Akár tíz évig is érlelhető</li></ul><div class="buy"><div class="pr">9 800 Ft<span>0,75 l palack</span></div><span data-buy="w3"></span></div></div></section>
 
-<section class="wrap shop" id="borok" data-shot="offer" style="scroll-margin-top:0">
-  <div class="shophead"><div>
-    <h2>Boraink</h2>
-    <p class="note">Rendelj közvetlenül a pincéből: tedd a kosárba, amit megkóstolnál, a többit mi intézzük.</p>
-    <div class="perks"><span><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Közvetlenül a pincéből</span><span><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg>Házhoz szállítás 2 900 Ft, 40 000 Ft felett ingyenes</span><span><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg>Átvétel a pincénél díjmentesen</span></div>
-  </div></div>
+<section class="wrap shop" id="borok" data-shot="offer" style="scroll-margin-top:70px">
+  <div class="chead"><p class="lbl">Webshop</p><h2>Boraink</h2>
+    <p>Rendelj közvetlenül a pincéből: tedd a kosárba, amit megkóstolnál, a többit mi intézzük.</p>
+    <div class="perks"><span><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Közvetlenül a pincéből</span><span><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg>Házhoz szállítás 2 900 Ft, 40 000 Ft felett ingyenes</span><span><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg>Átvétel a pincénél díjmentesen</span></div></div>
   <div class="filters" role="group" aria-label="Szűrés fajta szerint"><button type="button" data-f="*" aria-pressed="true">Összes bor</button><button type="button" data-f="0" aria-pressed="false">Vörösborok</button><button type="button" data-f="1" aria-pressed="false">Rozé és fehér</button></div>
-  <div class="pgrid"><article class="prod" data-cat="0"><div class="vis" style="--tint:#EFE3E2"><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#231A18"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#F4EEE2"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2025</small></div></div></div><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg><span class="badge">Új évjárat</span></div><div class="body"><h3>Portugieser<small>2025</small></h3><div class="tags"><span class="tag">száraz</span></div><p>Könnyű, gyümölcsös, hűtve is jó</p><div class="buy"><div class="pr">2 900 Ft<span>0,75 l palack</span></div><span data-buy="w0"></span></div></div></article><article class="prod" data-cat="0"><div class="vis" style="--tint:#EFE3E2"><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#231A18"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#F4EEE2"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2024</small></div></div></div><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg></div><div class="body"><h3>Kékfrankos<small>2024</small></h3><div class="tags"><span class="tag">száraz</span></div><p>Meggyes, fűszeres, nagy hordóban érlelt</p><div class="buy"><div class="pr">3 600 Ft<span>0,75 l palack</span></div><span data-buy="w1"></span></div></div></article><article class="prod" data-cat="0"><div class="vis" style="--tint:#EFE3E2"><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#231A18"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#F4EEE2"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2022</small></div></div></div><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg></div><div class="body"><h3>Cabernet Franc<small>2022</small></h3><div class="tags"><span class="tag">száraz</span></div><p>Jammertál-dűlő, 18 hónap tölgyfa hordóban</p><div class="buy"><div class="pr">6 900 Ft<span>0,75 l palack</span></div><span data-buy="w2"></span></div></div></article><article class="prod" data-cat="0"><div class="vis" style="--tint:#EFE3E2"><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#231A18"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#F4EEE2"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2021</small></div></div></div><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg><span class="badge">A pince zászlósbora</span></div><div class="body"><h3>Kőhalom Cuvée<small>2021</small></h3><div class="tags"><span class="tag">száraz</span><span class="tag">prémium</span></div><p>Cabernet franc, merlot és kékfrankos házasítás</p><div class="buy"><div class="pr">9 800 Ft<span>0,75 l palack</span></div><span data-buy="w3"></span></div></div></article><article class="prod out" data-cat="0"><div class="vis" style="--tint:#EFE3E2"><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#231A18"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#F4EEE2"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2020</small></div></div></div><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg></div><div class="body"><h3>Merlot Válogatás<small>2020</small></h3><div class="tags"><span class="tag">száraz</span></div><p>Csak a legjobb évjáratokban készül</p><div class="buy"><div class="pr">12 500 Ft<span>0,75 l palack</span></div><span class="soldout">Elfogyott</span></div></div></article><article class="prod" data-cat="1"><div class="vis" style="--tint:#F9E8E4"><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#E9A9A1"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#FBF6EE"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2025</small></div></div></div><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg></div><div class="body"><h3>Rozé<small>2025</small></h3><div class="tags"><span class="tag">száraz</span></div><p>Kékfrankosból, friss és epres</p><div class="buy"><div class="pr">2 700 Ft<span>0,75 l palack</span></div><span data-buy="w5"></span></div></div></article><article class="prod" data-cat="1"><div class="vis" style="--tint:#EDF0DD"><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#55683A"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#F6F2E4"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2025</small></div></div></div><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg></div><div class="body"><h3>Olaszrizling<small>2025</small></h3><div class="tags"><span class="tag">száraz</span></div><p>Mandulás, feszes savakkal</p><div class="buy"><div class="pr">2 900 Ft<span>0,75 l palack</span></div><span data-buy="w6"></span></div></div></article><article class="prod" data-cat="1"><div class="vis" style="--tint:#EDF0DD"><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#55683A"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#F6F2E4"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2024</small></div></div></div><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg></div><div class="body"><h3>Hárslevelű<small>2024</small></h3><div class="tags"><span class="tag">félédes</span></div><p>Mézes, hársvirágos illat</p><div class="buy"><div class="pr">3 400 Ft<span>0,75 l palack</span></div><span data-buy="w7"></span></div></div></article></div>
+  <div class="pgrid"><article class="prod" data-cat="0"><div class="vis" style="--tint:#EFE3E2"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#231A18"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#F4EEE2"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2025</small></div></div></div><span class="badge">Új évjárat</span></div><div class="body"><h3>Portugieser<small>2025</small></h3><p class="tags">száraz</p><p>Könnyű, gyümölcsös, hűtve is jó</p><div class="buy"><div class="pr">2 900 Ft<span>0,75 l palack</span></div><span data-buy="w0"></span></div></div></article><article class="prod" data-cat="0"><div class="vis" style="--tint:#EFE3E2"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#231A18"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#F4EEE2"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2024</small></div></div></div></div><div class="body"><h3>Kékfrankos<small>2024</small></h3><p class="tags">száraz</p><p>Meggyes, fűszeres, nagy hordóban érlelt</p><div class="buy"><div class="pr">3 600 Ft<span>0,75 l palack</span></div><span data-buy="w1"></span></div></div></article><article class="prod" data-cat="0"><div class="vis" style="--tint:#EFE3E2"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#231A18"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#F4EEE2"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2022</small></div></div></div></div><div class="body"><h3>Cabernet Franc<small>2022</small></h3><p class="tags">száraz</p><p>Jammertál-dűlő, 18 hónap tölgyfa hordóban</p><div class="buy"><div class="pr">6 900 Ft<span>0,75 l palack</span></div><span data-buy="w2"></span></div></div></article><article class="prod" data-cat="0"><div class="vis" style="--tint:#EFE3E2"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#231A18"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#F4EEE2"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2021</small></div></div></div><span class="badge">A pince zászlósbora</span></div><div class="body"><h3>Kőhalom Cuvée<small>2021</small></h3><p class="tags">száraz · prémium</p><p>Cabernet franc, merlot és kékfrankos házasítás</p><div class="buy"><div class="pr">9 800 Ft<span>0,75 l palack</span></div><span data-buy="w3"></span></div></div></article><article class="prod out" data-cat="0"><div class="vis" style="--tint:#EFE3E2"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#231A18"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#F4EEE2"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2020</small></div></div></div></div><div class="body"><h3>Merlot Válogatás<small>2020</small></h3><p class="tags">száraz</p><p>Csak a legjobb évjáratokban készül</p><div class="buy"><div class="pr">12 500 Ft<span>0,75 l palack</span></div><span class="soldout">Elfogyott</span></div></div></article><article class="prod" data-cat="1"><div class="vis" style="--tint:#F9E8E4"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#E9A9A1"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#FBF6EE"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2025</small></div></div></div></div><div class="body"><h3>Rozé<small>2025</small></h3><p class="tags">száraz</p><p>Kékfrankosból, friss és epres</p><div class="buy"><div class="pr">2 700 Ft<span>0,75 l palack</span></div><span data-buy="w5"></span></div></div></article><article class="prod" data-cat="1"><div class="vis" style="--tint:#EDF0DD"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#55683A"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#F6F2E4"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2025</small></div></div></div></div><div class="body"><h3>Olaszrizling<small>2025</small></h3><p class="tags">száraz</p><p>Mandulás, feszes savakkal</p><div class="buy"><div class="pr">2 900 Ft<span>0,75 l palack</span></div><span data-buy="w6"></span></div></div></article><article class="prod" data-cat="1"><div class="vis" style="--tint:#EDF0DD"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg><div class="bottle"><svg viewBox="0 0 100 320" aria-hidden="true"><path d="M41 50H59V84C59 104 82 108 82 134V300Q82 312 70 312H30Q18 312 18 300V134C18 108 41 104 41 84Z" fill="#55683A"/><path d="M26 140V296" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/><rect x="39.5" y="6" width="21" height="46" rx="3" fill="var(--acc)"/><rect x="39.5" y="44" width="21" height="4" fill="var(--gold)"/><rect x="18" y="168" width="64" height="96" fill="#F6F2E4"/><rect x="18" y="168" width="64" height="5" fill="var(--gold)"/></svg><div class="lab"><div><b>K</b><small>2024</small></div></div></div></div><div class="body"><h3>Hárslevelű<small>2024</small></h3><p class="tags">félédes</p><p>Mézes, hársvirágos illat</p><div class="buy"><div class="pr">3 400 Ft<span>0,75 l palack</span></div><span data-buy="w7"></span></div></div></article></div>
 </section>
 
 <section class="taste" id="kostolo" data-shot="taste">
+  <div class="tbg"><img src="img/b6.jpg" alt="A hordós érlelő" width="900" height="600" loading="lazy"></div>
   <div class="wrap">
-    <h2>Kóstoló a pincében</h2>
-    <p class="note">Csütörtöktől vasárnapig fogadunk vendégeket. Válassz programot, napot és létszámot.</p>
+    <div class="chead"><p class="lbl">Borkóstoló</p><h2>Kóstoló a pincében</h2>
+    <p>Csütörtöktől vasárnapig fogadunk vendégeket. Válassz programot, napot és létszámot.</p></div>
     <div data-tbody>
-      <div class="tcards" style="--n:3" role="radiogroup" aria-label="Kóstolóprogram"><label class="tcard"><input type="radio" name="kostolo" value="0"><div><h3>Pincelátogatás</h3><p class="p">5 900 Ft <small>/ fő</small></p><p class="d">kb. 1 óra</p><ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>4 bor kóstolása</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Séta a pincében</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Pogácsa</li></ul></div></label><label class="tcard"><input type="radio" name="kostolo" value="1" checked><div><h3>Birtokkóstoló</h3><p class="p">9 900 Ft <small>/ fő</small></p><p class="d">kb. 2 óra</p><ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>7 bor, köztük a Cuvée</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Séta a szőlőben és a pincében</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Hidegtál helyi sajtokkal</li></ul></div></label><label class="tcard"><input type="radio" name="kostolo" value="2"><div><h3>Vacsora a pincében</h3><p class="p">19 900 Ft <small>/ fő</small></p><p class="d">kb. 3 óra</p><ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>4 fogásos vacsora borpárosítással</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>A borász vezetésével</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Régi évjáratok a pincetárból</li></ul></div></label></div>
+      <div class="tcards" style="--n:3" role="radiogroup" aria-label="Kóstolóprogram"><label class="tcard"><input type="radio" name="kostolo" value="0"><div><p class="lbl">kb. 1 óra</p><h3>Pincelátogatás</h3><p class="p">5 900 Ft <small>/ fő</small></p><ul><li>4 bor kóstolása</li><li>Séta a pincében</li><li>Pogácsa</li></ul></div></label><label class="tcard"><input type="radio" name="kostolo" value="1" checked><div><p class="lbl">kb. 2 óra</p><h3>Birtokkóstoló</h3><p class="p">9 900 Ft <small>/ fő</small></p><ul><li>7 bor, köztük a Cuvée</li><li>Séta a szőlőben és a pincében</li><li>Hidegtál helyi sajtokkal</li></ul></div></label><label class="tcard"><input type="radio" name="kostolo" value="2"><div><p class="lbl">kb. 3 óra</p><h3>Vacsora a pincében</h3><p class="p">19 900 Ft <small>/ fő</small></p><ul><li>4 fogásos vacsora borpárosítással</li><li>A borász vezetésével</li><li>Régi évjáratok a pincetárból</li></ul></div></label></div>
       <div class="tbook">
         <div><h3>Melyik napon?</h3><div class="cal" data-tcal></div></div>
         <form class="form" data-tform novalidate>
@@ -439,7 +509,7 @@ footer b{color:var(--ink)}
           <div class="two"><label>E-mail-cím<input name="temail" type="email" required autocomplete="email"></label><label>Telefonszám<input name="ttel" type="tel" required autocomplete="tel"></label></div>
           <div class="tsum"><span data-tname></span><b data-ttotal></b></div>
           <p class="hint" data-thint role="alert"></p>
-          <button class="btn full" type="submit">Kóstoló lefoglalása</button>
+          <button class="btn gold full" type="submit">Kóstoló lefoglalása</button>
         </form>
       </div>
     </div>
@@ -450,20 +520,25 @@ footer b{color:var(--ink)}
     </div>
   </div>
 </section>
-<section class="wrap estate" id="birtok" data-shot="story"><div class="pics"><button type="button" data-lb="b9" aria-label="Szőlősorok – nagyítás"><img src="img/b9.jpg" alt="Szőlősorok" width="900" height="675" loading="lazy"></button><button type="button" data-lb="b4" aria-label="Hordók a pincében – nagyítás"><img src="img/b4.jpg" alt="Hordók a pincében" width="900" height="675" loading="lazy"></button></div><div><h2>A szőlőtől a palackig minden a mi kezünkben van</h2><p>Nem vásárolunk szőlőt és nem palackoztatunk bérben. Hét hektáron gazdálkodunk a Jammertál és a Csillagvölgy dűlőkben, kézzel szüretelünk, a borok pedig löszfalba vájt pincében érnek.</p><blockquote>„A jó bor a szőlőben dől el. A pincében már csak elrontani lehet.”<cite>Kőhalmi István, borász</cite></blockquote><p class="more"><a class="btn" href="tortenetunk/">Történetünk</a></p></div></section>
+<section class="wrap estate" id="birtok" data-shot="story"><div class="pics"><button type="button" data-lb="b9" aria-label="Szőlősorok – nagyítás"><img src="img/b9.jpg" alt="Szőlősorok" width="900" height="675" loading="lazy"></button><button type="button" data-lb="b4" aria-label="Hordók a pincében – nagyítás"><img src="img/b4.jpg" alt="Hordók a pincében" width="900" height="675" loading="lazy"></button></div><div><p class="lbl">A birtok</p><h2>A szőlőtől a palackig minden a mi kezünkben van</h2><p>Nem vásárolunk szőlőt és nem palackoztatunk bérben. Hét hektáron gazdálkodunk a Jammertál és a Csillagvölgy dűlőkben, kézzel szüretelünk, a borok pedig löszfalba vájt pincében érnek.</p><p class="more"><a class="btn" href="tortenetunk/">Történetünk</a></p></div></section>
 <section class="wrap sec"><div class="ggrid"><button type="button" data-lb="b0" aria-label="A pince – nagyítás"><img src="img/b0.jpg" alt="A pince" width="900" height="675" loading="lazy"></button><button type="button" data-lb="b3" aria-label="Kóstolóterem – nagyítás"><img src="img/b3.jpg" alt="Kóstolóterem" width="900" height="598" loading="lazy"></button><button type="button" data-lb="b8" aria-label="Barrique hordók – nagyítás"><img src="img/b8.jpg" alt="Barrique hordók" width="900" height="600" loading="lazy"></button><button type="button" data-lb="b10" aria-label="A dűlő nyáron – nagyítás"><img src="img/b10.jpg" alt="A dűlő nyáron" width="900" height="675" loading="lazy"></button><button type="button" data-lb="b14" aria-label="A birtok épülete – nagyítás"><img src="img/b14.jpg" alt="A birtok épülete" width="900" height="675" loading="lazy"></button><button type="button" data-lb="b6" aria-label="A hordós érlelő – nagyítás"><img src="img/b6.jpg" alt="A hordós érlelő" width="900" height="600" loading="lazy"></button></div></section>
 <section class="wrap sec" id="kapcsolat">
-  <div class="visitbox"><h2>Látogass el hozzánk</h2>
+  <div class="visitbox"><div class="chead"><p class="lbl">Kapcsolat</p><h2>Látogass el hozzánk</h2></div>
     <div class="visit"><table class="hours"><tbody><tr class="closed"><td>Hétfő</td><td>Zárva</td></tr><tr class="closed"><td>Kedd</td><td>Zárva</td></tr><tr class="closed"><td>Szerda</td><td>Zárva</td></tr><tr><td>Csütörtök</td><td>12:00–18:00</td></tr><tr><td>Péntek</td><td>12:00–20:00</td></tr><tr><td>Szombat</td><td>10:00–20:00</td></tr><tr><td>Vasárnap</td><td>10:00–16:00</td></tr></tbody></table><div class="clist"><div><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>7771 Palkonya, Pincesor 14.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=7771+Palkonya,+Pincesor+14." target="_blank" rel="noopener">Útvonaltervezés</a></span></div><div><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+36301234567">+36 30 123 4567</a></div><div><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:pince@kohalompince.example">pince@kohalompince.example</a></div></div></div>
   </div>
 </section>
 </main>
 <div class="mbar"><p data-mcart data-def="&lt;b&gt;2 700 Ft-tól&lt;/b&gt;&lt;br&gt;&lt;span class=&quot;muted&quot;&gt;közvetlenül a pincéből&lt;/span&gt;"><b>2 700 Ft-tól</b><br><span class="muted">közvetlenül a pincéből</span></p><a class="btn" href="#borok" data-cart data-mlink>Borlap</a></div>
-<footer>
+<footer class="bfoot">
   <div class="wrap">
-    <div><b>Kőhalom Pince</b><br>7771 Palkonya, Pincesor 14.</div>
-    <div>+36 30 123 4567<br><a href="mailto:pince@kohalompince.example">pince@kohalompince.example</a></div>
-    <div>Fotók: Wikimedia Commons (CC BY-SA) – helykitöltő mintaképek<br>Weboldal-tervezet: <a href="https://hozdesigns.com">hozdesigns.com</a></div>
+    <svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg>
+    <p class="name">Kőhalom Pince</p>
+    <div class="cols">
+      <div><h4>Látogatás</h4><ul><li>7771 Palkonya, Pincesor 14.</li><li>Csütörtök: 12:00–18:00</li><li>Péntek: 12:00–20:00</li><li>Szombat: 10:00–20:00</li><li>Vasárnap: 10:00–16:00</li></ul></div>
+      <div><h4>Elérhetőség</h4><ul><li><a href="tel:+36301234567">+36 30 123 4567</a></li><li><a href="mailto:pince@kohalompince.example">pince@kohalompince.example</a></li></ul></div>
+      <div><h4>Az oldalon</h4><ul><li><a href="#borok">Boraink</a></li><li><a href="#kostolo">Kóstoló</a></li><li><a href="tortenetunk/">Történetünk</a></li></ul></div>
+    </div>
+    <div class="legal"><span>Fotók: Wikimedia Commons (CC BY-SA) – helykitöltő mintaképek</span><span>Csak 18 éven felülieknek.</span><span>Weboldal-tervezet: <a href="https://hozdesigns.com">hozdesigns.com</a></span></div>
   </div>
 </footer>
 <div class="lb" role="dialog" aria-modal="true" aria-label="Fotók" data-lbox>
@@ -506,6 +581,13 @@ footer b{color:var(--ink)}
     <button type="button" class="btn full" data-onext>Tovább a pénztárhoz</button>
   </div></div>
 </aside>
+<div class="gate" data-gate hidden role="dialog" aria-modal="true" aria-label="Életkor megerősítése"><div class="box">
+  <svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg>
+  <h2>Elmúltál 18 éves?</h2>
+  <p>Az oldal alkoholos italokat mutat be, ezért csak nagykorúak látogathatják.</p>
+  <div class="row"><button type="button" class="btn gold" data-gate-yes>Igen, elmúltam</button><button type="button" class="btn ghost" data-gate-no>Még nem</button></div>
+  <p class="no" data-gate-msg hidden>Köszönjük az őszinteséget. Gyere vissza, ha betöltötted a 18-at!</p>
+</div></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.500C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
 <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
@@ -536,7 +618,7 @@ footer b{color:var(--ink)}
 <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8zM9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
 </defs></svg>
 
-<script type="application/json" id="hzdata">{"cats": [{"cat": "Vörösborok", "items": [{"name": "Portugieser", "year": 2025, "tags": ["száraz"], "desc": "Könnyű, gyümölcsös, hűtve is jó", "price": 2900, "badge": "Új évjárat", "id": "w0"}, {"name": "Kékfrankos", "year": 2024, "tags": ["száraz"], "desc": "Meggyes, fűszeres, nagy hordóban érlelt", "price": 3600, "id": "w1"}, {"name": "Cabernet Franc", "year": 2022, "tags": ["száraz"], "desc": "Jammertál-dűlő, 18 hónap tölgyfa hordóban", "price": 6900, "id": "w2"}, {"name": "Kőhalom Cuvée", "year": 2021, "tags": ["száraz", "prémium"], "desc": "Cabernet franc, merlot és kékfrankos házasítás", "price": 9800, "badge": "A pince zászlósbora", "id": "w3"}, {"name": "Merlot Válogatás", "year": 2020, "tags": ["száraz"], "desc": "Csak a legjobb évjáratokban készül", "price": 12500, "out": true, "id": "w4"}]}, {"cat": "Rozé és fehér", "items": [{"name": "Rozé", "year": 2025, "tags": ["száraz"], "desc": "Kékfrankosból, friss és epres", "price": 2700, "id": "w5"}, {"name": "Olaszrizling", "year": 2025, "tags": ["száraz"], "desc": "Mandulás, feszes savakkal", "price": 2900, "id": "w6"}, {"name": "Hárslevelű", "year": 2024, "tags": ["félédes"], "desc": "Mézes, hársvirágos illat", "price": 3400, "id": "w7"}]}], "order": {"min_bottles": 6, "ship": {"price": 2900, "free_from": 40000}}, "tastings": [{"name": "Pincelátogatás", "price": 5900, "dur": "kb. 1 óra", "items": ["4 bor kóstolása", "Séta a pincében", "Pogácsa"], "min_guests": 2, "max_guests": 20}, {"name": "Birtokkóstoló", "price": 9900, "dur": "kb. 2 óra", "featured": true, "items": ["7 bor, köztük a Cuvée", "Séta a szőlőben és a pincében", "Hidegtál helyi sajtokkal"], "min_guests": 2, "max_guests": 16}, {"name": "Vacsora a pincében", "price": 19900, "dur": "kb. 3 óra", "items": ["4 fogásos vacsora borpárosítással", "A borász vezetésével", "Régi évjáratok a pincetárból"], "min_guests": 6, "max_guests": 14}], "tfeat": 1, "tdays": [0, 0, 0, 1, 1, 1, 1], "tlead": 2, "slug": "teszt-boraszat", "gal": [["b9", "Szőlősorok"], ["b4", "Hordók a pincében"], ["b0", "A pince"], ["b3", "Kóstolóterem"], ["b8", "Barrique hordók"], ["b10", "A dűlő nyáron"], ["b14", "A birtok épülete"], ["b6", "A hordós érlelő"], ["h6", "Szőlősorok naplementében"]], "hours": [null, null, null, ["12:00", "18:00"], ["12:00", "20:00"], ["10:00", "20:00"], ["10:00", "16:00"]]}</script>
+<script type="application/json" id="hzdata">{"cats": [{"cat": "Vörösborok", "items": [{"name": "Portugieser", "year": 2025, "tags": ["száraz"], "desc": "Könnyű, gyümölcsös, hűtve is jó", "price": 2900, "badge": "Új évjárat", "id": "w0"}, {"name": "Kékfrankos", "year": 2024, "tags": ["száraz"], "desc": "Meggyes, fűszeres, nagy hordóban érlelt", "price": 3600, "id": "w1"}, {"name": "Cabernet Franc", "year": 2022, "tags": ["száraz"], "desc": "Jammertál-dűlő, 18 hónap tölgyfa hordóban", "price": 6900, "id": "w2"}, {"name": "Kőhalom Cuvée", "year": 2021, "tags": ["száraz", "prémium"], "desc": "Cabernet franc, merlot és kékfrankos házasítás", "price": 9800, "badge": "A pince zászlósbora", "featured": true, "long": "Cabernet franc, merlot és kékfrankos házasítása a Jammertál legöregebb tőkéiről. Tizennyolc hónapot töltött tölgyfa hordóban, további egy évet palackban.", "notes": ["Fekete cseresznye, szilva, finom fűszerek", "Bársonyos tannin, hosszú lecsengés", "Akár tíz évig is érlelhető"], "id": "w3"}, {"name": "Merlot Válogatás", "year": 2020, "tags": ["száraz"], "desc": "Csak a legjobb évjáratokban készül", "price": 12500, "out": true, "id": "w4"}]}, {"cat": "Rozé és fehér", "items": [{"name": "Rozé", "year": 2025, "tags": ["száraz"], "desc": "Kékfrankosból, friss és epres", "price": 2700, "id": "w5"}, {"name": "Olaszrizling", "year": 2025, "tags": ["száraz"], "desc": "Mandulás, feszes savakkal", "price": 2900, "id": "w6"}, {"name": "Hárslevelű", "year": 2024, "tags": ["félédes"], "desc": "Mézes, hársvirágos illat", "price": 3400, "id": "w7"}]}], "order": {"min_bottles": 6, "ship": {"price": 2900, "free_from": 40000}}, "tastings": [{"name": "Pincelátogatás", "price": 5900, "dur": "kb. 1 óra", "items": ["4 bor kóstolása", "Séta a pincében", "Pogácsa"], "min_guests": 2, "max_guests": 20}, {"name": "Birtokkóstoló", "price": 9900, "dur": "kb. 2 óra", "featured": true, "items": ["7 bor, köztük a Cuvée", "Séta a szőlőben és a pincében", "Hidegtál helyi sajtokkal"], "min_guests": 2, "max_guests": 16}, {"name": "Vacsora a pincében", "price": 19900, "dur": "kb. 3 óra", "items": ["4 fogásos vacsora borpárosítással", "A borász vezetésével", "Régi évjáratok a pincetárból"], "min_guests": 6, "max_guests": 14}], "tfeat": 1, "tdays": [0, 0, 0, 1, 1, 1, 1], "tlead": 2, "slug": "teszt-boraszat", "gal": [["b9", "Szőlősorok"], ["b4", "Hordók a pincében"], ["b0", "A pince"], ["b3", "Kóstolóterem"], ["b8", "Barrique hordók"], ["b10", "A dűlő nyáron"], ["b14", "A birtok épülete"], ["b6", "A hordós érlelő"]], "hours": [null, null, null, ["12:00", "18:00"], ["12:00", "20:00"], ["10:00", "20:00"], ["10:00", "16:00"]]}</script>
 <script>/* közös segédek a szolgáltatós demókhoz (kutyakozmetika, esküvő, borászat) */
 var HZ = (function () {
   var D = JSON.parse(document.getElementById('hzdata').textContent);
@@ -717,9 +799,20 @@ var HZ = (function () {
   }
   draw();
 
+  /* fejléc: a nyitókép fölött átlátszó, görgetve tömör */
+  var hd = $('[data-head]'); function onScroll() { if (hd) hd.classList.toggle('solid', window.scrollY > 60) } window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  /* 18+ kapu (munkamenetenként egyszer) */
+  var gate = $('[data-gate]'), GK = 'hz18-' + D.slug, okd = false; try { okd = sessionStorage.getItem(GK) === '1' } catch (e) {}
+  if (gate && !okd) {
+    gate.hidden = false; document.body.style.overflow = 'hidden'; $('[data-gate-yes]').focus();
+    $('[data-gate-yes]').onclick = function () { gate.hidden = true; document.body.style.overflow = ''; try { sessionStorage.setItem(GK, '1') } catch (e) {} };
+    $('[data-gate-no]').onclick = function () { $('[data-gate-msg]').hidden = false };
+  }
+  window.hzGate = function () { if (gate) { gate.hidden = true; document.body.style.overflow = '' } };
+
   /* előnézeti képekhez: megrakott kosár; hzDemo('cart') a kosárfiókot is kinyitja */
   window.hzDemo = function (mode) {
-    cart = {}; var ids = Object.keys(W).filter(function (k) { return !W[k].out });[3, 2, 1].forEach(function (q, i) { if (ids[i * 2]) cart[ids[i * 2]] = q });
+    window.hzGate(); cart = {}; var ids = Object.keys(W).filter(function (k) { return !W[k].out });[3, 2, 1].forEach(function (q, i) { if (ids[i * 2]) cart[ids[i * 2]] = q });
     var f = $('[name=atvetel][value=futar]'); if (f) f.checked = true; draw(); if (window.hzT) window.hzT();
     if (mode === 'cart') { openCart(); document.body.style.overflow = '' }
   };
