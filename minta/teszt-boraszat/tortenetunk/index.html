@@ -164,10 +164,10 @@ footer b{color:var(--ink)}
 .hero .bg img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,center);transform-origin:var(--pos,center);animation:hzoom 24s cubic-bezier(.2,.6,.3,1) both}
 @keyframes hzoom{from{transform:scale(1.14)}to{transform:scale(1)}}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(75% 62% at 50% 54%,rgba(12,9,8,.5) 0%,rgba(12,9,8,.28) 55%,transparent 100%),linear-gradient(180deg,rgba(12,9,8,.66) 0%,rgba(12,9,8,.26) 30%,rgba(12,9,8,.36) 62%,rgba(12,9,8,.84) 100%)}
-.hero .c{max-width:1040px}
+.hero .c{max-width:920px;width:100%;padding:0 12px}
 .hero .lbl{display:inline-flex;align-items:center;gap:16px;color:#fff;text-shadow:0 1px 14px rgba(0,0,0,.5)}
 .hero .lbl::before,.hero .lbl::after{content:"";width:44px;height:1px;background:currentColor;opacity:.7}
-.hero h1{font-size:clamp(46px,min(7.4vw,12.5vh),118px);line-height:1.08;margin-top:34px;text-wrap:balance;text-shadow:0 2px 50px rgba(0,0,0,.5)}
+.hero h1{font-size:clamp(38px,min(5.7vw,9.6vh),92px);line-height:1.22;letter-spacing:.005em;margin-top:30px;text-wrap:balance;text-shadow:0 2px 40px rgba(0,0,0,.55)}
 .hero h1 span{display:block}
 .hero h1 .it{font-style:italic}
 .hero .lead{font-size:clamp(18px,1.6vw,21px);line-height:1.65;font-weight:500;max-width:46ch;margin:40px auto 0;color:#fff;text-shadow:0 1px 18px rgba(0,0,0,.65)}
@@ -183,6 +183,7 @@ footer b{color:var(--ink)}
 .seal text{font-family:var(--fb);font-weight:600;letter-spacing:.16em;fill:currentColor}
 .seal .m{font-family:var(--fh);font-weight:var(--fhw);letter-spacing:0}
 .sub .hero{min-height:max(74svh,560px)}
+.sub .hero h1{font-size:clamp(36px,min(5.2vw,9vh),84px)}
 
 /* bemutatkozó állítás + számok */
 .mani{max-width:900px;margin:0 auto;text-align:center;padding-top:120px;padding-bottom:40px}
@@ -444,7 +445,7 @@ footer b{color:var(--ink)}
   .logo{justify-items:start}.logo b{font-size:24px}.logo small{font-size:9.5px}
   .cartbtn .t{display:none}
   .hero{margin-top:-80px;padding:140px 20px 110px;min-height:max(100svh,640px)}
-  .hero h1{font-size:clamp(42px,12vw,64px);line-height:1.1}
+  .hero h1{font-size:clamp(36px,10.4vw,56px);line-height:1.2}
   .hero .lead{margin-top:28px}
   .hero .seal{display:none}
   .hero .lbl{letter-spacing:.14em;font-size:11.5px}
@@ -465,10 +466,19 @@ footer b{color:var(--ink)}
   .estate{grid-template-columns:1fr;gap:40px;padding-top:80px}
   .ggrid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px;gap:8px}
   .bfoot{padding-top:60px;margin-top:60px}
-  .bfoot .cols{grid-template-columns:1fr 1fr;gap:40px 24px}
-  .bfoot .id{grid-column:1/-1;grid-template-columns:76px 1fr}.bfoot .seal{width:76px;height:76px}
-  .bfoot .cols>div:nth-child(2){grid-column:1/-1}
-  .bfoot .legal{flex-direction:column;margin-top:48px;padding-bottom:110px}
+  .bfoot .cols{grid-template-columns:1fr;gap:0}
+  .bfoot .id{grid-template-columns:72px 1fr;gap:18px;padding-bottom:30px}.bfoot .seal{width:72px;height:72px}
+  .bfoot .name{font-size:28px}.bfoot .tag{font-size:10px;letter-spacing:.18em}
+  .bfoot .cols>div:not(.id){border-top:1px solid rgba(255,255,255,.14);padding:24px 0 26px}
+  .bfoot h4{margin:0 0 14px}
+  .bfoot .hrs li{max-width:none}
+  .bfoot .cols>div:last-child ul{display:flex;flex-wrap:wrap;gap:10px 24px}
+  .bfoot .legal{margin-top:0}
+  .k-bor .clist{gap:0;border-top:1px solid var(--line)}
+  .k-bor .clist div{padding:16px 0;border-bottom:1px solid var(--line);align-items:center}
+  .k-bor .clist .ico{margin-top:0}
+  .k-bor .visit{gap:36px}
+  .bfoot .legal{flex-direction:column;padding-bottom:110px}
   .tl{grid-template-columns:1fr;gap:16px;padding:32px 0}.tl .y{font-size:50px}
   .person{grid-template-columns:1fr;gap:26px}.person:nth-of-type(even) .ph{order:0}.person .ph{max-width:360px}.person h3{font-size:38px}
   .prose{padding-top:64px}.prose p{font-size:18px}
@@ -477,20 +487,27 @@ footer b{color:var(--ink)}
   .gate h2{font-size:36px}
 }
 /* térkép: csak kattintásra tölt be */
-.mapbox{position:relative;margin-top:56px;height:440px;background:var(--acct);overflow:hidden;display:grid;place-items:center;text-align:center}
+.mapbox{position:relative;margin-top:30px;height:300px;background:var(--acct);overflow:hidden;display:grid;place-items:center;text-align:center}
 .mapbox::before{content:"";position:absolute;inset:0;opacity:.5;background:
   linear-gradient(115deg,transparent 46%,var(--line) 46%,var(--line) 47.2%,transparent 47.2%),
   linear-gradient(28deg,transparent 58%,var(--line) 58%,var(--line) 59%,transparent 59%),
   linear-gradient(160deg,transparent 30%,var(--line) 30%,var(--line) 30.8%,transparent 30.8%),
   linear-gradient(75deg,transparent 70%,var(--line) 70%,var(--line) 70.7%,transparent 70.7%)}
 .mapbox .in{position:relative;max-width:640px;padding:24px}
-.mapbox .ico{width:38px;height:38px;color:var(--acc);margin:0 auto}
-.mapbox b{display:block;font:var(--fhw) 30px/1.15 var(--fh);margin-top:12px}
-.mapbox .row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
+.mapbox .ico{width:30px;height:30px;color:var(--acc);margin:0 auto}
+.mapbox b{display:block;font:var(--fhw) 25px/1.15 var(--fh);margin-top:8px}
+.mapbox .row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:16px}
+.mapbox .btn{min-height:46px;padding:14px 20px;font-size:12px}
+.vright{min-width:0}
+.k-bor .visit{align-items:stretch}
+.k-bor .vright{display:flex;flex-direction:column}
+.k-bor .vright .mapbox{flex:1;min-height:280px;height:auto}
+.k-bor .clist a[href*='google.com/maps']{display:none}
+.k-bor .clist br{display:none}
 .mapbox .btn.line{border-color:var(--ink)}
 .mapbox small{display:block;color:var(--ink2);font-size:13px;margin:16px auto 0;line-height:1.5;max-width:46ch}
 .mapbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-@media (max-width:900px){.mapbox{height:380px;margin-top:40px}}
+@media (max-width:900px){.mapbox{height:340px}.k-bor .vright .mapbox{min-height:340px}}
 @media (max-height:780px) and (min-width:901px){.hero{padding-top:150px;padding-bottom:96px}.hero h1{margin-top:22px}.hero .lead{margin-top:26px}.hero .cta{margin-top:30px}.hero .cue{display:none}}
 </style>
 </head>
