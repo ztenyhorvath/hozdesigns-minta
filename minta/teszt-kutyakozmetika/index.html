@@ -21,7 +21,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none !important;animation:none !important}}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--fb);-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
-a{color:var(--accd)}
+a{color:var(--aci,var(--accd))}
 button,input,select,textarea{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--aci,var(--acc));outline-offset:2px;border-radius:4px}
 h1,h2,h3,h4{font-family:var(--fh);margin:0;line-height:1.08;font-weight:var(--fhw,600);letter-spacing:var(--fhs,-.015em)}
@@ -78,7 +78,7 @@ p{margin:0}
 .hours{width:100%;border-collapse:collapse;font-size:15px}
 .hours td{padding:10px 0;border-bottom:1px solid var(--line)}
 .hours td:last-child{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
-.hours tr.now td{color:var(--accd)}
+.hours tr.now td{color:var(--aci,var(--accd));font-weight:700}
 .hours tr.closed td:last-child{font-weight:400;color:var(--ink2)}
 .clist{display:grid;gap:14px;font-size:16px}
 .clist div{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start}
@@ -174,7 +174,7 @@ footer b{color:var(--ink)}
 .sizes button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
 .sizes button[aria-pressed=true] span{color:inherit;opacity:.75}
 .pl{margin-top:34px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 64px}
-.pl h3{font-size:15px;font-family:var(--fb);font-weight:700;letter-spacing:0;color:var(--accd);margin:22px 0 4px;grid-column:1/-1}
+.pl h3{font-size:15px;font-family:var(--fb);font-weight:700;letter-spacing:0;color:var(--aci,var(--accd));margin:22px 0 4px;grid-column:1/-1}
 .pl .cat{display:contents}
 .row{display:grid;grid-template-columns:minmax(0,1fr) auto 48px;gap:6px 16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
 .row b{font-size:18px;font-weight:600;letter-spacing:-.01em;font-family:var(--fh)}
@@ -463,6 +463,61 @@ footer b{color:var(--ink)}
 .baside li .dd{width:24px;height:24px;flex:none}
 .baside .meta{font-size:14px;margin-bottom:18px}
 @media (max-width:820px){.pairs.one{grid-template-columns:minmax(0,1fr)}}
+/* ── mobil: mintha telefonra készült volna ── */
+html{overflow-x:hidden}
+.k-kutya main{overflow-x:hidden;overflow-x:clip}
+.k-kutya button,.k-kutya .btn,.k-kutya a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.ba input{touch-action:pan-y}
+@media (max-width:640px){
+  .k-kutya .top{position:sticky;top:0;z-index:35;background:color-mix(in srgb,var(--paper) 88%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding-top:10px;padding-bottom:10px}
+  .k-kutya .brand .mark{width:36px;height:36px}
+  .k-kutya .top nav a.cta{padding:9px 14px;font-size:14px;margin-left:0}
+  .k-kutya .sec{padding-top:36px;padding-bottom:36px}
+  .k-kutya .sech{margin-bottom:18px}
+  .k-kutya .sec>h2,.k-kutya .sech h2,.loy h2{font-size:27px;line-height:1.12}
+  .hero{gap:28px;padding-top:14px;padding-bottom:28px}
+  .hero h1{font-size:clamp(36px,10.6vw,44px);line-height:1.04}
+  .hero .cta{display:grid;grid-template-columns:1fr auto;gap:10px}.hero .cta .btn{min-height:54px;padding:12px 20px;font-size:16px}
+  .hero .meta{gap:8px 16px;font-size:14.5px}
+  .hpic{max-width:none;width:100%;margin-bottom:34px}
+  .mq{margin:8px 0 28px}.mq span{font-size:16px}
+  .prices{padding:26px 18px 18px;border-radius:28px}
+  .bookband{padding:30px 18px 22px;border-radius:28px;margin-top:8px;gap:24px}
+  .bookband h2{font-size:30px;line-height:1.08}
+  .days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;overflow:visible;padding:0}
+  .days button{width:auto;border-radius:12px;padding:7px 0 8px}
+  .days button small{font-size:9.5px;letter-spacing:-.02em;white-space:nowrap;overflow:hidden}
+  .days button small:last-child{display:none}
+  .days button b{font-size:18px}
+  .slots{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.slots button{min-height:44px;font-size:14.5px}
+  .sumcard{padding:22px 18px}
+  .flow{gap:14px}.flow li{grid-template-columns:64px 1fr;gap:2px 14px}.flow::before{left:31px}
+  .pairs{gap:16px}.ba{border-radius:22px}
+  .baside{padding:22px 18px 20px;border-radius:22px;box-shadow:5px 5px 0 var(--ink);margin-top:14px}
+  .baside .btn{width:100%}
+  .works{gap:8px}.works button{border-radius:16px}
+  .cares{gap:12px}
+  .cares div{display:grid;grid-template-columns:48px minmax(0,1fr);gap:2px 14px;align-items:center;padding:16px 18px;border-radius:20px}
+  .cares .dd{width:48px;height:48px;margin:0;grid-row:1/3;align-self:start}
+  .cares h3{font-size:19px}.cares p{margin-top:0;font-size:15px;grid-column:2}
+  .know{grid-template-columns:1fr;gap:10px}
+  .know div{display:grid;grid-template-columns:40px minmax(0,1fr);gap:2px 14px;padding:16px 18px;border-radius:20px}
+  .know .dd,.know .ico{width:40px;height:40px;margin:0;grid-row:1/3}
+  .know b{font-size:17px;margin:0}.know p{grid-column:2}
+  .about{gap:22px}.about .pic{max-width:none}
+  .team{gap:8px;margin-top:18px}.team div{flex:1 1 150px}
+  .loy{gap:22px}.loy p{font-size:16px}
+  .loy .card{transform:rotate(1.2deg);padding:20px;max-width:none;width:100%;box-shadow:5px 5px 0 var(--ink)}
+  .loy .st i{width:46px;height:46px}.loy .st i .dd{width:28px;height:28px}
+  .visitbox{padding:24px 18px;border-radius:28px}
+  .tray{left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));gap:10px;padding:7px 7px 7px 18px}
+  .tray p{min-width:0;font-size:13px;overflow:hidden;text-overflow:ellipsis}.tray b{font-size:16px}
+  .tray .btn{flex:none;min-height:46px;padding:10px 16px;font-size:14.5px}
+}
+@media (max-width:640px){
+  .flow li{grid-template-columns:60px minmax(0,1fr)}.flow .dd{width:60px;height:60px;padding:10px}.flow::before{left:29px}
+  .loy .st{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}.loy .st i{width:auto;height:auto;aspect-ratio:1}
+}
 </style>
 </head>
 <body class="k-kutya s-alap t-alap">
