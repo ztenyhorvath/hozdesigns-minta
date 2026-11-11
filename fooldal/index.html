@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hozdesigns · Weboldal helyi vállalkozásoknak</title>
+<meta name="description" content="Egyedi, gyors, mobilra szabott weboldalak vendéglátóhelyeknek, szállásadóknak és helyi vállalkozásoknak – elkészítés és havi gondozás. 10 év tapasztalat.">
+<link rel="canonical" href="https://hozdesigns.com/">
+<link rel="icon" type="image/png" href="/img/logo.png">
+<link rel="apple-touch-icon" href="/img/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="hozdesigns · Weboldal helyi vállalkozásoknak">
+<meta property="og:description" content="Egyedi, gyors, mobilra szabott weboldalak vendéglátóhelyeknek, szállásadóknak és helyi vállalkozásoknak.">
+<meta property="og:url" content="https://hozdesigns.com/">
+<meta property="og:image" content="https://hozdesigns.com/img/og.jpg">
+<meta name="theme-color" content="#121212">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F1EC;--ink:#121212;--panel:#E9E5DD;--card:#FBFAF7;--muted:#4A453E;--muted2:#5A5248;--line:#CFC9BE;--dline:#2E2B27;--accent:#C9A46A;--accent-t:#8A6A35;--on-dark:#DCD6CB}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none !important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Geist',system-ui,sans-serif}
+img{max-width:100%;display:block}
+a{color:var(--ink)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:24px;padding-right:24px}
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.03em}
+h2{font-size:clamp(40px,5vw,64px);line-height:1}
+.eyebrow{margin:0;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2)}
+.lead{margin:0;font-size:19px;line-height:1.6;max-width:580px}
+.btn{display:inline-block;padding:16px 28px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.btn:hover{transform:translateY(-3px)}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-line{border:1.5px solid var(--ink)}
+.btn-light{background:var(--bg);color:var(--ink)}
+.btn-line-light{border:1.5px solid var(--bg);color:var(--bg)}
+
+/* header */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:20px;padding-bottom:20px}
+.top nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px;font-weight:500;font-size:15px}
+.top nav a{padding:12px 14px;text-decoration:none}
+.top nav a.cta{padding:12px 20px;background:var(--ink);color:var(--bg);border-radius:999px;font-weight:600}
+
+/* hero */
+.hero{display:flex;flex-direction:column;gap:28px;padding-top:40px;padding-bottom:64px}
+.hero h1{font-size:clamp(46px,7vw,108px);line-height:.96;letter-spacing:-.04em;max-width:1100px}
+.hero h1 em{font-style:normal;color:var(--accent-t)}
+.hero-row{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end;justify-content:space-between}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.stats{margin-top:32px;background:var(--ink);color:var(--bg);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.stat{padding:40px 36px;display:flex;flex-direction:column;gap:14px;border-right:1px solid var(--dline);transition:background .35s}
+.stat:last-child{border-right:0}
+.stat:hover{background:#1C1A18}
+.stat small{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9C958A}
+.stat .num{font-weight:600;font-size:clamp(72px,8vw,120px);letter-spacing:-.06em;line-height:.85}
+.stat .num i{font-style:normal;font-size:.32em;letter-spacing:-.02em;margin-left:6px;color:var(--accent)}
+.stat span{font-size:15px;color:var(--on-dark)}
+
+/* sectors */
+.sectors{padding-top:72px;padding-bottom:72px;display:flex;flex-direction:column;gap:36px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px}
+.sec-head p{margin:0;font-size:18px;line-height:1.6;color:var(--muted);max-width:460px}
+.sector-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:20px}
+.sector{border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:18px;background:var(--card)}
+.sector h3{font-size:34px;line-height:1.05}
+.sector .who{margin:0;font-size:16px;color:var(--muted)}
+.sector ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;font-size:16px}
+.sector li{padding:11px 0;border-bottom:1px solid var(--line)}
+.sector li:first-child{border-top:1px solid var(--line)}
+.sector .btn{margin-top:auto;align-self:flex-start}
+.sector.main{background:var(--ink);color:var(--bg);padding:0;overflow:hidden}
+.sector.main .pic{position:relative;height:250px;overflow:hidden}
+.sector.main .pic img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.sector.main:hover .pic img{transform:scale(1.05)}
+.sector.main .pic span{position:absolute;left:16px;bottom:16px;background:var(--bg);color:var(--ink);font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px}
+.sector.main .body{padding:28px 32px 32px;display:flex;flex-direction:column;gap:18px;flex:1}
+.sector.main .who{color:var(--on-dark)}
+.sector.main li{border-color:var(--dline)}
+.sector .tag{align-self:flex-start;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+@media (max-width:980px){.sector-grid{grid-template-columns:1fr 1fr}.sector.main{grid-column:1 / -1}}
+@media (max-width:640px){.sector-grid{grid-template-columns:1fr}}
+
+/* works */
+.works{background:var(--ink);color:var(--bg)}
+.works .wrap{padding-top:72px;padding-bottom:72px;display:flex;flex-direction:column;gap:36px}
+.works .sec-head p{color:#BDB6AA}
+.work{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center}
+.work .shot{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--dline);background:#fff}
+.work .shot img{width:100%;height:auto;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.work .shot:hover img{transform:scale(1.04)}
+.work .info{display:flex;flex-direction:column;gap:18px}
+.work .kind{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.work h3{font-size:clamp(56px,8vw,112px);font-weight:700;letter-spacing:-.06em;line-height:.85}
+.work p{margin:0;font-size:17px;line-height:1.6;color:var(--on-dark)}
+.work .links{display:flex;flex-wrap:wrap;gap:10px}
+.work .links a{padding:14px 22px;font-size:15px}
+.work-sm{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;padding-top:36px;border-top:1px solid var(--dline)}
+.work-sm h3{font-size:clamp(44px,7vw,96px);font-weight:700;letter-spacing:-.05em;line-height:.9}
+@media (max-width:860px){.work{grid-template-columns:1fr;gap:24px}}
+
+/* packages */
+.pkgs{background:var(--panel)}
+.pkgs .wrap{padding-top:72px;padding-bottom:72px;display:flex;flex-direction:column;gap:40px}
+.pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.pkg{background:var(--card);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px;transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
+.pkg:hover,.pkg:focus-within{transform:translateY(-10px);box-shadow:0 32px 64px rgba(18,18,18,.18)}
+.pkg.dark{background:var(--ink);color:var(--bg)}
+.pkg small{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2)}
+.pkg.dark small{color:var(--accent)}
+.pkg .price{font-size:52px;font-weight:500;line-height:1;letter-spacing:-.03em}
+.pkg .price i{font-style:normal;font-size:24px}
+.pkg p{margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
+.pkg.dark p{color:var(--on-dark)}
+.pkg ul{margin:0;padding-left:20px;font-size:15px;line-height:1.9}
+.pkg .btn{margin-top:auto;text-align:center;padding:14px 22px}
+.note{margin:0;font-size:14px;color:var(--muted)}
+
+/* process */
+.process{padding-top:72px;padding-bottom:72px;display:flex;flex-direction:column;gap:40px}
+.steps{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.steps li{background:var(--card);border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:18px}
+.steps li.dark{background:var(--ink);color:var(--bg)}
+.steps .n{display:flex;justify-content:space-between;align-items:center}
+.steps .n b{font-size:64px;font-weight:600;letter-spacing:-.05em;line-height:1}
+.steps .dark .n b{color:var(--accent)}
+.steps .n span{font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--line)}
+.steps .dark .n span{border-color:#3A3631}
+.steps h3{font-size:26px;letter-spacing:-.02em}
+.steps p{margin:0;font-size:16px;line-height:1.65;color:var(--muted)}
+.steps .dark p{color:var(--on-dark)}
+
+/* contact */
+.contact{background:var(--ink);color:var(--bg)}
+.contact .wrap{padding-top:72px;padding-bottom:72px;display:flex;flex-wrap:wrap;gap:56px}
+.contact .side{flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.contact .side img{width:96px;height:96px;border:1px solid #3A3631;border-radius:50%}
+.contact .side p{margin:0;font-size:17px;line-height:1.7;color:var(--on-dark)}
+.contact .side a{color:var(--bg)}
+.contact form,.contact .ok{flex:1 1 420px;min-width:0}
+.contact form{display:flex;flex-direction:column;gap:16px}
+.contact label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.contact input,.contact textarea,.contact select{padding:14px;font-size:16px;border:1px solid #5A554D;border-radius:10px;background:#1E1C1A;color:var(--bg);font-family:inherit}
+.contact textarea{resize:vertical}
+.contact button{padding:16px;border:0;border-radius:999px;background:var(--bg);color:var(--ink);font-size:16px;font-weight:700;cursor:pointer;font-family:inherit}
+.contact .ok{padding:28px;border:1px solid #3A3631;border-radius:16px;font-size:18px;align-self:flex-start}
+.contact .err{margin:0;font-size:15px;color:#F0B9A6}
+.foot{border-top:1px solid #3A3631;padding-top:24px;padding-bottom:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:#BDB6AA}
+.foot a{color:#BDB6AA}
+
+@media (max-width:640px){
+  .wrap{padding-left:20px;padding-right:20px}
+  .top nav a.nl{display:none}
+  .hero{padding-top:28px;padding-bottom:48px;gap:22px}
+  .stats{margin-top:12px}
+  .stat{padding:24px;border-right:0;border-bottom:1px solid var(--dline)}
+  .stat:last-child{border-bottom:0}
+  .sectors,.process{padding-top:56px;padding-bottom:56px;gap:24px}
+  .works .wrap,.pkgs .wrap,.contact .wrap{padding-top:56px;padding-bottom:56px;gap:28px}
+  .sector{padding:24px}.sector.main .body{padding:22px 24px 26px}.sector.main .pic{height:200px}
+  .pkg,.steps li{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a href="/" aria-label="hozdesigns – főoldal"><img src="/img/logo.png" alt="H designs logó" width="48" height="48"></a>
+  <nav aria-label="Fő menü">
+    <a class="nl" href="/vendeglatas/">Vendéglátás</a>
+    <a class="nl" href="/szallas/">Szállás</a>
+    <a class="nl" href="#munkak">Munkák</a>
+    <a class="nl" href="#csomagok">Árak</a>
+    <a class="cta" href="#kapcsolat">Ajánlatot kérek</a>
+  </nav>
+</header>
+
+<main>
+<section id="top" class="wrap hero">
+  <p class="eyebrow">Webdizájn helyi vállalkozásoknak · Budapest és környéke</p>
+  <h1>Saját weboldal, ami <em>vendéget</em> hoz.</h1>
+  <div class="hero-row">
+    <p class="lead">10 éve dolgozom az e-commerce és a webdizájn világában. Vendéglátóhelyeknek, szállásadóknak és helyi vállalkozásoknak készítek egyedi, mobilra szabott weboldalakat – és utána is gondozom őket, hogy mindig naprakészek legyenek.</p>
+    <div class="btns">
+      <a class="btn btn-dark" href="#teruletek">Miben segíthetek?</a>
+      <a class="btn btn-line" href="#munkak">Munkáim</a>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><small>Tapasztalat</small><b class="num">10<i>év</i></b><span>e-commerce-ben és webdizájnban</span></div>
+    <div class="stat"><small>Átfutás</small><b class="num">1–3<i>hét</i></b><span>az első egyeztetéstől az élesítésig</span></div>
+    <div class="stat"><small>Gondozás</small><b class="num">2<i>óra/hó</i></b><span>frissítés és módosítás, minden hónapban</span></div>
+  </div>
+</section>
+
+<section id="teruletek" class="wrap sectors" aria-labelledby="ter-cim">
+  <div class="sec-head">
+    <h2 id="ter-cim">Kinek dolgozom</h2>
+    <p>Minden oldal az adott hely fotóival, színeivel és szövegeivel készül – sablon helyett a ti saját arculatotokkal.</p>
+  </div>
+  <div class="sector-grid">
+    <article class="sector main">
+      <div class="pic"><img src="/img/hz-cafe_interior.webp" alt="Fotó: kávézó belső tere" width="1100" height="733" loading="lazy"><span>3 élő demó</span></div>
+      <div class="body">
+        <h3>Vendéglátás</h3>
+        <p class="who">Kávézók, éttermek, pékségek, cukrászdák</p>
+        <ul>
+          <li>Heti vagy napi menü, amit ti frissítetek</li>
+          <li>Online asztalfoglalás, előrendelés</li>
+          <li>Étlap, Instagram-feed, nyitvatartás</li>
+        </ul>
+        <a class="btn btn-light" href="/vendeglatas/">Sablonok és munkák →</a>
+      </div>
+    </article>
+    <article class="sector">
+      <h3>Szállás</h3>
+      <p class="who">Vendégházak, apartmanok, panziók</p>
+      <ul>
+        <li>Foglaltsági naptár, azonnali árkalkuláció</li>
+        <li>Közvetlen foglalás – jutalék nélkül</li>
+        <li>Szobák fotókkal, felszereltséggel</li>
+      </ul>
+      <a class="btn btn-dark" href="/szallas/">Élő demó: foglalási naptár →</a>
+    </article>
+    <article class="sector">
+      <h3>Helyi vállalkozás</h3>
+      <p class="who">Kutyakozmetikák, szalonok, műhelyek, szolgáltatók</p>
+      <ul>
+        <li>Szolgáltatások és árak, akár méret szerint</li>
+        <li>Online időpontfoglalás, emlékeztetővel</li>
+        <li>Előtte–utána galéria, térkép, nyitvatartás</li>
+      </ul>
+      <a class="btn btn-dark" href="/minta/teszt-kutyakozmetika/">Élő demó: kutyakozmetika →</a>
+    </article>
+  </div>
+</section>
+
+<section id="munkak" class="works" aria-labelledby="munka-cim">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="munka-cim">Munkák</h2>
+      <p>Élő oldalak, valódi ügyfelek</p>
+    </div>
+    <article class="work">
+      <a class="shot" href="https://csaklitkavehaz.hu" target="_blank" rel="noopener" aria-label="A Csáklit Kávéház weboldala (új lapon)"><img src="/img/hz-case-csaklit-d.webp?v=2" alt="A Csáklit Kávéház weboldalának főoldala a heti menüvel" width="1600" height="1000" loading="lazy"></a>
+      <div class="info">
+        <span class="kind">Kávéház · Budapest XVI.</span>
+        <h3>Csáklit</h3>
+        <p>9 aloldal, online asztalfoglalás, torta- és rendezvényrendelés, és egy heti menü, amit a kávéház maga frissít egy táblázatból.</p>
+        <div class="links">
+          <a class="btn btn-light" href="https://csaklitkavehaz.hu" target="_blank" rel="noopener">csaklitkavehaz.hu ↗</a>
+          <a class="btn btn-line-light" href="/vendeglatas/#munkak">Részletek</a>
+        </div>
+      </div>
+    </article>
+    <article class="work-sm">
+      <div>
+        <span class="kind" style="font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#BDB6AA">Első értékesített oldal</span>
+        <h3>Teoflora</h3>
+      </div>
+      <a class="btn btn-line-light" href="https://teoflora.hu" target="_blank" rel="noopener">teoflora.hu ↗</a>
+    </article>
+  </div>
+</section>
+
+<section id="csomagok" class="pkgs" aria-labelledby="ar-cim">
+  <div class="wrap">
+    <h2 id="ar-cim">Árak</h2>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <small>Egyszerűbb oldal</small>
+        <span class="price">300 000 Ft</span>
+        <p>Bemutatkozó oldal, amiből minden fontos kiderül.</p>
+        <ul><li>Bemutatkozás, nyitvatartás, térkép</li><li>Kínálat, szolgáltatások vagy szobák</li><li>Fotógaléria, közösségi linkek</li><li>Mobilra szabva</li></ul>
+        <a class="btn btn-dark" href="/?csomag=egyszeru#kapcsolat">Ezt kérem →</a>
+      </div>
+      <div class="pkg dark">
+        <small>Bonyolultabb oldal</small>
+        <span class="price">500 000 Ft</span>
+        <p>Több aloldal, foglalás vagy rendelés.</p>
+        <ul><li>Minden az egyszerűbb oldalból</li><li>Asztal- vagy szobafoglalás, előrendelés</li><li>Instagram-feed bekötés</li><li>Kétnyelvű oldal, több aloldal</li></ul>
+        <a class="btn btn-light" href="/?csomag=bonyolultabb#kapcsolat">Ezt kérem →</a>
+      </div>
+      <div class="pkg">
+        <small>Havi 2 óra</small>
+        <span class="price">20 000 Ft<i> / hó</i></span>
+        <p>2 óra munkát fizetsz – az üzemeltetés ingyen jár mellé.</p>
+        <ul><li>Módosítás, átalakítás, új fotók</li><li>Karbantartás és készenlét</li><li>Domain, tárhely, frissítések: ingyen</li></ul>
+        <a class="btn btn-dark" href="/?csomag=havi#kapcsolat">Erről kérdeznék →</a>
+      </div>
+    </div>
+    <p class="note">Alanyi adómentes vagyok, a feltüntetett árak végösszegek, áfát nem számolok fel.</p>
+  </div>
+</section>
+
+<section class="wrap process" aria-labelledby="folyamat-cim">
+  <div class="sec-head">
+    <h2 id="folyamat-cim">Így dolgozunk</h2>
+    <p>Három lépés az első beszélgetéstől a kulcsrakész weboldalig – és utána sem hagylak magadra.</p>
+  </div>
+  <ol class="steps">
+    <li>
+      <div class="n"><b>01</b><span>Személyesen vagy online</span></div>
+      <h3>Egyeztetés</h3>
+      <p>Mesélj a vállalkozásodról, a hangulatáról és a vendégeidről, ügyfeleidről. Ebből derül ki, mire van szükséged – és mire nincs.</p>
+    </li>
+    <li>
+      <div class="n"><b>02</b><span>Tervezés</span></div>
+      <h3>Draftok és finomhangolás</h3>
+      <p>Elkészítem az első terveket, közösen átbeszéljük őket, és addig csiszoljuk, amíg minden szöveg, kép és funkció a helyére nem kerül.</p>
+    </li>
+    <li class="dark">
+      <div class="n"><b>03</b><span>20 000 Ft / hó</span></div>
+      <h3>Élesítés és üzemeltetés</h3>
+      <p>Bekötöm a domaint, és onnantól én üzemeltetem az oldalt. Minden hónapban 2 órát dolgozom rajta: frissítések, módosítások, új fotók, szezonális ajánlatok.</p>
+    </li>
+  </ol>
+</section>
+</main>
+
+<footer id="kapcsolat" class="contact" aria-labelledby="kapcs-cim">
+  <div class="wrap">
+    <div class="side">
+      <img src="/img/logo.png" alt="" width="96" height="96">
+      <h2 id="kapcs-cim">Kérj ajánlatot.</h2>
+      <p>24 órán belül válaszolok.</p>
+      <p><a href="mailto:hozdesigns@gmail.com">hozdesigns@gmail.com</a><br><a href="tel:+36204047942">+36 20 404 7942</a></p>
+    </div>
+    <form id="ajanlat" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="f4cf77f1-a974-4df2-9064-e5f9f8ac3ad1">
+      <input type="hidden" name="subject" value="Új ajánlatkérés – hozdesigns.com">
+      <input type="hidden" name="from_name" value="hozdesigns.com">
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+      <label>Neved<input type="text" name="name" autocomplete="name" required></label>
+      <label>A vállalkozás neve<input type="text" name="hely" required></label>
+      <label>Terület
+        <select name="terulet">
+          <option value="Vendéglátás">Vendéglátás</option>
+          <option value="Szállás">Szállás (vendégház, apartman, panzió)</option>
+          <option value="Egyéb">Egyéb helyi vállalkozás</option>
+        </select>
+      </label>
+      <label>E-mail<input type="email" name="email" autocomplete="email" required></label>
+      <label>Mit szeretnél?<textarea name="message" rows="4"></textarea></label>
+      <button type="submit">Ajánlatot kérek</button>
+      <p class="err" role="alert" hidden>Most nem sikerült elküldeni. Írj közvetlenül: <a href="mailto:hozdesigns@gmail.com" style="color:#F3F1EC">hozdesigns@gmail.com</a></p>
+    </form>
+    <div class="ok" role="status" hidden>Köszönöm! Megkaptam az üzeneted, 24 órán belül jelentkezem.</div>
+  </div>
+  <div class="wrap foot">
+    <span>© 2026 hozdesigns.com</span>
+    <span style="display:flex;flex-wrap:wrap;gap:8px 24px"><a href="/vendeglatas/">Vendéglátás</a><a href="/szallas/">Szállás</a><a href="mailto:hozdesigns@gmail.com">hozdesigns@gmail.com</a><a href="tel:+36204047942">+36 20 404 7942</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var form = document.getElementById('ajanlat');
+  var ta = form.querySelector('textarea'), sel = form.querySelector('select');
+  var sablon = { kavezo: 'a Kávézó', pekseg: 'a Pékség', etterem: 'az Étterem' };
+  var csomag = { egyszeru: 'Az egyszerűbb oldal (300 000 Ft) érdekelne.', bonyolultabb: 'A bonyolultabb oldal (500 000 Ft) érdekelne.', havi: 'A havi gondozásról (20 000 Ft / hó) kérdeznék.' };
+  var ter = { szallas: 'Szállás', egyeb: 'Egyéb', vendeglatas: 'Vendéglátás' };
+  if (sablon[q.get('sablon')]) { ta.value = 'Tetszett ' + sablon[q.get('sablon')] + ' sablon, ilyen oldalt szeretnék a helyemnek.'; sel.value = 'Vendéglátás'; }
+  if (csomag[q.get('csomag')]) ta.value = csomag[q.get('csomag')];
+  if (ter[q.get('terulet')]) sel.value = ter[q.get('terulet')];
+  var btn = form.querySelector('button'), err = form.querySelector('.err'), ok = document.querySelector('.contact .ok');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (btn.disabled) return;
+    btn.disabled = true; btn.textContent = 'Küldés…'; err.hidden = true;
+    fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) })
+      .then(function (r) { return r.json(); })
+      .then(function (j) { if (j && j.success) { form.hidden = true; ok.hidden = false; } else { throw 0; } })
+      .catch(function () { err.hidden = false; btn.disabled = false; btn.textContent = 'Ajánlatot kérek'; });
+  });
+})();
+</script>
+</body>
+</html>
