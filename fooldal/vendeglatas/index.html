@@ -562,7 +562,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var k = new URLSearchParams(location.search).get('sablon');
   var ta = document.querySelector('#kapcsolat textarea');
   if (names[k] && ta && !ta.value) ta.value = 'Tetszett ' + names[k] + ' sablon, ilyen oldalt szeretnék a helyemnek.';
-  if (location.hash) { var el = document.querySelector(location.hash); if (el) el.scrollIntoView(); }
+  if (location.hash) {  /* a tartalom a komponens renderelése után jelenik meg: megvárjuk, és a képek betöltése után még egyszer igazítunk */
+    var n = 0; (function go() { var el = document.querySelector(location.hash);
+      if (el) { el.scrollIntoView(); setTimeout(function () { el.scrollIntoView(); }, 500); setTimeout(function () { el.scrollIntoView(); }, 1200); }
+      else if (++n < 50) setTimeout(go, 100); })();
+  }
 });
 </script>
 <noscript><p style="padding:24px;font-family:sans-serif">Az oldal megjelenítéséhez kapcsold be a JavaScriptet. Elérhetőség: hozdesigns@gmail.com · +36 20 404 7942</p></noscript>
