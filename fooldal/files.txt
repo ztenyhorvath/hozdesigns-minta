@@ -1,2 +1,2 @@
 index.html
-vendeglatas/index.html
+helyi/index.html
