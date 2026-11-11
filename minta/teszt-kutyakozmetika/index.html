@@ -85,6 +85,18 @@ p{margin:0}
 .clist .ico{margin-top:3px;color:var(--acc)}
 .clist a{font-weight:700}
 
+/* térkép: csak kattintásra tölt be */
+.mapbox{position:relative;margin-top:24px;min-height:280px;background:var(--acct);overflow:hidden;display:grid;place-items:center;text-align:center;border-radius:var(--rm,0)}
+.mapbox::before{content:"";position:absolute;inset:0;opacity:.5;background:linear-gradient(115deg,transparent 46%,var(--line) 46%,var(--line) 47.2%,transparent 47.2%),linear-gradient(28deg,transparent 58%,var(--line) 58%,var(--line) 59%,transparent 59%),linear-gradient(160deg,transparent 30%,var(--line) 30%,var(--line) 30.8%,transparent 30.8%),linear-gradient(75deg,transparent 70%,var(--line) 70%,var(--line) 70.7%,transparent 70.7%)}
+.mapbox .in{position:relative;max-width:640px;padding:24px}
+.mapbox .in>.ico{width:30px;height:30px;color:var(--acc);margin:0 auto}
+.mapbox b{display:block;font-family:var(--fh);font-size:22px;line-height:1.2;margin-top:8px}
+.mapbox .row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:16px}
+.mapbox .btn{min-height:46px;padding:10px 18px}
+.mapbox small{display:block;color:var(--ink2);font-size:13px;margin:14px auto 0;line-height:1.5;max-width:46ch}
+.mapbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vright{min-width:0;display:flex;flex-direction:column}
+.vright .mapbox{flex:1}
 footer{border-top:1px solid var(--line);margin-top:32px;padding:32px 0 110px;font-size:14px;color:var(--ink2)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 40px}
 footer b{color:var(--ink)}
@@ -286,12 +298,8 @@ footer b{color:var(--ink)}
   .hpic .next{font-size:13px;padding:10px 14px}.hpic .next b{font-size:18px}
 }
 .bookband>*,.hero>*,.about>*,.visit>*{min-width:0}
-.paw{font-size:.5em;display:inline-block;transform:rotate(18deg);margin-left:.12em;vertical-align:.12em;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;letter-spacing:0}
-.next .paw,.sumcard h3 .paw{font-size:1em;vertical-align:0}
-.pawrow{display:flex;justify-content:center;gap:34px;padding:44px 0 0;font-size:22px;opacity:.5}
-.pawrow span:nth-child(odd){transform:rotate(-14deg) translateY(-6px)}.pawrow span:nth-child(even){transform:rotate(16deg) translateY(6px)}
-.bookband .sizes button[aria-pressed=true] span{color:var(--ink2);opacity:1}
 .nw{white-space:nowrap}
+.bookband .sizes button[aria-pressed=true] span{color:var(--ink2);opacity:1}
 /* formaváltozatok (cfg "shape": "iv" | "kerek" | "szogletes") */
 .s-kerek .hpic .a{border-radius:50%;aspect-ratio:1}
 .s-kerek .hpic .b{bottom:-10px}
@@ -302,6 +310,137 @@ footer b{color:var(--ink)}
 .s-szogletes .sizes{border-radius:14px}.s-szogletes .sizes button{border-radius:10px}
 .s-szogletes{--rb:12px}
 .s-szogletes .add{border-radius:12px}
+
+/* ── matricák, apró részletek ── */
+.dd{width:40px;height:40px;flex:none;stroke:var(--ink);stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round;fill:none;overflow:visible}
+.dd-f{fill:var(--pop)}.dd-w{fill:#fff}.dd-k{fill:var(--ink);stroke:none}
+.scr{position:relative;white-space:nowrap}
+.scr .dd{position:absolute;left:-2%;bottom:-.16em;width:104%;height:.26em;stroke:var(--pop);stroke-width:5;z-index:-1}
+.hero{position:relative;isolation:isolate}
+.hpic .fl{position:absolute;z-index:2}
+.hpic .f1{left:-34px;top:8%;width:72px;height:72px;transform:rotate(-12deg);animation:kfloat 5s ease-in-out infinite}
+.hpic .f2{right:6%;bottom:-22px;width:76px;height:76px;transform:rotate(18deg)}
+.hpic .f3{right:-26px;top:44%;width:44px;height:44px;animation:kfloat 4s ease-in-out -2s infinite}
+@keyframes kfloat{50%{translate:0 -8px}}
+.hpic .say{position:absolute;left:-8%;top:30%;z-index:3;background:var(--card);border:2.2px solid var(--ink);border-radius:22px 22px 22px 4px;padding:12px 16px;font-weight:700;font-size:15px;line-height:1.3;max-width:200px;box-shadow:5px 5px 0 var(--ink);transform:rotate(-4deg)}
+.hpic .spin{position:absolute;left:26%;bottom:-46px;width:132px;height:132px;display:grid;place-items:center;background:var(--pop);border:2.2px solid var(--ink);border-radius:50%;z-index:3;text-decoration:none;transition:transform .3s}
+.hpic .spin:hover{transform:scale(1.06)}
+.hpic .spin>svg:first-child{position:absolute;inset:0;animation:kspin 22s linear infinite}
+.hpic .spin text{font:700 15.5px var(--fb);letter-spacing:.06em;fill:var(--ink)}
+.hpic .spin .dd{width:54px;height:54px}
+@keyframes kspin{to{transform:rotate(360deg)}}
+.hpic .b{left:auto;right:-30px;bottom:auto;top:-18px;width:34%;border:2.2px solid var(--ink);outline:7px solid var(--paper)}
+.hpic .a{border:2.2px solid var(--ink)}
+.hpic .next{right:auto;left:-30px;top:auto;bottom:16%;display:flex;gap:10px;align-items:center;background:var(--card);border:2.2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);color:var(--ink);transform:rotate(2deg);max-width:250px;border-radius:18px;padding:10px 16px 10px 10px;z-index:3}
+.hpic .next .dd{width:42px;height:42px}
+.hpic .next b{font-size:19px;margin-top:0}
+/* futószalag */
+.mq{margin:34px 0 64px;background:var(--pop);border-block:2.2px solid var(--ink);overflow:hidden;transform:rotate(-1.2deg) scale(1.02)}
+.mq .tr{display:flex;align-items:center;gap:26px;width:max-content;padding:14px 0;animation:kmq 46s linear infinite}
+.mq span{font:700 22px var(--fh);letter-spacing:-.02em;color:var(--popink);white-space:nowrap}
+.mq .dd{width:34px;height:34px}.mq .dd-f{fill:#fff}
+@keyframes kmq{to{transform:translateX(-50%)}}
+/* méretválasztó kutyákkal */
+.sizes button{display:grid;justify-items:center;align-content:end;gap:2px;min-height:112px}
+.sizes .dg{height:auto;aspect-ratio:64/48;margin-bottom:4px;transition:transform .25s}
+.sizes button:hover .dg{transform:translateY(-3px) rotate(-3deg)}
+.sizes button[aria-pressed=true] .dg{stroke:var(--ink)}
+.bookband .sizes button{min-height:96px}
+.bookband .sizes .dg{transform:scale(.8);margin-bottom:-2px}
+.bookband .sizes button:not([aria-pressed=true]) .dg{stroke:#fff}
+.bookband .sizes button:not([aria-pressed=true]) .dd-w{fill:transparent}
+.pl h3{display:flex;align-items:center;gap:10px;font-size:17px;color:var(--ink)}
+.pl h3 .dd{width:34px;height:34px}
+.add{border-width:2.2px}
+.add[aria-pressed=true]{animation:kpop .35s cubic-bezier(.3,1.8,.5,1)}
+@keyframes kpop{0%{transform:scale(.7)}100%{transform:scale(1)}}
+/* így telik egy kozmetika */
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(var(--n,5),minmax(0,1fr));gap:20px;position:relative}
+.flow::before{content:"";position:absolute;left:6%;right:6%;top:39px;border-top:2.5px dashed var(--ink);opacity:.35}
+.flow li{position:relative;text-align:center}
+.flow .dd{width:78px;height:78px;background:var(--card);border-radius:50%;padding:14px;border:2.2px solid var(--ink);margin:0 auto 14px;display:block;transition:transform .3s}
+.flow li:hover .dd{transform:rotate(-8deg) scale(1.06)}
+.flow b{display:block;font-family:var(--fh);font-size:19px;letter-spacing:-.02em}
+.flow p{font-size:14.5px;color:var(--ink2);margin-top:4px}
+/* akire külön figyelünk */
+.cares{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.cares div{background:var(--card);border:2.2px solid var(--ink);border-radius:26px;padding:26px;box-shadow:6px 6px 0 var(--ink)}
+.cares div:nth-child(3n+2){background:var(--pop);color:var(--popink)}
+.cares div:nth-child(3n+2) .dd-f{fill:#fff}
+.cares div:nth-child(3n+2) p{color:inherit;opacity:.85}
+.cares .dd{width:56px;height:56px;margin-bottom:12px}
+.cares h3{font-size:23px;letter-spacing:-.02em}
+.cares p{color:var(--ink2);margin-top:8px}
+.know .dd{width:44px;height:44px;margin-bottom:10px}
+.about .pic{position:relative;overflow:visible}
+.about .pic img{border-radius:inherit}
+.about .pic .fl{position:absolute;right:-18px;top:-18px;width:76px;height:76px;transform:rotate(14deg)}
+.team i .dd{width:38px;height:38px}
+/* foglalás: biléta-kártya, pecsét */
+.sumcard{border-radius:28px 28px 28px 28px;padding-top:44px}
+.sumcard .hole{position:absolute;left:50%;top:14px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:var(--ink)}
+.sumcard h3{display:flex;align-items:center;gap:10px}
+.sumcard h3 .dd{width:34px;height:34px}
+.sumcard li .dd{width:24px;height:24px;margin-top:-1px}
+.bs h3 i{border:2.2px solid var(--ink)}
+.ba .knob{border:2.2px solid var(--ink)}
+.ba .knob .dd{width:26px;height:26px}
+.ba{border:2.2px solid var(--ink)}
+.bookband .done{position:relative}
+.stamp{display:inline-block;border:3px solid var(--pop);color:var(--pop);font:700 20px var(--fh);letter-spacing:.14em;text-transform:uppercase;padding:6px 16px;border-radius:10px;transform:rotate(-7deg);margin-bottom:22px}
+/* törzskártya */
+.loy{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.loy h2{font-size:clamp(28px,3.6vw,42px);letter-spacing:-.03em}
+.loy p{color:var(--ink2);font-size:18px;margin-top:12px;max-width:44ch}
+.loy .card{background:var(--pop);color:var(--popink);border:2.2px solid var(--ink);border-radius:26px;padding:26px;box-shadow:8px 8px 0 var(--ink);transform:rotate(2.5deg);max-width:440px;justify-self:center}
+.loy .card b{font-family:var(--fh);font-size:22px}
+.loy .st{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 12px}
+.loy .st i{width:54px;height:54px;border-radius:50%;border:2.2px dashed var(--ink);display:grid;place-items:center}
+.loy .st i .dd{width:34px;height:34px;opacity:.18}
+.loy .st i.on{border-style:solid;background:#fff}.loy .st i.on .dd{opacity:1}
+.loy .st i.gift{background:var(--ink);border-style:solid}.loy .st i.gift .dd{opacity:1;stroke:var(--ink)}
+.loy small{font-weight:700;font-size:13px;letter-spacing:.04em}
+.k-kutya{--rm:24px}
+.k-kutya .mapbox{border:2.2px solid var(--ink)}
+.k-kutya .clist a[href*='google.com/maps'],.k-kutya .clist br{display:none}
+/* lábléc a kikukucskáló kutyával */
+.kfoot{position:relative;background:var(--ink);color:rgba(255,255,255,.75);margin-top:110px;padding:64px 0 0;border-top:0;font-size:15px}
+.kfoot .peek{position:absolute;left:50%;top:-73px;width:150px;height:75px;margin-left:-75px;stroke:var(--ink)}
+.kfoot .wrap{display:block}
+.kfoot .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:56px;align-items:start}
+.kfoot .name{font:700 34px/1.05 var(--fh);letter-spacing:-.03em;color:#fff}
+.kfoot .tagl{margin:8px 0 22px;color:rgba(255,255,255,.65)}
+.kfoot .btn{background:var(--pop);border-color:var(--pop);color:var(--popink)}
+.kfoot h4{font:700 15px var(--fb);color:var(--pop);margin:6px 0 16px;letter-spacing:0}
+.kfoot ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.kfoot a{color:#fff}
+.kfoot .hrs li{display:flex;justify-content:space-between;gap:16px;max-width:240px}
+.kfoot .hrs li span:last-child{color:#fff;font-variant-numeric:tabular-nums}
+.kfoot .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 30px;margin-top:56px;padding:22px 0 28px;border-top:1px solid rgba(255,255,255,.14);font-size:13px;color:rgba(255,255,255,.55)}
+.kfoot .legal a{color:rgba(255,255,255,.8)}
+@media (max-width:1000px){
+  .hpic .say{left:-4px;top:22%;font-size:13.5px;max-width:160px}
+  .hpic .next{left:-6px}
+  .hpic .b{right:-8px}
+  .hpic .f1{left:-10px}.hpic .f3{right:-8px}
+  .hpic{margin-bottom:40px}
+  .mq{margin:20px 0 44px}.mq span{font-size:18px}
+  .flow{grid-template-columns:1fr;gap:18px}.flow::before{left:38px;right:auto;top:20px;bottom:20px;border-top:0;border-left:2.5px dashed var(--ink)}
+  .flow li{display:grid;grid-template-columns:78px 1fr;gap:4px 16px;text-align:left;align-items:center}
+  .flow .dd{grid-row:1/3;margin:0}.flow b{align-self:end}.flow p{align-self:start;margin:0}
+  .loy{grid-template-columns:1fr;gap:28px}
+  .kfoot .cols{grid-template-columns:1fr;gap:0}
+  .kfoot .cols>div:not(.id){border-top:1px solid rgba(255,255,255,.14);padding:22px 0 24px}
+  .kfoot .id{padding-bottom:28px}
+  .kfoot .hrs li{max-width:none}
+  .kfoot .legal{flex-direction:column;margin-top:0;padding-bottom:110px}
+  .cares div{box-shadow:4px 4px 0 var(--ink)}
+}
+@media (max-width:640px){
+  .sizes button{min-height:96px}
+  .hpic .spin{width:104px;height:104px;bottom:-36px;left:8%}.hpic .spin .dd{width:42px;height:42px}.hpic .spin text{font-size:16px}
+}
+.k-kutya main{overflow-x:clip}
 </style>
 </head>
 <body class="k-kutya s-alap t-alap">
@@ -314,13 +453,14 @@ footer b{color:var(--ink)}
 <section class="wrap hero" data-shot="hero">
   <div>
     <p class="loc"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Budapest XIV., Zugló</p>
-    <h1>Kutyakozmetika, ahová a kutyád is szívesen <span class="nw">jön<span class="paw" aria-hidden="true">🐾</span></span></h1>
+    <h1>Kutyakozmetika, ahová a kutyád is <span class="scr">szívesen<svg class="dd" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><use href="#d-scribble"/></svg></span> jön</h1>
     <p class="lead">Fürdetés, nyírás és trimmelés nyugodt tempóban, egyszerre egy kutyával. Az árakat a méret alapján előre látod, az időpontot pedig két perc alatt lefoglalod.</p>
     <div class="cta"><a class="btn" href="#foglalas">Időpontot foglalok</a><a class="btn line" href="#arak">Árak</a></div>
     <div class="meta"><span><i class="dot"></i><span data-open></span></span><span><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>+36 30 123 4567</span><span><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg>Ingyenes parkolás az utcán</span></div>
   </div>
-  <div class="hpic"><div class="a"><img src="img/d1.jpg" alt="Szamojéd fürdetés után" width="748" height="1125"></div><div class="b"><img src="img/d5.jpg" alt="Fekete uszkár nyírás után" width="900" height="675"></div><p class="next">Legközelebbi szabad időpont<b><span data-next></span> <span class="paw" aria-hidden="true">🐾</span></b></p></div>
+  <div class="hpic"><div class="a"><img src="img/d1.jpg" alt="Szamojéd fürdetés után" width="748" height="1125"></div><div class="b"><img src="img/d5.jpg" alt="Fekete uszkár nyírás után" width="900" height="675"></div><p class="say">Vau! Itt senki nem siettet.</p><a class="spin" href="#foglalas" aria-label="Időpontfoglalás"><svg viewBox="0 0 200 200" aria-hidden="true"><defs><path id="spinp" d="M100 100m-74 0a74 74 0 1 1 148 0a74 74 0 1 1-148 0"/></defs><text><textPath href="#spinp" textLength="455" lengthAdjust="spacing">IDŐPONT ONLINE • KÉT PERC ALATT •</textPath></text></svg><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-dogface"/></svg></a><p class="next"><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-clock"/></svg><span>Legközelebbi szabad időpont<b data-next></b></span></p><svg class="dd fl f1" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bubbles"/></svg><svg class="dd fl f2" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg><svg class="dd fl f3" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-star"/></svg></div>
 </section>
+<div class="mq" aria-hidden="true"><div class="tr"><span>Fürdetés és szárítás</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg><span>Fürdetés és gépi nyírás</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-scissors"/></svg><span>Fürdetés és ollós nyírás</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bubbles"/></svg><span>Trimmelés</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bow"/></svg><span>Karomvágás</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-star"/></svg><span>Fogkőeltávolítás ultrahanggal</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-ball"/></svg><span>Bontás, filcmentesítés</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-comb"/></svg><span>Kölyök első kozmetika</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-heart"/></svg><span>Fürdetés és szárítás</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg><span>Fürdetés és gépi nyírás</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-scissors"/></svg><span>Fürdetés és ollós nyírás</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bubbles"/></svg><span>Trimmelés</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bow"/></svg><span>Karomvágás</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-star"/></svg><span>Fogkőeltávolítás ultrahanggal</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-ball"/></svg><span>Bontás, filcmentesítés</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-comb"/></svg><span>Kölyök első kozmetika</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-heart"/></svg></div></div>
 
 <section class="wrap" id="arak" style="scroll-margin-top:16px">
   <div class="prices" data-shot="offer">
@@ -331,10 +471,12 @@ footer b{color:var(--ink)}
   </div>
 </section>
 
+<section class="wrap sec"><div class="sech"><h2>Így telik nálunk egy kozmetika</h2></div><ol class="flow" style="--n:5"><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-heart"/></svg><b>Ismerkedés</b><p>Pár perc szaglászás, simogatás, mielőtt bármi elkezdődne.</p></li><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-tub"/></svg><b>Fürdetés</b><p>Langyos víz, bőrbarát sampon, fültisztítás.</p></li><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-dryer"/></svg><b>Szárítás</b><p>Türelemmel, a félősöknek halkabb fokozaton.</p></li><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-scissors"/></svg><b>Nyírás</b><p>Géppel vagy ollóval, a fajtának megfelelően.</p></li><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-treat"/></svg><b>Jutalomfalat</b><p>A végén mindenki kap egyet. A gazdi is büszke lehet.</p></li></ol></section>
+
 <section class="wrap" id="foglalas" style="scroll-margin-top:8px">
   <div class="bookband" data-shot="book">
     <form class="form" data-form data-bookbody novalidate>
-      <h2>Foglalj időpontot <span class="paw" aria-hidden="true">🐾</span></h2>
+      <h2 data-hello>Foglalj időpontot</h2>
       <p class="intro">Két perc az egész. A szabad időpontokat azonnal látod, hívogatni nem kell.</p>
       <div class="bs"><h3><i>1</i>A kutyád</h3>
         <div class="two"><label>Neve<input name="kutya" required autocomplete="off"></label><label>Fajtája<input name="fajta" required autocomplete="off" placeholder="pl. uszkár, keverék"></label></div>
@@ -354,16 +496,18 @@ footer b{color:var(--ink)}
       <button class="btn full" type="submit">Időpont lefoglalása</button>
     </form>
     <aside class="sumcard" data-bookbody aria-live="polite">
-      <h3>A foglalásod <span class="paw" aria-hidden="true">🐾</span></h3>
+      <span class="hole" aria-hidden="true"></span>
+      <h3><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-tag"/></svg>A foglalásod</h3>
       <dl>
         <div><dt>Kinek</dt><dd data-s-dog></dd></div>
         <div><dt>Mit</dt><dd data-s-what></dd></div>
         <div><dt>Mikor</dt><dd data-s-when></dd></div>
       </dl>
       <div class="tot"><span>Fizetendő a helyszínen</span><b data-s-total>–</b></div>
-      <ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Visszaigazolás e-mailben</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Emlékeztető az időpont előtti napon</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Lemondás egy kattintással</li></ul>
+      <ul><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg>Visszaigazolás e-mailben</li><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg>Emlékeztető az időpont előtti napon</li><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg>Lemondás egy kattintással</li></ul>
     </aside>
     <div class="done" data-done hidden tabindex="-1">
+      <span class="stamp" aria-hidden="true">Lefoglalva</span>
       <h3 data-done-h></h3>
       <p data-done-p></p>
       <p>A visszaigazolást e-mailben küldjük, az időpont előtti napon pedig emlékeztetőt kapsz.</p>
@@ -372,26 +516,31 @@ footer b{color:var(--ink)}
   </div>
 </section>
 
-<div class="pawrow" aria-hidden="true"><span>🐾</span><span>🐾</span><span>🐾</span></div>
-<section class="wrap sec" id="munkaink"><div class="sech"><h2>Előtte és utána</h2><p>Húzd el a csúszkát: bal oldalon az érkezés, jobb oldalon a hazaindulás.</p></div><div class="pairs"><figure style="margin:0"><div class="ba"><img src="img/d7.jpg" alt="Előtte" width="900" height="598" loading="lazy"><img src="img/d4.jpg" alt="Utána" width="900" height="675" loading="lazy" class="af"><span class="tag l">Előtte</span><span class="tag r">Utána</span><input type="range" min="0" max="100" value="50" aria-label="Előtte–utána összehasonlítás: Uszkár – fürdetés és ollós nyírás"><span class="knob" aria-hidden="true">↔</span></div><figcaption class="bacap">Uszkár – fürdetés és ollós nyírás</figcaption></figure><figure style="margin:0"><div class="ba"><img src="img/d10.jpg" alt="Előtte" width="900" height="600" loading="lazy"><img src="img/d11.jpg" alt="Utána" width="900" height="598" loading="lazy" class="af"><span class="tag l">Előtte</span><span class="tag r">Utána</span><input type="range" min="0" max="100" value="50" aria-label="Előtte–utána összehasonlítás: Spániel – fürdetés és fazonigazítás"><span class="knob" aria-hidden="true">↔</span></div><figcaption class="bacap">Spániel – fürdetés és fazonigazítás</figcaption></figure></div><div class="works" style="margin-top:20px"><button type="button" data-lb="d9" aria-label="Kínai meztelenkutya fazonigazítás után – nagyítás"><img src="img/d9.jpg" alt="Kínai meztelenkutya fazonigazítás után" width="844" height="1125" loading="lazy"></button><button type="button" data-lb="d8" aria-label="Fehér bichon – nagyítás"><img src="img/d8.jpg" alt="Fehér bichon" width="900" height="900" loading="lazy"></button><button type="button" data-lb="d2" aria-label="Munka közben – nagyítás"><img src="img/d2.jpg" alt="Munka közben" width="900" height="674" loading="lazy"></button><button type="button" data-lb="d11" aria-label="Cocker spániel – nagyítás"><img src="img/d11.jpg" alt="Cocker spániel" width="900" height="598" loading="lazy"></button><button type="button" data-lb="d4" aria-label="Szürke uszkár – nagyítás"><img src="img/d4.jpg" alt="Szürke uszkár" width="900" height="675" loading="lazy"></button></div></section>
-<section class="wrap sec"><div class="about"><div class="pic"><img src="img/d2.jpg" alt="Kozmetikus munka közben" width="900" height="674" loading="lazy"></div><div><h2>Egyszerre egy kutya, annyi idő, amennyi kell</h2><p class="lead">Nálunk nincs futószalag: a kutyád nem vár ketrecben, a kozmetika végig vele foglalkozik. A félős és idős kutyáknak több szünetet tartunk.</p><div class="team"><div><i>R</i><span><b>Réka</b><span>kutyakozmetikus</span></span></div><div><i>D</i><span><b>Dóri</b><span>kutyakozmetikus</span></span></div></div></div></div></section>
-<section class="wrap sec"><div class="sech"><h2>Jó tudni érkezés előtt <span class="paw" aria-hidden="true">🐾</span></h2></div><div class="know"><div><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Oltási könyv</b><p>Az első alkalommal hozd magaddal az oltási könyvet.</p></div><div><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><b>Érkezés</b><p>Elég 5 perccel korábban jönnöd, a kutyát sétáltasd meg előtte.</p></div><div><svg class="ico" aria-hidden="true"><use href="#i-card"/></svg><b>Fizetés</b><p>Készpénzzel és bankkártyával is fizethetsz.</p></div></div></section>
+<section class="wrap sec" id="munkaink"><div class="sech"><h2>Előtte és utána</h2><p>Húzd el a csúszkát: bal oldalon az érkezés, jobb oldalon a hazaindulás.</p></div><div class="pairs"><figure style="margin:0"><div class="ba"><img src="img/d7.jpg" alt="Előtte" width="900" height="598" loading="lazy"><img src="img/d4.jpg" alt="Utána" width="900" height="675" loading="lazy" class="af"><span class="tag l">Előtte</span><span class="tag r">Utána</span><input type="range" min="0" max="100" value="50" aria-label="Előtte–utána összehasonlítás: Uszkár – fürdetés és ollós nyírás"><span class="knob" aria-hidden="true"><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-scissors"/></svg></span></div><figcaption class="bacap">Uszkár – fürdetés és ollós nyírás</figcaption></figure><figure style="margin:0"><div class="ba"><img src="img/d10.jpg" alt="Előtte" width="900" height="600" loading="lazy"><img src="img/d11.jpg" alt="Utána" width="900" height="598" loading="lazy" class="af"><span class="tag l">Előtte</span><span class="tag r">Utána</span><input type="range" min="0" max="100" value="50" aria-label="Előtte–utána összehasonlítás: Spániel – fürdetés és fazonigazítás"><span class="knob" aria-hidden="true"><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-scissors"/></svg></span></div><figcaption class="bacap">Spániel – fürdetés és fazonigazítás</figcaption></figure></div><div class="works" style="margin-top:20px"><button type="button" data-lb="d9" aria-label="Kínai meztelenkutya fazonigazítás után – nagyítás"><img src="img/d9.jpg" alt="Kínai meztelenkutya fazonigazítás után" width="844" height="1125" loading="lazy"></button><button type="button" data-lb="d8" aria-label="Fehér bichon – nagyítás"><img src="img/d8.jpg" alt="Fehér bichon" width="900" height="900" loading="lazy"></button><button type="button" data-lb="d2" aria-label="Munka közben – nagyítás"><img src="img/d2.jpg" alt="Munka közben" width="900" height="674" loading="lazy"></button><button type="button" data-lb="d11" aria-label="Cocker spániel – nagyítás"><img src="img/d11.jpg" alt="Cocker spániel" width="900" height="598" loading="lazy"></button><button type="button" data-lb="d4" aria-label="Szürke uszkár – nagyítás"><img src="img/d4.jpg" alt="Szürke uszkár" width="900" height="675" loading="lazy"></button></div></section>
+<section class="wrap sec"><div class="sech"><h2>Akire külön figyelünk</h2></div><div class="cares"><div><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-treat"/></svg><h3>Kölykök</h3><p>Az első alkalom csak ismerkedés: rövid, játékos, hogy legközelebb is szívesen jöjjön.</p></div><div><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-heart"/></svg><h3>Félős kutyák</h3><p>Több szünet, halkabb gépek, és ha kell, a gazdi is bent maradhat.</p></div><div><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-clock"/></svg><h3>Idős kutyák</h3><p>Csúszásmentes asztal, rövidebb állás, annyi pihenő, amennyi kell.</p></div></div></section>
+<section class="wrap sec"><div class="about"><div class="pic"><img src="img/d2.jpg" alt="Kozmetikus munka közben" width="900" height="674" loading="lazy"><svg class="dd fl" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-heart"/></svg></div><div><h2>Egyszerre egy kutya, annyi idő, amennyi kell</h2><p class="lead">Nálunk nincs futószalag: a kutyád nem vár ketrecben, a kozmetika végig vele foglalkozik. A félős és idős kutyáknak több szünetet tartunk.</p><div class="team"><div><i><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-dogface"/></svg></i><span><b>Réka</b><span>kutyakozmetikus</span></span></div><div><i><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-dogface"/></svg></i><span><b>Dóri</b><span>kutyakozmetikus</span></span></div></div></div></div></section>
+<section class="wrap sec"><div class="loy"><div><h2>Minden hatodik fürdetés ajándék</h2><p>A törzskártyádra minden kozmetika után csontot nyomunk. Ha összegyűlt öt, a hatodik fürdetést mi álljuk.</p></div><div class="card" aria-hidden="true"><b>Mancs Műhely</b><div class="st"><i class="on"><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg></i><i class="on"><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg></i><i class="on"><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg></i><i class=""><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg></i><i class=""><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg></i><i class="gift"><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-treat"/></svg></i></div><small>törzsvásárlói kártya</small></div></div></section>
+<section class="wrap sec"><div class="sech"><h2>Jó tudni érkezés előtt</h2></div><div class="know"><div><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-tag"/></svg><b>Oltási könyv</b><p>Az első alkalommal hozd magaddal az oltási könyvet.</p></div><div><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-ball"/></svg><b>Érkezés</b><p>Elég 5 perccel korábban jönnöd, a kutyát sétáltasd meg előtte.</p></div><div><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg><b>Fizetés</b><p>Készpénzzel és bankkártyával is fizethetsz.</p></div></div></section>
 
 <section class="wrap sec" id="kapcsolat">
   <div class="visitbox">
-    <div class="sech"><h2>Itt találsz minket <span class="paw" aria-hidden="true">🐾</span></h2></div>
-    <div class="visit"><table class="hours"><tbody><tr><td>Hétfő</td><td>9:00–17:00</td></tr><tr><td>Kedd</td><td>9:00–17:00</td></tr><tr><td>Szerda</td><td>9:00–17:00</td></tr><tr><td>Csütörtök</td><td>9:00–18:00</td></tr><tr><td>Péntek</td><td>9:00–17:00</td></tr><tr><td>Szombat</td><td>9:00–13:00</td></tr><tr class="closed"><td>Vasárnap</td><td>Zárva</td></tr></tbody></table><div class="clist"><div><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>1145 Budapest, Példa utca 12.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=1145+Budapest,+Példa+utca+12." target="_blank" rel="noopener">Útvonaltervezés</a></span></div><div><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+36301234567">+36 30 123 4567</a></div><div><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:hello@mancsmuhely.example">hello@mancsmuhely.example</a></div></div></div>
+    <div class="sech"><h2>Itt találsz minket</h2></div>
+    <div class="visit"><table class="hours"><tbody><tr><td>Hétfő</td><td>9:00–17:00</td></tr><tr><td>Kedd</td><td>9:00–17:00</td></tr><tr><td>Szerda</td><td>9:00–17:00</td></tr><tr><td>Csütörtök</td><td>9:00–18:00</td></tr><tr><td>Péntek</td><td>9:00–17:00</td></tr><tr><td>Szombat</td><td>9:00–13:00</td></tr><tr class="closed"><td>Vasárnap</td><td>Zárva</td></tr></tbody></table><div class="vright"><div class="clist"><div><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>1145 Budapest, Példa utca 12.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=1145+Budapest,+Példa+utca+12." target="_blank" rel="noopener">Útvonaltervezés</a></span></div><div><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+36301234567">+36 30 123 4567</a></div><div><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:hello@mancsmuhely.example">hello@mancsmuhely.example</a></div></div><div class="mapbox"><div class="in"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><b>1145 Budapest, Példa utca 12.</b><div class="row"><button type="button" class="btn" data-map="1145 Budapest, Példa utca 12.">Térkép betöltése</button><a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=1145+Budapest,+Példa+utca+12." target="_blank" rel="noopener">Útvonaltervezés</a></div><small>A térképet a Google szolgáltatja. Csak a gombra kattintva tölt be, ekkor a Google sütiket használhat.</small></div></div></div></div>
   </div>
 </section>
 
 <div class="tray" data-tray><p data-tray-txt></p><a class="btn" href="#foglalas">Időpontot választok</a></div>
 </main>
 <div class="mbar"><p><b>2 000 Ft-tól</b><br><span class="muted">szabad időpontok azonnal</span></p><a class="btn" href="#foglalas">Időpontot foglalok</a></div>
-<footer>
+<footer class="kfoot">
+  <svg class="dd peek" viewBox="0 0 120 60" aria-hidden="true"><use href="#d-peek"/></svg>
   <div class="wrap">
-    <div><b>Mancs Műhely</b><br>1145 Budapest, Példa utca 12.</div>
-    <div>+36 30 123 4567<br><a href="mailto:hello@mancsmuhely.example">hello@mancsmuhely.example</a></div>
-    <div>Fotók: Wikimedia Commons (CC BY / CC BY-SA) – helykitöltő mintaképek<br>Weboldal-tervezet: <a href="https://hozdesigns.com">hozdesigns.com</a></div>
+    <div class="cols">
+      <div class="id"><p class="name">Mancs Műhely</p><p class="tagl">Kutyakozmetika Zuglóban, nyugodt tempóban.</p><a class="btn" href="#foglalas">Időpontot foglalok</a></div>
+      <div><h4>Nyitvatartás</h4><ul class="hrs"><li><span>Hétfő</span><span>9:00–17:00</span></li><li><span>Kedd</span><span>9:00–17:00</span></li><li><span>Szerda</span><span>9:00–17:00</span></li><li><span>Csütörtök</span><span>9:00–18:00</span></li><li><span>Péntek</span><span>9:00–17:00</span></li><li><span>Szombat</span><span>9:00–13:00</span></li><li><span>Vasárnap</span><span>zárva</span></li></ul></div>
+      <div><h4>Elérhetőség</h4><ul><li>1145 Budapest, Példa utca 12.</li><li><a href="tel:+36301234567">+36 30 123 4567</a></li><li><a href="mailto:hello@mancsmuhely.example">hello@mancsmuhely.example</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© Mancs Műhely</span><span>Fotók: Wikimedia Commons (CC BY / CC BY-SA) – helykitöltő mintaképek</span><span>Weboldal-tervezet: <a href="https://hozdesigns.com">hozdesigns.com</a></span></div>
   </div>
 </footer>
 <div class="lb" role="dialog" aria-modal="true" aria-label="Fotók" data-lbox>
@@ -401,6 +550,26 @@ footer b{color:var(--ink)}
   <button class="r" type="button" aria-label="Következő fotó">›</button>
   <p></p>
 </div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="d-bone" viewBox="0 0 48 48"><path class="dd-f" d="M15.770 21H32.230A5 5 0 1 1 39.2 24A5 5 0 1 1 32.230 27H15.770A5 5 0 1 1 8.8 24A5 5 0 1 1 15.770 21Z"/></symbol>
+<symbol id="d-bubbles" viewBox="0 0 48 48"><circle class="dd-w" cx="18" cy="28" r="11"/><circle class="dd-f" cx="35" cy="17" r="7"/><circle class="dd-w" cx="36" cy="36" r="4.5"/><path d="M12 25a7 7 0 0 1 5-4M31.5 14.500a4 4 0 0 1 3-1.5" fill="none"/></symbol>
+<symbol id="d-scissors" viewBox="0 0 48 48"><circle class="dd-f" cx="13" cy="14" r="6"/><circle class="dd-f" cx="13" cy="34" r="6"/><path class="dd-w" d="M18 17.500L41 31.5 43 36 18.5 21.500ZM18 30.500L41 16.5 43 12 18.5 26.500Z"/><circle class="dd-k" cx="24" cy="24" r="1.6"/></symbol>
+<symbol id="d-comb" viewBox="0 0 48 48"><rect class="dd-f" x="6" y="12" width="36" height="10" rx="4"/><path class="dd-w" d="M9 22h4v13a2 2 0 0 1-4 0zM16 22h4v13a2 2 0 0 1-4 0zM23 22h4v13a2 2 0 0 1-4 0zM30 22h4v13a2 2 0 0 1-4 0zM37 22h3v9a1.5 1.5 0 0 1-3 0z"/></symbol>
+<symbol id="d-tub" viewBox="0 0 48 48"><circle class="dd-w" cx="16" cy="17" r="5"/><circle class="dd-w" cx="25" cy="14" r="6"/><circle class="dd-w" cx="33" cy="18" r="4.5"/><path class="dd-f" d="M5 22h38v4a12 12 0 0 1-12 12H17A12 12 0 0 1 5 26z"/><path d="M14 38l-2 4M34 38l2 4" fill="none"/></symbol>
+<symbol id="d-dryer" viewBox="0 0 48 48"><path class="dd-w" d="M20 27h8l-1 14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/><path class="dd-f" d="M8 12a8 8 0 0 1 8-6h12a10 10 0 0 1 0 22H16a8 8 0 0 1-8-6z"/><circle class="dd-w" cx="28" cy="17" r="4.5"/><path d="M40 12l4-2M41 17h5M40 22l4 2" fill="none"/></symbol>
+<symbol id="d-bow" viewBox="0 0 48 48"><path class="dd-f" d="M22 24L8 14a2 2 0 0 0-3 2v16a2 2 0 0 0 3 2zM26 24l14-10a2 2 0 0 1 3 2v16a2 2 0 0 1-3 2z"/><rect class="dd-w" x="19.5" y="18.5" width="9" height="11" rx="3"/></symbol>
+<symbol id="d-ball" viewBox="0 0 48 48"><circle class="dd-f" cx="24" cy="24" r="15"/><path d="M11 17c8 2 12 8 11 21M37 31c-8-2-12-8-11-21" fill="none"/></symbol>
+<symbol id="d-bottle" viewBox="0 0 48 48"><rect class="dd-w" x="19" y="5" width="10" height="6" rx="1.5"/><path class="dd-f" d="M15 17a6 6 0 0 1 6-6h6a6 6 0 0 1 6 6v22a4 4 0 0 1-4 4H19a4 4 0 0 1-4-4z"/><rect class="dd-w" x="15" y="22" width="18" height="11"/><path d="M21 27.500h6" fill="none"/></symbol>
+<symbol id="d-tag" viewBox="0 0 48 48"><circle class="dd-w" cx="24" cy="9" r="4.5"/><path class="dd-f" d="M24 14l13 8v13a8 8 0 0 1-8 8H19a8 8 0 0 1-8-8V22z"/><circle class="dd-w" cx="24" cy="22" r="2.5"/><path d="M19 31h10M19 36h6" fill="none"/></symbol>
+<symbol id="d-heart" viewBox="0 0 48 48"><path class="dd-f" d="M24 40S7 30 7 18a8.5 8.5 0 0 1 17-2.500A8.5 8.5 0 0 1 41 18c0 12-17 22-17 22z"/><path d="M13 17a4 4 0 0 1 4-4" fill="none"/></symbol>
+<symbol id="d-treat" viewBox="0 0 48 48"><path class="dd-f" d="M10 16c3-6 9-8 14-5 5-3 11-1 14 5 3 7-1 16-14 23C11 32 7 23 10 16z"/><circle class="dd-k" cx="18" cy="19" r="1.4"/><circle class="dd-k" cx="30" cy="19" r="1.4"/><circle class="dd-k" cx="24" cy="27" r="1.4"/></symbol>
+<symbol id="d-star" viewBox="0 0 48 48"><path class="dd-f" d="M24 5c1.5 10 6 14.5 16 16-10 1.5-14.5 6-16 16-1.5-10-6-14.5-16-16 10-1.5 14.5-6 16-16z"/></symbol>
+<symbol id="d-clock" viewBox="0 0 48 48"><circle class="dd-f" cx="24" cy="25" r="15"/><circle class="dd-w" cx="24" cy="25" r="10.5"/><path d="M24 18v7l5 3M14 8l-5 4M34 8l5 4" fill="none"/></symbol>
+<symbol id="d-dogface" viewBox="0 0 48 48"><path class="dd-f" d="M11 12c-6 1-8 9-5 17 2 4 6 3 7-1zM37 12c6 1 8 9 5 17-2 4-6 3-7-1z"/><path class="dd-w" d="M11 22a13 13 0 0 1 26 0v6a13 13 0 0 1-26 0z"/><circle class="dd-k" cx="19" cy="23" r="1.8"/><circle class="dd-k" cx="29" cy="23" r="1.8"/><ellipse class="dd-k" cx="24" cy="29" rx="3" ry="2.2"/><path d="M24 31v3M20 35c2 2 6 2 8 0" fill="none"/></symbol>
+<symbol id="d-dog" viewBox="0 0 64 48"><path d="M11 24C6 21 4 15 6 9" fill="none"/><rect class="dd-w" x="13" y="29" width="6.5" height="15" rx="3.2"/><rect class="dd-w" x="33" y="29" width="6.5" height="15" rx="3.2"/><rect class="dd-w" x="9" y="19" width="34" height="15" rx="7.5"/><rect class="dd-w" x="48" y="14" width="13" height="9" rx="4.5"/><circle class="dd-w" cx="45" cy="16" r="9.5"/><ellipse class="dd-f" cx="40.5" cy="15" rx="4" ry="7.5" transform="rotate(18 40.5 15)"/><circle class="dd-k" cx="48.5" cy="14" r="1.5"/><ellipse class="dd-k" cx="60" cy="16.5" rx="1.8" ry="1.5"/></symbol>
+<symbol id="d-peek" viewBox="0 0 120 60"><path class="dd-f" d="M28 30c-12-2-20 6-20 22l14 6zM92 30c12-2 20 6 20 22l-14 6z"/><path class="dd-w" d="M26 60V40a34 34 0 0 1 68 0v20z"/><circle class="dd-k" cx="46" cy="38" r="3.4"/><circle class="dd-k" cx="74" cy="38" r="3.4"/><ellipse class="dd-k" cx="60" cy="50" rx="6.5" ry="4.5"/><path d="M40 29c3-3 8-3 11 0M69 29c3-3 8-3 11 0" fill="none"/></symbol>
+<symbol id="d-scribble" viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M3 13c30-9 60-9 92-4 34 5 66 3 102-5" fill="none" stroke-width="5"/></symbol>
+</defs></svg>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.500C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
@@ -432,7 +601,7 @@ footer b{color:var(--ink)}
 <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8zM9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
 </defs></svg>
 
-<script type="application/json" id="hzdata">{"sizes": [{"name": "Kistestű", "note": "10 kg-ig"}, {"name": "Közepes", "note": "10–25 kg"}, {"name": "Nagytestű", "note": "25–40 kg"}, {"name": "Óriás", "note": "40 kg felett"}], "cats": [{"cat": "Teljes kozmetika", "items": [{"name": "Fürdetés és szárítás", "desc": "Bőrbarát samponnal, kifésülve, fültisztítással", "min": [45, 60, 75, 90], "price": [6500, 8500, 11000, 14000], "id": "s0"}, {"name": "Fürdetés és gépi nyírás", "desc": "Fazonra vagy rövidre, a fajtának megfelelően", "min": [75, 90, 120, 150], "price": [9500, 12500, 16000, 21000], "id": "s1"}, {"name": "Fürdetés és ollós nyírás", "desc": "Kézzel formázott fazon, uszkároknak, bichonoknak", "min": [90, 120, 150, 180], "price": [12000, 15500, 19500, 25000], "from": true, "id": "s2"}, {"name": "Trimmelés", "desc": "Szálkás szőrű fajtáknak, kézzel", "min": [90, 120, 150, 150], "price": [13000, 16500, 21000, 21000], "from": true, "id": "s3"}]}, {"cat": "Kiegészítők", "items": [{"name": "Karomvágás", "min": 10, "price": 2000, "id": "s4"}, {"name": "Fogkőeltávolítás ultrahanggal", "desc": "Altatás nélkül, nyugodt kutyáknak", "min": 30, "price": 9000, "id": "s5"}, {"name": "Bontás, filcmentesítés", "desc": "Negyedóránként számolva", "min": 15, "price": 2500, "from": true, "id": "s6"}, {"name": "Kölyök első kozmetika", "desc": "5 hónapos korig, ismerkedős tempóban", "min": 45, "price": 6000, "id": "s7"}]}], "step": 30, "size0": 1, "demoDog": null, "demoBreed": null, "slug": "teszt-kutyakozmetika", "gal": [["d1", "Szamojéd fürdetés után"], ["d5", "Fekete uszkár nyírás után"], ["d9", "Kínai meztelenkutya fazonigazítás után"], ["d8", "Fehér bichon"], ["d2", "Munka közben"], ["d11", "Cocker spániel"], ["d4", "Szürke uszkár"]], "hours": [["9:00", "17:00"], ["9:00", "17:00"], ["9:00", "17:00"], ["9:00", "18:00"], ["9:00", "17:00"], ["9:00", "13:00"], null]}</script>
+<script type="application/json" id="hzdata">{"sizes": [{"name": "Kistestű", "note": "10 kg-ig"}, {"name": "Közepes", "note": "10–25 kg"}, {"name": "Nagytestű", "note": "25–40 kg"}, {"name": "Óriás", "note": "40 kg felett"}], "cats": [{"cat": "Teljes kozmetika", "items": [{"name": "Fürdetés és szárítás", "desc": "Bőrbarát samponnal, kifésülve, fültisztítással", "min": [45, 60, 75, 90], "price": [6500, 8500, 11000, 14000], "id": "s0"}, {"name": "Fürdetés és gépi nyírás", "desc": "Fazonra vagy rövidre, a fajtának megfelelően", "min": [75, 90, 120, 150], "price": [9500, 12500, 16000, 21000], "id": "s1"}, {"name": "Fürdetés és ollós nyírás", "desc": "Kézzel formázott fazon, uszkároknak, bichonoknak", "min": [90, 120, 150, 180], "price": [12000, 15500, 19500, 25000], "from": true, "id": "s2"}, {"name": "Trimmelés", "desc": "Szálkás szőrű fajtáknak, kézzel", "min": [90, 120, 150, 150], "price": [13000, 16500, 21000, 21000], "from": true, "id": "s3"}], "dd": "scissors"}, {"cat": "Kiegészítők", "items": [{"name": "Karomvágás", "min": 10, "price": 2000, "id": "s4"}, {"name": "Fogkőeltávolítás ultrahanggal", "desc": "Altatás nélkül, nyugodt kutyáknak", "min": 30, "price": 9000, "id": "s5"}, {"name": "Bontás, filcmentesítés", "desc": "Negyedóránként számolva", "min": 15, "price": 2500, "from": true, "id": "s6"}, {"name": "Kölyök első kozmetika", "desc": "5 hónapos korig, ismerkedős tempóban", "min": 45, "price": 6000, "id": "s7"}], "dd": "star"}], "step": 30, "size0": 1, "demoDog": null, "demoBreed": null, "slug": "teszt-kutyakozmetika", "gal": [["d1", "Szamojéd fürdetés után"], ["d5", "Fekete uszkár nyírás után"], ["d9", "Kínai meztelenkutya fazonigazítás után"], ["d8", "Fehér bichon"], ["d2", "Munka közben"], ["d11", "Cocker spániel"], ["d4", "Szürke uszkár"]], "hours": [["9:00", "17:00"], ["9:00", "17:00"], ["9:00", "17:00"], ["9:00", "18:00"], ["9:00", "17:00"], ["9:00", "13:00"], null]}</script>
 <script>/* közös segédek a szolgáltatós demókhoz (kutyakozmetika, esküvő, borászat) */
 var HZ = (function () {
   var D = JSON.parse(document.getElementById('hzdata').textContent);
@@ -534,12 +703,12 @@ var HZ = (function () {
   function drawSizes() {
     $$('[data-sizes]').forEach(function (el) {
       el.style.setProperty('--n', S.length);
-      el.innerHTML = S.map(function (s, i) { return '<button type="button" data-size="' + i + '" aria-pressed="' + (i === st.size) + '"><b>' + H.esc(s.name) + '</b><span>' + H.esc(s.note || '') + '</span></button>' }).join('');
+      el.innerHTML = S.map(function (s, i) { return '<button type="button" data-size="' + i + '" aria-pressed="' + (i === st.size) + '"><svg class="dd dg" viewBox="0 0 64 48" style="width:' + Math.round(34 + 46 * (S.length > 1 ? i / (S.length - 1) : .5)) + 'px" aria-hidden="true"><use href="#d-dog"/></svg><b>' + H.esc(s.name) + '</b><span>' + H.esc(s.note || '') + '</span></button>' }).join('');
     });
   }
   function drawList() {
     $('[data-pl]').innerHTML = D.cats.map(function (c) {
-      return '<div class="cat"><h3>' + H.esc(c.cat) + '</h3>' + c.items.map(function (it) {
+      return '<div class="cat"><h3><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-' + (c.dd || 'bone') + '"/></svg>' + H.esc(c.cat) + '</h3>' + c.items.map(function (it) {
         var on = st.picked.indexOf(it.id) >= 0, m = mins(it);
         return '<div class="row"><div><b>' + H.esc(it.name) + '</b>' + (it.desc ? '<small>' + H.esc(it.desc) + '</small>' : '') + '</div><div class="pr">' + ptxt(it) + (m ? '<span>kb. ' + H.dur(m) + '</span>' : '') + '</div>' +
           '<button type="button" class="add" data-add="' + it.id + '" aria-pressed="' + on + '" aria-label="' + H.esc(it.name) + (on ? ' – kivétel a foglalásból' : ' – hozzáadás a foglaláshoz') + '">' + H.ico(on ? 'check' : 'plus') + '</button></div>';
@@ -596,7 +765,9 @@ var HZ = (function () {
     else if ((b = e.target.closest('[data-day]')) && !b.disabled) { st.day = +b.getAttribute('data-day'); st.slot = null; drawDays(); drawSlots(); drawSum() }
     else if ((b = e.target.closest('[data-slot]')) && !b.disabled) { st.slot = +b.getAttribute('data-slot'); drawSlots(); drawSum() }
   });
-  $('[name=kutya]').addEventListener('input', drawSum);
+  var hello = $('[data-hello]'), hello0 = hello ? hello.textContent : '';
+  function greet() { var d = $('[name=kutya]').value.trim(); if (hello) hello.textContent = d ? 'Szia, ' + d + '! Mikor jössz?' : hello0 }
+  $('[name=kutya]').addEventListener('input', function () { drawSum(); greet() });
 
   var form = $('[data-form]'), hint = $('[data-hint]');
   form.addEventListener('submit', function (e) {
@@ -605,7 +776,7 @@ var HZ = (function () {
     if (st.day == null || st.slot == null) { hint.textContent = 'Válassz napot és időpontot.'; dayEls.scrollIntoView({ block: 'center' }); return }
     if (!H.check(form, hint)) return;
     var dog = $('[name=kutya]').value.trim();
-    $('[data-done-h]').textContent = 'Megvan, várjuk ' + dog + (/[aáeéiíoóöőuúüű]$/i.test(dog) ? 't' : '-t') + '! 🐾';
+    $('[data-done-h]').textContent = 'Megvan, várjuk ' + dog + (/[aáeéiíoóöőuúüű]$/i.test(dog) ? 't' : '-t') + '!';
     $('[data-done-p]').textContent = $('[data-s-when]').textContent + ' · ' + $('[data-s-what]').textContent + ' · ' + $('[data-s-total]').textContent;
     $$('[data-bookbody]').forEach(function (x) { x.hidden = true }); var dn = $('[data-done]'); dn.hidden = false; dn.focus(); drawSum();
     $('#foglalas').scrollIntoView({ block: 'start' });
@@ -627,7 +798,7 @@ var HZ = (function () {
     st.size = Math.min(1, S.length - 1); var ids = Object.keys(items); st.picked = ids.slice(0, Math.min(2, ids.length));
     $('[name=kutya]').value = D.demoDog || 'Mogyoró'; $('[name=fajta]').value = D.demoBreed || 'uszkár';
     for (var i = 1; i < 21; i++) { var f = slotsFor(H.addDays(today, i), Math.max(total().m, 30)).filter(function (s) { return s.free }); if (f.length > 2) { st.day = i; st.slot = f[1].m; break } }
-    redraw();
+    redraw(); greet();
   };
 })();
 </script>
