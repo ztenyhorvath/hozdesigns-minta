@@ -143,6 +143,7 @@ footer b{color:var(--ink)}
   .brand{font-size:18px}
 }
 .brand .mark{width:42px;height:42px;flex:none;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}.brand:hover .mark{transform:rotate(-12deg) scale(1.06)}
+.dot.off{background:#D64545;box-shadow:0 0 0 4px rgba(214,69,69,.18)}
 /* kutyakozmetika */
 :root{--rb:999px}
 .hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:56px;align-items:center;padding-top:28px;padding-bottom:72px}
@@ -738,10 +739,10 @@ var HZ = (function () {
     var h = D.hours; if (!h) return null; var n = new Date(), i = (n.getDay() + 6) % 7, t = h[i], m = n.getHours() * 60 + n.getMinutes();
     var row = $$('.hours tr')[i]; if (row) row.classList.add('now');
     if (t && m >= hm(t[0]) && m < hm(t[1])) return 'Most nyitva, ' + t[1] + '-ig';
-    for (var k = (t && m < hm(t[0])) ? 0 : 1; k < 8; k++) { var j = (i + k) % 7; if (h[j]) return (k === 0 ? 'Ma ' : k === 1 ? 'Holnap ' : DAY[(j + 1) % 7].replace(/^./, function (c) { return c.toUpperCase() }) + ' ') + h[j][0] + '-tól nyitva' }
+    for (var k = (t && m < hm(t[0])) ? 0 : 1; k < 8; k++) { var j = (i + k) % 7; if (h[j]) return 'Most zárva · ' + (k === 0 ? 'ma ' : k === 1 ? 'holnap ' : DAY[(j + 1) % 7] + ' ') + h[j][0] + '-tól nyitva' }
     return null;
   }
-  var st = openNow(); $$('[data-open]').forEach(function (e) { if (st) e.textContent = st; else e.hidden = true });
+  var st = openNow(); $$('[data-open]').forEach(function (e) { if (st) { e.textContent = st; var d = e.parentNode.querySelector('.dot'); if (d) d.classList.toggle('off', st.indexOf('Most nyitva') !== 0) } else e.hidden = true });
 
   /* térkép: külső beágyazás csak kattintásra (addig nincs Google-kérés) */
   document.addEventListener('click', function (e) {
