@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weboldal kávézóknak, éttermeknek, pékségeknek · hozdesigns</title>
+<meta name="description" content="Gyors, mobilra szabott weboldalak budapesti vendéglátóhelyeknek: napi menü, asztalfoglalás, előrendelés, Instagram-feed. 10 év tapasztalat.">
+<link rel="canonical" href="https://hozdesigns.com/vendeglatas/">
+<link rel="icon" type="image/png" href="/img/logo.png">
+<link rel="apple-touch-icon" href="/img/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Weboldal vendéglátóhelyeknek · hozdesigns">
+<meta property="og:description" content="Gyors, mobilra szabott weboldalak budapesti vendéglátóhelyeknek: napi menü, asztalfoglalás, előrendelés, Instagram-feed. 10 év tapasztalat.">
+<meta property="og:url" content="https://hozdesigns.com/vendeglatas/">
+<meta property="og:image" content="https://hozdesigns.com/img/og.jpg">
+<meta name="theme-color" content="#121212">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F3F1EC}
+a{color:#121212}a:hover{color:#5A5248}
+.pkg{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s,outline-color .4s;outline:2px solid transparent;outline-offset:6px}
+.pkg:hover,.pkg:focus-within{transform:translateY(-12px);box-shadow:0 32px 64px rgba(18,18,18,.22);outline-color:#C9A46A}
+.pkg .cta{opacity:0;transform:translateY(10px);transition:opacity .35s,transform .35s}
+.pkg:hover .cta,.pkg:focus-within .cta{opacity:1;transform:none}
+.zoomimg{transition:transform .8s cubic-bezier(.2,.7,.2,1)}.zoomwrap:hover .zoomimg{transform:scale(1.07)}
+.lift{transition:transform .3s cubic-bezier(.2,.7,.2,1)}.lift:hover{transform:translateY(-4px)}
+.stat{transition:background .35s}.stat:hover{background:#1C1A18}
+.stat .num{display:inline-block;transition:transform .45s cubic-bezier(.2,.7,.2,1)}.stat:hover .num{transform:translateX(8px)}@media (max-width:640px){
+[style*="padding: 72px 24px"],[style*="padding: 72px 24px"],[style*="padding: 64px 24px"],[style*="padding: 72px 24px"]{padding-top:56px !important;padding-bottom:56px !important;padding-left:20px !important;padding-right:20px !important}
+[style*="padding: 40px 24px 64px"]{padding:28px 20px 48px !important}
+[style*="padding: 16px 24px 56px"],[style*="padding: 16px 24px 56px"],[style*="padding: 16px 24px 56px"]{padding:12px 20px 48px !important}
+[style*="gap: 56px"],[style*="gap: 48px"]{gap:28px !important}
+[style*="gap: 40px"]{gap:24px !important}
+[style*="gap: 32px"],[style*="gap: 28px"]{gap:20px !important}
+[style*="padding: 48px"]{padding:24px !important}
+[style*="padding: 40px 36px"],[style*="padding: 36px"]{padding:24px !important}
+[style*="padding: 32px"]{padding:20px !important}
+[style*="grid-column: span 2"]{grid-column:auto !important}
+[style*="minmax(220px, 1fr)"]{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+[style*="min-height: 560px"],[style*="min-height: 440px"]{min-height:0 !important;height:280px !important}
+[style*="minmax(200px, 1fr)"]{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:4px !important}
+[style*="aspect-ratio: 4 / 5"]{aspect-ratio:1 / 1 !important}
+.grid3m{grid-template-columns:minmax(0,1fr) !important}
+.grid3m [style*="aspect-ratio: 4 / 5"]{aspect-ratio:4 / 3 !important}
+.grid4m{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.navlink{display:none !important}
+.pkg .cta{opacity:1 !important;transform:none !important}
+.hidem{display:none !important}
+.stat{border-right:0 !important;border-bottom:1px solid #2E2B27}
+}
+@media (hover:none){.pkg .cta{opacity:1 !important;transform:none !important}}
+</style>
+<style>html{scroll-behavior:smooth}img{max-width:100%}</style>
+<style>
+.case{display:flex;flex-direction:column;gap:32px}
+.case-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px}
+.case-title{margin:0;font-family:'Geist',sans-serif;font-weight:700;letter-spacing:-0.06em;font-size:clamp(72px,13vw,200px);line-height:.82}
+.case-shots{display:grid;grid-template-columns:minmax(0,3.2fr) minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:end}
+.case-shots img{display:block;width:100%;height:auto}
+.case-desk{display:block;overflow:hidden;border-radius:14px;border:1px solid #2E2B27;background:#fff}
+.case-phone{overflow:hidden;border-radius:26px;border:6px solid #2E2B27;background:#fff}
+.case-facts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #2E2B27}
+.case-facts li{padding:20px 20px 0 0;display:flex;flex-direction:column;gap:6px}
+.case-facts b{font-family:'Geist',sans-serif;font-size:20px;font-weight:600;letter-spacing:-.02em}
+.case-facts span{font-size:15px;line-height:1.5;color:#BDB6AA}
+.case-sm{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;padding-top:40px;border-top:1px solid #2E2B27}
+@media (max-width:900px){.case-shots{grid-template-columns:repeat(2,minmax(0,1fr))}.case-desk{grid-column:1 / -1}.case-facts{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:8px}}
+@media (max-width:640px){.case-phone{border-width:4px;border-radius:20px}.case-facts{grid-template-columns:minmax(0,1fr)}.case-facts li{padding-top:16px}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="dc-template">
+<div style="font-family: 'Geist', sans-serif; color: #121212; background: #F3F1EC; min-height: 100vh">
+
+<header style="max-width: 1240px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<div style="display: flex; align-items: center; gap: 14px">
+<a href="/" aria-label="hozdesigns – főoldal" style="display: flex; align-items: center; text-decoration: none">
+<img src="/img/logo.png" alt="H designs logó" style="width: 48px; height: 48px; display: block"></a>
+<span style="font-size: 15px; color: #5A5248"><a href="/" style="color: #5A5248; text-decoration: none">Főoldal</a> / <b style="color: #121212; font-weight: 600">Vendéglátás</b></span>
+</div>
+<nav aria-label="Fő menü" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-weight: 500; font-size: 15px">
+<a class="navlink" href="#munkak" style="padding: 12px 14px; text-decoration: none">Munkák</a>
+<a class="navlink" href="#sablonok" style="padding: 12px 14px; text-decoration: none">Sablonok</a>
+<a class="navlink" href="#csomagok" style="padding: 12px 14px; text-decoration: none">Csomagok</a>
+<a href="#kapcsolat" style="padding: 12px 20px; text-decoration: none; background: #121212; color: #F3F1EC; border-radius: 999px; font-weight: 600">Ajánlatot kérek</a>
+</nav>
+</header>
+
+<section id="top" style="max-width: 1240px; margin: 0 auto; padding: 40px 24px 64px; display: flex; flex-direction: column; gap: 28px">
+<p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5A5248">Webdizájn éttermeknek, kávézóknak, pékségeknek · Budapest</p>
+<h1 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.03em; font-size: clamp(44px, 6.4vw, 96px); line-height: 0.98; letter-spacing: -0.035em; max-width: 1120px">Weboldal, ami asztalt foglal, <span style="color: {{accentText}}">süteményt</span> mutat és vendéget hoz.</h1>
+<div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-end; justify-content: space-between">
+<p style="margin: 0; font-size: 19px; line-height: 1.6; max-width: 560px">10 éve dolgozom az e-commerce és a webdizájn világában. Abban szeretnék segíteni a magyar kisvállalkozásoknak, hogy online is olyan színvonalon jelenjenek meg, amilyet megérdemelnek – mert egy jó weboldal mindig többet mond el Rólatok, mint egy Facebook-oldal.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#sablonok" style="padding: 16px 28px; background: #121212; color: #F3F1EC; text-decoration: none; border-radius: 999px; font-weight: 600">Sablonok megtekintése</a>
+<a href="#munkak" style="padding: 16px 28px; border: 1.5px solid #121212; text-decoration: none; border-radius: 999px; font-weight: 600">Munkáim</a>
+</div>
+</div>
+<div style="margin-top: 32px; background: #121212; color: #F3F1EC; border-radius: 28px; overflow: hidden">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))">
+<div class="stat" style="padding: 40px 36px; display: flex; flex-direction: column; gap: 14px; border-right: 1px solid #2E2B27">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #9C958A">Tapasztalat</span>
+<span class="num" style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: clamp(72px, 8vw, 120px); letter-spacing: -0.06em; line-height: 0.85">10<span style="font-size: 0.32em; letter-spacing: -0.02em; margin-left: 6px; color: {{accent}}">év</span></span>
+<span style="font-size: 15px; color: #DCD6CB">webdizájnban, most vendéglátásra szabva</span>
+</div>
+<div class="stat" style="padding: 40px 36px; display: flex; flex-direction: column; gap: 14px; border-right: 1px solid #2E2B27">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #9C958A">Átfutás</span>
+<span class="num" style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: clamp(72px, 8vw, 120px); letter-spacing: -0.06em; line-height: 0.85">1–3<span style="font-size: 0.32em; letter-spacing: -0.02em; margin-left: 6px; color: {{accent}}">hét</span></span>
+<span style="font-size: 15px; color: #DCD6CB">az első egyeztetéstől az élesítésig</span>
+</div>
+<div class="stat" style="padding: 40px 36px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #9C958A">Gondozás</span>
+<span class="num" style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: clamp(72px, 8vw, 120px); letter-spacing: -0.06em; line-height: 0.85">2<span style="font-size: 0.32em; letter-spacing: -0.02em; margin-left: 6px; color: {{accent}}">óra/hó</span></span>
+<span style="font-size: 15px; color: #DCD6CB">frissítés és módosítás, minden hónapban</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="munkak" style="background: #121212; color: #F3F1EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+<h2 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.03em; font-size: clamp(40px, 5vw, 64px)">Munkák</h2>
+<p class="hidem" style="margin: 0; font-size: 15px; color: #BDB6AA">Élő oldalak, valódi ügyfelek</p>
+</div>
+
+<article class="case">
+<div class="case-head">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: {{accent}}">Case study · 01 · Kávéház, Budapest XVI.</span>
+<h3 class="case-title">Csáklit</h3>
+</div>
+<a class="lift" href="https://csaklitkavehaz.hu" target="_blank" rel="noopener" style="padding: 18px 30px; background: #F3F1EC; color: #121212; text-decoration: none; border-radius: 999px; font-weight: 600; font-size: 16px">csaklitkavehaz.hu megnyitása ↗</a>
+</div>
+<div class="case-shots">
+<a class="case-desk zoomwrap" href="https://csaklitkavehaz.hu" target="_blank" rel="noopener" aria-label="A Csáklit Kávéház főoldala"><img class="zoomimg" src="/img/hz-case-csaklit-d.webp?v=2" alt="A Csáklit Kávéház weboldalának főoldala: reggeli minden nap 15 óráig, a mai heti menüvel" width="1600" height="1000" loading="lazy"></a>
+<div class="case-phone"><img src="/img/hz-case-csaklit-m.webp?v=2" alt="A főoldal telefonon" width="780" height="1688" loading="lazy"></div>
+<div class="case-phone"><img src="/img/hz-case-csaklit-m2.webp?v=2" alt="A heti menü telefonon, a mai nap kiemelve" width="780" height="1688" loading="lazy"></div>
+</div>
+<ul class="case-facts">
+<li><b>9 aloldal</b><span>étlap, cukrászda, rendezvények, galéria</span></li>
+<li><b>Online asztalfoglalás</b><span>a foglalás azonnal e-mailben érkezik</span></li>
+<li><b>Heti menü táblázatból</b><span>a kávéház maga frissíti, kód nélkül</span></li>
+<li><b>Torta- és rendezvényrendelés</b><span>külön űrlap a cukrászdának</span></li>
+</ul>
+</article>
+
+<article class="case-sm">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #BDB6AA">Case study · 02 · Első értékesített oldal</span>
+<h3 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 700; letter-spacing: -0.05em; font-size: clamp(44px, 7vw, 96px); line-height: 0.9">Teoflora</h3>
+</div>
+<a class="lift" href="https://teoflora.hu" target="_blank" rel="noopener" style="padding: 16px 26px; border: 1.5px solid #F3F1EC; color: #F3F1EC; text-decoration: none; border-radius: 999px; font-weight: 600; font-size: 15px">teoflora.hu megnyitása ↗</a>
+</article>
+</div>
+</section>
+
+<section id="sablonok" style="max-width: 1240px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 760px">
+<h2 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.03em; font-size: clamp(40px, 5vw, 64px)">Sablonok, upgrade funkciókkal</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A453E">Minden sablon a te helyed fotóival, színeivel és szövegeivel készül el. Válaszd ki a helytípust, és nézd meg, mit tud.</p>
+</div>
+<div role="tablist" aria-label="Sablon típusa" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="4">
+<button type="button" role="tab" aria-selected="{{t.selected}}" onClick="{{t.pick}}" style="{{t.style}}">{{t.label}}</button>
+</sc-for>
+</div>
+
+<sc-if value="{{isPek}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+<div style="flex: 999 1 640px; min-width: 0; border-radius: 16px; overflow: hidden; border: 1px solid #CFC9BE; background: #FBFAF7">
+<div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #E8E4DC">
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #B8B1A5"></span>
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #B8B1A5"></span>
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #B8B1A5"></span>
+<span style="margin-left: 12px; font-size: 13px; color: #4A453E">pekseged.hu · minta</span>
+</div>
+<div style="padding: 32px; display: flex; flex-direction: column; gap: 24px">
+<div class="zoomwrap" style="border-radius: 12px; overflow: hidden; height: 240px"><img class="zoomimg" src="/img/hz-hero_bakery.webp" alt="Fotó: reggeli pékség pult kenyerekkel" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px">
+<h3 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.03em; font-size: 36px">Különleges sütemények</h3>
+<span style="font-size: 14px; color: #4A453E">Heti kollekció · előrendelhető</span>
+</div>
+<div class="grid3m" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{cakes}}" as="c" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div class="zoomwrap" style="aspect-ratio: 4 / 5; border-radius: 10px; overflow: hidden"><img class="zoomimg" src="{{c.img}}" alt="Fotó: {{c.name}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="display: flex; justify-content: space-between; gap: 8px; align-items: baseline">
+<span style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: 21px; font-weight: 600">{{c.name}}</span>
+<span style="font-size: 14px; font-weight: 600; white-space: nowrap">{{c.price}}</span>
+</div>
+<span style="font-size: 14px; line-height: 1.5; color: #4A453E">{{c.desc}}</span>
+</div>
+</sc-for>
+</div>
+<div class="grid4m" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+<div class="zoomwrap" style="aspect-ratio: 1; border-radius: 8px; overflow: hidden"><img class="zoomimg" src="/img/hz-mood_dough.webp" alt="Fotó: pékség hangulatkép" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div class="zoomwrap" style="aspect-ratio: 1; border-radius: 8px; overflow: hidden"><img class="zoomimg" src="/img/hz-mood_shelf.webp" alt="Fotó: pékség hangulatkép" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div class="zoomwrap" style="aspect-ratio: 1; border-radius: 8px; overflow: hidden"><img class="zoomimg" src="/img/hz-mood_coffee.webp" alt="Fotó: pékség hangulatkép" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div class="zoomwrap" style="aspect-ratio: 1; border-radius: 8px; overflow: hidden"><img class="zoomimg" src="/img/hz-mood_shop.webp" alt="Fotó: pékség hangulatkép" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+</div>
+</div>
+</div>
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.03em; font-size: 32px">Pékség sablon</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A453E">A sütemények úgy jelennek meg, ahogy a pultban: nagy, közeli fotókon, rövid leírással.</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 16px">
+<li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">„Mi sül ma?” heti sütési rend</li>
+<li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Előrendelés kosárral, átvételi idősávval</li>
+<li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">„Elfogyott” jelzés telefonról</li>
+<li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Élő nyitvatartás és térkép</li>
+</ul>
+<a class="lift" href="/pekseg/" style="align-self: flex-start; padding: 16px 26px; background: #121212; color: #F3F1EC; text-decoration: none; border-radius: 999px; font-weight: 600">Élő demó megnyitása →</a>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isEtterem}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+<div style="flex: 999 1 640px; min-width: 0; border-radius: 16px; overflow: hidden; border: 1px solid #CFC9BE; background: #FBFAF7">
+<div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #E8E4DC">
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #B8B1A5"></span>
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #B8B1A5"></span>
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #B8B1A5"></span>
+<span style="margin-left: 12px; font-size: 13px; color: #4A453E">etterem.hu/foglalas · minta</span>
+</div>
+<div style="padding: 32px; display: flex; flex-direction: column; gap: 22px">
+<div class="zoomwrap" style="position: relative; border-radius: 14px; overflow: hidden; height: 240px; display: flex; align-items: flex-end">
+<img class="zoomimg" src="/img/hz-rest_main.webp" alt="Fotó: kacsamell a heti menüről" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+<div style="position: relative; margin: 14px; padding: 14px 18px; border-radius: 12px; background: #121212; color: #F3F1EC; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: {{accent}}">Ezen a héten</span>
+<span style="font-size: 18px; font-weight: 600">Kacsamell, vörösboros meggyel</span>
+<span style="font-size: 14px; color: #DCD6CB">Péntekre és szombatra fogynak először az asztalok.</span>
+</div>
+</div>
+<h3 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.03em; font-size: 36px">Asztalfoglalás</h3>
+<sc-if value="{{notBooked}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px">
+<legend style="font-size: 14px; font-weight: 700; padding: 0; margin-bottom: 10px">Nap</legend>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{days}}" as="d" hint-placeholder-count="4">
+<button type="button" aria-pressed="{{d.selected}}" onClick="{{d.pick}}" style="{{d.style}}">{{d.label}}</button>
+</sc-for>
+</div>
+</fieldset>
+<fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px">
+<legend style="font-size: 14px; font-weight: 700; padding: 0; margin-bottom: 10px">Időpont</legend>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{slots}}" as="s" hint-placeholder-count="6">
+<button type="button" aria-pressed="{{s.selected}}" onClick="{{s.pick}}" style="{{s.style}}">{{s.label}}</button>
+</sc-for>
+</div>
+</fieldset>
+<div style="display: flex; align-items: center; gap: 16px">
+<span style="font-size: 14px; font-weight: 700">Fő</span>
+<button type="button" aria-label="Kevesebb fő" onClick="{{minus}}" style="width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid #121212; background: transparent; font-size: 20px; cursor: pointer">−</button>
+<span aria-live="polite" style="font-size: 22px; font-weight: 600; min-width: 24px; text-align: center">{{persons}}</span>
+<button type="button" aria-label="Több fő" onClick="{{plus}}" style="width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid #121212; background: transparent; font-size: 20px; cursor: pointer">+</button>
+</div>
+<button type="button" onClick="{{book}}" style="padding: 16px; border: 0; border-radius: 999px; background: #121212; color: #F3F1EC; font-size: 16px; font-weight: 600; cursor: pointer; font-family: inherit">Foglalás: {{summary}}</button>
+</div>
+</sc-if>
+<sc-if value="{{booked}}" hint-placeholder-val="{{ false }}">
+<div role="status" style="display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 12px; background: #ECE7DE">
+<span style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: 30px">Várunk szeretettel!</span>
+<span style="font-size: 16px">Asztal lefoglalva: {{summary}}. A visszaigazolást e-mailben és SMS-ben küldjük; a tulajdonos azonnal értesítést kap.</span>
+<button type="button" onClick="{{reset}}" style="align-self: flex-start; padding: 12px 20px; border: 1.5px solid #121212; background: transparent; border-radius: 999px; font-weight: 600; cursor: pointer; font-family: inherit">Új foglalás</button>
+</div>
+</sc-if>
+</div>
+</div>
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.03em; font-size: 32px">Étterem sablon</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A453E">Próbáld ki: a foglaló itt is működik. A vendég 3 kattintással foglal, telefon nélkül.</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 16px">
+<li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Online asztalfoglalás, szabad időpontokkal</li>
+<li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Visszaigazolás e-mailben</li>
+<li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Étlap és napi menü, magyarul és angolul</li>
+<li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Rendezvény- és különterem-ajánlatkérő</li>
+<li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Interaktív térkép útvonaltervezéssel</li>
+</ul>
+<a class="lift" href="/etterem/" style="align-self: flex-start; padding: 16px 26px; background: #121212; color: #F3F1EC; text-decoration: none; border-radius: 999px; font-weight: 600">Élő demó megnyitása →</a>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isKave}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+<div style="flex: 999 1 640px; min-width: 0; border-radius: 16px; overflow: hidden; border: 1px solid #CFC9BE; background: #FBFAF7">
+<div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #E8E4DC">
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #B8B1A5"></span>
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #B8B1A5"></span>
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #B8B1A5"></span>
+<span style="margin-left: 12px; font-size: 13px; color: #4A453E">kavezo.hu · minta</span>
+</div>
+<div style="padding: 32px; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px">
+<div style="display: flex; align-items: center; gap: 12px">
+<span aria-hidden="true" style="width: 44px; height: 44px; border-radius: 50%; background: #121212"></span>
+<div style="display: flex; flex-direction: column">
+<span style="font-weight: 700">@kavezod</span>
+<span style="font-size: 13px; color: #4A453E">Instagram · automatikusan frissül</span>
+</div>
+</div>
+<a href="https://instagram.com" style="padding: 12px 20px; background: #121212; color: #F3F1EC; text-decoration: none; border-radius: 999px; font-size: 14px; font-weight: 600">Követés</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
+<sc-for list="{{posts}}" as="p" hint-placeholder-count="6">
+<div class="zoomwrap" style="aspect-ratio: 1; border-radius: 6px; overflow: hidden"><img class="zoomimg" src="{{p.img}}" alt="Instagram-poszt: {{p.label}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #CFC9BE; padding-top: 18px">
+<span style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: 28px">Brunch, egész nap</span>
+<div style="display: flex; justify-content: space-between; font-size: 15px"><span>Eggs Benedict, házi brióssal</span><span style="font-weight: 600">3 490 Ft</span></div>
+<div style="display: flex; justify-content: space-between; font-size: 15px"><span>Pisztáciás croissant + flat white</span><span style="font-weight: 600">2 490 Ft</span></div>
+</div>
+</div>
+</div>
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.03em; font-size: 32px">Kávézó & brunch sablon</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A453E">Az Instagram-fiók posztjai maguktól megjelennek az oldalon – nem kell kétszer feltölteni.</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 16px">
+<li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Instagram-feed bekötés</li>
+<li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Kétnyelvű étlap vega-szűrővel</li>
+<li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">„Most nyitva” jelzés, magától frissül</li>
+<li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Google-értékelések blokk</li>
+<li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Térkép és útvonal egy gombbal</li>
+</ul>
+<a class="lift" href="/kavezo/" style="align-self: flex-start; padding: 16px 26px; background: #121212; color: #F3F1EC; text-decoration: none; border-radius: 999px; font-weight: 600">Élő demó megnyitása →</a>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{isEgyeb}}" hint-placeholder-val="{{ false }}">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 48px 40px; align-items: start">
+<article style="display: flex; flex-direction: column; gap: 22px; min-width: 0">
+<a class="lift" href="/minta/teszt-kutyakozmetika/" aria-label="Kutyakozmetika sablon – élő demó" style="display: block; border-radius: 16px; overflow: hidden; border: 1px solid #CFC9BE; background: #FBFAF7; text-decoration: none; color: inherit">
+<div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #E8E4DC">
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #B8B1A5"></span>
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #B8B1A5"></span>
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #B8B1A5"></span>
+<span style="margin-left: 12px; font-size: 13px; color: #4A453E">kutyakozmetika.hu · minta</span>
+</div>
+<div class="zoomwrap" style="aspect-ratio: 1400 / 950; overflow: hidden"><img class="zoomimg" src="/minta/teszt-kutyakozmetika/elozetes/tkutya-1-nyitooldal.jpg" alt="A kutyakozmetika-sablon nyitóoldala" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center bottom; display: block"></div>
+</a>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.03em; font-size: 32px">Kutyakozmetika sablon</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A453E">A gazdi két perc alatt lát árat és foglal időpontot – nyírás közben nem kell a telefont felvenni.</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 16px"><li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Méret szerinti árlista, összeállítható kezelés</li><li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Online időpontfoglalás, emlékeztetővel</li><li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Előtte–utána csúszka a munkákról</li><li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Élő nyitvatartás, egy gombnyomásos hívás</li></ul>
+<a class="lift" href="/minta/teszt-kutyakozmetika/" style="align-self: flex-start; padding: 16px 26px; background: #121212; color: #F3F1EC; text-decoration: none; border-radius: 999px; font-weight: 600">Élő demó megnyitása →</a>
+</div>
+</article>
+<article style="display: flex; flex-direction: column; gap: 22px; min-width: 0">
+<a class="lift" href="/minta/teszt-boraszat/" aria-label="Borászat sablon – élő demó" style="display: block; border-radius: 16px; overflow: hidden; border: 1px solid #CFC9BE; background: #FBFAF7; text-decoration: none; color: inherit">
+<div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #E8E4DC">
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #B8B1A5"></span>
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #B8B1A5"></span>
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #B8B1A5"></span>
+<span style="margin-left: 12px; font-size: 13px; color: #4A453E">pinceszet.hu · minta</span>
+</div>
+<div class="zoomwrap" style="aspect-ratio: 1400 / 950; overflow: hidden"><img class="zoomimg" src="/minta/teszt-boraszat/elozetes/tbor-1-nyitooldal.jpg" alt="A borászat-sablon nyitóoldala" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center bottom; display: block"></div>
+</a>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.03em; font-size: 32px">Borászat sablon</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A453E">Erős márkamegjelenés a pince történetével, a borok pedig rögtön meg is rendelhetők.</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 16px"><li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Webshop kosárral és rendeléssel</li><li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Borlap fajta szerint szűrve</li><li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Kóstolófoglalás naptárral</li><li style="padding-bottom: 12px; border-bottom: 1px solid #CFC9BE">Történetünk aloldal a családról és a dűlőkről</li></ul>
+<a class="lift" href="/minta/teszt-boraszat/" style="align-self: flex-start; padding: 16px 26px; background: #121212; color: #F3F1EC; text-decoration: none; border-radius: 999px; font-weight: 600">Élő demó megnyitása →</a>
+</div>
+</article>
+</div>
+</sc-if>
+</section>
+
+<section id="csomagok" style="background: #E9E5DD">
+<div style="max-width: 1240px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.03em; font-size: clamp(40px, 5vw, 64px)">Csomagok</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<div class="pkg" style="background: #FBFAF7; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5A5248">Egyszerűbb oldal</span>
+<span style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: 52px; font-weight: 500; line-height: 1">300 000 Ft</span>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A453E">Pékségnek, kávézónak, étkezdének.</p>
+<ul style="margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.9">
+<li>Bemutatkozás, nyitvatartás, térkép</li>
+<li>Napi menü vagy kínálat</li>
+<li>Fotógaléria, Facebook/Instagram link</li>
+<li>Mobilra szabva</li>
+</ul>
+<a class="cta" href="#kapcsolat" style="margin-top: auto; padding: 14px 22px; background: #121212; color: #F3F1EC; text-decoration: none; border-radius: 999px; font-weight: 600; text-align: center">Ezt kérem →</a>
+</div>
+<div class="pkg" style="background: #121212; color: #F3F1EC; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: {{accent}}">Bonyolultabb oldal</span>
+<span style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: 52px; font-weight: 500; line-height: 1">500 000 Ft</span>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #DCD6CB">Étteremnek, brunch helynek, cukrászdának.</p>
+<ul style="margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.9">
+<li>Minden az egyszerűbb oldalból</li>
+<li>Asztalfoglalás vagy előrendelés</li>
+<li>Instagram-feed bekötés</li>
+<li>Kétnyelvű oldal, több aloldal</li>
+</ul>
+<a class="cta" href="#kapcsolat" style="margin-top: auto; padding: 14px 22px; background: #F3F1EC; color: #121212; text-decoration: none; border-radius: 999px; font-weight: 600; text-align: center">Ezt kérem →</a>
+</div>
+<div class="pkg" style="background: #FBFAF7; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5A5248">Havi 2 óra</span>
+<span style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: 52px; font-weight: 500; line-height: 1">20 000 Ft<span style="font-size: 24px"> / hó</span></span>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A453E">2 óra munkát fizetsz – az üzemeltetés ingyen jár mellé.</p>
+<ul style="margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.9">
+<li>Módosítás, átalakítás, új fotók</li>
+<li>Karbantartás és készenlét</li>
+<li>Domain, tárhely, frissítések: ingyen</li>
+</ul>
+<a class="cta" href="#kapcsolat" style="margin-top: auto; padding: 14px 22px; background: #121212; color: #F3F1EC; text-decoration: none; border-radius: 999px; font-weight: 600; text-align: center">Erről kérdeznék →</a>
+</div>
+</div>
+<p style="margin: 0; font-size: 14px; color: #4A453E">Alanyi adómentes vagyok, a feltüntetett árak végösszegek, áfát nem számolok fel.</p>
+</div>
+</section>
+
+<section id="folyamat" style="max-width: 1240px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 720px">
+<h2 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.03em; font-size: clamp(40px, 5vw, 64px); line-height: 1">Így dolgozunk</h2>
+</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A453E; max-width: 440px">Három lépés az első beszélgetéstől a kulcsrakész weboldalig – és utána sem hagyunk magadra.</p>
+</div>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<li class="pkg" style="background: #FBFAF7; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: 64px; letter-spacing: -0.05em; line-height: 1; color: #121212">01</span>
+<span style="font-size: 13px; font-weight: 600; padding: 8px 14px; border-radius: 999px; border: 1px solid #CFC9BE">Személyesen vagy online</span>
+</div>
+<h3 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.02em; font-size: 26px">Egyeztetés</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A453E">Mi az elképzelésed? Mesélj a helyedről, a hangulatáról és a vendégeidről – bármi is legyen, mi megvalósítjuk.</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A453E; padding-top: 16px; border-top: 1px solid #E2DDD3">Egy saját weboldal mindig többet mond el Rólatok, mint egy Facebook-oldal, ahol az étlap valahol a fotók között vész el.</p>
+</li>
+<li class="pkg" style="background: #FBFAF7; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: 64px; letter-spacing: -0.05em; line-height: 1; color: #121212">02</span>
+<span style="font-size: 13px; font-weight: 600; padding: 8px 14px; border-radius: 999px; border: 1px solid #CFC9BE">Tervezés</span>
+</div>
+<h3 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.02em; font-size: 26px">Draftok és finomhangolás</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A453E">Elkészítjük az első terveket, közösen átbeszéljük őket, és addig csiszoljuk, amíg minden szöveg, kép és funkció a helyére nem kerül.</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A453E; padding-top: 16px; border-top: 1px solid #E2DDD3">A végeredmény: kulcsrakész oldal, amivel neked már nincs teendőd.</p>
+</li>
+<li class="pkg" style="background: #121212; color: #F3F1EC; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: 64px; letter-spacing: -0.05em; line-height: 1; color: {{accent}}">03</span>
+<span style="font-size: 13px; font-weight: 600; padding: 8px 14px; border-radius: 999px; border: 1px solid #3A3631">20 000 Ft / hó</span>
+</div>
+<h3 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.02em; font-size: 26px">Élesítés és üzemeltetés</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #DCD6CB">Bekötjük a domaint, és onnantól mi üzemeltetjük az oldalt.</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #DCD6CB; padding-top: 16px; border-top: 1px solid #3A3631">A havidíjért cserébe minden hónapban 2 órát dolgozunk neked: frissítések, módosítások, új fotók, szezonális étlap.</p>
+</li>
+</ol>
+</section>
+
+<section id="kapcsolat" style="background: #121212; color: #F3F1EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; gap: 56px">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<img src="/img/logo.png" alt="" style="width: 96px; height: 96px; display: block; border: 1px solid #3A3631; border-radius: 50%">
+<h2 style="margin: 0; font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.03em; font-size: clamp(40px, 5vw, 64px); line-height: 1">Kérj ajánlatot.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #DCD6CB">24 órán belül válaszolok.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.8"><a href="mailto:hozdesigns@gmail.com" style="color: #F3F1EC">hozdesigns@gmail.com</a><br><a href="tel:+36204047942" style="color: #F3F1EC">+36 20 404 7942</a></p>
+</div>
+<div style="flex: 1 1 420px; min-width: 0">
+<sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
+<div role="status" style="padding: 28px; border: 1px solid #3A3631; border-radius: 16px; font-size: 18px">Köszönöm! Megkaptam az üzeneted, 24 órán belül jelentkezem.</div>
+</sc-if>
+<sc-if value="{{notSent}}" hint-placeholder-val="{{ true }}">
+<form action="https://api.web3forms.com/submit" method="POST" onSubmit="{{send}}" style="display: flex; flex-direction: column; gap: 16px">
+<input type="hidden" name="access_key" value="f4cf77f1-a974-4df2-9064-e5f9f8ac3ad1">
+<input type="hidden" name="subject" value="Új ajánlatkérés – hozdesigns.com">
+<input type="hidden" name="from_name" value="hozdesigns.com">
+<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Neved
+<input type="text" name="name" autocomplete="name" required="required" style="padding: 14px; font-size: 16px; border: 1px solid #5A554D; border-radius: 10px; background: #1E1C1A; color: #F3F1EC; font-family: inherit">
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">A hely neve
+<input type="text" name="hely" required="required" style="padding: 14px; font-size: 16px; border: 1px solid #5A554D; border-radius: 10px; background: #1E1C1A; color: #F3F1EC; font-family: inherit">
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">E-mail
+<input type="email" name="email" autocomplete="email" required="required" style="padding: 14px; font-size: 16px; border: 1px solid #5A554D; border-radius: 10px; background: #1E1C1A; color: #F3F1EC; font-family: inherit">
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Mit szeretnél?
+<textarea name="message" rows="4" style="padding: 14px; font-size: 16px; border: 1px solid #5A554D; border-radius: 10px; background: #1E1C1A; color: #F3F1EC; font-family: inherit; resize: vertical"></textarea>
+</label>
+<button type="submit" style="padding: 16px; border: 0; border-radius: 999px; background: #F3F1EC; color: #121212; font-size: 16px; font-weight: 700; cursor: pointer; font-family: inherit">{{btnLabel}}</button>
+<sc-if value="{{failed}}" hint-placeholder-val="{{ false }}"><p role="alert" style="margin: 0; font-size: 15px; color: #F0B9A6">Most nem sikerült elküldeni. Írj közvetlenül: <a href="mailto:hozdesigns@gmail.com" style="color: #F3F1EC">hozdesigns@gmail.com</a></p></sc-if>
+</form>
+</sc-if>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 24px; border-top: 1px solid #3A3631; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; color: #BDB6AA">
+<span>© 2026 hozdesigns.com</span>
+<span style="display: flex; flex-wrap: wrap; gap: 8px 24px"><a href="mailto:hozdesigns@gmail.com" style="color: #BDB6AA">hozdesigns@gmail.com</a><a href="tel:+36204047942" style="color: #BDB6AA">+36 20 404 7942</a></span>
+</div>
+</section>
+
+</div>
+</template>
+<script type="text/x-dc" id="dc-logic" data-props='{"accent":{"editor":"color","default":"#C9A46A","options":["#C9A46A","#B8B1A5","#D9A79A","#9DB4A0"]},"$preview":{"width":1440,"height":5200}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tpl: (['pek', 'etterem', 'kave', 'egyeb'].indexOf(new URLSearchParams(location.search).get('tab')) >= 0 ? new URLSearchParams(location.search).get('tab') : 'pek'), day: 0, slot: 2, persons: 2, booked: false, sent: false, sending: false, failed: false };
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#C9A46A';
+    const s = this.state;
+    const pill = (on) => on
+      ? 'padding: 12px 18px; min-height: 44px; border-radius: 999px; border: 1.5px solid #121212; background: #121212; color: #F3F1EC; font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit'
+      : 'padding: 12px 18px; min-height: 44px; border-radius: 999px; border: 1.5px solid #8F887C; background: transparent; color: #121212; font-size: 15px; font-weight: 500; cursor: pointer; font-family: inherit';
+    const tabDefs = [['pek', 'Pékség'], ['etterem', 'Étterem'], ['kave', 'Kávézó & brunch'], ['egyeb', 'Egyéb']];
+    const dayDefs = ['Ma', 'Holnap', 'Szombat', 'Vasárnap'];
+    const slotDefs = ['12:00', '13:00', '18:00', '19:00', '19:30', '20:30'];
+    return {
+      accent,
+      accentText: '#8A6A35',
+      tabs: tabDefs.map(([id, label]) => ({ label, selected: s.tpl === id ? 'true' : 'false', style: pill(s.tpl === id), pick: () => this.setState({ tpl: id }) })),
+      isPek: s.tpl === 'pek', isEtterem: s.tpl === 'etterem', isKave: s.tpl === 'kave', isEgyeb: s.tpl === 'egyeb',
+      cakes: [
+        { name: 'Pisztáciás croissant', price: '1 290 Ft', desc: 'Szicíliai pisztáciakrém, vajas leveles tészta.', img: '/img/hz-croissant.webp' },
+        { name: 'Kardamomos csiga', price: '890 Ft', desc: 'Svéd recept, frissen őrölt kardamommal.', img: '/img/hz-cardamom.webp' },
+        { name: 'Szezonális gyümölcstorta', price: '14 900 Ft', desc: 'Egész tortaként is rendelhető, 48 órával előre.', img: '/img/hz-tart.webp' }
+      ],
+      days: dayDefs.map((label, i) => ({ label, selected: s.day === i ? 'true' : 'false', style: pill(s.day === i), pick: () => this.setState({ day: i }) })),
+      slots: slotDefs.map((label, i) => ({ label, selected: s.slot === i ? 'true' : 'false', style: pill(s.slot === i), pick: () => this.setState({ slot: i }) })),
+      persons: s.persons,
+      minus: () => this.setState({ persons: Math.max(1, s.persons - 1) }),
+      plus: () => this.setState({ persons: Math.min(12, s.persons + 1) }),
+      summary: dayDefs[s.day] + ', ' + slotDefs[s.slot] + ' · ' + s.persons + ' fő',
+      book: () => this.setState({ booked: true }),
+      reset: () => this.setState({ booked: false }),
+      booked: s.booked, notBooked: !s.booked,
+      posts: [
+        { label: 'flat white', img: '/img/hz-ig_flatwhite.webp' }, { label: 'brunch tál', img: '/img/hz-ig_shakshuka.webp' }, { label: 'terasz', img: '/img/hz-ig_terrace.webp' },
+        { label: 'croissant', img: '/img/hz-ig_croissants.webp' }, { label: 'barista', img: '/img/hz-ig_pour.webp' }, { label: 'reggeli fény', img: '/img/hz-ig_corner.webp' }
+      ],
+      sent: s.sent, notSent: !s.sent,
+      failed: s.failed,
+      btnLabel: s.sending ? 'Küldés…' : 'Ajánlatot kérek',
+      send: (e) => {
+        e.preventDefault();
+        if (s.sending) return;
+        const form = e.target;
+        this.setState({ sending: true, failed: false });
+        fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+          .then(r => r.json())
+          .then(j => { if (j && j.success) { this.setState({ sent: true, sending: false }); } else { this.setState({ failed: true, sending: false }); } })
+          .catch(() => this.setState({ failed: true, sending: false }));
+      }
+    };
+  }
+}
+</script>
+<script src="/assets/dc-mini.js" defer></script>
+<script>
+/* Arriving from a demo's "Ilyen oldalt szeretnék" button: prefill the request with the template's name. */
+document.addEventListener('DOMContentLoaded', function () {
+  var names = { kavezo: 'a Kávézó', pekseg: 'a Pékség', etterem: 'az Étterem' };
+  var k = new URLSearchParams(location.search).get('sablon');
+  var ta = document.querySelector('#kapcsolat textarea');
+  if (names[k] && ta && !ta.value) ta.value = 'Tetszett ' + names[k] + ' sablon, ilyen oldalt szeretnék a helyemnek.';
+  if (location.hash) { var el = document.querySelector(location.hash); if (el) el.scrollIntoView(); }
+});
+</script>
+<noscript><p style="padding:24px;font-family:sans-serif">Az oldal megjelenítéséhez kapcsold be a JavaScriptet. Elérhetőség: hozdesigns@gmail.com · +36 20 404 7942</p></noscript>
+</body>
+</html>
