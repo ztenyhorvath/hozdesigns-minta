@@ -149,7 +149,7 @@ footer b{color:var(--ink)}
 .hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:56px;align-items:center;padding-top:28px;padding-bottom:72px}
 .hero .loc{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink2);margin-bottom:22px}
 .hero .loc .ico{color:var(--aci,var(--acc))}
-.hero h1{font-size:clamp(42px,6.3vw,86px);font-weight:700;letter-spacing:-.035em;line-height:1.02;text-wrap:balance}
+.hero h1{font-size:clamp(40px,4.9vw,66px);font-weight:700;letter-spacing:-.03em;line-height:1.06;text-wrap:balance}
 .hero .lead{font-size:clamp(17px,1.5vw,20px);color:var(--ink2);max-width:46ch;margin-top:24px}
 .hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .hero .cta .btn{min-height:56px;padding:14px 28px;font-size:17px}
@@ -540,6 +540,11 @@ html{overflow-x:hidden}
   .hero .meta>*{padding:12px 0;border-top:1px solid var(--line)}.hero .meta>*:first-child{border-top:0}
 }
 @media (max-width:640px){.hero{align-items:stretch}.hpic .say{bottom:22%}}
+.hero .meta{gap:10px 20px;font-size:14.5px}
+.hero .meta>*{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;color:var(--ink);text-decoration:none}
+.hero .meta a:hover{text-decoration:underline}
+.hero .meta .dot{margin:0 4.5px;flex:none}
+.hero .meta .ico{flex:none}
 </style>
 </head>
 <body class="k-kutya s-alap t-alap">
@@ -553,9 +558,9 @@ html{overflow-x:hidden}
   <div>
     <p class="loc"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Budapest XIV., Zugló</p>
     <h1>Kutyakozmetika, ahová a kutyád is <span class="scr">szívesen<svg class="dd" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><use href="#d-scribble"/></svg></span> jön</h1>
-    <p class="lead">Fürdetés, nyírás és trimmelés nyugodt tempóban, egyszerre egy kutyával. Az árakat a méret alapján előre látod, az időpontot pedig két perc alatt lefoglalod.</p>
+    <p class="lead">Fürdetés, nyírás és trimmelés nyugodt tempóban, egyszerre egy kutyával. Az árakat a méret alapján előre láthatod, az időpontot pedig két perc alatt lefoglalhatod.</p>
     <div class="cta"><a class="btn" href="#foglalas">Időpontot foglalok</a><a class="btn line" href="#arak">Árak</a></div>
-    <div class="meta"><span><i class="dot"></i><span data-open></span></span><span><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>+36 30 123 4567</span><span><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg>Ingyenes parkolás az utcában</span></div>
+    <div class="meta"><span><i class="dot"></i><span data-open></span></span><a href="tel:+36301234567"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>+36 30 123 4567</a><span><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg>Ingyenes parkolás az utcában</span></div>
   </div>
   <div class="hpic"><div class="a"><img src="img/u49.jpg" alt="Fürdetés után, törölközőben" width="1200" height="1718"></div><div class="b"><img src="img/u15.jpg" alt="Uszkár nyírás után" width="1200" height="1800"></div><p class="say">Vau! Itt senki nem siettet.</p><a class="spin" href="#foglalas" aria-label="Időpontfoglalás"><svg viewBox="0 0 200 200" aria-hidden="true"><defs><path id="spinp" d="M100 100m-74 0a74 74 0 1 1 148 0a74 74 0 1 1-148 0"/></defs><text><textPath href="#spinp" textLength="455" lengthAdjust="spacing">IDŐPONT ONLINE • KÉT PERC ALATT •</textPath></text></svg><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-dogface"/></svg></a><p class="next"><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-clock"/></svg><span>Legközelebbi szabad időpont<b data-next></b></span></p><svg class="dd fl f1" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bubbles"/></svg><svg class="dd fl f2" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg><svg class="dd fl f3" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-star"/></svg></div>
 </section>
