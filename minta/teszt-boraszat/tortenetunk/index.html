@@ -159,19 +159,19 @@ footer b{color:var(--ink)}
 .bhead.solid .logo b{font-size:25px}
 
 /* nyitókép */
-.hero{position:relative;display:grid;place-items:center;text-align:center;min-height:max(100svh,700px);margin-top:-91px;padding:150px 24px 120px;color:#fff;isolation:isolate;overflow:hidden;background:var(--dark)}
+.hero{position:relative;display:grid;place-items:center;text-align:center;min-height:max(100svh,700px);margin-top:-91px;padding:170px 24px 130px;color:#fff;isolation:isolate;overflow:hidden;background:var(--dark)}
 .hero .bg{position:absolute;inset:0;z-index:-2}
 .hero .bg img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,center);transform-origin:var(--pos,center);animation:hzoom 24s cubic-bezier(.2,.6,.3,1) both}
 @keyframes hzoom{from{transform:scale(1.14)}to{transform:scale(1)}}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(12,9,8,.62) 0%,rgba(12,9,8,.22) 30%,rgba(12,9,8,.34) 62%,rgba(12,9,8,.82) 100%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(75% 62% at 50% 54%,rgba(12,9,8,.5) 0%,rgba(12,9,8,.28) 55%,transparent 100%),linear-gradient(180deg,rgba(12,9,8,.66) 0%,rgba(12,9,8,.26) 30%,rgba(12,9,8,.36) 62%,rgba(12,9,8,.84) 100%)}
 .hero .c{max-width:1040px}
 .hero .lbl{display:inline-flex;align-items:center;gap:16px;color:#fff;text-shadow:0 1px 14px rgba(0,0,0,.5)}
 .hero .lbl::before,.hero .lbl::after{content:"";width:44px;height:1px;background:currentColor;opacity:.7}
-.hero h1{font-size:clamp(52px,8.4vw,132px);line-height:.98;margin-top:26px;text-wrap:balance;text-shadow:0 2px 50px rgba(0,0,0,.45)}
+.hero h1{font-size:clamp(46px,min(7.4vw,12.5vh),118px);line-height:1.08;margin-top:34px;text-wrap:balance;text-shadow:0 2px 50px rgba(0,0,0,.5)}
 .hero h1 span{display:block}
 .hero h1 .it{font-style:italic}
-.hero .lead{font-size:clamp(18px,1.6vw,21px);max-width:50ch;margin:30px auto 0;color:rgba(255,255,255,.92)}
-.hero .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:40px}
+.hero .lead{font-size:clamp(18px,1.6vw,21px);line-height:1.65;font-weight:500;max-width:46ch;margin:40px auto 0;color:#fff;text-shadow:0 1px 18px rgba(0,0,0,.65)}
+.hero .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:46px}
 .hero .c>*{animation:hrise 1s cubic-bezier(.2,.7,.2,1) both}
 .hero .c>*:nth-child(2){animation-delay:.15s}.hero .c>*:nth-child(3){animation-delay:.32s}.hero .c>*:nth-child(4){animation-delay:.46s}
 @keyframes hrise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
@@ -369,14 +369,21 @@ footer b{color:var(--ink)}
 .k-bor .hours td{padding:13px 0}
 
 /* lábléc */
-.bfoot{background:var(--dark);color:rgba(255,255,255,.75);margin-top:70px;padding:80px 0 110px;font-size:15px}
-.bfoot .seal{width:96px;height:96px;color:var(--gold);margin:0 auto}
-.bfoot .name{text-align:center;font:var(--fhw) 34px/1 var(--fh);color:#fff;margin-top:20px}
-.bfoot .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:56px;padding-top:44px;border-top:1px solid rgba(255,255,255,.16)}
-.bfoot h4{font:600 11.5px var(--fb);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-.bfoot a{color:#fff}
-.bfoot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.bfoot .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 30px;margin-top:50px;font-size:13px;color:rgba(255,255,255,.55)}
+.bfoot{background:var(--dark);color:rgba(255,255,255,.72);margin-top:90px;padding:88px 0 0;font-size:15px;border-top:0}
+.bfoot .wrap{display:block}
+.bfoot .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr .8fr;gap:56px;align-items:start}
+.bfoot .id{display:grid;grid-template-columns:92px 1fr;gap:22px;align-items:center}
+.bfoot .seal{width:92px;height:92px;color:var(--gold);margin:0}
+.bfoot .name{font:var(--fhw) 32px/1.05 var(--fh);color:#fff;margin:0;text-align:left}
+.bfoot .tag{margin-top:8px;font:600 11px var(--fb);letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.bfoot h4{font:600 11.5px var(--fb);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:6px 0 18px}
+.bfoot a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.bfoot a:hover{border-color:#fff}
+.bfoot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;line-height:1.5}
+.bfoot .hrs li{display:flex;justify-content:space-between;gap:16px;max-width:230px}
+.bfoot .hrs li span:last-child{color:#fff;font-variant-numeric:tabular-nums}
+.bfoot .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 30px;margin-top:72px;padding:24px 0 30px;border-top:1px solid rgba(255,255,255,.14);font-size:13px;color:rgba(255,255,255,.5)}
+.bfoot .legal a{color:rgba(255,255,255,.75)}
 
 /* 18+ kapu */
 .gate{position:fixed;inset:0;z-index:95;display:grid;place-items:center;padding:24px;background:color-mix(in srgb,var(--dark) 88%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
@@ -436,7 +443,9 @@ footer b{color:var(--ink)}
   .bhead nav.r a{display:none}
   .logo{justify-items:start}.logo b{font-size:24px}.logo small{font-size:9.5px}
   .cartbtn .t{display:none}
-  .hero{margin-top:-80px;padding:130px 20px 110px;min-height:max(100svh,640px)}
+  .hero{margin-top:-80px;padding:140px 20px 110px;min-height:max(100svh,640px)}
+  .hero h1{font-size:clamp(42px,12vw,64px);line-height:1.1}
+  .hero .lead{margin-top:28px}
   .hero .seal{display:none}
   .hero .lbl{letter-spacing:.14em;font-size:11.5px}
   .hero .lbl::before,.hero .lbl::after{width:22px}
@@ -455,8 +464,11 @@ footer b{color:var(--ink)}
   .tbook{grid-template-columns:1fr;gap:32px;padding:26px 18px}
   .estate{grid-template-columns:1fr;gap:40px;padding-top:80px}
   .ggrid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px;gap:8px}
-  .bfoot .cols{grid-template-columns:1fr;gap:30px;text-align:center}
-  .bfoot{padding-top:60px}
+  .bfoot{padding-top:60px;margin-top:60px}
+  .bfoot .cols{grid-template-columns:1fr 1fr;gap:40px 24px}
+  .bfoot .id{grid-column:1/-1;grid-template-columns:76px 1fr}.bfoot .seal{width:76px;height:76px}
+  .bfoot .cols>div:nth-child(2){grid-column:1/-1}
+  .bfoot .legal{flex-direction:column;margin-top:48px;padding-bottom:110px}
   .tl{grid-template-columns:1fr;gap:16px;padding:32px 0}.tl .y{font-size:50px}
   .person{grid-template-columns:1fr;gap:26px}.person:nth-of-type(even) .ph{order:0}.person .ph{max-width:360px}.person h3{font-size:38px}
   .prose{padding-top:64px}.prose p{font-size:18px}
@@ -464,6 +476,22 @@ footer b{color:var(--ink)}
   .endcta{padding-top:80px}
   .gate h2{font-size:36px}
 }
+/* térkép: csak kattintásra tölt be */
+.mapbox{position:relative;margin-top:56px;height:440px;background:var(--acct);overflow:hidden;display:grid;place-items:center;text-align:center}
+.mapbox::before{content:"";position:absolute;inset:0;opacity:.5;background:
+  linear-gradient(115deg,transparent 46%,var(--line) 46%,var(--line) 47.2%,transparent 47.2%),
+  linear-gradient(28deg,transparent 58%,var(--line) 58%,var(--line) 59%,transparent 59%),
+  linear-gradient(160deg,transparent 30%,var(--line) 30%,var(--line) 30.8%,transparent 30.8%),
+  linear-gradient(75deg,transparent 70%,var(--line) 70%,var(--line) 70.7%,transparent 70.7%)}
+.mapbox .in{position:relative;max-width:640px;padding:24px}
+.mapbox .ico{width:38px;height:38px;color:var(--acc);margin:0 auto}
+.mapbox b{display:block;font:var(--fhw) 30px/1.15 var(--fh);margin-top:12px}
+.mapbox .row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
+.mapbox .btn.line{border-color:var(--ink)}
+.mapbox small{display:block;color:var(--ink2);font-size:13px;margin:16px auto 0;line-height:1.5;max-width:46ch}
+.mapbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (max-width:900px){.mapbox{height:380px;margin-top:40px}}
+@media (max-height:780px) and (min-width:901px){.hero{padding-top:150px;padding-bottom:96px}.hero h1{margin-top:22px}.hero .lead{margin-top:26px}.hero .cta{margin-top:30px}.hero .cue{display:none}}
 </style>
 </head>
 <body class="k-bor s-alap t-alap sub">
@@ -490,14 +518,13 @@ footer b{color:var(--ink)}
 <div class="mbar"><p><b>2 700 Ft-tól</b><br><span class="muted">közvetlenül a pincéből</span></p><a class="btn" href="#borok">Borlap</a></div>
 <footer class="bfoot">
   <div class="wrap">
-    <svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg>
-    <p class="name">Kőhalom Pince</p>
     <div class="cols">
-      <div><h4>Látogatás</h4><ul><li>7771 Palkonya, Pincesor 14.</li><li>Csütörtök: 12:00–18:00</li><li>Péntek: 12:00–20:00</li><li>Szombat: 10:00–20:00</li><li>Vasárnap: 10:00–16:00</li></ul></div>
-      <div><h4>Elérhetőség</h4><ul><li><a href="tel:+36301234567">+36 30 123 4567</a></li><li><a href="mailto:pince@kohalompince.example">pince@kohalompince.example</a></li></ul></div>
-      <div><h4>Az oldalon</h4><ul><li><a href="#borok">Boraink</a></li><li><a href="#kostolo">Kóstoló</a></li><li><a href="tortenetunk/">Történetünk</a></li></ul></div>
+      <div class="id"><svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="sealp" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.5"/><text font-size="14.5"><textPath href="#sealp" textLength="468" lengthAdjust="spacing">KŐHALOM PINCE • VILLÁNYI BORVIDÉK •</textPath></text><text class="m" x="100" y="123" text-anchor="middle" font-size="66">K</text></svg><div><p class="name">Kőhalom Pince</p><p class="tag">Villányi borvidék, Palkonya</p></div></div>
+      <div><h4>Nyitvatartás</h4><ul class="hrs"><li><span>Hétfő</span><span>zárva</span></li><li><span>Kedd</span><span>zárva</span></li><li><span>Szerda</span><span>zárva</span></li><li><span>Csütörtök</span><span>12:00–18:00</span></li><li><span>Péntek</span><span>12:00–20:00</span></li><li><span>Szombat</span><span>10:00–20:00</span></li><li><span>Vasárnap</span><span>10:00–16:00</span></li></ul></div>
+      <div><h4>Elérhetőség</h4><ul><li>7771 Palkonya, Pincesor 14.</li><li><a href="tel:+36301234567">+36 30 123 4567</a></li><li><a href="mailto:pince@kohalompince.example">pince@kohalompince.example</a></li></ul></div>
+      <div><h4>Az oldalon</h4><ul><li><a href="#borok">Boraink</a></li><li><a href="#kostolo">Kóstoló</a></li><li><a href="tortenetunk/">Történetünk</a></li><li><a href="#kapcsolat">Kapcsolat</a></li></ul></div>
     </div>
-    <div class="legal"><span>Fotók: Wikimedia Commons (CC BY-SA) – helykitöltő mintaképek</span><span>Csak 18 éven felülieknek.</span><span>Weboldal-tervezet: <a href="https://hozdesigns.com">hozdesigns.com</a></span></div>
+    <div class="legal"><span>© Kőhalom Pince · Csak 18 éven felülieknek.</span><span>Fotók: Wikimedia Commons (CC BY-SA) – helykitöltő mintaképek</span><span>Weboldal-tervezet: <a href="https://hozdesigns.com">hozdesigns.com</a></span></div>
   </div>
 </footer>
 <div class="lb" role="dialog" aria-modal="true" aria-label="Fotók" data-lbox>
@@ -581,6 +608,13 @@ var HZ = (function () {
     return null;
   }
   var st = openNow(); $$('[data-open]').forEach(function (e) { if (st) e.textContent = st; else e.hidden = true });
+
+  /* térkép: külső beágyazás csak kattintásra (addig nincs Google-kérés) */
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-map]'); if (!b) return; var box = b.closest('.mapbox'), f = document.createElement('iframe');
+    f.src = 'https://www.google.com/maps?q=' + encodeURIComponent(b.getAttribute('data-map')) + '&output=embed'; f.title = 'Térkép'; f.loading = 'lazy'; f.referrerPolicy = 'no-referrer-when-downgrade';
+    box.innerHTML = ''; box.appendChild(f);
+  });
 
   /* űrlap-ellenőrzés: az első hibás mezőre áll, a hibát szövegesen kiírja */
   function check(form, hint) {
