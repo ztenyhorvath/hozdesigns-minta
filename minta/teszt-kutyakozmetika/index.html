@@ -7,14 +7,14 @@
 
 <title>Mancs Műhely – kutyakozmetika Zuglóban</title>
 <meta name="description" content="Kutyakozmetika Zuglóban: fürdetés, nyírás, trimmelés, karomvágás. Foglalj időpontot online.">
-<meta name="theme-color" content="#F1F4EE">
+<meta name="theme-color" content="#F6F4EC">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
-<style>:root{--paper:#F1F4EE;--card:#FFFFFF;--ink:#14231B;--ink2:#55635B;--line:#DCE3DA;--acc:#1F6B4F;--accd:#164E3A;--acct:#E0ECE4;--on:#FFFFFF;--pop:#F4C95D;--popink:#14231B;--fh:'Manrope',system-ui,sans-serif;--fb:'Manrope',system-ui,sans-serif;--fhw:700}
+<style>:root{--paper:#F6F4EC;--card:#FFFFFF;--ink:#14231B;--ink2:#5A6055;--line:#E3E0D2;--acc:#F4C95D;--accd:#EAB93E;--acct:#FBF1CF;--on:#14231B;--aci:#14231B;--pop:#F4C95D;--popink:#14231B;--fh:'Manrope',system-ui,sans-serif;--fb:'Manrope',system-ui,sans-serif;--fhw:700}
 *{box-sizing:border-box}
 [hidden]{display:none !important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -23,7 +23,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--f
 img{display:block;max-width:100%}
 a{color:var(--accd)}
 button,input,select,textarea{font:inherit;color:inherit}
-:focus-visible{outline:3px solid var(--acc);outline-offset:2px;border-radius:4px}
+:focus-visible{outline:3px solid var(--aci,var(--acc));outline-offset:2px;border-radius:4px}
 h1,h2,h3,h4{font-family:var(--fh);margin:0;line-height:1.08;font-weight:var(--fhw,600);letter-spacing:var(--fhs,-.015em)}
 p{margin:0}
 .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
@@ -49,7 +49,7 @@ p{margin:0}
 
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 13px;font-size:14px;font-weight:600}
-.chip .ico{width:17px;height:17px;color:var(--acc)}
+.chip .ico{width:17px;height:17px;color:var(--aci,var(--acc))}
 .sec{padding-top:56px;padding-bottom:56px}
 .sec>h2,.sech h2{font-size:clamp(28px,3.6vw,42px)}
 .sech{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px 32px;margin-bottom:26px}
@@ -59,7 +59,7 @@ p{margin:0}
 .form{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
 .form label{display:grid;gap:5px;font-size:14px;font-weight:700}
 .form input,.form select,.form textarea{width:100%;min-height:48px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);padding:11px 13px;font-size:16px;font-weight:400}
-.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--acc);outline-offset:1px;border-color:transparent}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--aci,var(--acc));outline-offset:1px;border-color:transparent}
 .form .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .hint{color:#A2332A;font-size:14px;font-weight:600;min-height:0}
 .hint:empty{display:none}
@@ -82,14 +82,14 @@ p{margin:0}
 .hours tr.closed td:last-child{font-weight:400;color:var(--ink2)}
 .clist{display:grid;gap:14px;font-size:16px}
 .clist div{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start}
-.clist .ico{margin-top:3px;color:var(--acc)}
+.clist .ico{margin-top:3px;color:var(--aci,var(--acc))}
 .clist a{font-weight:700}
 
 /* térkép: csak kattintásra tölt be */
 .mapbox{position:relative;margin-top:24px;min-height:280px;background:var(--acct);overflow:hidden;display:grid;place-items:center;text-align:center;border-radius:var(--rm,0)}
 .mapbox::before{content:"";position:absolute;inset:0;opacity:.5;background:linear-gradient(115deg,transparent 46%,var(--line) 46%,var(--line) 47.2%,transparent 47.2%),linear-gradient(28deg,transparent 58%,var(--line) 58%,var(--line) 59%,transparent 59%),linear-gradient(160deg,transparent 30%,var(--line) 30%,var(--line) 30.8%,transparent 30.8%),linear-gradient(75deg,transparent 70%,var(--line) 70%,var(--line) 70.7%,transparent 70.7%)}
 .mapbox .in{position:relative;max-width:640px;padding:24px}
-.mapbox .in>.ico{width:30px;height:30px;color:var(--acc);margin:0 auto}
+.mapbox .in>.ico{width:30px;height:30px;color:var(--aci,var(--acc));margin:0 auto}
 .mapbox b{display:block;font-family:var(--fh);font-size:22px;line-height:1.2;margin-top:8px}
 .mapbox .row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:16px}
 .mapbox .btn{min-height:46px;padding:10px 18px}
@@ -142,18 +142,19 @@ footer b{color:var(--ink)}
   .form .two{grid-template-columns:1fr}
   .brand{font-size:18px}
 }
+.brand .mark{width:42px;height:42px;flex:none;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}.brand:hover .mark{transform:rotate(-12deg) scale(1.06)}
 /* kutyakozmetika */
 :root{--rb:999px}
 .hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:56px;align-items:center;padding-top:28px;padding-bottom:72px}
 .hero .loc{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink2);margin-bottom:22px}
-.hero .loc .ico{color:var(--acc)}
+.hero .loc .ico{color:var(--aci,var(--acc))}
 .hero h1{font-size:clamp(42px,6.3vw,86px);font-weight:700;letter-spacing:-.035em;line-height:1.02;text-wrap:balance}
 .hero .lead{font-size:clamp(17px,1.5vw,20px);color:var(--ink2);max-width:46ch;margin-top:24px}
 .hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .hero .cta .btn{min-height:56px;padding:14px 28px;font-size:17px}
 .hero .meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;font-size:15px;font-weight:600}
 .hero .meta span{display:inline-flex;align-items:center;gap:8px}
-.hero .meta .ico{color:var(--acc);width:18px;height:18px}
+.hero .meta .ico{color:var(--aci,var(--acc));width:18px;height:18px}
 .dot{width:9px;height:9px;border-radius:50%;background:#2FA36B;box-shadow:0 0 0 4px rgba(47,163,107,.18)}
 .hpic{position:relative;justify-self:end;width:100%;max-width:520px}
 .hpic .a{aspect-ratio:4/5;border-radius:260px 260px 40px 40px;overflow:hidden;background:var(--acct)}
@@ -183,7 +184,7 @@ footer b{color:var(--ink)}
 .add{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--ink);background:none;cursor:pointer;display:grid;place-items:center;transition:background .15s,color .15s,transform .15s}
 .add:hover{background:var(--acct)}
 .add .ico{width:20px;height:20px}
-.add[aria-pressed=true]{background:var(--acc);border-color:var(--acc);color:var(--on)}
+.add[aria-pressed=true]{background:var(--acc);border-color:var(--aci,var(--acc));color:var(--on)}
 .pnote{margin-top:22px;font-size:14px;color:var(--ink2)}
 
 /* foglalás – sötét sáv */
@@ -230,7 +231,7 @@ footer b{color:var(--ink)}
 .sumcard .tot b{font-family:var(--fh);font-size:30px;letter-spacing:-.03em}
 .sumcard ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px;font-size:14px;color:var(--ink2)}
 .sumcard li{display:flex;gap:8px;align-items:flex-start}
-.sumcard li .ico{color:var(--acc);width:17px;height:17px;margin-top:2px}
+.sumcard li .ico{color:var(--aci,var(--acc));width:17px;height:17px;margin-top:2px}
 .bookband .done{grid-column:1/-1;max-width:640px}
 .bookband .done h3{font-size:clamp(30px,4vw,46px);letter-spacing:-.03em}
 .bookband .done small{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.65)}
@@ -243,7 +244,7 @@ footer b{color:var(--ink)}
 .ba::after{content:"";position:absolute;top:0;bottom:0;left:var(--p);width:3px;margin-left:-1.5px;background:#fff}
 .ba .knob{position:absolute;top:50%;left:var(--p);width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:#fff;color:#111;display:grid;place-items:center;font-weight:700;pointer-events:none;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:2}
 .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;z-index:3}
-.ba input:focus-visible~.knob{outline:3px solid var(--acc)}
+.ba input:focus-visible~.knob{outline:3px solid var(--aci,var(--acc))}
 .ba .tag{position:absolute;bottom:14px;background:rgba(0,0,0,.6);color:#fff;font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;z-index:1}
 .ba .tag.l{left:14px}.ba .tag.r{right:14px}
 .bacap{margin-top:10px;font-weight:600}
@@ -265,7 +266,7 @@ footer b{color:var(--ink)}
 .team b{display:block;line-height:1.2}.team span{font-size:13px;color:var(--ink2)}
 .know{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .know div{background:var(--card);border-radius:24px;padding:24px}
-.know .ico{width:26px;height:26px;color:var(--acc);margin-bottom:12px}
+.know .ico{width:26px;height:26px;color:var(--aci,var(--acc));margin-bottom:12px}
 .know b{display:block;font-family:var(--fh);font-size:19px;letter-spacing:-.02em;margin-bottom:6px}
 .know p{color:var(--ink2);font-size:15px}
 .visitbox{background:var(--card);border-radius:44px;padding:48px 56px}
@@ -457,7 +458,7 @@ footer b{color:var(--ink)}
 <body class="k-kutya s-alap t-alap">
 <div class="draft" role="note">Bemutató tervezet a Mancs Műhely számára – nem hivatalos oldal. Készítette: <a href="https://hozdesigns.com">hozdesigns.com</a></div>
 <header class="wrap top">
-  <a class="brand" href="#" aria-label="Mancs Műhely – kezdőlap">Mancs Műhely</a>
+  <a class="brand" href="#" aria-label="Mancs Műhely – kezdőlap"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22.6" fill="var(--pop)" stroke="var(--ink)" stroke-width="2.4"/><g transform="translate(24 24) scale(.66) translate(-24 -25)"><g fill="var(--ink)" transform="rotate(-10 24 24)"><ellipse cx="11.6" cy="20.4" rx="4.3" ry="5.6" transform="rotate(-24 11.6 20.4)"/><ellipse cx="19.4" cy="12.4" rx="4.6" ry="6.1" transform="rotate(-8 19.4 12.4)"/><ellipse cx="28.9" cy="12.4" rx="4.6" ry="6.1" transform="rotate(8 28.9 12.4)"/><ellipse cx="36.6" cy="20.4" rx="4.3" ry="5.6" transform="rotate(24 36.6 20.4)"/><path d="M24.1 21.6c6.6 0 12.9 6.6 12.9 12.4 0 4.3-3.3 6.2-6.6 6.2-2.6 0-4-1.5-6.3-1.5s-3.7 1.5-6.3 1.5c-3.300 0-6.600-1.900-6.600-6.200 0-5.800 6.300-12.400 12.900-12.400z"/></g></g></svg>Mancs Műhely</a>
   <nav aria-label="Fő menü"><a href="#arak">Árak</a><a href="#munkaink">Munkáink</a><a href="#kapcsolat">Kapcsolat</a><a class="cta" href="#foglalas">Időpontfoglalás</a></nav>
 </header>
 <main>
