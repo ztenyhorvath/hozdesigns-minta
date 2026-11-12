@@ -137,6 +137,19 @@
 @media (max-width:1020px){.mk-hero{grid-template-columns:1fr;gap:32px}.mk-art{max-width:560px}}
 @media (max-width:1020px){.inc{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.turns{grid-template-columns:1fr}.inc{gap:10px}.inc li{padding:16px}.donebox{padding:24px 18px}.donebox dl{grid-template-columns:1fr}}
+.know{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:stretch}
+.know article{background:#fff;border:1.5px solid var(--line);border-radius:var(--r-l);padding:22px;display:grid;gap:10px;line-height:1.5;transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s,border-color .25s}
+.know article:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.know .ico{width:44px;height:44px;border-radius:50%;background:var(--red-t);color:var(--red);display:grid;place-items:center;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.know article:hover .ico{transform:rotate(-10deg) scale(1.12)}
+.know article:nth-child(2) .ico{background:var(--green-t);color:var(--green)}
+.know .ico svg{width:22px;height:22px}
+.know h3{margin:4px 0 0;font-size:20px}
+.know p{margin:0;font-size:15px;color:var(--ink)}
+.know ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15px}
+.hint{margin-top:10px;font-size:14px;color:var(--green-2)}
+@media (max-width:1020px){.know{grid-template-columns:1fr}}
+@media (max-width:640px){.know article{padding:18px}}
 </style>
 <section class="phero" style="padding-bottom: 56px;">
   <div class="wrap mk-hero">
@@ -217,6 +230,37 @@
   </div>
 </section>
 
+<section id="feltetelek" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Jó tudni</h2>
+      <p>Pár fontos tudnivaló a foglalás előtt.</p>
+    </div>
+    <div class="know">
+      <article>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.5"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 15.5c2.8-.4 5 1.8 5 4.5"></path></svg></span>
+        <h3>Turnusok és létszám</h3>
+        <ul>
+          <li>Egy turnusban legfeljebb <b>12 gyermek</b> vehet részt.</li>
+          <li>Egy foglalásba legfeljebb <b>9 gyermek</b> kerülhet.</li>
+          <li>A foglalás az online fizetéssel együtt érvényes.</li>
+        </ul>
+      </article>
+      <article>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"></path><path d="M8 9h8M8 13h8M8 17h5"></path></svg></span>
+        <h3>Lemondás és átruházás</h3>
+        <p>A foglalás nem mondható le, de <b>legkésőbb az előző nap 18:00-ig átruházható</b> valaki másra, vagy a befizetett összeg <b>lefogyasztható a kávéházban</b>.</p>
+      </article>
+      <article>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></span>
+        <h3>Kísérő szülők</h3>
+        <p>A gyermekek részvételéhez egy vagy két kísérő szülő is csatlakozhat, számukra a részvétel <b>ingyenes</b>.</p>
+        <p>Ha két szülő érkezik a gyermekkel, kérjük, hogy a Mikulás közvetlen közelében egyszerre csak az egyik szülő tartózkodjon; a másik ezalatt az üzlethelyiségben vagy a teraszon várakozhat. Az üzletben korlátozott számban állnak rendelkezésre ülőhelyek, ezért nem tudjuk garantálni, hogy a második kísérő szülőnek is jut ülőhely.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="tint" id="foglalas" style="padding-top:56px">
   <div class="wrap" id="bookWrap">
     <div class="sec-head"><h2>Foglalás</h2><p>A foglalás csak az online fizetéssel együtt érvényes. Fizetés nélkül nem tudunk helyet tartani.</p></div>
@@ -230,6 +274,7 @@
         <h3><b>2</b>A gyermek adatai</h3>
         <div class="kids" id="kids"></div>
         <button type="button" class="addkid" id="addKid" style="margin-top:14px">+ Még egy gyermeket hozok</button>
+        <p class="hint" id="maxNote" hidden>Egy foglalásba legfeljebb 9 gyermek kerülhet. Több gyermekhez indíts új foglalást.</p>
         <p class="warn" id="capWarn" role="status" style="margin-top:14px" hidden></p>
       </div>
       <div class="bstep form">
@@ -242,7 +287,7 @@
       </div>
       <div class="bstep form">
         <h3><b>4</b>Fizetés és véglegesítés</h3>
-        <label class="chk"><input type="checkbox" id="terms"><span>Elolvastam és elfogadom az <a href="../adatkezeles/">adatkezelési tájékoztatót</a>.</span></label>
+        <label class="chk"><input type="checkbox" id="terms"><span>Elolvastam és elfogadom a <a href="#feltetelek">részvételi feltételeket</a> és az <a href="../adatkezeles/">adatkezelési tájékoztatót</a>.</span></label>
         <p class="paynote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><span>Bankkártyás fizetés a biztonságos fizetési oldalon. A helyet a sikeres fizetés pillanatában foglaljuk le, a visszaigazolást e-mailben küldjük.</span></p>
         <p class="ferr" id="mkErr" role="alert"></p>
         <button class="submit" type="submit" id="payBtn">Fizetés és foglalás · 5&nbsp;990&nbsp;Ft</button>
@@ -254,6 +299,7 @@
         <div><dt>Turnus</dt><dd id="sSlot">Válassz turnust</dd></div>
         <div><dt>Gyermekek</dt><dd id="sKids">1 gyermek</dd></div>
         <div><dt>Részvételi díj</dt><dd>5&nbsp;990&nbsp;Ft / gyermek</dd></div>
+        <div><dt>Kísérő szülő</dt><dd>1–2 fő, ingyenes</dd></div>
       </dl>
       <div class="tot"><span>Fizetendő</span><b id="sTotal">5&nbsp;990&nbsp;Ft</b></div>
       <p>Kérdésed van a programmal kapcsolatban? Hívj minket: <a href="tel:+3616173197"><b>+36 1 617 3197</b></a></p>
@@ -300,12 +346,12 @@
   /* Beállítások: ár és turnusonkénti szabad helyek (élesben a szerver adja) */
   var PRICE = 5990;
   var SLOTS = [
-    {id:'s1', day:'December 5., szombat', time:'14:00–16:00', free:14},
+    {id:'s1', day:'December 5., szombat', time:'14:00–16:00', free:12},
     {id:'s2', day:'December 5., szombat', time:'16:00–18:00', free:3},
     {id:'s3', day:'December 6., vasárnap', time:'14:00–16:00', free:0},
     {id:'s4', day:'December 6., vasárnap', time:'16:00–18:00', free:9}
   ];
-  var MAXKIDS = 6;
+  var MAXKIDS = 9;   /* egy foglalásba legfeljebb 9 gyermek; turnusonként 12 hely */
   var $ = function(id){return document.getElementById(id)};
   var st = {slot:null, kids:[{name:'',age:'',note:''}]};
   var fmt = function(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' Ft'};
@@ -348,6 +394,7 @@
     var s = selSlot(), n = st.kids.length, total = PRICE*n;
     var max = s ? Math.min(MAXKIDS, s.free) : MAXKIDS;
     $('addKid').hidden = n >= max;
+    $('maxNote').hidden = !(n >= MAXKIDS);
     var over = s && n > s.free;
     $('capWarn').hidden = !over;
     if(over) $('capWarn').textContent = 'Ebben a turnusban már csak '+s.free+' szabad hely van. Válassz másik időpontot, vagy csökkentsd a gyermekek számát.';
@@ -394,7 +441,7 @@
     if(!err && !name){ err='Add meg a szülő nevét.'; focus=$('pName'); }
     if(!err && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ err='Adj meg egy érvényes e-mail-címet, ide küldjük a visszaigazolást.'; focus=$('pEmail'); }
     if(!err && phone.replace(/\D/g,'').length<9){ err='Add meg a telefonszámod.'; focus=$('pPhone'); }
-    if(!err && !$('terms').checked){ err='A foglaláshoz fogadd el az adatkezelési tájékoztatót.'; focus=$('terms'); }
+    if(!err && !$('terms').checked){ err='A foglaláshoz fogadd el a részvételi feltételeket és az adatkezelési tájékoztatót.'; focus=$('terms'); }
     $('mkErr').textContent = err;
     if(err){ if(focus) focus.focus(); return; }
     /* Élesben: foglalás létrehozása a szerveren (hely zárolása) → átirányítás a fizetési oldalra.
