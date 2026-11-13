@@ -9,3 +9,9 @@ felsorolt fájlokat másolja a webgyökérbe. Csak ami a listán van; törlés n
     `grep -v '^<div class="pbar">' minta/csaklit/mikulas/index.html > eles/csaklitkavehaz.hu/mikulas/index.html`
 
 **Megjegyzés:** a hozdesigns.com szerverén is van egy `hz-sync.sh csaklitkavehaz.hu …` cron-sor (tévedésből, 2026-11-13). Ott nincs ilyen oldal, ezért minden futáskor hibával kilép, és nem csinál semmit. Kiszedhető: `crontab -l | grep -v hz-sync | crontab -`.
+
+## Mikulás-foglalás: visszaigazolás és szabad helyek (2026-11-13)
+
+- Táblázat: „Csáklit – Mikulás-foglalások” (zteny.horvath@gmail.com Drive-ja, id `1i52t5ojrrjluQ8H7sIcaet6vZAKnZKWwrC0uaWggGRc`). Lapok: Foglalások (személyes adatok, NEM nyilvános), Helyek (Létszám − visszaigazolt gyermek; csak ez a lap van közzétéve CSV-ként).
+- Apps Script (a táblázathoz kötve): „Csáklit – Mikulás-visszaigazolás”, forrás: `csaklitkavehaz.hu/_apps-script/Code.gs` (ez a mappa nincs a files.txt-ben, nem kerül a szerverre). Webalkalmazás: a megnyitó felhasználóként fut, Google-fiókkal bárki megnyithatja, de csak az ALLOWED címekkel lehet visszaigazolni. URL a `mikulas/index.html` `CONF_URL` változójában.
+- Folyamat: foglalás → Web3Forms-levél a kávéháznak „Visszaigazolás – …” linkkel → a kávéház a Teya-befizetés után megnyitja → „Visszaigazolás küldése” → a vendég levelet kap a kávéház Gmail-címéről, a foglalás bekerül a Foglalások lapra → a Helyek lap közzétett CSV-je (`SEATS_CSV`) frissíti az oldalon a szabad helyeket (~5 perc).

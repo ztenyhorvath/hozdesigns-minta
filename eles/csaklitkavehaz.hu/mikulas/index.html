@@ -365,6 +365,11 @@
     1: 'https://checkout.teya.com/pbl/01a1d482-5ce8-7e45-9829-d38c38a5af63'
   };
   var MAXKIDS = 0; while(MAXKIDS < 9 && PAY_LINKS[MAXKIDS+1]) MAXKIDS++;
+  /* Visszaigazolás: a kávéház a foglalási e-mailben lévő linkkel (Google Apps Script) küldi a vendégnek,
+     és ugyanez írja a foglalást a „Csáklit – Mikulás-foglalások” táblázatba. A szabad helyek a táblázat
+     „Helyek” lapjának közzétett CSV-jéből jönnek (Létszám − visszaigazolt gyermekek). */
+  var CONF_URL = 'https://script.google.com/macros/s/AKfycbxsZqNlJQIGubbvlvkDmUTIdpRyNQBnC4B8YrxC81UtnJ8KFbm3ogR8hPSafCK4ZD-t/exec';
+  var SEATS_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSuXYzLVrglZHG3QnNZ6ZUUy0w6GsXYFZx6PpqmzoL5AVMZAwDQFaPGUHLQVzvf-fR6jHD1OMMoYoQw/pub?gid=1452504981&single=true&output=csv';
   [].forEach.call(document.querySelectorAll('.maxk'), function(el){ el.textContent = MAXKIDS; });
   var $ = function(id){return document.getElementById(id)};
   var st = {slot:null, kids:[{name:'',age:'',note:''}]};
@@ -459,6 +464,7 @@
     $('mkErr').textContent = err;
     if(err){ if(focus) focus.focus(); return; }
     var n = st.kids.length, link = PAY_LINKS[n], total = PRICE*n;
+    var bid = 'MK-' + (Date.now().toString(36).slice(-4) + Math.random().toString(36).slice(2,5)).toUpperCase();
     if(!link){ $('mkErr').textContent = 'Egy foglalásba legfeljebb '+MAXKIDS+' gyermek kerülhet.'; return; }
     /* A foglalás adatai e-mailben mennek a kávéháznak (Web3Forms), utána a Teya fizetési oldala jön.
        A Teya-link nem visz magával adatot: a kávéház a befizetést az összeg, az időpont és a név alapján párosítja. */
@@ -479,8 +485,14 @@
       'Telefon': phone,
       'Fizetendő': fmt(total),
       'Fizetés': 'Teya (online bankkártya) – a foglalás a sikeres fizetéssel érvényes',
+      'Foglalás azonosító': bid,
       'Űrlap': 'Mikulás-foglalás'
     };
+    if(CONF_URL){
+      var bj = JSON.stringify({v:1, id:bid, s:s.id, k:st.kids.map(function(k){ return [k.name.trim(), k.age]; }), p:name, e:email, t:phone, a:total});
+      var b64 = btoa(unescape(encodeURIComponent(bj))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+      p['Visszaigazolás – a befizetés ellenőrzése után nyisd meg'] = CONF_URL + '?d=' + b64;
+    }
     var btn = $('payBtn'); btn.disabled = true; btn.textContent = 'Foglalás küldése…';
     fetch((window.CK && CK.FORM_ENDPOINT) || 'https://api.web3forms.com/submit', {method:'POST', headers:{'Content-Type':'application/json', Accept:'application/json'}, body: JSON.stringify(p)})
       .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if(!r.ok || j.success === false) throw 0; }); })
@@ -510,6 +522,18 @@
   addEventListener('hashchange', openFaq); openFaq();
   document.addEventListener('click', function(e){ var a = e.target.closest('a[href="#feltetelek"]'); if(a) setTimeout(openFaq, 0); });
   renderSlots(); renderKids(); update();
+  if(SEATS_CSV) fetch(SEATS_CSV + (SEATS_CSV.indexOf('?')>0?'&':'?') + 't=' + Date.now(), {cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw 0; return r.text(); })
+    .then(function(txt){
+      var n = 0;
+      txt.split(/\r?\n/).forEach(function(line){
+        var c = [], m, re = /("([^"]|"")*"|[^,]*)(,|$)/g;
+        while((m = re.exec(line)) && m[0] !== ''){ c.push(m[1].replace(/^"|"$/g,'').replace(/""/g,'"')); if(!m[3]) break; }
+        var id = (c[0]||'').trim(), free = parseInt(c[5],10);
+        SLOTS.forEach(function(s){ if(s.id===id && !isNaN(free)){ s.free = Math.max(0, free); n++; } });
+      });
+      if(n){ if(st.slot && !selSlot()) st.slot = null; renderSlots(); update(); }
+    }).catch(function(){});
 })();
 </script>
 </body>
