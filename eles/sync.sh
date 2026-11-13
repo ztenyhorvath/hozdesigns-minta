@@ -7,7 +7,12 @@
 [ $# -eq 2 ] || { echo "használat: $0 <mappa> <webgyökér>"; exit 2; }
 R=https://raw.githubusercontent.com/ztenyhorvath/hozdesigns-minta/main/eles/$1
 W=$2
-[ -f "$W/index.html" ] || { echo "nincs ilyen webgyökér: $W"; exit 1; }
+# Ha a megadott webgyökér nem létezik, az nginx-konfigból keresi ki (a mappa neve = a domain).
+if [ ! -f "$W/index.html" ]; then
+  C=$(grep -rlE "server_name[^;]*[ \t]$1([ \t;]|\$)" ${HZ_NGINX:-/etc/nginx/sites-enabled /etc/nginx/conf.d} 2>/dev/null | head -1)
+  [ -n "$C" ] && W=$(awk '$1=="root"{gsub(";","",$2); print $2; exit}' "$C")
+  [ -n "$W" ] && [ -f "$W/index.html" ] || { echo "nincs ilyen webgyökér: $2 (az nginx-konfigban sem találom: $1)"; exit 1; }
+fi
 T=$(mktemp -d) || exit 1
 trap 'rm -rf "$T"' EXIT
 curl -fsS "$R/files.txt?t=$(date +%s)" -o "$T/list" || exit 0
@@ -20,5 +25,5 @@ grep -E '^[A-Za-z0-9_./-]+$' "$T/list" | grep -v '\.\.' | grep -v '^/' | while r
     cmp -s "$T/f" "$W/$p" && continue
     [ -e "$W/$p.bak-orig" ] || cp -p "$W/$p" "$W/$p.bak-orig"
   fi
-  cp "$T/f" "$W/$p" && chmod a+r "$W/$p" && chmod a+rx "$(dirname "$W/$p")"
+  cp "$T/f" "$W/$p" && chmod a+r "$W/$p" && chmod a+rx "$(dirname "$W/$p")" && echo "frissítve: $W/$p"
 done
