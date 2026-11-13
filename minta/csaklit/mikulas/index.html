@@ -156,7 +156,7 @@
   <div>
     <p class="crumb"><a href="../">Főoldal</a> / Mikulás-program</p>
     <h1>Mikulás-délután a <span class="mk-red">Csáklitban</span></h1>
-    <p class="lead">Két órányi ünnepi élmény a gyerekeknek: forró csoki, éneklés, rajzolás, levélírás, és személyes találkozás a Mikulással, aki néhány kedves szót is szól minden gyermekhez. Válassz időpontot, töltsd ki az adatokat, és fizess online: a helyetek a fizetéssel azonnal lefoglalva.</p>
+    <p class="lead">Két órányi ünnepi élmény a gyerekeknek: forró csoki, éneklés, rajzolás, levélírás, és személyes találkozás a Mikulással, aki néhány kedves szót is szól minden gyermekhez. Válassz időpontot, töltsd ki az adatokat, és fizess online bankkártyával: a helyetek a sikeres fizetéssel lesz lefoglalva.</p>
     <div class="mk-badges">
       <span class="mk-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>December 5–6.</span>
       <span class="mk-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>2 órás program</span>
@@ -242,14 +242,14 @@
         <h3>Turnusok és létszám</h3>
         <ul>
           <li>Egy turnusban legfeljebb <b>12 gyermek</b> vehet részt.</li>
-          <li>Egy foglalásba legfeljebb <b>9 gyermek</b> kerülhet.</li>
+          <li>Egy foglalásba legfeljebb <b><span class="maxk">9</span> gyermek</b> kerülhet.</li>
           <li>A foglalás az online fizetéssel együtt érvényes.</li>
         </ul>
       </article>
       <article>
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"></path><path d="M8 9h8M8 13h8M8 17h5"></path></svg></span>
         <h3>Lemondás és átruházás</h3>
-        <p>A foglalás nem mondható le, de <b>legkésőbb az előző nap 18:00-ig átruházható</b> valaki másra, vagy a befizetett összeg <b>lefogyasztható a kávéházban</b>.</p>
+        <p>A foglalás nem mondható le, de <b>legkésőbb az előző nap 18:00-ig átruházható</b> valaki másra, vagy a befizetett összeg <b>decemberben bármikor lefogyasztható a kávéházban</b>.</p>
       </article>
       <article>
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></span>
@@ -274,7 +274,7 @@
         <h3><b>2</b>A gyermek adatai</h3>
         <div class="kids" id="kids"></div>
         <button type="button" class="addkid" id="addKid" style="margin-top:14px">+ Még egy gyermeket hozok</button>
-        <p class="hint" id="maxNote" hidden>Egy foglalásba legfeljebb 9 gyermek kerülhet. Több gyermekhez indíts új foglalást.</p>
+        <p class="hint" id="maxNote" hidden>Egy foglalásba legfeljebb <span class="maxk">9</span> gyermek kerülhet. További gyermekhez indíts új foglalást.</p>
         <p class="warn" id="capWarn" role="status" style="margin-top:14px" hidden></p>
       </div>
       <div class="bstep form">
@@ -288,7 +288,7 @@
       <div class="bstep form">
         <h3><b>4</b>Fizetés és véglegesítés</h3>
         <label class="chk"><input type="checkbox" id="terms"><span>Elolvastam és elfogadom a <a href="#feltetelek">részvételi feltételeket</a> és az <a href="../adatkezeles/">adatkezelési tájékoztatót</a>.</span></label>
-        <p class="paynote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><span>Bankkártyás fizetés a biztonságos fizetési oldalon. A helyet a sikeres fizetés pillanatában foglaljuk le, a visszaigazolást e-mailben küldjük.</span></p>
+        <p class="paynote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><span>A foglalás elküldése után átirányítunk a Teya biztonságos fizetési oldalára. A helyet a sikeres fizetéssel foglaljuk le; a fizetésről a Teya oldalán kérhetsz e-mailes nyugtát.</span></p>
         <p class="ferr" id="mkErr" role="alert"></p>
         <button class="submit" type="submit" id="payBtn">Fizetés és foglalás · 5&nbsp;990&nbsp;Ft</button>
       </div>
@@ -308,15 +308,15 @@
   </div>
   <div class="wrap" id="doneWrap" hidden>
     <div class="donebox" role="status" tabindex="-1" id="doneBox">
-      <h2>Sikeres fizetés, a helyetek lefoglalva!</h2>
+      <h2>Már csak a fizetés van hátra</h2>
       <p id="doneMsg"></p>
       <dl>
         <div><dt>Turnus</dt><dd id="dSlot"></dd></div>
         <div><dt>Gyermekek</dt><dd id="dKids"></dd></div>
-        <div><dt>Fizetve</dt><dd id="dTotal"></dd></div>
+        <div><dt>Fizetendő</dt><dd id="dTotal"></dd></div>
       </dl>
-      <p class="demo">Bemutató: élesben a gomb a bankkártyás fizetési oldalra visz, és ez a visszaigazolás csak sikeres fizetés után jelenik meg.</p>
-      <div class="row"><button type="button" class="btn btn-gold" id="again">Új foglalás</button></div>
+      <div class="row"><a class="btn btn-gold" id="payGo" href="https://checkout.teya.com/pbl/01a1d482-5ce8-7e45-9829-d38c38a5af63">Tovább a fizetéshez</a> <button type="button" class="btn btn-line" id="again" style="color:#F3EFE6;border-color:rgba(243,239,230,.45)">Új foglalás</button></div>
+      <p class="demo">Ha a fizetési oldal nem nyílt meg, vagy megszakadt a fizetés, a gombbal újra megnyithatod.</p>
     </div>
   </div>
 </section>
@@ -347,11 +347,17 @@
   var PRICE = 5990;
   var SLOTS = [
     {id:'s1', day:'December 5., szombat', time:'14:00–16:00', free:12},
-    {id:'s2', day:'December 5., szombat', time:'16:00–18:00', free:3},
-    {id:'s3', day:'December 6., vasárnap', time:'14:00–16:00', free:0},
-    {id:'s4', day:'December 6., vasárnap', time:'16:00–18:00', free:9}
+    {id:'s2', day:'December 5., szombat', time:'16:00–18:00', free:12},
+    {id:'s3', day:'December 6., vasárnap', time:'14:00–16:00', free:12},
+    {id:'s4', day:'December 6., vasárnap', time:'16:00–18:00', free:12}
   ];
-  var MAXKIDS = 9;   /* egy foglalásba legfeljebb 9 gyermek; turnusonként 12 hely */
+  /* Teya Pay by Link: gyermekszámonként egy fix összegű link (1 gyermek = 5 990 Ft, 2 = 11 980 Ft …).
+     Egy foglalásba annyi gyermek kerülhet, ameddig 1-től folyamatosan van link (legfeljebb 9). */
+  var PAY_LINKS = {
+    1: 'https://checkout.teya.com/pbl/01a1d482-5ce8-7e45-9829-d38c38a5af63'
+  };
+  var MAXKIDS = 0; while(MAXKIDS < 9 && PAY_LINKS[MAXKIDS+1]) MAXKIDS++;
+  [].forEach.call(document.querySelectorAll('.maxk'), function(el){ el.textContent = MAXKIDS; });
   var $ = function(id){return document.getElementById(id)};
   var st = {slot:null, kids:[{name:'',age:'',note:''}]};
   var fmt = function(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' Ft'};
@@ -444,14 +450,46 @@
     if(!err && !$('terms').checked){ err='A foglaláshoz fogadd el a részvételi feltételeket és az adatkezelési tájékoztatót.'; focus=$('terms'); }
     $('mkErr').textContent = err;
     if(err){ if(focus) focus.focus(); return; }
-    /* Élesben: foglalás létrehozása a szerveren (hely zárolása) → átirányítás a fizetési oldalra.
-       A visszaigazolás csak a fizetési szolgáltató sikeres visszajelzése után jelenik meg. */
-    $('doneMsg').textContent = 'Köszönjük, '+name+'! A visszaigazolást elküldtük a(z) '+email+' címre. Várunk titeket a Csáklitban.';
-    $('dSlot').textContent = s.day+' · '+s.time;
-    $('dKids').textContent = st.kids.length+' gyermek';
-    $('dTotal').textContent = fmt(PRICE*st.kids.length);
-    $('bookWrap').hidden = true; $('doneWrap').hidden = false;
-    $('foglalas').scrollIntoView({behavior:'smooth', block:'start'}); $('doneBox').focus({preventScroll:true});
+    var n = st.kids.length, link = PAY_LINKS[n], total = PRICE*n;
+    if(!link){ $('mkErr').textContent = 'Egy foglalásba legfeljebb '+MAXKIDS+' gyermek kerülhet.'; return; }
+    /* A foglalás adatai e-mailben mennek a kávéháznak (Web3Forms), utána a Teya fizetési oldala jön.
+       A Teya-link nem visz magával adatot: a kávéház a befizetést az összeg, az időpont és a név alapján párosítja. */
+    var kidsTxt = st.kids.map(function(k,i){
+      var age = k.age==='0' ? '1 év alatti' : (k.age==='13' ? '12 évnél idősebb' : k.age+' éves');
+      return (i+1)+'. '+k.name.trim()+' ('+age+')'+(k.note.trim() ? ' – A Mikulás mondja neki: '+k.note.trim() : '');
+    }).join('\n');
+    var p = {
+      access_key: (window.CK && CK.FORM_KEY) || 'e7adef8b-f72d-42f9-9362-ceba9306ab2d',
+      from_name: 'Csáklit Kávéház weboldal',
+      subject: 'Mikulás-foglalás – '+s.day+' '+s.time+' – '+n+' gyermek – '+name,
+      replyto: email,
+      'Turnus': s.day+' '+s.time,
+      'Gyermekek száma': n,
+      'Gyermekek': kidsTxt,
+      'Szülő neve': name,
+      'E-mail': email,
+      'Telefon': phone,
+      'Fizetendő': fmt(total),
+      'Fizetés': 'Teya (online bankkártya) – a foglalás a sikeres fizetéssel érvényes',
+      'Űrlap': 'Mikulás-foglalás'
+    };
+    var btn = $('payBtn'); btn.disabled = true; btn.textContent = 'Foglalás küldése…';
+    fetch((window.CK && CK.FORM_ENDPOINT) || 'https://api.web3forms.com/submit', {method:'POST', headers:{'Content-Type':'application/json', Accept:'application/json'}, body: JSON.stringify(p)})
+      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if(!r.ok || j.success === false) throw 0; }); })
+      .then(function(){
+        $('doneMsg').textContent = 'Köszönjük, '+name+'! A foglalás adatait elküldtük a kávéháznak. A helyetek a sikeres fizetéssel lesz lefoglalva: most átirányítunk a Teya biztonságos fizetési oldalára.';
+        $('dSlot').textContent = s.day+' · '+s.time;
+        $('dKids').textContent = n+' gyermek';
+        $('dTotal').textContent = fmt(total);
+        $('payGo').href = link; $('payGo').textContent = 'Tovább a fizetéshez · '+fmt(total);
+        $('bookWrap').hidden = true; $('doneWrap').hidden = false;
+        $('foglalas').scrollIntoView({behavior:'smooth', block:'start'}); $('doneBox').focus({preventScroll:true});
+        setTimeout(function(){ location.assign(link); }, 1500);
+      })
+      .catch(function(){
+        $('mkErr').textContent = 'Nem sikerült elküldeni a foglalást. Próbáld újra pár perc múlva, vagy hívj minket: +36 1 617 3197.';
+      })
+      .then(function(){ btn.disabled = false; update(); });
   });
   $('again').addEventListener('click', function(){
     st = {slot:null, kids:[{name:'',age:'',note:''}]};
