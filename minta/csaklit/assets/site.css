@@ -267,11 +267,11 @@ dialog.lb::backdrop{background:rgba(18,26,21,.88)}
   .map,.map iframe{min-height:300px}
 }
 
-/* Mikulás-menüpont (szezonális): asztali menüben piros-rózsaszín pirula zöld hópehellyel a menü végén; mobilon piros, cukorpálca-csíkos sor a lista végén */
-.menu a.mk-nav{display:inline-flex;align-items:center;gap:7px;margin-left:6px;padding:9px 15px 9px 12px;color:#C62828;background:#FCEBEA;transition:background .2s,color .2s}
-.menu a.mk-nav svg{flex:none;color:var(--green);transition:transform .4s cubic-bezier(.3,1.6,.5,1),color .2s}
-.menu a.mk-nav:hover,.menu a.mk-nav[aria-current=page]{color:#fff;background:#C62828}
-.menu a.mk-nav:hover svg,.menu a.mk-nav[aria-current=page] svg{color:var(--gold-l)}
+/* Mikulás-menüpont (szezonális): asztali menüben telt piros pirula arany hópehellyel a menü végén (rávitt egérnél és az aktív oldalon rózsaszín, zöld hópehellyel); mobilon piros, cukorpálca-csíkos sor a lista végén */
+.menu a.mk-nav{display:inline-flex;align-items:center;gap:7px;margin-left:6px;padding:9px 15px 9px 12px;color:#fff;background:#C62828;transition:background .2s,color .2s}
+.menu a.mk-nav svg{flex:none;color:var(--gold-l);transition:transform .4s cubic-bezier(.3,1.6,.5,1),color .2s}
+.menu a.mk-nav:hover,.menu a.mk-nav[aria-current=page]{color:#C62828;background:#FCEBEA}
+.menu a.mk-nav:hover svg,.menu a.mk-nav[aria-current=page] svg{color:var(--green)}
 .menu a.mk-nav:hover svg{transform:rotate(60deg)}
 .mnav ul a.mk-nav{justify-content:flex-start;gap:12px;margin:10px 0 0;padding:13px 14px;border-radius:14px;border:2px solid transparent;color:#fff;background:linear-gradient(#C62828,#C62828) padding-box,repeating-linear-gradient(-45deg,#C62828 0 7px,#fff 7px 14px) border-box}
 .mnav ul a.mk-nav[aria-current=page]{color:#fff;padding-left:14px;padding-right:14px;background:linear-gradient(#C62828,#C62828) padding-box,repeating-linear-gradient(-45deg,var(--green) 0 7px,#fff 7px 14px) border-box}
