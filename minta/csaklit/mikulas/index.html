@@ -137,19 +137,25 @@
 @media (max-width:1020px){.mk-hero{grid-template-columns:1fr;gap:32px}.mk-art{max-width:560px}}
 @media (max-width:1020px){.inc{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.turns{grid-template-columns:1fr}.inc{gap:10px}.inc li{padding:16px}.donebox{padding:24px 18px}.donebox dl{grid-template-columns:1fr}}
-.know{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:stretch}
-.know article{background:#fff;border:1.5px solid var(--line);border-radius:var(--r-l);padding:22px;display:grid;gap:10px;line-height:1.5;transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s,border-color .25s}
-.know article:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
-.know .ico{width:44px;height:44px;border-radius:50%;background:var(--red-t);color:var(--red);display:grid;place-items:center;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
-.know article:hover .ico{transform:rotate(-10deg) scale(1.12)}
-.know article:nth-child(2) .ico{background:var(--green-t);color:var(--green)}
-.know .ico svg{width:22px;height:22px}
-.know h3{margin:4px 0 0;font-size:20px}
-.know p{margin:0;font-size:15px;color:var(--ink)}
-.know ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15px}
 .hint{margin-top:10px;font-size:14px;color:var(--green-2)}
-@media (max-width:1020px){.know{grid-template-columns:1fr}}
-@media (max-width:640px){.know article{padding:18px}}
+.faqsec{padding:56px 0 72px}
+.faqgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:32px;align-items:start}
+.faqhead h2{font-size:clamp(24px,2.6vw,30px)}
+.faqhead p{margin:8px 0 0;color:var(--muted,#6B6458);font-size:15px}
+.faq{display:grid;gap:10px}
+.faq details{background:#fff;border:1.5px solid var(--line);border-radius:var(--r-m);transition:border-color .2s}
+.faq details[open]{border-color:var(--green-3)}
+.faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:58px;padding:14px 18px;cursor:pointer;font-weight:700;font-size:16px;line-height:1.35;border-radius:var(--r-m)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--green)}
+.faq summary:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.faq .chev{flex:none;width:20px;height:20px;color:var(--green);transition:transform .2s}
+.faq details[open] .chev{transform:rotate(180deg)}
+.faq .ans{padding:0 18px 18px;display:grid;gap:10px;font-size:15px;line-height:1.55;color:var(--ink)}
+.faq .ans p{margin:0}
+.faq .ans ul{margin:0;padding-left:18px;display:grid;gap:6px}
+@media (max-width:900px){.faqgrid{grid-template-columns:1fr;gap:18px}}
+@media (prefers-reduced-motion:reduce){.faq .chev,.faq details{transition:none}}
 </style>
 <section class="phero" style="padding-bottom: 56px;">
   <div class="wrap mk-hero">
@@ -229,38 +235,6 @@
     </ul>
   </div>
 </section>
-
-<section id="feltetelek" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>Jó tudni</h2>
-      <p>Pár fontos tudnivaló a foglalás előtt.</p>
-    </div>
-    <div class="know">
-      <article>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.5"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 15.5c2.8-.4 5 1.8 5 4.5"></path></svg></span>
-        <h3>Turnusok és létszám</h3>
-        <ul>
-          <li>Egy turnusban legfeljebb <b>12 gyermek</b> vehet részt.</li>
-          <li>Egy foglalásba legfeljebb <b><span class="maxk">9</span> gyermek</b> kerülhet.</li>
-          <li>A foglalás az online fizetéssel együtt érvényes.</li>
-        </ul>
-      </article>
-      <article>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"></path><path d="M8 9h8M8 13h8M8 17h5"></path></svg></span>
-        <h3>Lemondás és átruházás</h3>
-        <p>A foglalás nem mondható le, de <b>legkésőbb az előző nap 18:00-ig átruházható</b> valaki másra, vagy a befizetett összeg <b>decemberben bármikor lefogyasztható a kávéházban</b>.</p>
-      </article>
-      <article>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></span>
-        <h3>Kísérő szülők</h3>
-        <p>A gyermekek részvételéhez egy vagy két kísérő szülő is csatlakozhat, számukra a részvétel <b>ingyenes</b>.</p>
-        <p>Ha két szülő érkezik a gyermekkel, kérjük, hogy a Mikulás közvetlen közelében egyszerre csak az egyik szülő tartózkodjon; a másik ezalatt az üzlethelyiségben vagy a teraszon várakozhat. Az üzletben korlátozott számban állnak rendelkezésre ülőhelyek, ezért nem tudjuk garantálni, hogy a második kísérő szülőnek is jut ülőhely.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
 <section class="tint" id="foglalas" style="padding-top:56px">
   <div class="wrap" id="bookWrap">
     <div class="sec-head"><h2>Foglalás</h2><p>A foglalás csak az online fizetéssel együtt érvényes. Fizetés nélkül nem tudunk helyet tartani.</p></div>
@@ -317,6 +291,41 @@
       </dl>
       <div class="row"><a class="btn btn-gold" id="payGo" href="https://checkout.teya.com/pbl/01a1d482-5ce8-7e45-9829-d38c38a5af63">Tovább a fizetéshez</a> <button type="button" class="btn btn-line" id="again" style="color:#F3EFE6;border-color:rgba(243,239,230,.45)">Új foglalás</button></div>
       <p class="demo">Ha a fizetési oldal nem nyílt meg, vagy megszakadt a fizetés, a gombbal újra megnyithatod.</p>
+    </div>
+  </div>
+</section>
+<section id="feltetelek" class="faqsec">
+  <div class="wrap">
+    <div class="faqgrid">
+      <div class="faqhead">
+        <h2>Jó tudni</h2>
+        <p>Részvételi feltételek és gyakori kérdések.</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Hány gyermek jöhet egy turnusra és egy foglalásban?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
+          <div class="ans">
+            <ul>
+              <li>Egy turnusban legfeljebb <b>12 gyermek</b> vehet részt.</li>
+              <li>Egy foglalásba legfeljebb <b><span class="maxk">9</span> gyermek</b> kerülhet.</li>
+              <li>A foglalás az online fizetéssel együtt érvényes.</li>
+            </ul>
+          </div>
+        </details>
+        <details>
+          <summary>Le lehet mondani a foglalást?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
+          <div class="ans">
+            <p>A foglalás nem mondható le, de <b>legkésőbb az előző nap 18:00-ig átruházható</b> valaki másra, vagy a befizetett összeg <b>decemberben bármikor lefogyasztható a kávéházban</b>.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Jöhetnek a szülők is?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
+          <div class="ans">
+            <p>A gyermekek részvételéhez egy vagy két kísérő szülő is csatlakozhat, számukra a részvétel <b>ingyenes</b>.</p>
+            <p>Ha két szülő érkezik a gyermekkel, kérjük, hogy a Mikulás közvetlen közelében egyszerre csak az egyik szülő tartózkodjon; a másik ezalatt az üzlethelyiségben vagy a teraszon várakozhat. Az üzletben korlátozott számban állnak rendelkezésre ülőhelyek, ezért nem tudjuk garantálni, hogy a második kísérő szülőnek is jut ülőhely.</p>
+          </div>
+        </details>
+      </div>
     </div>
   </div>
 </section>
@@ -498,6 +507,9 @@
     $('doneWrap').hidden = true; $('bookWrap').hidden = false;
   });
 
+  function openFaq(){ if(location.hash==='#feltetelek') [].forEach.call(document.querySelectorAll('#feltetelek details'), function(d){ d.open = true; }); }
+  addEventListener('hashchange', openFaq); openFaq();
+  document.addEventListener('click', function(e){ var a = e.target.closest('a[href="#feltetelek"]'); if(a) setTimeout(openFaq, 0); });
   renderSlots(); renderKids(); update();
 })();
 </script>
