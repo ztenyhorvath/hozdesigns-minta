@@ -1,1 +1,15 @@
+index.html
+etlap/index.html
+heti-menu/index.html
+cukraszda/index.html
+rendezvenyek/index.html
+rolunk/index.html
+galeria/index.html
+kapcsolat/index.html
+asztalfoglalas/index.html
+adatkezeles/index.html
 mikulas/index.html
+assets/site.css
+sitemap.xml
+mikulas/plakat.jpg
+mikulas/plakat-900.jpg
