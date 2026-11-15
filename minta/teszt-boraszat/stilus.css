@@ -427,3 +427,7 @@ dialog::backdrop{background:rgba(30,35,32,.55)}
   .packs.rows .d{grid-column:2}
   .sbuy{gap:14px}
 }
+
+/* sötét mezők: a naptárikon és a lenyíló nyíl világos */
+.dark .inp,.panel.green .inp{color-scheme:dark}
+.dark .inp::-webkit-calendar-picker-indicator,.panel.green .inp::-webkit-calendar-picker-indicator{opacity:.9;cursor:pointer}
