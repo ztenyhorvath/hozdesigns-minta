@@ -6,6 +6,9 @@ felsorolt fájlokat másolja a webgyökérbe. Csak ami a listán van; törlés n
 - `csaklitkavehaz.hu/` → a Csáklit szerverén (Teoflora droplet, `ssh root@csaklitkavehaz.hu`); a webgyökeret a szkript az nginx-konfigból keresi ki. Telepítve: 2026-11-13 12:06, cron 5 percenként.
   - **Az éles oldal minden fájlja a mintából épül:** `python3 eles/build_csaklit.py` (a felső bemutató sáv és a noindex nélkül), ez írja a files.txt-t is. Előtte ellenőrizve (2026-11-13): az éles oldalak bájtra egyeztek a minta „sáv és noindex nélküli” változatával.
   - Mikulás-program: 2026-11-13 13:28 óta nyilvános, menüpont minden oldalon (a felhasználó: „legyen egy menüpont zöld piros … mikulás színekkel”), sitemapben is.
+- `teoflora.hu/` → a Teoflora weboldal (ugyanazon a dropleten). Egyetlen önálló `index.html` (képek base64-ben). Forrás: a projektmappa `elesites/index.html`-je.
+  - 2026-11-15: téli frissítés (téli kezdőkép, 11.20. Őszi alkotóműhely, 11.21. Mikulásváró, 12.05. Karácsonyváró kinusaiga plakátokkal, Instagram-link, lejárt októberi dátumok törölve).
+  - **Egyszeri beállítás a szerveren** (ha még nincs): `crontab -e` → `*/5 * * * * /usr/local/bin/hz-sync.sh teoflora.hu /var/www/teoflora.hu`
 
 **Megjegyzés:** a hozdesigns.com szerverén is van egy `hz-sync.sh csaklitkavehaz.hu …` cron-sor (tévedésből, 2026-11-13). Ott nincs ilyen oldal, ezért minden futáskor hibával kilép, és nem csinál semmit. Kiszedhető: `crontab -l | grep -v hz-sync | crontab -`.
 
