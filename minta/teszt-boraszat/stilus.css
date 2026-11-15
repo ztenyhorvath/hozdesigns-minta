@@ -51,6 +51,7 @@ header nav a:hover{border-color:var(--tinta)}
 .arch{border-radius:999px 999px 0 0;overflow:hidden;aspect-ratio:3/4;background:var(--homok)}
 .arch img{width:100%;height:100%;object-fit:cover}
 .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--tinta);margin-top:64px}
+.hero .facts{margin-bottom:56px}
 .facts div{padding:18px 16px 22px 20px;border-right:1px solid var(--vonal)}
 .facts div:first-child{padding-left:0}
 .facts div:last-child{border-right:0}
@@ -98,7 +99,7 @@ section{padding:104px 0}
 .band{margin:0;position:relative}
 .band img{width:100%;height:min(62vh,600px);object-fit:cover}
 .band figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 0;font:400 13px/1.4 var(--mono);color:#fff;background:linear-gradient(transparent,rgba(30,35,32,.55))}
-.teaser{padding:72px 0 104px}
+.teaser{padding:104px 0}
 .teaser .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .teaser .wide{aspect-ratio:4/3;object-position:35% 50%}
 .teaser h2{margin-bottom:22px}
@@ -305,7 +306,7 @@ dialog::backdrop{background:rgba(30,35,32,.55)}
   .hero .arch{aspect-ratio:4/3;border-radius:200px 200px 0 0}
   .log article{grid-template-columns:1fr}
   .log article p{grid-column:1}
-  .teaser{padding:48px 0 64px}
+  .teaser{padding:64px 0}
   .band img{height:46vh}
   .phero{padding:40px 0 36px}
   .facts{grid-template-columns:1fr 1fr;margin-top:40px}
@@ -374,11 +375,7 @@ dialog::backdrop{background:rgba(30,35,32,.55)}
 .sidx button span:first-child::before{content:"";display:inline-block;width:0;height:1.5px;background:var(--tinta);vertical-align:middle;margin-right:0;transition:width .25s,margin .25s}
 .sidx button[aria-current=true] span:first-child::before{width:14px;margin-right:8px}
 .sidx button:focus-visible{outline:2px solid var(--zold);outline-offset:2px}
-@media (min-width:1001px) and (min-height:600px){
-  .show.pin{height:250vh}
-  .show.pin .stage{position:sticky;top:73px;height:calc(100vh - 73px);padding:0;display:flex;align-items:center}
-  .show.pin .spic{height:min(calc(100vh - 230px),540px);min-height:300px}
-}
+.sidx{position:relative}
 @media (max-height:760px) and (min-width:1001px){
   .sinfo h3{font-size:34px;margin:6px 0 10px}
   #s-le{font-size:16px}

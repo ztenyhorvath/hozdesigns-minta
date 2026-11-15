@@ -27,7 +27,7 @@
   <div class="wrap">
     <a class="logo" href="#" aria-label="Kőhalom Pince – az oldal teteje"><svg><use href="#iv"/></svg>Kőhalom</a>
     <nav aria-label="Fő menü">
-      <a href="#borok">Borok</a>
+      <a href="#borok">Boraink</a>
       <a href="#kostolo">Kóstoló</a>
       <a href="birtok/">Birtok</a>
       <a href="#ajandek">Ajándék és cégeknek</a>
@@ -46,7 +46,7 @@
       <h1>Tizenkét hektár, három dűlő, <em>egy család.</em></h1>
       <p class="lead">Kadarkát, kékfrankost és bikavért készítünk a szekszárdi löszdombokon, 1994 óta. A borainkat közvetlenül tőlünk rendelheted, palackra vagy kartonra, és a pincében meg is kóstolhatod őket.</p>
       <div class="cta">
-        <a class="btn" href="#borok">Borok</a>
+        <a class="btn" href="#borok">Boraink</a>
         <a class="btn line" href="#kostolo">Kóstoló foglalása</a>
       </div>
     </div>
@@ -62,16 +62,21 @@
   </div>
 </section>
 
+<figure class="band">
+  <img src="img/taj.jpg" width="2400" height="1012" alt="A szekszárdi dombok ősszel, köddel a völgyekben" >
+  <figcaption><div class="wrap">Iván-völgy, október vége</div></figcaption>
+</figure>
+
 <section class="show" id="borok">
   <div class="stage">
     <div class="wrap">
       <div class="shead">
-        <h2>Borok</h2>
+        <h2>Boraink</h2>
         <div class="shipline"><span>Házhoz szállítás 2 990 Ft</span><span>25 000 Ft felett ingyen visszük</span><span>Átvétel a pincénél díjmentes</span></div>
       </div>
       <div class="sgrid">
         <div class="spic c-voros" id="s-pic"></div>
-        <div class="sinfo" id="s-info" aria-live="polite">
+        <div class="sinfo" id="s-info" >
           <div class="mono" id="s-sor"></div>
           <h3 id="s-nev"></h3>
           <p id="s-le"></p>
@@ -124,11 +129,7 @@
   </div>
 </section>
 
-<figure class="band" id="birtok">
-  <img src="img/taj.jpg" width="2400" height="1012" alt="A szekszárdi dombok ősszel, köddel a völgyekben" loading="lazy">
-  <figcaption><div class="wrap">Iván-völgy, október vége</div></figcaption>
-</figure>
-<section class="teaser">
+<section class="teaser" id="birtok">
   <div class="wrap">
     <img class="wide" src="img/pince2.jpg" width="1456" height="804" alt="A birtok téglaboltozatos pincéje az ászokhordókkal" loading="lazy">
     <div>
@@ -217,7 +218,7 @@
         <a class="logo" href="#"><svg><use href="#iv"/></svg>Kőhalom Pince</a>
         <p>Családi pincészet a szekszárdi Iván-völgyben, 1994 óta.</p>
       </div>
-      <div><h4>Vásárlás</h4><ul><li><a href="#borok">Borok</a></li><li><a href="#ajandek">Ajándék és cégeknek</a></li><li><a href="#borok">Szállítás és fizetés</a></li><li><a href="#">ÁSZF és elállás</a></li></ul></div>
+      <div><h4>Vásárlás</h4><ul><li><a href="#borok">Boraink</a></li><li><a href="#ajandek">Ajándék és cégeknek</a></li><li><a href="#borok">Szállítás és fizetés</a></li><li><a href="#">ÁSZF és elállás</a></li></ul></div>
       <div><h4>Pince</h4><ul><li><a href="#kostolo">Kóstoló</a></li><li><a href="birtok/">Birtok</a></li><li><a href="#kapcsolat">Kapcsolat</a></li></ul></div>
       <div><h4>Fizetés és szállítás</h4><ul><li>Bankkártya, átutalás, utánvét</li><li>GLS futár, 2–4 munkanap</li><li>Csomagautomata 1 690 Ft</li></ul></div>
     </div>
@@ -226,7 +227,7 @@
 </footer>
 
 <div class="mbar">
-  <a href="#borok">Borok</a>
+  <a href="#borok">Boraink</a>
   <a href="#kostolo">Kóstoló</a>
   <button type="button" data-cart>Kosár<b data-n>0</b></button>
   <a href="tel:+36301234567">Hívás</a>
@@ -295,7 +296,7 @@ var P={};W.concat(G).forEach(function(w){P[w.id]=w});
 var AJANLO=['kadarka','bikaver','siller'], TAG={kadarka:'Halászlé mellé',bikaver:'Vadszezonra',siller:'Új évjárat'};
 
 /* bormutató: egy képernyő, a görgetés lapoz */
-var sec=$('#borok'), stage=$('.stage',sec), cur=null, HEAD=73;
+var sec=$('#borok'), stage=$('.stage',sec), cur=null;
 $('#s-idx').innerHTML=TIERS.map(function(t){return '<div class="t">'+t.nev+'</div>'+W.filter(function(w){return w.t===t.id}).map(function(w){return '<button type="button" data-show="'+w.id+'"><span>'+w.nev+'</span><span>'+ft(w.ar)+'</span></button>'}).join('')}).join('');
 var ORDER=[];TIERS.forEach(function(t){W.forEach(function(w){if(w.t===t.id)ORDER.push(w.id)})});
 var calm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -307,19 +308,19 @@ function show(id){if(id===cur)return;cur=id;var w=P[id];
   $('#s-etel').textContent='Mihez: '+w.etel;
   $('#s-ar').innerHTML=ft(w.ar)+'<small>0,75 l · '+ft(w.ar/0.75)+'/l</small>';
   $('#s-qty').innerHTML=[1,6,12].map(function(q,i){return '<button class="btn small'+(i?' line':'')+'" type="button" data-add="'+id+'" data-qn="'+q+'">'+(q===1?'Kosárba':q+' palack · '+ft(q*w.ar))+'</button>'}).join('');
-  $$('#s-idx button').forEach(function(b){var on=b.dataset.show===id;b.setAttribute('aria-current',on);if(on&&!pinned())b.scrollIntoView({block:'nearest',inline:'center'})});
+  $$('#s-idx button').forEach(function(b){var on=b.dataset.show===id;b.setAttribute('aria-current',on);if(on){var x=$('#s-idx');if(x.scrollWidth>x.clientWidth)x.scrollTo({left:b.offsetLeft-x.clientWidth/2+b.offsetWidth/2,behavior:calm?'auto':'smooth'})}});
   if(!calm&&$('#s-info').animate){$('#s-info').animate([{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'none'}],{duration:320,easing:'ease-out'});$('#s-pic svg').animate([{opacity:0,transform:'translateY(12%)'},{opacity:1,transform:'translateY(5%)'}],{duration:380,easing:'ease-out'})}
 }
-var mq=window.matchMedia('(min-width:1001px) and (min-height:600px)');
-function pinned(){return sec.classList.contains('pin')}
-function setPin(){sec.classList.toggle('pin',mq.matches&&!calm)}
-function span(){return sec.offsetHeight-stage.offsetHeight}
-function onScroll(){if(!pinned())return;var r=sec.getBoundingClientRect(),p=(HEAD-r.top)/span();if(p<0||p>1)return;show(ORDER[Math.min(ORDER.length-1,Math.floor(p*ORDER.length))])}
-setPin();if(mq.addEventListener)mq.addEventListener('change',setPin);
-window.addEventListener('scroll',onScroll,{passive:true});
-$('#s-idx').addEventListener('click',function(e){var b=e.target.closest('[data-show]');if(!b)return;
-  if(pinned()){var i=ORDER.indexOf(b.dataset.show),r=sec.getBoundingClientRect();window.scrollTo({top:window.scrollY+r.top-HEAD+(i+.5)/ORDER.length*span(),behavior:calm?'auto':'smooth'})}
-  show(b.dataset.show)});
+function pinned(){return false}
+/* pár másodpercenként vált; kattintásra a választott bor jön, és onnan megy tovább */
+var DELAY=5000, timer=null, hold=false, seen=false;
+function next(){show(ORDER[(ORDER.indexOf(cur)+1)%ORDER.length])}
+function play(){clearInterval(timer);timer=null;if(calm||hold||!seen||document.hidden)return;timer=setInterval(next,DELAY)}
+$('#s-idx').addEventListener('click',function(e){var b=e.target.closest('[data-show]');if(!b)return;show(b.dataset.show);play()});
+['mouseenter','focusin'].forEach(function(ev){stage.addEventListener(ev,function(){hold=true;play()})});
+['mouseleave','focusout'].forEach(function(ev){stage.addEventListener(ev,function(){hold=false;play()})});
+document.addEventListener('visibilitychange',play);
+if('IntersectionObserver' in window)new IntersectionObserver(function(en){seen=en[0].isIntersecting;play()},{threshold:.35}).observe(stage);else{seen=true;play()}
 show('kadarka');cur=null;show(ORDER[0]);
 $('#gifts').innerHTML=G.map(function(g){return '<li><div><b>'+g.nev+'</b><small>'+g.sor+'</small></div><span class="pr">'+ft(g.ar)+'</span><button class="btn small line" type="button" data-add="'+g.id+'">Kosárba</button></li>'}).join('');
 
