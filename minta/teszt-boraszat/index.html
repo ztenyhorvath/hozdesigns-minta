@@ -62,93 +62,65 @@
   </div>
 </section>
 
-<section id="ajanlo" style="padding-top:88px;padding-bottom:40px">
-  <div class="wrap">
-    <div class="head">
-      <h2>Novemberben ezt ajánljuk</h2>
-      <p>Három bor, amely most a legjobb formáját mutatja. Havonta cseréljük, mindig abból, ami a pincében éppen jól áll.</p>
+<section class="show" id="borok">
+  <div class="stage">
+    <div class="wrap">
+      <div class="shead">
+        <h2>Borok</h2>
+        <div class="shipline"><span>Házhoz szállítás 2 990 Ft</span><span>25 000 Ft felett ingyen visszük</span><span>Átvétel a pincénél díjmentes</span></div>
+      </div>
+      <div class="sgrid">
+        <div class="spic c-voros" id="s-pic"></div>
+        <div class="sinfo" id="s-info" aria-live="polite">
+          <div class="mono" id="s-sor"></div>
+          <h3 id="s-nev"></h3>
+          <p id="s-le"></p>
+          <div class="mono" id="s-adat"></div>
+          <p id="s-etel"></p>
+          <div class="sbuy"><div class="price" id="s-ar"></div><div class="qty" id="s-qty"></div></div>
+        </div>
+        <nav class="sidx" id="s-idx" aria-label="Borkínálat"></nav>
+      </div>
     </div>
-    <div class="grid three" id="ajanlo-grid"></div>
-  </div>
-</section>
-
-<section id="borok" style="padding-top:48px">
-  <div class="wrap">
-    <div class="head">
-      <h2>Borok</h2>
-    </div>
-    <div class="shipline"><span>Házhoz szállítás 2 990 Ft</span><span>25 000 Ft felett ingyen visszük</span><span>Átvétel a pincénél díjmentes</span><span>Törött palackot cserélünk</span></div>
-    <div class="chips" role="group" aria-label="Szűrés szín szerint" style="margin:22px 0 36px">
-      <button type="button" data-f="mind" aria-pressed="true">Mind</button>
-      <button type="button" data-f="vilagos" aria-pressed="false">Fehér, rozé, siller</button>
-      <button type="button" data-f="voros" aria-pressed="false">Vörös</button>
-    </div>
-    <div id="tiers"></div>
   </div>
 </section>
 
 <section class="dark" id="kostolo">
-  <div class="wrap">
-    <div class="head">
+  <div class="wrap kgrid">
+    <div>
       <h2>Kóstoló a pincében</h2>
-      <p>Csütörtöktől vasárnapig fogadunk vendégeket, kettőtől tizenhat főig. A kóstolót mindig a család egyik tagja vezeti. Válassz csomagot, és kérj időpontot.</p>
+      <p class="lead">Csütörtöktől vasárnapig fogadunk vendégeket, kettőtől tizenhat főig. A kóstolót mindig a család egyik tagja vezeti, a pince asztalánál.</p>
+      <img class="ph" src="img/kostolo.jpg" width="900" height="1205" alt="Vörösbor töltése a pince asztalánál, mellette kenyér, sajt és kolbász" loading="lazy">
+      <ul class="terms">
+        <li>A kóstoló díjából fejenként 2 000 Ft-ot beszámítunk, ha helyben bort is viszel.</li>
+        <li>Fizetni a helyszínen lehet, kártyával, készpénzzel vagy SZÉP-kártyával.</li>
+        <li>Lemondani az előző nap délig díjmentesen lehet.</li>
+      </ul>
+      <details><summary>Jöhetünk gyerekkel vagy kutyával?</summary><p>Igen. A gyerekeknek szörpöt adunk, a kutyáknak vizet, az udvar zárt.</p></details>
+      <details><summary>Mi lesz azzal, aki vezet?</summary><p>A sofőr ingyen jön, szőlőlevet és kávét kap. Szállást a faluban három helyen tudunk ajánlani.</p></details>
+      <details><summary>Adhatom ajándékba?</summary><p>Igen, kóstolóutalványt az <a href="#ajandek">ajándékok között</a> találsz. Egy évig érvényes.</p></details>
     </div>
-    <div class="packs" role="group" aria-label="Kóstolócsomagok">
-      <button class="pack" type="button" data-pack="Pincesor" data-price="5500" aria-pressed="false">
-        <span class="d">45 perc · 2–16 fő</span>
-        <h3>Pincesor</h3>
-        <span class="p">5 500 Ft / fő</span>
-        <ul><li>4 bor a mindennapi sorból</li><li>Rövid séta a pincében</li><li>Kenyér, víz</li></ul>
-        <span class="pick">Ezt választom</span>
-      </button>
-      <button class="pack" type="button" data-pack="Birtokkóstoló" data-price="8900" aria-pressed="true">
-        <span class="d">90 perc · 2–16 fő</span>
-        <h3>Birtokkóstoló</h3>
-        <span class="p">8 900 Ft / fő</span>
-        <ul><li>6 bor, köztük egy dűlőválogatás</li><li>Pincelátogatás és hordókóstoló</li><li>Kenyér, sajt, kolbász</li></ul>
-        <span class="pick">Ezt választom</span>
-      </button>
-      <button class="pack" type="button" data-pack="Dűlőválogatás a borásszal" data-price="14900" aria-pressed="false">
-        <span class="d">2 óra · 4–10 fő</span>
-        <h3>Dűlőválogatás a borásszal</h3>
-        <span class="p">14 900 Ft / fő</span>
-        <ul><li>8 bor, régebbi évjáratokkal</li><li>Séta az Iván-völgyi szőlőben</li><li>Hidegtál a környék termelőitől</li></ul>
-        <span class="pick">Ezt választom</span>
-      </button>
-    </div>
-
-    <div class="book">
-      <div>
-        <img class="ph" src="img/kostolo.jpg" width="900" height="1205" alt="Vörösbor töltése a pince asztalánál, mellette kenyér, sajt és kolbász" loading="lazy">
-        <h3>Jó tudni</h3>
-        <ul class="terms">
-          <li>Legalább két nappal előre kérj időpontot.</li>
-          <li>A kóstoló díjából fejenként 2 000 Ft-ot beszámítunk, ha helyben bort is viszel.</li>
-          <li>Fizetni a helyszínen lehet, kártyával, készpénzzel vagy SZÉP-kártyával.</li>
-          <li>Lemondani az előző nap délig díjmentesen lehet.</li>
-        </ul>
-        <details><summary>Jöhetünk gyerekkel vagy kutyával?</summary><p>Igen. A gyerekeknek szörpöt adunk, a kutyáknak vizet, az udvar zárt.</p></details>
-        <details><summary>Mi lesz azzal, aki vezet?</summary><p>A sofőr ingyen jön, szőlőlevet és kávét kap. Szállást a faluban három helyen tudunk ajánlani.</p></details>
-        <details><summary>Adhatom ajándékba?</summary><p>Igen, kóstolóutalványt az <a href="#ajandek">ajándékok között</a> találsz. Egy évig érvényes.</p></details>
+    <form id="f-kostolo" class="kcard" novalidate>
+      <h3>Válassz csomagot</h3>
+      <input type="hidden" name="csomag" value="Birtokkóstoló">
+      <div class="packs rows" role="group" aria-label="Kóstolócsomagok">
+        <button class="pack" type="button" data-pack="Pincesor" data-price="5500" aria-pressed="false"><span class="pick" aria-hidden="true"></span><b class="n">Pincesor</b><span class="p">5 500 Ft / fő</span><span class="d">45 perc · 4 bor · rövid séta a pincében · kenyér, víz</span></button>
+        <button class="pack" type="button" data-pack="Birtokkóstoló" data-price="8900" aria-pressed="true"><span class="pick" aria-hidden="true"></span><b class="n">Birtokkóstoló</b><span class="p">8 900 Ft / fő</span><span class="d">90 perc · 6 bor · pincelátogatás, hordókóstoló · kenyér, sajt, kolbász</span></button>
+        <button class="pack" type="button" data-pack="Dűlőválogatás a borásszal" data-price="14900" aria-pressed="false"><span class="pick" aria-hidden="true"></span><b class="n">Dűlőválogatás a borásszal</b><span class="p">14 900 Ft / fő</span><span class="d">2 óra · 8 bor, régi évjáratokkal · séta a szőlőben · hidegtál · 4–10 fő</span></button>
       </div>
-      <form id="f-kostolo" novalidate>
-        <h3>Időpontkérés</h3>
-        <label class="f"><span>Csomag</span>
-          <select class="inp" name="csomag"><option>Pincesor</option><option selected>Birtokkóstoló</option><option>Dűlőválogatás a borásszal</option></select></label>
-        <div class="row">
-          <label class="f"><span>Nap</span><input class="inp" type="date" name="nap" required></label>
-          <label class="f"><span>Kezdés</span><select class="inp" name="ido"><option>10:00</option><option>12:00</option><option selected>14:00</option><option>16:00</option></select></label>
-        </div>
-        <div class="row">
-          <label class="f"><span>Létszám</span><select class="inp" name="fo"><option>2 fő</option><option>3 fő</option><option selected>4 fő</option><option>5 fő</option><option>6 fő</option><option>7–10 fő</option><option>11–16 fő</option></select></label>
-          <label class="f"><span>Telefonszám</span><input class="inp" type="tel" name="tel" autocomplete="tel" required></label>
-        </div>
-        <label class="f"><span>Név</span><input class="inp" name="nev" autocomplete="name" required></label>
-        <button class="btn" type="submit">Időpontot kérek</button>
-        <p class="note" data-sum>Birtokkóstoló, 4 fő: 35 600 Ft a helyszínen. Ez még nem foglalás, 24 órán belül visszaigazoljuk. Telefonon is kérhetsz időpontot: <a href="tel:+36301234567">+36 30 123 4567</a></p>
-        <p class="ok" role="status">Köszönjük, megkaptuk. Bemutató oldalon vagy, ezért levél most nem megy ki. Élesben a pincészet azonnal értesítést kap a kérésről.</p>
-      </form>
-    </div>
+      <div class="row">
+        <label class="f"><span>Nap</span><input class="inp" type="date" name="nap" required></label>
+        <label class="f"><span>Kezdés</span><select class="inp" name="ido"><option>10:00</option><option>12:00</option><option selected>14:00</option><option>16:00</option></select></label>
+      </div>
+      <div class="row">
+        <label class="f"><span>Létszám</span><select class="inp" name="fo"><option>2 fő</option><option>3 fő</option><option selected>4 fő</option><option>5 fő</option><option>6 fő</option><option>7–10 fő</option><option>11–16 fő</option></select></label>
+        <label class="f"><span>Telefonszám</span><input class="inp" type="tel" name="tel" autocomplete="tel" required></label>
+      </div>
+      <label class="f"><span>Név</span><input class="inp" name="nev" autocomplete="name" required></label>
+      <button class="btn" type="submit">Időpontot kérek</button>
+      <p class="note" data-sum>Birtokkóstoló, 4 fő: 35 600 Ft a helyszínen. Ez még nem foglalás, 24 órán belül visszaigazoljuk. Telefonon is kérhetsz időpontot: <a href="tel:+36301234567">+36 30 123 4567</a></p>
+      <p class="ok" role="status">Köszönjük, megkaptuk. Bemutató oldalon vagy, ezért levél most nem megy ki. Élesben a pincészet azonnal értesítést kap a kérésről.</p>
+    </form>
   </div>
 </section>
 
@@ -193,21 +165,6 @@
           <button class="btn" type="submit">Ajánlatot kérek</button>
           <p class="ok" role="status" style="background:var(--zold-2)">Köszönjük, megkaptuk. Bemutató oldalon vagy, ezért levél most nem megy ki.</p>
         </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="naplo" style="padding-top:0">
-  <div class="wrap logwrap">
-    <div class="arch"><img src="img/szuret.jpg" width="900" height="1205" alt="Kékfrankos szüretelése kézzel, metszőollóval" loading="lazy"></div>
-    <div>
-      <h2>Pincenapló</h2>
-      <p class="lead">Pár sor arról, mi történik éppen a szőlőben és a pincében.</p>
-      <div class="log">
-        <article><time datetime="2026-11-09">2026. november 9.</time><h3>Lefejtettük a kadarkát</h3><p>Az idei világosabb lett a tavalyinál, és nagyon meggyes. Tavasszal palackozzuk, addig hagyjuk békén.</p></article>
-        <article><time datetime="2026-10-17">2026. október 17.</time><h3>Vége a szüretnek</h3><p>Utoljára a Porkoláb cabernet franc-ja jött be. Huszonhárom nap, egy elromlott prés, nulla eső. Jó év volt.</p></article>
-        <article><time datetime="2026-09-28">2026. szeptember 28.</time><h3>Megjött az új siller</h3><p>A 2025-ös elfogyott augusztusra, ezért idén kétszer annyit készítettünk. Hűtve idd, de ne jegesen.</p></article>
       </div>
     </div>
   </div>
@@ -261,7 +218,7 @@
         <p>Családi pincészet a szekszárdi Iván-völgyben, 1994 óta.</p>
       </div>
       <div><h4>Vásárlás</h4><ul><li><a href="#borok">Borok</a></li><li><a href="#ajandek">Ajándék és cégeknek</a></li><li><a href="#borok">Szállítás és fizetés</a></li><li><a href="#">ÁSZF és elállás</a></li></ul></div>
-      <div><h4>Pince</h4><ul><li><a href="#kostolo">Kóstoló</a></li><li><a href="birtok/">Birtok</a></li><li><a href="#naplo">Pincenapló</a></li><li><a href="#kapcsolat">Kapcsolat</a></li></ul></div>
+      <div><h4>Pince</h4><ul><li><a href="#kostolo">Kóstoló</a></li><li><a href="birtok/">Birtok</a></li><li><a href="#kapcsolat">Kapcsolat</a></li></ul></div>
       <div><h4>Fizetés és szállítás</h4><ul><li>Bankkártya, átutalás, utánvét</li><li>GLS futár, 2–4 munkanap</li><li>Csomagautomata 1 690 Ft</li></ul></div>
     </div>
     <div class="bar"><span>© 2026 Kőhalom Pince · Bemutató oldal, a pincészet kitalált</span><span>18 éven aluliakat nem szolgálunk ki. Fogyaszd felelősséggel.</span><span>Weboldal: <a href="https://hozdesigns.com">hozdesigns.com</a></span></div>
@@ -293,17 +250,6 @@
     </div>
   </div>
 </dialog>
-
-<dialog id="borlap" aria-labelledby="bl-nev"><div class="in"><div class="pic" id="bl-pic"></div><div class="txt">
-  <button class="x" type="button" data-close aria-label="Bezárás">×</button>
-  <div class="mono" id="bl-sor" style="color:var(--fust)"></div>
-  <h3 id="bl-nev"></h3>
-  <p id="bl-leiras"></p>
-  <dl id="bl-adat"></dl>
-  <p id="bl-etel" style="color:var(--fust);margin:0"></p>
-  <div class="qty" id="bl-qty"></div>
-  <p class="note" id="bl-ar"></p>
-</div></div></dialog>
 
 <dialog id="kor">
   <svg><use href="#iv"/></svg>
@@ -348,25 +294,34 @@ var G=[
 var P={};W.concat(G).forEach(function(w){P[w.id]=w});
 var AJANLO=['kadarka','bikaver','siller'], TAG={kadarka:'Halászlé mellé',bikaver:'Vadszezonra',siller:'Új évjárat'};
 
-function card(w,tag){
-  return '<article class="wine" data-g="'+w.g+'"><button class="pic c-'+w.c+'" type="button" data-open="'+w.id+'" aria-label="'+w.nev+' '+w.ev+' – részletek">'+(tag?'<span class="tag">'+tag+'</span>':'')+bottle(w.c,w.ev)+'</button>'+
-   '<h3><button type="button" data-open="'+w.id+'">'+w.nev+'</button></h3><div class="meta">'+w.ev+' · '+w.dulo.split(',')[0]+' · száraz</div><p class="line">'+w.sor+'</p>'+
-   '<div class="buy"><div class="price">'+ft(w.ar)+'<small>0,75 l · '+ft(w.ar/0.75)+'/l</small></div><button class="btn small line" type="button" data-add="'+w.id+'">Kosárba</button></div></article>';
+/* bormutató: egy képernyő, a görgetés lapoz */
+var sec=$('#borok'), stage=$('.stage',sec), cur=null, HEAD=73;
+$('#s-idx').innerHTML=TIERS.map(function(t){return '<div class="t">'+t.nev+'</div>'+W.filter(function(w){return w.t===t.id}).map(function(w){return '<button type="button" data-show="'+w.id+'"><span>'+w.nev+'</span><span>'+ft(w.ar)+'</span></button>'}).join('')}).join('');
+var ORDER=[];TIERS.forEach(function(t){W.forEach(function(w){if(w.t===t.id)ORDER.push(w.id)})});
+var calm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function show(id){if(id===cur)return;cur=id;var w=P[id];
+  $('#s-pic').className='spic c-'+w.c;$('#s-pic').innerHTML=bottle(w.c,w.ev);
+  $('#s-sor').textContent=TIERS.filter(function(t){return t.id===w.t})[0].nev+' · '+('0'+(ORDER.indexOf(id)+1)).slice(-2)+' / '+ORDER.length;
+  $('#s-nev').textContent=w.nev+' '+w.ev;$('#s-le').textContent=w.le;
+  $('#s-adat').textContent=w.fajta+' · '+w.dulo+' · '+w.alk+' · száraz · '+w.ho;
+  $('#s-etel').textContent='Mihez: '+w.etel;
+  $('#s-ar').innerHTML=ft(w.ar)+'<small>0,75 l · '+ft(w.ar/0.75)+'/l</small>';
+  $('#s-qty').innerHTML=[1,6,12].map(function(q,i){return '<button class="btn small'+(i?' line':'')+'" type="button" data-add="'+id+'" data-qn="'+q+'">'+(q===1?'Kosárba':q+' palack · '+ft(q*w.ar))+'</button>'}).join('');
+  $$('#s-idx button').forEach(function(b){var on=b.dataset.show===id;b.setAttribute('aria-current',on);if(on&&!pinned())b.scrollIntoView({block:'nearest',inline:'center'})});
+  if(!calm&&$('#s-info').animate){$('#s-info').animate([{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'none'}],{duration:320,easing:'ease-out'});$('#s-pic svg').animate([{opacity:0,transform:'translateY(12%)'},{opacity:1,transform:'translateY(5%)'}],{duration:380,easing:'ease-out'})}
 }
-$('#ajanlo-grid').innerHTML=AJANLO.map(function(id){return card(P[id],TAG[id])}).join('');
-$('#tiers').innerHTML=TIERS.map(function(t){
-  return '<div class="tier"><div class="th"><h3>'+t.nev+'</h3><p>'+t.txt+'</p><span class="mono">'+t.ar+'</span></div><div class="grid">'+W.filter(function(w){return w.t===t.id}).map(function(w){return card(w)}).join('')+(t.id==='dulo'?'<div class="promo"><div><h3>Vegyes karton, ahogy szeretnéd</h3><p>Hat palack bármiből már kartonnak számít. A kosárban egy gombbal hatra kerekítheted bármelyik bort, 25 000 Ft felett pedig ingyen visszük.</p></div><div><button class="btn line" type="button" data-cart>Kosár megnyitása</button></div></div>':'')+'</div></div>';
-}).join('');
+var mq=window.matchMedia('(min-width:1001px) and (min-height:600px)');
+function pinned(){return sec.classList.contains('pin')}
+function setPin(){sec.classList.toggle('pin',mq.matches&&!calm)}
+function span(){return sec.offsetHeight-stage.offsetHeight}
+function onScroll(){if(!pinned())return;var r=sec.getBoundingClientRect(),p=(HEAD-r.top)/span();if(p<0||p>1)return;show(ORDER[Math.min(ORDER.length-1,Math.floor(p*ORDER.length))])}
+setPin();if(mq.addEventListener)mq.addEventListener('change',setPin);
+window.addEventListener('scroll',onScroll,{passive:true});
+$('#s-idx').addEventListener('click',function(e){var b=e.target.closest('[data-show]');if(!b)return;
+  if(pinned()){var i=ORDER.indexOf(b.dataset.show),r=sec.getBoundingClientRect();window.scrollTo({top:window.scrollY+r.top-HEAD+(i+.5)/ORDER.length*span(),behavior:calm?'auto':'smooth'})}
+  show(b.dataset.show)});
+show('kadarka');cur=null;show(ORDER[0]);
 $('#gifts').innerHTML=G.map(function(g){return '<li><div><b>'+g.nev+'</b><small>'+g.sor+'</small></div><span class="pr">'+ft(g.ar)+'</span><button class="btn small line" type="button" data-add="'+g.id+'">Kosárba</button></li>'}).join('');
-
-/* szűrő */
-$$('.chips button').forEach(function(b){b.onclick=function(){
-  $$('.chips button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
-  var f=b.dataset.f;
-  $$('#tiers .wine').forEach(function(w){w.hidden=f!=='mind'&&w.dataset.g!==f});
-  $$('#tiers .tier').forEach(function(t){t.hidden=!$$('.wine',t).some(function(w){return !w.hidden})});
-  $$('#tiers .promo').forEach(function(x){x.hidden=f==='vilagos'});
-}});
 
 /* kosár */
 var cart={};try{cart=JSON.parse(sessionStorage.getItem('kohalom-kosar'))||{}}catch(e){}
@@ -388,31 +343,18 @@ function draw(){
   $('#checkout').disabled=!n;
 }
 function add(id,q){cart[id]=Math.max(0,(cart[id]||0)+q);if(!cart[id])delete cart[id];save();draw()}
-var kosar=$('#kosar'), borlap=$('#borlap');
-function openCart(){$('#coNote').textContent='Vendégként is rendelhetsz, regisztráció nélkül.';if(borlap.open)borlap.close();if(!kosar.open)kosar.showModal()}
-
-/* borlap */
-function openWine(id){var w=P[id];if(!w||!w.le)return;
-  $('#bl-pic').className='pic c-'+w.c;$('#bl-pic').innerHTML=bottle(w.c,w.ev);
-  $('#bl-sor').textContent=TIERS.filter(function(t){return t.id===w.t})[0].nev+' · '+w.ev;
-  $('#bl-nev').textContent=w.nev;$('#bl-leiras').textContent=w.le;
-  $('#bl-adat').innerHTML=[['Fajta',w.fajta],['Dűlő',w.dulo],['Alkohol',w.alk+' · száraz'],['Palackszám',w.pal+' db'],['Kínáld',w.ho]].map(function(r){return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>'}).join('');
-  $('#bl-etel').textContent='Mihez: '+w.etel;
-  $('#bl-qty').innerHTML=[1,6,12].map(function(q,i){return '<button class="btn small'+(i?' line':'')+'" type="button" data-add="'+id+'" data-qn="'+q+'">'+(q===1?'1 palack':q+' palack')+' · '+ft(q*w.ar)+'</button>'}).join('');
-  $('#bl-ar').textContent=ft(w.ar)+' / palack (0,75 l), '+ft(w.ar/0.75)+' / liter. Szulfitokat tartalmaz.';
-  borlap.showModal();
-}
+var kosar=$('#kosar');
+function openCart(){$('#coNote').textContent='Vendégként is rendelhetsz, regisztráció nélkül.';if(!kosar.open)kosar.showModal()}
 
 document.addEventListener('click',function(e){
-  var t=e.target.closest('[data-add],[data-open],[data-cart],[data-close],[data-q],[data-six]');if(!t)return;
+  var t=e.target.closest('[data-add],[data-cart],[data-close],[data-q],[data-six]');if(!t)return;
   if(t.dataset.add){add(t.dataset.add,+(t.dataset.qn||1));openCart()}
-  else if(t.dataset.open)openWine(t.dataset.open);
   else if(t.hasAttribute('data-cart'))openCart();
   else if(t.hasAttribute('data-close'))t.closest('dialog').close();
   else if(t.dataset.q)add(t.dataset.q,+t.dataset.d);
   else if(t.dataset.six)add(t.dataset.six,6-(cart[t.dataset.six]||0));
 });
-[kosar,borlap].forEach(function(d){d.addEventListener('click',function(e){if(e.target===d)d.close()})});
+[kosar].forEach(function(d){d.addEventListener('click',function(e){if(e.target===d)d.close()})});
 $$('[name=way]').forEach(function(r){r.onchange=draw});
 $('#checkout').onclick=function(){$('#coNote').textContent='Bemutató oldalon vagy, itt most megállunk. Élesben innen a pénztár jön: adatok, fizetés bankkártyával, átutalással vagy utánvéttel.'};
 draw();
@@ -422,7 +364,7 @@ var fk=$('#f-kostolo');
 function ksum(){var p=$('.pack[aria-pressed=true]'),n=parseInt(fk.fo.value,10),pr=+p.dataset.price;
   $('[data-sum]').firstChild.textContent=p.dataset.pack+', '+fk.fo.value+': '+(/–/.test(fk.fo.value)?ft(pr)+' / fő':ft(pr*n))+' a helyszínen. Ez még nem foglalás, 24 órán belül visszaigazoljuk. Telefonon is kérhetsz időpontot: '}
 function pick(name){$$('.pack').forEach(function(p){p.setAttribute('aria-pressed',p.dataset.pack===name)});fk.csomag.value=name;ksum()}
-$$('.pack').forEach(function(p){p.onclick=function(){pick(p.dataset.pack);fk.scrollIntoView({behavior:'smooth',block:'center'})}});
+$$('.pack').forEach(function(p){p.onclick=function(){pick(p.dataset.pack)}});
 fk.csomag.onchange=function(){pick(fk.csomag.value)};fk.fo.onchange=ksum;
 var d=new Date();d.setDate(d.getDate()+2);fk.nap.min=d.toISOString().slice(0,10);
 $$('form').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();
