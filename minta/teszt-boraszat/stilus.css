@@ -62,7 +62,7 @@ header nav a:hover{border-color:var(--tinta)}
 
 /* szakaszok */
 section{padding:104px 0}
-.head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:48px}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:48px}
 .head p{color:var(--fust);margin:0;max-width:52ch}
 
 /* borkártyák */
@@ -102,7 +102,7 @@ section{padding:104px 0}
 .band img{width:100%;height:min(62vh,600px);object-fit:cover}
 .band figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 0;font:400 13px/1.4 var(--mono);color:var(--krem);background:linear-gradient(transparent,rgba(30,35,32,.55))}
 .teaser{padding:104px 0}
-.teaser .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.teaser .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .teaser .wide{aspect-ratio:4/3;object-position:50% 50%}
 @media (min-width:1001px){.teaser .wide{order:2}}
 .teaser h2{margin-bottom:22px}
@@ -189,7 +189,7 @@ table.dulo td:first-child{font:350 21px/1.2 var(--serif);white-space:nowrap}
 .cta2 .btn.line:hover{background:rgba(246,242,234,.12);border-color:var(--krem);color:var(--krem)}
 
 /* ajándék, cégek */
-.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.two{display:grid;grid-template-columns:1.35fr 1fr;gap:20px}
 .panel{background:var(--homok);border-radius:8px;padding:36px}
 .panel h3{font-size:32px;margin-bottom:10px}
 .panel > p{color:var(--fust)}
@@ -217,7 +217,7 @@ table.dulo td:first-child{font:350 21px/1.2 var(--serif);white-space:nowrap}
 .log p{color:var(--fust);font-size:16px}
 
 /* kapcsolat */
-.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px}
 .hours{list-style:none;padding:0;margin:26px 0 0}
 .hours li{display:flex;justify-content:space-between;padding:10px 0;border-top:1px solid var(--vonal)}
 .hours li span:last-child{font:400 14px/1.6 var(--mono)}
@@ -231,7 +231,7 @@ table.dulo td:first-child{font:350 21px/1.2 var(--serif);white-space:nowrap}
 
 /* hírlevél, lábléc */
 .news{padding:72px 0;border-top:1px solid var(--vonal)}
-.news .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.news .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .news h2{font-size:clamp(28px,3vw,38px)}
 .news form{display:flex;gap:10px}
 .news .inp{flex:1}
@@ -393,7 +393,7 @@ dialog::backdrop{background:rgba(30,35,32,.55)}
   .shead h2{font-size:38px}
 }
 
-.kgrid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.kgrid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .kgrid h2{margin-bottom:18px}
 .kgrid .ph{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 78%;border-radius:6px;margin:30px 0 26px}
 .kgrid .terms{color:#B9B3A6;font-size:16px;padding-left:20px;margin:0 0 14px}
