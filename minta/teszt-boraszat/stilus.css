@@ -103,7 +103,8 @@ section{padding:104px 0}
 .band figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 0;font:400 13px/1.4 var(--mono);color:var(--krem);background:linear-gradient(transparent,rgba(30,35,32,.55))}
 .teaser{padding:104px 0}
 .teaser .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.teaser .wide{aspect-ratio:4/3;object-position:35% 50%}
+.teaser .wide{aspect-ratio:4/3;object-position:50% 50%}
+@media (min-width:1001px){.teaser .wide{order:2}}
 .teaser h2{margin-bottom:22px}
 .teaser .btn{margin-top:14px}
 
@@ -259,7 +260,9 @@ dialog::backdrop{background:rgba(30,35,32,.55)}
 .step{display:inline-flex;align-items:center;border:1px solid var(--vonal);border-radius:999px}
 .step button{background:none;border:0;width:36px;height:36px;cursor:pointer;font-size:18px}
 .step output{min-width:26px;text-align:center;font:500 14px/1 var(--mono)}
-.item .sum{text-align:right;font-weight:500}
+.item .sum{text-align:right;font-weight:500;display:flex;align-items:center;gap:6px;justify-content:flex-end}
+.del{background:none;border:0;cursor:pointer;width:32px;height:32px;border-radius:50%;font-size:22px;line-height:1;color:var(--fust);margin-right:-8px}
+.del:hover{background:var(--vonal);color:var(--tinta)}
 #kosar .foot{padding:18px 24px 24px;border-top:1px solid var(--vonal);background:var(--homok)}
 .bar2{height:4px;background:var(--vonal);border-radius:4px;overflow:hidden;margin:8px 0 16px}
 .bar2 i{display:block;height:100%;background:var(--zold);width:0;transition:width .3s}

@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Instrument+Sans:wght@400..600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="stilus.css?v=7">
+<link rel="stylesheet" href="stilus.css?v=8">
 </head>
 <body>
 
@@ -131,7 +131,7 @@
 
 <section class="teaser" id="birtok">
   <div class="wrap">
-    <img class="wide" src="img/pince2.jpg" width="1456" height="804" alt="A birtok téglaboltozatos pincéje az ászokhordókkal" loading="lazy">
+    <img class="wide" src="img/hordo.jpg" width="1380" height="1035" alt="Hordóminta a pincében: a borász lopóval vörösbort enged a pohárba" loading="lazy">
     <div>
       <h2>A szőlőtől a dugóig mi csináljuk</h2>
       <p class="lead">Apánk 1994-ben két hektár kadarkával kezdte, mert azt mondta, azt úgysem veszi meg senki, legalább nekünk marad. Ma tizenkét hektáron gazdálkodunk hárman.</p>
@@ -144,7 +144,7 @@
 <section id="ajandek" style="padding-top:0">
   <div class="wrap">
     <div class="head">
-      <h2>Ajándék és cégeknek</h2>
+      <h2>Minőségi ajándék</h2>
       <p>Díszdobozba csomagolva, kísérőkártyával küldjük. Decemberben a 15-ig leadott rendelést visszük ki karácsonyig.</p>
     </div>
     <div class="two">
@@ -330,7 +330,7 @@ function save(){try{sessionStorage.setItem('kohalom-kosar',JSON.stringify(cart))
 function draw(){
   var n=0,s=0,h='';
   Object.keys(cart).forEach(function(k){var w=P[k],q=cart[k];if(!w||q<1)return;n+=q;s+=q*w.ar;
-    h+='<div class="item"><div><b>'+w.nev+(w.ev?' '+w.ev:'')+'</b><small>'+ft(w.ar)+' / '+(w.ev?'palack':'db')+'</small></div><div class="sum">'+ft(q*w.ar)+'</div>'+
+    h+='<div class="item"><div><b>'+w.nev+(w.ev?' '+w.ev:'')+'</b><small>'+ft(w.ar)+' / '+(w.ev?'palack':'db')+'</small></div><div class="sum">'+ft(q*w.ar)+'<button class="del" type="button" data-del="'+k+'" aria-label="'+w.nev+' törlése a kosárból" title="Törlés">×</button></div>'+
        '<div><span class="step"><button type="button" data-q="'+k+'" data-d="-1" aria-label="'+w.nev+' – kevesebb">−</button><output>'+q+'</output><button type="button" data-q="'+k+'" data-d="1" aria-label="'+w.nev+' – több">+</button></span></div>'+
        (w.ev&&q<6?'<div style="text-align:right"><button class="btn small line" type="button" data-six="'+k+'">Legyen 6</button></div>':'<div></div>')+'</div>';
   });
@@ -348,12 +348,13 @@ var kosar=$('#kosar');
 function openCart(){$('#coNote').textContent='Vendégként is rendelhetsz, regisztráció nélkül.';if(!kosar.open)kosar.showModal()}
 
 document.addEventListener('click',function(e){
-  var t=e.target.closest('[data-add],[data-cart],[data-close],[data-q],[data-six]');if(!t)return;
+  var t=e.target.closest('[data-add],[data-cart],[data-close],[data-q],[data-six],[data-del]');if(!t)return;
   if(t.dataset.add){add(t.dataset.add,+(t.dataset.qn||1));openCart()}
   else if(t.hasAttribute('data-cart'))openCart();
   else if(t.hasAttribute('data-close'))t.closest('dialog').close();
   else if(t.dataset.q)add(t.dataset.q,+t.dataset.d);
   else if(t.dataset.six)add(t.dataset.six,6-(cart[t.dataset.six]||0));
+  else if(t.dataset.del){delete cart[t.dataset.del];save();draw()}
 });
 [kosar].forEach(function(d){d.addEventListener('click',function(e){if(e.target===d)d.close()})});
 $$('[name=way]').forEach(function(r){r.onchange=draw});
