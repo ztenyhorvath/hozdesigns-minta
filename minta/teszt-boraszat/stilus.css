@@ -22,9 +22,9 @@ p{margin:0 0 1em}
 .mono{font:400 13px/1.5 var(--mono);letter-spacing:.02em}
 .lead{font-size:19px;color:var(--fust);max-width:56ch}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border:1.5px solid var(--tinta);border-radius:999px;background:var(--tinta);color:var(--papir);font-weight:500;font-size:16px;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
-.btn:hover{background:var(--zold);border-color:var(--zold)}
+.btn:hover{background:#5A4447;border-color:#5A4447}
 .btn.line{background:transparent;color:var(--tinta)}
-.btn.line:hover{background:var(--tinta);color:var(--papir);border-color:var(--tinta)}
+.btn.line:hover{background:rgba(59,44,46,.08);color:var(--tinta);border-color:var(--tinta)}
 .btn.small{min-height:40px;padding:0 16px;font-size:15px}
 :focus-visible{outline:2px solid var(--zold);outline-offset:3px}
 .sr{position:absolute;left:-9999px}
@@ -179,6 +179,7 @@ table.dulo td:first-child{font:350 21px/1.2 var(--serif);white-space:nowrap}
 .cta2 .btn{background:var(--krem);color:var(--zold-2);border-color:var(--krem)}
 .cta2 .btn.line{background:transparent;color:var(--krem)}
 .cta2 .btn:hover{background:#fff;border-color:#fff;color:var(--zold-2)}
+.cta2 .btn.line:hover{background:rgba(237,230,216,.14);border-color:var(--krem);color:var(--krem)}
 
 /* ajándék, cégek */
 .two{display:grid;grid-template-columns:1.35fr 1fr;gap:20px}
@@ -193,6 +194,7 @@ table.dulo td:first-child{font:350 21px/1.2 var(--serif);white-space:nowrap}
 .panel.green > p{color:#CBD6CF}
 .panel.green .inp{background:var(--zold-2);border-color:#4F6A5E;color:var(--krem)}
 .panel.green .btn{background:var(--krem);color:var(--zold-2);border-color:var(--krem)}
+.panel.green .btn:hover{background:#fff;border-color:#fff}
 .panel.green .note{color:#CBD6CF}
 
 /* napló */
