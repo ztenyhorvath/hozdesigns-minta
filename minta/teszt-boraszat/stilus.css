@@ -99,7 +99,9 @@ section{padding:104px 0}
 .band img{width:100%;height:min(62vh,600px);object-fit:cover}
 .band figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 0;font:400 13px/1.4 var(--mono);color:#fff;background:linear-gradient(transparent,rgba(30,35,32,.55))}
 .teaser{padding:72px 0 104px}
-.teaser .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.teaser .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.teaser .wide{aspect-ratio:4/3;object-position:35% 50%}
+.teaser h2{margin-bottom:22px}
 .teaser .btn{margin-top:14px}
 
 /* kóstoló */
