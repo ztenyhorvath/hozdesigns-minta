@@ -164,7 +164,7 @@
           <label class="f"><span>Cég és kapcsolattartó</span><input class="inp" name="ceg" required></label>
           <label class="f"><span>E-mail-cím</span><input class="inp" type="email" name="email" autocomplete="email" required></label>
           <button class="btn" type="submit">Ajánlatot kérek</button>
-          <p class="ok" role="status" style="background:var(--zold-2)">Köszönjük, megkaptuk. Bemutató oldalon vagy, ezért levél most nem megy ki.</p>
+          <p class="ok" role="status">Köszönjük, megkaptuk. Bemutató oldalon vagy, ezért levél most nem megy ki.</p>
         </form>
       </div>
     </div>
@@ -266,7 +266,7 @@ var ft=function(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,
 var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
 
 /* palackrajz: üvegszín, kapszula, címke */
-var GL={feher:['#6F7B45','#C9B458'],roze:['#E59A8F','#B7495A'],siller:['#D7766F','#8E2F3F'],kadarka:['#3A2527','#A8404B'],voros:['#2A1D20','#5A2230'],ajandek:['#2A1D20','#9F804C']};
+var GL={feher:['#8A8F7A','#D5CBC4'],roze:['#B9A39B','#654A4E'],siller:['#8C6B68','#3B2C2E'],kadarka:['#3B2C2E','#654A4E'],voros:['#1E2320','#3B2C2E'],ajandek:['#1E2320','#654A4E']};
 function bottle(c,ev){var g=GL[c]||GL.voros;return '<svg viewBox="0 0 90 300" aria-hidden="true"><path d="M36 4h18v62c0 12 18 22 18 46v170a12 12 0 0 1-12 12H30a12 12 0 0 1-12-12V112c0-24 18-34 18-46z" fill="'+g[0]+'"/><path d="M36 4h18v40H36z" fill="'+g[1]+'"/><rect x="18" y="150" width="54" height="84" fill="#F6F2EA"/><path d="M36 190v-8a9 9 0 0 1 18 0v8M41 190v-7a4 4 0 0 1 8 0v7" fill="none" stroke="#3B2C2E" stroke-width="1.3"/><text x="45" y="208" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="8.5" fill="#3B2C2E">Kőhalom</text><text x="45" y="222" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="6.5" fill="#654A4E">'+(ev||'')+'</text><path d="M26 120v150" stroke="#fff" stroke-opacity=".16" stroke-width="3" stroke-linecap="round"/></svg>'}
 
 var TIERS=[

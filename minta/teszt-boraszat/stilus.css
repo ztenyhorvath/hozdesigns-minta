@@ -1,7 +1,9 @@
 :root{
-  --papir:#F6F2EA; --homok:#E9E3D8; --tinta:#3B2C2E; --fust:#654A4E; --vonal:#D5CBC4;
-  --rez:#9F804C; --zold:#2F4A3E; --zold-2:#243A30; --pince:#1E2320; --krem:#EDE6D8;
-  --feher-bor:#EEE6C3; --roze:#F1D2C7; --siller:#E9B3A9; --kadarka:#D59C99; --voros:#6B2D3C;
+  /* három földszín: papír, föld (barna), pincezöld – a többi ezek árnyalata */
+  --papir:#F6F2EA; --homok:#E9E3D8; --vonal:#D5CBC4;
+  --tinta:#3B2C2E; --fust:#654A4E;
+  --pince:#1E2320; --zold:#1E2320; --zold-2:#2A302C;
+  --krem:#F6F2EA;
   --serif:'Fraunces', Georgia, serif; --sans:'Instrument Sans', system-ui, sans-serif; --mono:'IBM Plex Mono', ui-monospace, monospace;
   --w:1180px;
 }
@@ -22,7 +24,7 @@ p{margin:0 0 1em}
 .mono{font:400 13px/1.5 var(--mono);letter-spacing:.02em}
 .lead{font-size:19px;color:var(--fust);max-width:56ch}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border:1.5px solid var(--tinta);border-radius:999px;background:var(--tinta);color:var(--papir);font-weight:500;font-size:16px;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
-.btn:hover{background:#5A4447;border-color:#5A4447}
+.btn:hover{background:var(--pince);border-color:var(--pince)}
 .btn.line{background:transparent;color:var(--tinta)}
 .btn.line:hover{background:rgba(59,44,46,.08);color:var(--tinta);border-color:var(--tinta)}
 .btn.small{min-height:40px;padding:0 16px;font-size:15px}
@@ -31,7 +33,7 @@ p{margin:0 0 1em}
 
 /* sávok, fejléc */
 .demo{background:var(--tinta);color:var(--krem);font-size:14px;text-align:center;padding:8px 16px}
-.demo a{color:#fff}
+.demo a{color:var(--krem)}
 header{position:sticky;top:0;z-index:30;background:rgba(246,242,234,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--vonal)}
 header .wrap{display:flex;align-items:center;gap:28px;height:72px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:400 24px/1 var(--serif);letter-spacing:-.01em}
@@ -40,7 +42,7 @@ header nav{display:flex;gap:26px;margin-left:auto}
 header nav a{text-decoration:none;font-size:16px;padding:6px 0;border-bottom:1px solid transparent}
 header nav a:hover{border-color:var(--tinta)}
 .cartbtn{background:none;border:0;padding:8px 4px;cursor:pointer;font-size:16px;display:flex;align-items:center;gap:8px}
-.cartbtn b{font:500 13px/1 var(--mono);background:var(--zold);color:#fff;border-radius:999px;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;padding:0 6px}
+.cartbtn b{font:500 13px/1 var(--mono);background:var(--pince);color:var(--krem);border-radius:999px;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;padding:0 6px}
 
 /* nyitó */
 .hero{padding:72px 0 0}
@@ -71,7 +73,7 @@ section{padding:104px 0}
 .wine .pic svg{height:86%;width:auto;transform:translateY(6%);transition:transform .35s ease}
 .wine .pic:hover svg{transform:translateY(2%)}
 .wine .tag{position:absolute;left:12px;top:12px;font:500 12px/1 var(--mono);background:var(--papir);color:var(--tinta);padding:6px 8px;border-radius:3px}
-.c-feher{background:var(--feher-bor)} .c-roze{background:var(--roze)} .c-siller{background:var(--siller)} .c-kadarka{background:var(--kadarka)} .c-voros{background:var(--voros)} .c-ajandek{background:var(--homok)}
+.c-feher,.c-roze,.c-siller,.c-kadarka,.c-voros,.c-ajandek{background:var(--homok)}
 .wine h3{font-size:23px;margin:16px 0 2px}
 .wine h3 button{all:unset;cursor:pointer}
 .wine h3 button:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
@@ -98,7 +100,7 @@ section{padding:104px 0}
 /* teljes szélességű kép */
 .band{margin:0;position:relative}
 .band img{width:100%;height:min(62vh,600px);object-fit:cover}
-.band figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 0;font:400 13px/1.4 var(--mono);color:#fff;background:linear-gradient(transparent,rgba(30,35,32,.55))}
+.band figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 0;font:400 13px/1.4 var(--mono);color:var(--krem);background:linear-gradient(transparent,rgba(30,35,32,.55))}
 .teaser{padding:104px 0}
 .teaser .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .teaser .wide{aspect-ratio:4/3;object-position:35% 50%}
@@ -127,13 +129,14 @@ section{padding:104px 0}
 form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 label.f{display:block;font-size:14px;margin:0 0 14px}
 label.f span{display:block;margin-bottom:6px}
-.inp{width:100%;min-height:48px;border:1px solid var(--vonal);border-radius:6px;background:#fff;padding:10px 14px;color:var(--tinta)}
+.inp{width:100%;min-height:48px;border:1px solid var(--vonal);border-radius:6px;background:var(--papir);padding:10px 14px;color:var(--tinta)}
 .dark .inp{background:#2A302C;border-color:#4A4F49;color:var(--krem)}
 .dark .btn{background:var(--krem);color:var(--pince);border-color:var(--krem)}
-.dark .btn:hover{background:#fff;border-color:#fff}
+.dark .btn:hover{background:var(--homok);border-color:var(--homok)}
 .note{font-size:14px;color:var(--fust);margin:12px 0 0}
 .dark .note{color:#B9B3A6}
-.ok{display:none;margin-top:14px;padding:14px 16px;border-radius:6px;background:var(--zold);color:#fff;font-size:15px}
+.ok{display:none;margin-top:14px;padding:14px 16px;border-radius:6px;background:var(--pince);color:var(--krem);font-size:15px}
+.dark .ok,.panel.green .ok{background:var(--zold-2);border:1px solid #4A4F49}
 .ok.show{display:block}
 details{border-top:1px solid #353A35;padding:14px 0}
 details summary{cursor:pointer;font-weight:500}
@@ -177,12 +180,12 @@ table.dulo td:first-child{font:350 21px/1.2 var(--serif);white-space:nowrap}
 .people h3{font-size:26px;margin:8px 0 8px}
 .people p{color:var(--fust);font-size:16px}
 .cta2{background:var(--zold);color:var(--krem);padding:88px 0;text-align:center}
-.cta2 p{color:#CBD6CF;margin:14px auto 28px;max-width:46ch}
+.cta2 p{color:#B9B3A6;margin:14px auto 28px;max-width:46ch}
 .cta2 .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.cta2 .btn{background:var(--krem);color:var(--zold-2);border-color:var(--krem)}
+.cta2 .btn{background:var(--krem);color:var(--pince);border-color:var(--krem)}
 .cta2 .btn.line{background:transparent;color:var(--krem)}
-.cta2 .btn:hover{background:#fff;border-color:#fff;color:var(--zold-2)}
-.cta2 .btn.line:hover{background:rgba(237,230,216,.14);border-color:var(--krem);color:var(--krem)}
+.cta2 .btn:hover{background:var(--homok);border-color:var(--homok);color:var(--pince)}
+.cta2 .btn.line:hover{background:rgba(246,242,234,.12);border-color:var(--krem);color:var(--krem)}
 
 /* ajándék, cégek */
 .two{display:grid;grid-template-columns:1.35fr 1fr;gap:20px}
@@ -194,11 +197,11 @@ table.dulo td:first-child{font:350 21px/1.2 var(--serif);white-space:nowrap}
 .gifts b{font-weight:500}.gifts small{display:block;color:var(--fust);font-size:15px}
 .gifts .pr{font-weight:500;white-space:nowrap}
 .panel.green{background:var(--zold);color:var(--krem)}
-.panel.green > p{color:#CBD6CF}
-.panel.green .inp{background:var(--zold-2);border-color:#4F6A5E;color:var(--krem)}
-.panel.green .btn{background:var(--krem);color:var(--zold-2);border-color:var(--krem)}
-.panel.green .btn:hover{background:#fff;border-color:#fff}
-.panel.green .note{color:#CBD6CF}
+.panel.green > p{color:#B9B3A6}
+.panel.green .inp{background:var(--zold-2);border-color:#4A4F49;color:var(--krem)}
+.panel.green .btn{background:var(--krem);color:var(--pince);border-color:var(--krem)}
+.panel.green .btn:hover{background:var(--homok);border-color:var(--homok)}
+.panel.green .note{color:#B9B3A6}
 
 /* napló */
 .logwrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
@@ -233,7 +236,7 @@ table.dulo td:first-child{font:350 21px/1.2 var(--serif);white-space:nowrap}
 .news .inp{flex:1}
 footer{background:var(--tinta);color:var(--krem);padding:64px 0 28px;font-size:15px}
 footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px}
-footer .logo{color:#fff;font-size:28px}
+footer .logo{color:var(--krem);font-size:28px}
 footer p{color:#C9BDBB;max-width:32ch;margin-top:14px}
 footer h4{font:400 13px/1.4 var(--mono);color:#C9BDBB;margin:4px 0 14px}
 footer ul{list-style:none;padding:0;margin:0}
@@ -343,7 +346,7 @@ dialog::backdrop{background:rgba(30,35,32,.55)}
   header .btn{display:none}
   .mbar{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--papir);border-top:1px solid var(--vonal)}
   .mbar a,.mbar button{background:none;border:0;text-decoration:none;text-align:center;padding:12px 4px 14px;font-size:14px;font-weight:500;cursor:pointer}
-  .mbar b{font:500 12px/1 var(--mono);background:var(--zold);color:#fff;border-radius:999px;padding:2px 6px;margin-left:4px}
+  .mbar b{font:500 12px/1 var(--mono);background:var(--pince);color:var(--krem);border-radius:999px;padding:2px 6px;margin-left:4px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
@@ -401,7 +404,7 @@ dialog::backdrop{background:rgba(30,35,32,.55)}
 .packs.rows .n{font:400 23px/1.2 var(--serif)}
 .packs.rows .p{font:500 16px/1.2 var(--sans);margin:0;white-space:nowrap}
 .packs.rows .d{grid-column:2/4;font:400 13px/1.5 var(--mono);color:#B9B3A6}
-.packs.rows .pack[aria-pressed=true] .n{color:#fff}
+.packs.rows .pack[aria-pressed=true] .n{color:var(--krem)}
 .packs.rows .pack:hover .n{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 
 @media (max-width:1000px){
