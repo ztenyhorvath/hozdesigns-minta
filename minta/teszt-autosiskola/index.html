@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Irányjelző Autósiskola</title>
+<meta name="description" content="B, A és AM kategóriás képzés Székesfehérváron. Kötelező mutatók, átlátható árak, online jelentkezés.">
+<meta name="theme-color" content="#1C2127">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Overpass:ital,wght@0,400..800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F3EF; --card:#FFFFFF; --line:#D8DBD3; --mist:#E6E8E2;
+  --ink:#1C2127; --ink2:#59616B; --asph:#1C2127; --asph2:#272D35;
+  --blue:#1D57B0; --blue2:#16468F; --bluet:#E4ECF8;
+  --mark:#F2C230;
+  --fh:'Archivo',system-ui,sans-serif; --fb:'Overpass',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--fb);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--blue)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--mark);outline-offset:2px;border-radius:4px}
+h1,h2,h3{font-family:var(--fh);margin:0;line-height:1.02;font-weight:800;font-stretch:78%;letter-spacing:-.01em}
+h2{font-size:clamp(34px,4.6vw,56px)}
+h3{font-size:24px;font-stretch:88%;font-weight:750}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.muted{color:var(--ink2)}
+.num{font-family:var(--fh);font-stretch:72%;font-weight:800;font-variant-numeric:tabular-nums}
+
+/* sávjelzés: a szakaszok közti egyetlen díszítőelem */
+.lane{height:6px;background:repeating-linear-gradient(90deg,var(--mark) 0 46px,transparent 46px 80px)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 24px;border-radius:10px;border:2px solid var(--blue);background:var(--blue);color:#fff;font:700 17px/1 var(--fb);text-decoration:none;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.btn:hover{background:var(--blue2);border-color:var(--blue2)}
+.btn.ghost{background:transparent;border-color:currentColor;color:inherit}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+.on-light .btn.ghost:hover,.btn.ghost.dark:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn.full{width:100%}
+
+.draft{background:#0F1317;color:#C9CED4;font-size:13.5px;text-align:center;padding:8px 16px}
+.draft a{color:#fff;font-weight:700}
+
+/* fejléc */
+header.top{position:sticky;top:0;z-index:20;background:rgba(28,33,39,.96);backdrop-filter:blur(8px);color:#fff}
+.top .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+.logo svg{width:38px;height:38px;flex:none}
+.logo b{font:800 21px/1 var(--fh);font-stretch:80%;letter-spacing:.005em}
+.logo span{display:block;font-size:12.5px;color:#AEB5BD;margin-top:3px}
+.top nav{display:flex;gap:26px;margin-left:auto}
+.top nav a{color:#D7DBE0;text-decoration:none;font-size:15.5px}
+.top nav a:hover{color:#fff}
+.top .btn{min-height:42px;padding:9px 18px;font-size:15.5px}
+.tel{color:#fff;text-decoration:none;font-weight:700;font-size:15.5px;white-space:nowrap}
+
+/* nyitó */
+.hero{background:var(--asph);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;gap:56px;align-items:center;padding-top:64px;padding-bottom:72px}
+.hero h1{font-size:clamp(48px,7.2vw,96px);font-stretch:70%;font-weight:850;line-height:.94;letter-spacing:-.015em}
+.hero .lead{font-size:20px;color:#C9CED4;margin-top:24px;max-width:31ch}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.next{display:flex;align-items:center;gap:14px;margin-top:34px;padding-top:24px;border-top:1px solid #3A424C;color:#C9CED4;font-size:15.5px}
+.next b{color:#fff}
+.next .dot{width:10px;height:10px;border-radius:50%;background:var(--mark);flex:none;box-shadow:0 0 0 5px rgba(242,194,48,.18)}
+.hero figure{margin:0;position:relative}
+.hero figure img,.ph{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px}
+.hero .badge{position:absolute;left:-28px;bottom:32px;background:#fff;color:var(--ink);border-radius:14px;padding:16px 20px;box-shadow:0 18px 40px rgba(0,0,0,.28);display:flex;gap:16px;align-items:center}
+.hero .badge .num{font-size:46px;line-height:1;color:var(--blue)}
+.hero .badge small{display:block;font-size:14px;line-height:1.35;color:var(--ink2);max-width:15ch}
+
+/* ideiglenes képhely (a Higgsfield-képek érkezéséig) */
+.ph{background:
+  linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.35)),
+  repeating-linear-gradient(90deg,transparent 0 calc(50% - 3px),rgba(242,194,48,.55) calc(50% - 3px) calc(50% + 3px),transparent calc(50% + 3px) 100%) center/100% 70px,
+  #3A424C;display:flex;align-items:flex-start;padding:18px;color:#D7DBE0;font-size:14px}
+
+/* kötelező mutatók */
+.metrics{background:var(--card);border-bottom:1px solid var(--line)}
+.metrics .wrap{padding-top:64px;padding-bottom:64px}
+.mhead{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
+.mhead p{max-width:54ch}
+.mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:36px;border:2px solid var(--ink);border-radius:16px;overflow:hidden}
+.m{padding:26px 26px 24px;border-right:1px solid var(--line)}
+.m:last-child{border-right:0}
+.m .num{font-size:clamp(44px,5vw,64px);line-height:1;display:block}
+.m .num small{font-size:.42em;font-weight:700;margin-left:4px}
+.m h3{font-size:18px;margin-top:12px;font-stretch:90%}
+.m p{font-size:15px;color:var(--ink2);margin-top:6px;line-height:1.45}
+.m.hl{background:var(--blue);color:#fff;border-right-color:var(--blue)}
+.m.hl p{color:#D6E2F5}
+.mnote{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:14px;font-size:14px;color:var(--ink2)}
+
+/* iskolai KRESZ után */
+.school{padding:96px 0}
+.school .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center}
+.school .ph,.school img{aspect-ratio:5/4;border-radius:18px;object-fit:cover;width:100%}
+.school ul{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px}
+.school li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
+.school li svg{width:24px;height:24px;margin-top:2px;color:var(--blue)}
+.school .lead{font-size:19px;margin-top:20px;color:var(--ink2);max-width:46ch}
+
+/* árak és kalkulátor */
+.prices{background:var(--asph);color:#fff;padding:96px 0}
+.prices .muted{color:#AEB5BD}
+.pgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;margin-top:40px;align-items:start}
+.cats{display:grid;gap:10px}
+.cat{display:grid;grid-template-columns:72px 1fr auto;gap:18px;align-items:center;padding:18px 20px;border:1px solid #3A424C;border-radius:14px;background:var(--asph2);cursor:pointer;text-align:left;width:100%;color:#fff;transition:border-color .15s,background .15s}
+.cat:hover{border-color:#6B7480}
+.cat[aria-pressed=true]{border-color:var(--mark);background:#2E353E}
+.cat .k{font:850 30px/1 var(--fh);font-stretch:70%;width:64px;height:52px;border-radius:10px;background:#fff;color:var(--ink);display:grid;place-items:center}
+.cat b{display:block;font-size:17px}
+.cat small{color:#AEB5BD;font-size:14.5px}
+.cat .from{font:800 20px/1 var(--fh);font-stretch:78%;white-space:nowrap}
+.calc{background:#fff;color:var(--ink);border-radius:18px;padding:28px;position:sticky;top:92px}
+.calc h3{font-size:26px}
+.calc fieldset{border:0;padding:0;margin:22px 0 0}
+.calc legend{font-weight:700;font-size:15.5px;margin-bottom:10px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0}
+.seg span{display:block;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;font-size:15px;line-height:1.3;cursor:pointer;min-height:100%}
+.seg input:checked+span{border-color:var(--blue);background:var(--bluet)}
+.seg input:focus-visible+span{outline:3px solid var(--mark);outline-offset:2px}
+.range{display:flex;align-items:center;gap:14px}
+.range input{flex:1;accent-color:var(--blue)}
+.range output{font:800 22px/1 var(--fh);font-stretch:78%;min-width:64px;text-align:right}
+.rows{margin-top:22px;border-top:1px solid var(--line)}
+.rows div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--mist);font-size:15.5px}
+.rows div span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin:18px 0 6px}
+.total .num{font-size:44px;color:var(--blue)}
+.calc .fine{font-size:13.5px;color:var(--ink2);margin:6px 0 18px}
+
+/* menete */
+.steps{padding:96px 0;background:var(--card)}
+.sgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:44px;position:relative}
+.sgrid::before{content:"";position:absolute;left:0;right:0;top:27px;height:4px;background:repeating-linear-gradient(90deg,var(--mark) 0 28px,transparent 28px 48px)}
+.st{position:relative;padding-right:24px}
+.st .n{width:58px;height:58px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font:850 26px/1 var(--fh);font-stretch:72%;border:5px solid var(--card);position:relative}
+.st h3{font-size:21px;margin-top:20px}
+.st p{font-size:15.5px;color:var(--ink2);margin-top:8px}
+
+/* oktatók és autók */
+.team{padding:96px 0}
+.tgrid{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:24px;margin-top:40px}
+.person img,.person .ph{aspect-ratio:4/5;border-radius:16px;object-fit:cover;width:100%}
+.person h3{font-size:22px;margin-top:16px}
+.person p{font-size:15.5px;color:var(--ink2);margin-top:6px}
+.fleet{background:var(--asph);color:#fff;border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.fleet img,.fleet .ph{aspect-ratio:16/11;object-fit:cover;width:100%;border-radius:0}
+.fleet .in{padding:22px 24px 24px}
+.fleet ul{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px;font-size:15.5px;color:#C9CED4}
+.fleet li b{color:#fff}
+
+/* jelentkezés */
+.apply{padding:96px 0;background:var(--blue);color:#fff}
+.apply .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.apply .lead{font-size:19px;color:#D6E2F5;margin-top:20px;max-width:38ch}
+.apply ul{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:12px;color:#E8EEF8}
+.apply li::before{content:"";display:inline-block;width:18px;height:4px;background:var(--mark);margin-right:12px;vertical-align:middle;border-radius:2px}
+form.card{background:#fff;color:var(--ink);border-radius:18px;padding:30px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fld{display:grid;gap:6px;margin-top:16px}
+.fld label,.fld legend{font-weight:700;font-size:15px}
+.fld input,.fld select,.fld textarea{width:100%;min-height:50px;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 3px var(--bluet)}
+.fld fieldset{border:0;padding:0;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative;font-weight:400}
+.chips input{position:absolute;opacity:0;width:1px;height:1px;min-height:0}
+.chips span{display:inline-block;padding:9px 14px;border:1.5px solid var(--line);border-radius:999px;font-size:15px;cursor:pointer}
+.chips input:checked+span{border-color:var(--blue);background:var(--bluet);color:var(--blue2);font-weight:700}
+.chips input:focus-visible+span{outline:3px solid var(--mark);outline-offset:2px}
+form.card .btn{margin-top:22px}
+form.card .fine{font-size:13.5px;color:var(--ink2);margin-top:12px}
+.ok{text-align:center;padding:40px 10px}
+.ok h3{font-size:30px}
+.ok p{color:var(--ink2);margin-top:10px}
+
+/* GYIK */
+.faq{padding:96px 0}
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font:750 20px/1.25 var(--fh);font-stretch:88%;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:50%;width:14px;height:14px;border-right:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+details p{padding:0 0 22px;color:var(--ink2);max-width:62ch}
+
+/* elérhetőség */
+.visit{background:var(--card);padding:88px 0;border-top:1px solid var(--line)}
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px}
+.visit h3{font-size:20px;margin-bottom:12px}
+.hours div{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--mist);font-size:15.5px}
+.visit address{font-style:normal;line-height:1.7}
+
+footer{background:var(--asph);color:#AEB5BD;padding:40px 0 104px;font-size:14.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer a{color:#fff}
+
+/* mobil alsó sáv */
+.mbar{display:none}
+
+@media (max-width:1020px){
+  .top nav{display:none}
+  .hero .wrap,.school .wrap,.pgrid,.apply .wrap,.faq .wrap{grid-template-columns:1fr;gap:40px}
+  .hero .badge{left:16px}
+  .mgrid{grid-template-columns:1fr 1fr}
+  .m:nth-child(2){border-right:0}
+  .m:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .m.hl{border-bottom-color:var(--blue)}
+  .sgrid{grid-template-columns:1fr;gap:28px}
+  .sgrid::before{left:27px;right:auto;top:0;bottom:0;width:4px;height:auto;background:repeating-linear-gradient(180deg,var(--mark) 0 22px,transparent 22px 38px)}
+  .st{display:grid;grid-template-columns:58px 1fr;gap:0 20px;padding:0;align-items:start}
+  .st .n{grid-row:1/3}
+  .st h3{margin-top:14px}
+  .st p{grid-column:2}
+  .tgrid{grid-template-columns:1fr 1fr}
+  .fleet{grid-column:1/-1}
+  .calc{position:static}
+  .visit .wrap{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  body{font-size:16.5px}
+  .wrap{padding:0 18px}
+  .top .wrap{height:60px;gap:12px}
+  .top .btn,.tel{display:none}
+  .logo span{display:none}
+  .hero .wrap{padding-top:36px;padding-bottom:48px}
+  .hero .lead{font-size:18px}
+  .hero figure img,.hero .ph{aspect-ratio:4/4.2}
+  .metrics .wrap{padding-top:48px;padding-bottom:48px}
+  .m{padding:20px 18px}
+  .school,.prices,.steps,.team,.apply,.faq{padding:60px 0}
+  .visit{padding:56px 0}
+  .tgrid{grid-template-columns:1fr}
+  .f2{grid-template-columns:1fr}
+  form.card,.calc{padding:22px 18px}
+  .cat{grid-template-columns:56px 1fr;gap:14px;padding:14px}
+  .cat .k{width:52px;height:46px;font-size:25px}
+  .cat .from{grid-column:2;font-size:17px}
+  .visit .wrap{grid-template-columns:1fr;gap:32px}
+  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(28,33,39,.97)}
+  .mbar a{min-height:48px;font-size:15.5px;padding:10px}
+  .mbar .btn.ghost{color:#fff}
+}
+</style>
+</head>
+<body>
+
+<div class="draft">Bemutató tervezet autósiskoláknak, kitalált iskolával. Készítette: <a href="https://hozdesigns.com">hozdesigns.com</a></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Irányjelző Autósiskola, kezdőlap">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#1D57B0"/><path d="M13 31V20.5a4 4 0 0 1 4-4h9" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M23.5 10.5l7 6-7 6z" fill="#F2C230"/></svg>
+      <div><b>Irányjelző</b><span>Autósiskola, Székesfehérvár</span></div>
+    </a>
+    <nav aria-label="Fő menü">
+      <a href="#mutatok">Mutatóink</a>
+      <a href="#arak">Árak</a>
+      <a href="#menete">Menete</a>
+      <a href="#oktatok">Oktatók</a>
+      <a href="#gyik">Kérdések</a>
+    </nav>
+    <a class="tel" href="tel:+3622000000">+36 22 000 0000</a>
+    <a class="btn" href="#jelentkezes">Jelentkezem</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Jogsi kapkodás nélkül, első vizsgára készülve.</h1>
+      <p class="lead">B, A és AM kategória Székesfehérváron. Előre tudod, mennyibe kerül, mikor vezetsz, és mennyien mennek át nálunk elsőre.</p>
+      <div class="cta">
+        <a class="btn" href="#jelentkezes">Jelentkezem</a>
+        <a class="btn ghost" href="#arak">Kiszámolom az árát</a>
+      </div>
+      <p class="next"><span class="dot" aria-hidden="true"></span><span>Következő KRESZ-tanfolyam: <b>december 1., hétfő 17:00</b>, még 6 hely</span></p>
+    </div>
+    <figure>
+      <div class="ph" role="img" aria-label="Tanuló vezet, mellette az oktató">Nyitókép: tanuló a volán mögött, oktatóval</div>
+      <div class="badge"><span class="num">78%</span><small>forgalmi vizsga elsőre, az elmúlt negyedévben</small></div>
+    </figure>
+  </div>
+</section>
+<div class="lane" aria-hidden="true"></div>
+
+<section class="metrics" id="mutatok">
+  <div class="wrap">
+    <div class="mhead">
+      <h2>A mutatóink, ahogy a vizsgaközpont méri</h2>
+      <p class="muted">Ezeket a számokat minden autósiskolának közzé kell tennie a honlapján, és negyedévente frissíteni. Mi kiemelten mutatjuk, mert ezek alapján érdemes iskolát választani.</p>
+    </div>
+    <div class="mgrid">
+      <div class="m hl"><span class="num">78<small>%</small></span><h3>Vizsgasikerességi mutató (VSM)</h3><p>Ennyien mennek át elsőre a forgalmi vizsgán.</p></div>
+      <div class="m"><span class="num">84<small>%</small></span><h3>VSM, elméleti vizsga</h3><p>Elsőre sikeres KRESZ-vizsgák aránya.</p></div>
+      <div class="m"><span class="num">31,2<small>óra</small></span><h3>Átlagos képzési óraszám (ÁKÓ)</h3><p>Ennyi gyakorlati órával jut el egy tanuló a sikeres vizsgáig.</p></div>
+      <div class="m"><span class="num">392<small>e Ft</small></span><h3>Képzési költség (KK)</h3><p>Egy tanuló átlagos teljes költsége, vizsgadíjakkal együtt.</p></div>
+    </div>
+    <div class="mnote"><span>B kategória, 2026. III. negyedév</span><span>Frissítve: 2026. október 15.</span></div>
+  </div>
+</section>
+
+<section class="school">
+  <div class="wrap">
+    <div class="ph" role="img" aria-label="Rutinpálya bójákkal">Kép: oktatóautó a rutinpályán</div>
+    <div>
+      <h2>Iskolában tetted le a KRESZ-t? Innen folytatjuk.</h2>
+      <p class="lead">Ha a középiskolai KRESZ-vizsgád már megvan, nálunk rögtön a vezetéssel kezdhetsz, felár nélkül.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Az első órát egy héten belül megkapod, este és szombaton is.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Az iskolából is felveszünk, így nem kell átjárnod a városon.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Ugyanaz az óradíj, mint annak, aki nálunk végezte az elméletet.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="prices" id="arak">
+  <div class="wrap">
+    <h2>Árak, rejtett tételek nélkül</h2>
+    <p class="muted" style="margin-top:14px;max-width:56ch">Válaszd ki a kategóriát, és a kalkulátor kiszámolja a teljes költséget a hatósági vizsgadíjakkal együtt.</p>
+    <div class="pgrid">
+      <div class="cats" role="group" aria-label="Kategóriák">
+        <button class="cat" type="button" data-cat="B" aria-pressed="true"><span class="k">B</span><span><b>Személyautó</b><small>29 kötelező gyakorlati óra, kézi váltó</small></span><span class="from" data-from="B"></span></button>
+        <button class="cat" type="button" data-cat="BA" aria-pressed="false"><span class="k">B</span><span><b>Személyautó, automata</b><small>29 óra, automata váltós autóval</small></span><span class="from" data-from="BA"></span></button>
+        <button class="cat" type="button" data-cat="A2" aria-pressed="false"><span class="k">A2</span><span><b>Motor, 35 kW-ig</b><small>17 éves kortól</small></span><span class="from" data-from="A2"></span></button>
+        <button class="cat" type="button" data-cat="A" aria-pressed="false"><span class="k">A</span><span><b>Motor, korlátlan</b><small>24 éves kortól, vagy 2 év A2 után</small></span><span class="from" data-from="A"></span></button>
+        <button class="cat" type="button" data-cat="AM" aria-pressed="false"><span class="k">AM</span><span><b>Segédmotor</b><small>14 éves kortól</small></span><span class="from" data-from="AM"></span></button>
+      </div>
+      <form class="calc" id="calc" aria-labelledby="calc-t" onsubmit="return false">
+        <h3 id="calc-t">B kategória, személyautó</h3>
+        <fieldset>
+          <legend>Elmélet</legend>
+          <div class="seg">
+            <label><input type="radio" name="th" value="el" checked><span>E-learning nálunk</span></label>
+            <label><input type="radio" name="th" value="isk"><span>Már megvan (iskolai KRESZ)</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Pótórák a kötelezőn felül</legend>
+          <div class="range"><input id="extra" type="range" min="0" max="15" value="2" aria-label="Pótórák száma"><output for="extra" id="extra-o">2 óra</output></div>
+        </fieldset>
+        <div class="rows" id="rows"></div>
+        <div class="total"><span>Összesen</span><span class="num" id="sum">0 Ft</span></div>
+        <p class="fine">A vizsgadíjakat a vizsgaközpontnak fizeted. Részletfizetés: a tandíj három részletben is fizethető, kamat nélkül.</p>
+        <a class="btn full" href="#jelentkezes" id="calc-go">Jelentkezem erre</a>
+      </form>
+    </div>
+  </div>
+</section>
+<div class="lane" aria-hidden="true"></div>
+
+<section class="steps" id="menete">
+  <div class="wrap">
+    <h2>Így jutsz el a jogosítványig</h2>
+    <div class="sgrid">
+      <div class="st"><span class="n">1</span><h3>Jelentkezés</h3><p>Online vagy az irodában. Az orvosi alkalmasságit mi is segítünk időpontra intézni.</p></div>
+      <div class="st"><span class="n">2</span><h3>Elmélet</h3><p>E-learning a saját tempódban, gyakorló tesztekkel és két konzultációval.</p></div>
+      <div class="st"><span class="n">3</span><h3>KRESZ-vizsga</h3><p>A vizsgára mi jelentünk be, a dátumot két-három héten belül kapod meg.</p></div>
+      <div class="st"><span class="n">4</span><h3>Vezetés</h3><p>29 kötelező óra: rutinpálya, város, országút és éjszakai vezetés.</p></div>
+      <div class="st"><span class="n">5</span><h3>Forgalmi vizsga</h3><p>Azzal az autóval és oktatóval vizsgázol, akivel tanultál.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="oktatok">
+  <div class="wrap">
+    <h2>Akikkel vezetni fogsz</h2>
+    <div class="tgrid">
+      <div class="person"><div class="ph" role="img" aria-label="Oktató portréja">Portré: oktató</div><h3>Kovács Judit</h3><p>B és automata. 14 éve oktat, a türelmesebb tempót kérők kedvence.</p></div>
+      <div class="person"><div class="ph" role="img" aria-label="Oktató portréja">Portré: oktató</div><h3>Szabó Gergely</h3><p>B és motoros kategóriák. Hétvégén és este is vállal órát.</p></div>
+      <div class="fleet">
+        <div class="ph" role="img" aria-label="Oktatóautó">Kép: oktatóautó</div>
+        <div class="in">
+          <h3>Autók és motorok</h3>
+          <ul>
+            <li><b>4 kézi váltós</b> városi autó, 2 évesnél fiatalabbak</li>
+            <li><b>1 automata</b> autó, ugyanazzal az óradíjjal</li>
+            <li><b>2 motor</b> az A2 és az A kategóriához, felszereléssel</li>
+            <li><b>Saját rutinpálya</b> a telephelyen, nem kell várni rá</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="apply" id="jelentkezes">
+  <div class="wrap">
+    <div>
+      <h2>Jelentkezz, és egy munkanapon belül hívunk</h2>
+      <p class="lead">Elmondjuk, mikor kezdhetsz, és melyik oktatóhoz tudunk beosztani. A jelentkezés nem kötelez semmire.</p>
+      <ul>
+        <li>Tanfolyam indul minden hónap elején</li>
+        <li>Vezetés hétköznap 7–20 óráig és szombaton</li>
+        <li>Az első részletet csak a kezdéskor kell fizetni</li>
+      </ul>
+    </div>
+    <form class="card" id="f-jel" novalidate>
+      <div class="fld">
+        <fieldset><legend>Kategória</legend>
+          <div class="chips">
+            <label><input type="radio" name="kat" value="B" checked><span>B</span></label>
+            <label><input type="radio" name="kat" value="B automata"><span>B automata</span></label>
+            <label><input type="radio" name="kat" value="A2"><span>A2</span></label>
+            <label><input type="radio" name="kat" value="A"><span>A</span></label>
+            <label><input type="radio" name="kat" value="AM"><span>AM</span></label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="fld">
+        <fieldset><legend>Van már KRESZ-vizsgád?</legend>
+          <div class="chips">
+            <label><input type="radio" name="kresz" value="nincs" checked><span>Még nincs</span></label>
+            <label><input type="radio" name="kresz" value="iskolai"><span>Igen, az iskolában</span></label>
+            <label><input type="radio" name="kresz" value="mashol"><span>Igen, máshol</span></label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="f2">
+        <div class="fld"><label for="nev">Név</label><input id="nev" name="nev" autocomplete="name" required></div>
+        <div class="fld"><label for="tel">Telefonszám</label><input id="tel" name="tel" type="tel" autocomplete="tel" required></div>
+      </div>
+      <div class="f2">
+        <div class="fld"><label for="email">E-mail-cím</label><input id="email" name="email" type="email" autocomplete="email"></div>
+        <div class="fld"><label for="mikor">Mikor kezdenél?</label>
+          <select id="mikor" name="mikor"><option>Amint lehet</option><option>Decemberben</option><option>Januárban</option><option>Később</option></select>
+        </div>
+      </div>
+      <button class="btn full" type="submit">Jelentkezés elküldése</button>
+      <p class="fine">Az adataidat csak a visszahíváshoz használjuk.</p>
+    </form>
+  </div>
+</section>
+
+<section class="faq" id="gyik">
+  <div class="wrap">
+    <h2>Gyakori kérdések</h2>
+    <div>
+      <details open><summary>Hány éves kortól kezdhetem el?</summary><p>B kategóriánál 16 és fél évesen kezdheted a tanfolyamot, a forgalmi vizsgát 17 évesen teheted le. Az A2 motoros kategória 17, az AM segédmotoros 14 éves kortól érhető el.</p></details>
+      <details><summary>Jár állami támogatás az első jogosítványhoz?</summary><p>A középiskolások ingyenesen végezhetik el a KRESZ-tanfolyamot és -vizsgát az iskolában. A gyakorlati képzésre ez nem vonatkozik. A pontos, aktuális feltételekről jelentkezéskor tájékoztatunk.</p></details>
+      <details><summary>Mi történik, ha nem sikerül elsőre a vizsga?</summary><p>Átbeszéljük, min csúszott el, és ha kell, egy-két pótórával felkészülsz az újravizsgára. A pótóra díja ugyanannyi, mint a rendes óráé.</p></details>
+      <details><summary>Tanulhatok automata autón?</summary><p>Igen. Ilyenkor a jogosítványod automata váltós autóra szól. Ha később kézi váltósra is kell, néhány óra után egy rövid vizsgával kiterjesztheted.</p></details>
+      <details><summary>Hogyan fizethetek?</summary><p>Átutalással vagy kártyával az irodában. A tandíj három részletben is fizethető: jelentkezéskor, a KRESZ-vizsga után és a 15. vezetési óránál.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="kapcsolat">
+  <div class="wrap">
+    <div>
+      <h3>Iroda</h3>
+      <address>8000 Székesfehérvár, Minta utca 12.<br><a href="tel:+3622000000">+36 22 000 0000</a><br><a href="mailto:iroda@iranyjelzo.example">iroda@iranyjelzo.example</a></address>
+    </div>
+    <div class="hours">
+      <h3>Nyitvatartás</h3>
+      <div><span>Hétfő–csütörtök</span><span>9:00–18:00</span></div>
+      <div><span>Péntek</span><span>9:00–15:00</span></div>
+      <div><span>Szombat</span><span>csak vezetés</span></div>
+    </div>
+    <div>
+      <h3>Rutinpálya</h3>
+      <p>A telephely mögött, a Minta utca felől. Az első órán itt találkozunk, utána bárhonnan felveszünk a városban.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Irányjelző Autósiskola, kitalált bemutató iskola. Képző szerv azonosító: 00-0000-00</span>
+    <span>Minta: <a href="https://hozdesigns.com">hozdesigns.com</a></span>
+  </div>
+</footer>
+
+<div class="mbar"><a class="btn ghost" href="tel:+3622000000">Hívás</a><a class="btn" href="#jelentkezes">Jelentkezem</a></div>
+
+<script>
+(function(){
+  var EXAM={kresz:5100,forg:12200};
+  var C={
+    B:{t:'B kategória, személyautó',th:39000,h:29,ph:11000},
+    BA:{t:'B kategória, automata',th:39000,h:29,ph:12000},
+    A2:{t:'A2 kategória, motor',th:39000,h:20,ph:11000,mot:true},
+    A:{t:'A kategória, motor',th:39000,h:21,ph:11000,mot:true},
+    AM:{t:'AM kategória, segédmotor',th:29000,h:10,ph:9500,mot:true}
+  };
+  var cur='B',ft=function(n){return n.toLocaleString('hu-HU').replace(/ /g,' ')+' Ft'};
+  var $=function(s){return document.querySelector(s)};
+  function calc(){
+    var c=C[cur],isk=$('input[name=th]:checked').value==='isk',x=+$('#extra').value;
+    $('#extra-o').textContent=x+' óra';
+    var th=isk?0:c.th,base=c.h*c.ph,ex=x*c.ph,sum=th+base+ex+EXAM.kresz*(isk?0:1)+EXAM.forg;
+    var r=[['Elméleti tanfolyam',isk?'megvan':ft(th)],[c.h+' kötelező óra × '+ft(c.ph),ft(base)]];
+    if(x)r.push([x+' pótóra',ft(ex)]);
+    if(!isk)r.push(['KRESZ-vizsga díja',ft(EXAM.kresz)]);
+    r.push(['Forgalmi vizsga díja',ft(EXAM.forg)]);
+    $('#rows').innerHTML=r.map(function(a){return'<div><span>'+a[0]+'</span><span>'+a[1]+'</span></div>'}).join('');
+    $('#sum').textContent=ft(sum);
+    $('#calc-t').textContent=c.t;
+  }
+  document.querySelectorAll('.cat').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('.cat').forEach(function(o){o.setAttribute('aria-pressed',o===b)});
+    cur=b.dataset.cat;calc();
+  })});
+  document.querySelectorAll('#calc input').forEach(function(i){i.addEventListener('input',calc)});
+  $('#calc-go').addEventListener('click',function(){
+    var map={B:'B',BA:'B automata',A2:'A2',A:'A',AM:'AM'};
+    var r=document.querySelector('#f-jel input[name=kat][value="'+map[cur]+'"]');if(r)r.checked=true;
+    if($('input[name=th]:checked').value==='isk')document.querySelector('#f-jel input[name=kresz][value=iskolai]').checked=true;
+  });
+  document.querySelectorAll('[data-from]').forEach(function(e){var c=C[e.dataset.from];e.textContent=ft(c.th+c.h*c.ph+EXAM.kresz+EXAM.forg)+'-tól'});
+  calc();
+  $('#f-jel').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target,nev=f.nev.value.trim(),tel=f.tel.value.trim();
+    if(!nev){f.nev.focus();f.nev.setCustomValidity('Add meg a neved.');f.nev.reportValidity();f.nev.setCustomValidity('');return}
+    if(tel.replace(/\D/g,'').length<8){f.tel.focus();f.tel.setCustomValidity('Add meg a telefonszámod, hogy vissza tudjunk hívni.');f.tel.reportValidity();f.tel.setCustomValidity('');return}
+    f.innerHTML='<div class="ok" role="status"><h3>Megkaptuk, '+nev.split(' ').pop().replace(/[<>&"]/g,'')+'!</h3><p>Egy munkanapon belül hívunk a megadott számon.<br>Ez egy bemutató oldal, a jelentkezés nem ment el.</p></div>';
+  });
+})();
+</script>
+</body>
+</html>
