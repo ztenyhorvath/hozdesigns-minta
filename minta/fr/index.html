@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hozdesigns · Sites web pour commerces et artisans</title>
+<meta name="description" content="Sites web sur mesure, rapides et adaptés au mobile, pour salons de toilettage, commerces et artisans : création, mise en ligne et suivi mensuel. 10 ans d'expérience.">
+<link rel="canonical" href="https://hozdesigns.com/minta/fr/">
+<link rel="alternate" hreflang="fr" href="https://hozdesigns.com/minta/fr/">
+<link rel="alternate" hreflang="hu" href="https://hozdesigns.com/">
+<link rel="icon" type="image/png" href="/img/logo.png">
+<link rel="apple-touch-icon" href="/img/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="hozdesigns · Sites web pour commerces et artisans">
+<meta property="og:description" content="Sites web sur mesure, rapides et adaptés au mobile, pour salons de toilettage, commerces et artisans.">
+<meta property="og:url" content="https://hozdesigns.com/minta/fr/">
+<meta property="og:image" content="https://hozdesigns.com/img/og.jpg">
+<meta name="theme-color" content="#121212">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F1EC;--ink:#121212;--panel:#E9E5DD;--card:#FBFAF7;--muted:#4A453E;--muted2:#5A5248;--line:#CFC9BE;--dline:#2E2B27;--accent:#C9A46A;--accent-t:#8A6A35;--on-dark:#DCD6CB}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none !important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Geist',system-ui,sans-serif}
+img{max-width:100%;display:block}
+a{color:var(--ink)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:24px;padding-right:24px}
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.03em}
+h2{font-size:clamp(40px,5vw,64px);line-height:1}
+.eyebrow{margin:0;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2)}
+.lead{margin:0;font-size:19px;line-height:1.6;max-width:580px}
+.btn{display:inline-block;padding:16px 28px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.btn:hover{transform:translateY(-3px)}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-line{border:1.5px solid var(--ink)}
+.btn-light{background:var(--bg);color:var(--ink)}
+.btn-line-light{border:1.5px solid var(--bg);color:var(--bg)}
+
+/* header */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:20px;padding-bottom:20px}
+.top nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px;font-weight:500;font-size:15px}
+.top nav a{padding:12px 14px;text-decoration:none}
+.top nav a.cta{padding:12px 20px;background:var(--ink);color:var(--bg);border-radius:999px;font-weight:600}
+
+/* hero */
+.hero{display:flex;flex-direction:column;gap:28px;padding-top:40px;padding-bottom:64px}
+.hero h1{font-size:clamp(46px,7vw,108px);line-height:.96;letter-spacing:-.04em;max-width:1100px}
+.hero h1 em{font-style:normal;color:var(--accent-t)}
+.hero-row{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end;justify-content:space-between}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.stats{margin-top:32px;background:var(--ink);color:var(--bg);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.stat{padding:40px 36px;display:flex;flex-direction:column;gap:14px;border-right:1px solid var(--dline);transition:background .35s}
+.stat:last-child{border-right:0}
+.stat:hover{background:#1C1A18}
+.stat small{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9C958A}
+.stat .num{font-weight:600;font-size:clamp(72px,8vw,120px);letter-spacing:-.06em;line-height:.85}
+.stat .num i{font-style:normal;font-size:.32em;letter-spacing:-.02em;margin-left:6px;color:var(--accent)}
+.stat span{font-size:15px;color:var(--on-dark)}
+
+/* sectors */
+.sectors{padding-top:72px;padding-bottom:72px;display:flex;flex-direction:column;gap:36px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px}
+.sec-head p{margin:0;font-size:18px;line-height:1.6;color:var(--muted);max-width:460px}
+.sector-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:20px}
+.sector{border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:18px;background:var(--card)}
+.sector h3{font-size:34px;line-height:1.05}
+.sector .who{margin:0;font-size:16px;color:var(--muted)}
+.sector ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;font-size:16px}
+.sector li{padding:11px 0;border-bottom:1px solid var(--line)}
+.sector li:first-child{border-top:1px solid var(--line)}
+.sector .btn{margin-top:auto;align-self:flex-start}
+.sector.main{background:var(--ink);color:var(--bg);padding:0;overflow:hidden}
+.sector.main .pic{position:relative;height:250px;overflow:hidden}
+.sector.main .pic img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.sector.main:hover .pic img{transform:scale(1.05)}
+.sector.main .pic span{position:absolute;left:16px;bottom:16px;background:var(--bg);color:var(--ink);font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px}
+.sector.main .body{padding:28px 32px 32px;display:flex;flex-direction:column;gap:18px;flex:1}
+.sector.main .who{color:var(--on-dark)}
+.sector.main li{border-color:var(--dline)}
+.sector .tag{align-self:flex-start;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+@media (max-width:980px){.sector-grid{grid-template-columns:1fr 1fr}.sector.main{grid-column:1 / -1}}
+@media (max-width:640px){.sector-grid{grid-template-columns:1fr}}
+
+/* works */
+.works{background:var(--ink);color:var(--bg)}
+.works .wrap{padding-top:72px;padding-bottom:72px;display:flex;flex-direction:column;gap:36px}
+.works .sec-head p{color:#BDB6AA}
+.work{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center}
+.work .shot{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--dline);background:#fff}
+.work .shot img{width:100%;height:auto;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.work .shot:hover img{transform:scale(1.04)}
+.work .info{display:flex;flex-direction:column;gap:18px}
+.work .kind{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.work h3{font-size:clamp(56px,8vw,112px);font-weight:700;letter-spacing:-.06em;line-height:.85}
+.work p{margin:0;font-size:17px;line-height:1.6;color:var(--on-dark)}
+.work .links{display:flex;flex-wrap:wrap;gap:10px}
+.work .links a{padding:14px 22px;font-size:15px}
+.work-sm{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;padding-top:36px;border-top:1px solid var(--dline)}
+.work-sm h3{font-size:clamp(44px,7vw,96px);font-weight:700;letter-spacing:-.05em;line-height:.9}
+@media (max-width:860px){.work{grid-template-columns:1fr;gap:24px}}
+
+/* packages */
+.pkgs{background:var(--panel)}
+.pkgs .wrap{padding-top:72px;padding-bottom:72px;display:flex;flex-direction:column;gap:40px}
+.pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.pkg{background:var(--card);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px;transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
+.pkg:hover,.pkg:focus-within{transform:translateY(-10px);box-shadow:0 32px 64px rgba(18,18,18,.18)}
+.pkg.dark{background:var(--ink);color:var(--bg)}
+.pkg small{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2)}
+.pkg.dark small{color:var(--accent)}
+.pkg .price{font-size:52px;font-weight:500;line-height:1;letter-spacing:-.03em}
+.pkg .price i{font-style:normal;font-size:24px}
+.pkg p{margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
+.pkg.dark p{color:var(--on-dark)}
+.pkg ul{margin:0;padding-left:20px;font-size:15px;line-height:1.9}
+.pkg .btn{margin-top:auto;text-align:center;padding:14px 22px}
+.note{margin:0;font-size:14px;color:var(--muted)}
+
+/* process */
+.process{padding-top:72px;padding-bottom:72px;display:flex;flex-direction:column;gap:40px}
+.steps{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.steps li{background:var(--card);border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:18px}
+.steps li.dark{background:var(--ink);color:var(--bg)}
+.steps .n{display:flex;justify-content:space-between;align-items:center}
+.steps .n b{font-size:64px;font-weight:600;letter-spacing:-.05em;line-height:1}
+.steps .dark .n b{color:var(--accent)}
+.steps .n span{font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--line)}
+.steps .dark .n span{border-color:#3A3631}
+.steps h3{font-size:26px;letter-spacing:-.02em}
+.steps p{margin:0;font-size:16px;line-height:1.65;color:var(--muted)}
+.steps .dark p{color:var(--on-dark)}
+
+/* contact */
+.contact{background:var(--ink);color:var(--bg)}
+.contact .wrap{padding-top:72px;padding-bottom:72px;display:flex;flex-wrap:wrap;gap:56px}
+.contact .side{flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.contact .side img{width:96px;height:96px;border:1px solid #3A3631;border-radius:50%}
+.contact .side p{margin:0;font-size:17px;line-height:1.7;color:var(--on-dark)}
+.contact .side a{color:var(--bg)}
+.contact form,.contact .ok{flex:1 1 420px;min-width:0}
+.contact form{display:flex;flex-direction:column;gap:16px}
+.contact label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.contact input,.contact textarea,.contact select{padding:14px;font-size:16px;border:1px solid #5A554D;border-radius:10px;background:#1E1C1A;color:var(--bg);font-family:inherit}
+.contact textarea{resize:vertical}
+.contact button{padding:16px;border:0;border-radius:999px;background:var(--bg);color:var(--ink);font-size:16px;font-weight:700;cursor:pointer;font-family:inherit}
+.contact .ok{padding:28px;border:1px solid #3A3631;border-radius:16px;font-size:18px;align-self:flex-start}
+.contact .err{margin:0;font-size:15px;color:#F0B9A6}
+.foot{border-top:1px solid #3A3631;padding-top:24px;padding-bottom:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:#BDB6AA}
+.foot a{color:#BDB6AA}
+
+@media (max-width:640px){
+  .wrap{padding-left:20px;padding-right:20px}
+  .top nav a.nl{display:none}
+  .hero{padding-top:28px;padding-bottom:48px;gap:22px}
+  .stats{margin-top:12px}
+  .stat{padding:24px;border-right:0;border-bottom:1px solid var(--dline)}
+  .stat:last-child{border-bottom:0}
+  .sectors,.process{padding-top:56px;padding-bottom:56px;gap:24px}
+  .works .wrap,.pkgs .wrap,.contact .wrap{padding-top:56px;padding-bottom:56px;gap:28px}
+  .sector{padding:24px}.sector.main .body{padding:22px 24px 26px}.sector.main .pic{height:200px}
+  .pkg,.steps li{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a href="/minta/fr/" aria-label="hozdesigns, accueil"><img src="/img/logo.png" alt="Logo H designs" width="48" height="48"></a>
+  <nav aria-label="Menu principal">
+    <a class="nl" href="/minta/demo-toilettage/">Démo toilettage</a>
+    <a class="nl" href="#realisations">Réalisations</a>
+    <a class="nl" href="#tarifs">Tarifs</a>
+    <a class="cta" href="#contact">Demander un devis</a>
+  </nav>
+</header>
+
+<main>
+<section id="top" class="wrap hero">
+  <p class="eyebrow">Sites web pour commerces et artisans · partout en France, à distance</p>
+  <h1>Un site à vous, qui vous amène des <em>clients</em>.</h1>
+  <div class="hero-row">
+    <p class="lead">Je travaille depuis 10 ans dans l'e-commerce et le web design. Je crée des sites sur mesure, pensés pour le mobile, pour les salons de toilettage, les commerces et les artisans, et je m'en occupe ensuite pour qu'ils restent toujours à jour.</p>
+    <div class="btns">
+      <a class="btn btn-dark" href="/minta/demo-toilettage/">Voir la démo toilettage</a>
+      <a class="btn btn-line" href="#realisations">Mes réalisations</a>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><small>Expérience</small><b class="num">10<i>ans</i></b><span>d'e-commerce et de web design</span></div>
+    <div class="stat"><small>Délai</small><b class="num">1–3<i>sem.</i></b><span>du premier échange à la mise en ligne</span></div>
+    <div class="stat"><small>Suivi</small><b class="num">2<i>h/mois</i></b><span>de mises à jour et modifications, chaque mois</span></div>
+  </div>
+</section>
+
+<section id="domaines" class="wrap sectors" aria-labelledby="dom-titre">
+  <div class="sec-head">
+    <h2 id="dom-titre">Pour qui je travaille</h2>
+    <p>Chaque site est construit avec vos photos, vos couleurs et vos textes : pas un modèle générique, votre propre identité.</p>
+  </div>
+  <div class="sector-grid">
+    <article class="sector main">
+      <div class="pic"><img src="/minta/demo-toilettage/img/u49.jpg" alt="Photo : chien après le bain, dans sa serviette" width="1200" height="1718" loading="lazy" style="object-position:50% 30%"><span>Démo en ligne</span></div>
+      <div class="body">
+        <h3>Toilettage canin</h3>
+        <p class="who">Salons de toilettage, toiletteurs à domicile</p>
+        <ul>
+          <li>Tarifs selon la taille du chien, affichés à l'avance</li>
+          <li>Prise de rendez-vous en ligne, créneaux libres en direct</li>
+          <li>Avant / après, horaires, carte</li>
+        </ul>
+        <a class="btn btn-light" href="/minta/demo-toilettage/">Voir la démo →</a>
+      </div>
+    </article>
+    <article class="sector">
+      <h3>Commerces</h3>
+      <p class="who">Cafés, boulangeries, restaurants, boutiques</p>
+      <ul>
+        <li>Menu ou offre de la semaine, facile à mettre à jour</li>
+        <li>Réservation de table, précommande</li>
+        <li>Horaires, accès, Instagram</li>
+      </ul>
+      <a class="btn btn-dark" href="#contact">En parler →</a>
+    </article>
+    <article class="sector">
+      <h3>Artisans et services</h3>
+      <p class="who">Gîtes, instituts, ateliers, prestataires</p>
+      <ul>
+        <li>Demande de devis ou de rendez-vous</li>
+        <li>Calendrier de disponibilités, réservation directe</li>
+        <li>Réalisations en photos, zone d'intervention</li>
+      </ul>
+      <a class="btn btn-dark" href="#contact">En parler →</a>
+    </article>
+  </div>
+</section>
+
+<section id="realisations" class="works" aria-labelledby="real-titre">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="real-titre">Réalisations</h2>
+      <p>Des sites en ligne, pour de vrais clients</p>
+    </div>
+    <article class="work">
+      <a class="shot" href="https://csaklitkavehaz.hu" target="_blank" rel="noopener" aria-label="Le site du Csáklit Kávéház (nouvel onglet)"><img src="/img/hz-case-csaklit-d.webp?v=2" alt="Page d'accueil du site du Csáklit Kávéház avec le menu de la semaine" width="1600" height="1000" loading="lazy"></a>
+      <div class="info">
+        <span class="kind">Café · Budapest</span>
+        <h3>Csáklit</h3>
+        <p>9 pages, réservation de table en ligne, commandes de gâteaux et d'événements, et un menu de la semaine que le café met à jour lui-même depuis un tableau.</p>
+        <div class="links">
+          <a class="btn btn-light" href="https://csaklitkavehaz.hu" target="_blank" rel="noopener">csaklitkavehaz.hu ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="work-sm">
+      <div>
+        <span class="kind" style="font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#BDB6AA">Premier site livré</span>
+        <h3>Teoflora</h3>
+      </div>
+      <a class="btn btn-line-light" href="https://teoflora.hu" target="_blank" rel="noopener">teoflora.hu ↗</a>
+    </article>
+  </div>
+</section>
+
+<section id="tarifs" class="pkgs" aria-labelledby="tarif-titre">
+  <div class="wrap">
+    <h2 id="tarif-titre">Tarifs</h2>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <small>Site vitrine</small>
+        <span class="price">790 €</span>
+        <p>Une page claire, où l'on trouve tout l'essentiel.</p>
+        <ul><li>Présentation, horaires, carte</li><li>Prestations, offre ou tarifs</li><li>Galerie photo, réseaux sociaux</li><li>Adapté au mobile</li></ul>
+        <a class="btn btn-dark" href="/minta/fr/?formule=vitrine#contact">Je choisis cette formule →</a>
+      </div>
+      <div class="pkg dark">
+        <small>Site complet</small>
+        <span class="price">1 290 €</span>
+        <p>Plusieurs pages, rendez-vous ou réservation.</p>
+        <ul><li>Tout le site vitrine</li><li>Prise de rendez-vous ou réservation en ligne</li><li>Tarifs détaillés, avant / après</li><li>Plusieurs pages, site bilingue possible</li></ul>
+        <a class="btn btn-light" href="/minta/fr/?formule=complet#contact">Je choisis cette formule →</a>
+      </div>
+      <div class="pkg">
+        <small>Suivi mensuel</small>
+        <span class="price">49 €<i> / mois</i></span>
+        <p>Vous payez 2 heures de travail, l'hébergement est offert.</p>
+        <ul><li>Modifications, nouvelles photos, nouveaux tarifs</li><li>Maintenance et assistance</li><li>Nom de domaine, hébergement, mises à jour : offerts</li></ul>
+        <a class="btn btn-dark" href="/minta/fr/?formule=suivi#contact">J'ai une question →</a>
+      </div>
+    </div>
+    <p class="note">Les prix indiqués sont des montants nets. Le site et son code vous appartiennent : en cas d'arrêt du suivi, je vous remets le code et le nom de domaine.</p>
+  </div>
+</section>
+
+<section class="wrap process" aria-labelledby="etapes-titre">
+  <div class="sec-head">
+    <h2 id="etapes-titre">Comment on travaille</h2>
+    <p>Trois étapes du premier échange au site clé en main, et je reste là ensuite.</p>
+  </div>
+  <ol class="steps">
+    <li>
+      <div class="n"><b>01</b><span>En visio ou par e-mail</span></div>
+      <h3>Premier échange</h3>
+      <p>Vous me parlez de votre activité, de son ambiance et de vos clients. On voit ensemble ce dont vous avez besoin, et ce dont vous n'avez pas besoin.</p>
+    </li>
+    <li>
+      <div class="n"><b>02</b><span>Conception</span></div>
+      <h3>Maquettes et ajustements</h3>
+      <p>Je prépare les premières maquettes, on les revoit ensemble, et on les affine jusqu'à ce que chaque texte, photo et fonction soit à sa place.</p>
+    </li>
+    <li class="dark">
+      <div class="n"><b>03</b><span>49 € / mois</span></div>
+      <h3>Mise en ligne et suivi</h3>
+      <p>Je connecte votre nom de domaine et je m'occupe du site. Chaque mois, 2 heures de travail : mises à jour, modifications, nouvelles photos, offres de saison.</p>
+    </li>
+  </ol>
+</section>
+</main>
+
+<footer id="contact" class="contact" aria-labelledby="contact-titre">
+  <div class="wrap">
+    <div class="side">
+      <img src="/img/logo.png" alt="" width="96" height="96">
+      <h2 id="contact-titre">Demandez un devis.</h2>
+      <p>Je réponds sous 24 heures, en français.</p>
+      <p><a href="mailto:hozdesigns@gmail.com">hozdesigns@gmail.com</a></p>
+    </div>
+    <form id="devis" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="f4cf77f1-a974-4df2-9064-e5f9f8ac3ad1">
+      <input type="hidden" name="subject" value="Nouvelle demande de devis (FR) – hozdesigns.com">
+      <input type="hidden" name="from_name" value="hozdesigns.com/fr">
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+      <label>Votre nom<input type="text" name="name" autocomplete="name" required></label>
+      <label>Nom de votre entreprise<input type="text" name="hely" required></label>
+      <label>Activité
+        <select name="terulet">
+          <option value="Toilettage">Toilettage canin</option>
+          <option value="Commerce">Commerce (café, restaurant, boutique)</option>
+          <option value="Artisan">Artisan ou service</option>
+        </select>
+      </label>
+      <label>E-mail<input type="email" name="email" autocomplete="email" required></label>
+      <label>Votre projet<textarea name="message" rows="4"></textarea></label>
+      <button type="submit">Demander un devis</button>
+      <p class="err" role="alert" hidden>L'envoi n'a pas fonctionné. Écrivez-moi directement : <a href="mailto:hozdesigns@gmail.com" style="color:#F3F1EC">hozdesigns@gmail.com</a></p>
+    </form>
+    <div class="ok" role="status" hidden>Merci ! J'ai bien reçu votre message, je vous réponds sous 24 heures.</div>
+  </div>
+  <div class="wrap foot">
+    <span>© 2026 hozdesigns.com</span>
+    <span style="display:flex;flex-wrap:wrap;gap:8px 24px"><a href="/minta/demo-toilettage/">Démo toilettage</a><a href="mailto:hozdesigns@gmail.com">hozdesigns@gmail.com</a><a href="/" hreflang="hu" lang="hu">Magyar</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var form = document.getElementById('devis');
+  var ta = form.querySelector('textarea'), sel = form.querySelector('select');
+  var formule = { vitrine: 'Le site vitrine (790 €) m\'intéresse.', complet: 'Le site complet (1 290 €) m\'intéresse.', suivi: 'J\'ai une question sur le suivi mensuel (49 € / mois).' };
+  if (formule[q.get('formule')]) ta.value = formule[q.get('formule')];
+  if (q.get('demo') === 'toilettage') { sel.value = 'Toilettage'; if (!ta.value) ta.value = 'La démo toilettage m\'a plu, je voudrais un site comme celui-ci pour mon salon.'; }
+  var btn = form.querySelector('button'), err = form.querySelector('.err'), ok = document.querySelector('.contact .ok');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (btn.disabled) return;
+    btn.disabled = true; btn.textContent = 'Envoi…'; err.hidden = true;
+    fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) })
+      .then(function (r) { return r.json(); })
+      .then(function (j) { if (j && j.success) { form.hidden = true; ok.hidden = false; } else { throw 0; } })
+      .catch(function () { err.hidden = false; btn.disabled = false; btn.textContent = 'Demander un devis'; });
+  });
+})();
+</script>
+</body>
+</html>

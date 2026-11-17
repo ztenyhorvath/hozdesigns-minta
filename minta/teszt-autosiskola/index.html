@@ -199,16 +199,55 @@ summary::after{content:"";position:absolute;right:6px;top:50%;width:14px;height:
 details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
 details p{padding:0 0 22px;color:var(--ink2);max-width:62ch}
 
-/* elérhetőség */
-.visit{background:var(--card);padding:88px 0;border-top:1px solid var(--line)}
-.visit .wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px}
-.visit h3{font-size:20px;margin-bottom:12px}
-.hours div{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--mist);font-size:15.5px}
-.visit address{font-style:normal;line-height:1.7}
+/* GYIK: segítő kártya a bal hasábban */
+.faq .help{margin-top:32px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;position:sticky;top:96px}
+.faq .help h3{font-size:22px}
+.faq .help p{color:var(--ink2);font-size:16px;margin-top:8px}
+.faq .help .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.faq .help .btn{min-height:46px;padding:10px 18px;font-size:15.5px}
 
-footer{background:var(--asph);color:#AEB5BD;padding:40px 0 104px;font-size:14.5px}
-footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-footer a{color:#fff}
+/* elérhetőség: sötét sáv, stilizált térképpel */
+.visit{background:var(--asph);color:#fff;padding:96px 0 88px}
+.visit .muted{color:#AEB5BD}
+.vgrid{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:28px;margin-top:40px;align-items:stretch}
+.vcard{background:var(--asph2);border:1px solid #39414B;border-radius:16px;padding:26px}
+.vcard h3{font-size:20px;margin-bottom:16px}
+.cl{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.cl li{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;font-size:16px;line-height:1.45}
+.cl svg{width:20px;height:20px;margin-top:2px;color:var(--mark)}
+.cl a{color:#fff;text-decoration:none;border-bottom:1px solid #5A636E}
+.cl a:hover{border-bottom-color:#fff}
+.cl small{display:block;color:#AEB5BD;font-size:14px}
+.vbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.vbtns .btn{min-height:46px;padding:10px 18px;font-size:15.5px}
+.now{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;padding:6px 12px;border-radius:999px;background:rgba(242,194,48,.14);color:var(--mark);margin-bottom:14px}
+.now::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.now.off{background:rgba(255,255,255,.08);color:#C9CED4}
+.hours div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid #39414B;font-size:15.5px;color:#C9CED4}
+.hours div span:last-child{color:#fff;font-variant-numeric:tabular-nums}
+.hours div.today{color:#fff;font-weight:700}
+.hours div.today span:first-child::after{content:" (ma)";color:var(--mark);font-weight:400}
+.hours .note{border:0;padding-top:14px;font-size:14.5px;color:#AEB5BD}
+.map{position:relative;border-radius:16px;overflow:hidden;background:#232931;border:1px solid #39414B;min-height:340px;display:block;color:#fff;text-decoration:none}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map .lbl{position:absolute;left:16px;top:16px;right:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14.5px}
+.map .lbl span{background:rgba(20,24,29,.85);padding:7px 12px;border-radius:999px}
+.map .lbl b{background:#fff;color:var(--ink);border-radius:999px;padding:8px 14px;font-size:14.5px;white-space:nowrap}
+.map:hover .lbl b{background:var(--mark)}
+
+/* lábléc */
+footer{background:#14181D;color:#AEB5BD;font-size:15px}
+footer .lane{height:6px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding:64px 0 48px}
+.fgrid h4{font:750 15px/1.2 var(--fh);font-stretch:90%;color:#fff;margin:0 0 16px;letter-spacing:.01em}
+.fgrid ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.fgrid a{color:#C9CED4;text-decoration:none}
+.fgrid a:hover{color:#fff;text-decoration:underline}
+.fbrand .logo{margin-bottom:16px}
+.fbrand p{max-width:30ch;line-height:1.55}
+.fbrand .tel2{display:inline-block;margin-top:16px;font:800 24px/1 var(--fh);font-stretch:78%;color:#fff;text-decoration:none}
+.fbot{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;border-top:1px solid #2B323A;padding:22px 0 30px;font-size:13.5px;color:#8C949E}
+.fbot a{color:#C9CED4}
 
 /* mobil alsó sáv */
 .mbar{display:none}
@@ -230,7 +269,10 @@ footer a{color:#fff}
   .tgrid{grid-template-columns:1fr 1fr}
   .fleet{grid-column:1/-1}
   .calc{position:static}
-  .visit .wrap{grid-template-columns:1fr 1fr}
+  .vgrid{grid-template-columns:1fr 1fr}
+  .map{grid-column:1/-1;min-height:300px}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .faq .help{position:static}
 }
 @media (max-width:640px){
   body{font-size:16.5px}
@@ -244,14 +286,21 @@ footer a{color:#fff}
   .metrics .wrap{padding-top:48px;padding-bottom:48px}
   .m{padding:20px 18px}
   .school,.prices,.steps,.team,.apply,.faq{padding:60px 0}
-  .visit{padding:56px 0}
+  .visit{padding:60px 0 56px}
   .tgrid{grid-template-columns:1fr}
   .f2{grid-template-columns:1fr}
   form.card,.calc{padding:22px 18px}
   .cat{grid-template-columns:56px 1fr;gap:14px;padding:14px}
   .cat .k{width:52px;height:46px;font-size:25px}
   .cat .from{grid-column:2;font-size:17px}
-  .visit .wrap{grid-template-columns:1fr;gap:32px}
+  .vgrid{grid-template-columns:1fr;gap:16px}
+  .vcard{padding:22px 18px}
+  .map{min-height:260px}
+  .map .lbl span{display:none}
+  .map .lbl{justify-content:flex-end}
+  .fgrid{grid-template-columns:1fr 1fr;gap:32px 20px;padding:48px 0 36px}
+  .fbrand{grid-column:1/-1}
+  .fbot{padding-bottom:96px}
   .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(28,33,39,.97)}
   .mbar a{min-height:48px;font-size:15.5px;padding:10px}
   .mbar .btn.ghost{color:#fff}
@@ -451,7 +500,14 @@ footer a{color:#fff}
 
 <section class="faq" id="gyik">
   <div class="wrap">
-    <h2>Gyakori kérdések</h2>
+    <div>
+      <h2>Gyakori kérdések</h2>
+      <div class="help">
+        <h3>Nem találod a választ?</h3>
+        <p>Hívj nyugodtan, vagy írj egy e-mailt. Hétköznap általában egy órán belül válaszolunk.</p>
+        <div class="row"><a class="btn" href="tel:+3622000000">+36 22 000 0000</a><a class="btn ghost dark" href="mailto:iroda@iranyjelzo.example">E-mail</a></div>
+      </div>
+    </div>
     <div>
       <details open><summary>Hány éves kortól kezdhetem el?</summary><p>B kategóriánál 16 és fél évesen kezdheted a tanfolyamot, a forgalmi vizsgát 17 évesen teheted le. Az A2 motoros kategória 17, az AM segédmotoros 14 éves kortól érhető el.</p></details>
       <details><summary>Jár állami támogatás az első jogosítványhoz?</summary><p>A középiskolások ingyenesen végezhetik el a KRESZ-tanfolyamot és -vizsgát az iskolában. A gyakorlati képzésre ez nem vonatkozik. A pontos, aktuális feltételekről jelentkezéskor tájékoztatunk.</p></details>
@@ -464,28 +520,76 @@ footer a{color:#fff}
 
 <section class="visit" id="kapcsolat">
   <div class="wrap">
-    <div>
-      <h3>Iroda</h3>
-      <address>8000 Székesfehérvár, Minta utca 12.<br><a href="tel:+3622000000">+36 22 000 0000</a><br><a href="mailto:iroda@iranyjelzo.example">iroda@iranyjelzo.example</a></address>
-    </div>
-    <div class="hours">
-      <h3>Nyitvatartás</h3>
-      <div><span>Hétfő–csütörtök</span><span>9:00–18:00</span></div>
-      <div><span>Péntek</span><span>9:00–15:00</span></div>
-      <div><span>Szombat</span><span>csak vezetés</span></div>
-    </div>
-    <div>
-      <h3>Rutinpálya</h3>
-      <p>A telephely mögött, a Minta utca felől. Az első órán itt találkozunk, utána bárhonnan felveszünk a városban.</p>
+    <h2>Itt találsz minket</h2>
+    <p class="muted" style="margin-top:14px;max-width:52ch">Az irodában jelentkezhetsz és fizethetsz, a rutinpálya közvetlenül mögötte van.</p>
+    <div class="vgrid">
+      <div class="vcard">
+        <h3>Iroda</h3>
+        <ul class="cl">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>8000 Székesfehérvár, Minta utca 12.<small>Parkolás az udvarban</small></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span><a href="tel:+3622000000">+36 22 000 0000</a><small>Hívható nyitvatartási időben</small></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span><a href="mailto:iroda@iranyjelzo.example">iroda@iranyjelzo.example</a><small>Egy munkanapon belül válaszolunk</small></span></li>
+        </ul>
+        <div class="vbtns"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Sz%C3%A9kesfeh%C3%A9rv%C3%A1r" target="_blank" rel="noopener">Útvonaltervezés</a><a class="btn ghost" href="tel:+3622000000">Hívás</a></div>
+      </div>
+      <div class="vcard hours">
+        <h3>Iroda nyitvatartása</h3>
+        <span class="now" data-now>Ma nyitva 18:00-ig</span>
+        <div data-d="1,2,3,4"><span>Hétfő–csütörtök</span><span>9:00–18:00</span></div>
+        <div data-d="5"><span>Péntek</span><span>9:00–15:00</span></div>
+        <div data-d="6"><span>Szombat</span><span>csak vezetés</span></div>
+        <div data-d="0"><span>Vasárnap</span><span>zárva</span></div>
+        <p class="note">Vezetési órák hétköznap 7 és 20 óra között, szombaton 8 és 16 óra között.</p>
+      </div>
+      <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Sz%C3%A9kesfeh%C3%A9rv%C3%A1r" target="_blank" rel="noopener" aria-label="Az iroda és a rutinpálya a térképen (Google Térkép, új lapon)">
+        <svg viewBox="0 0 520 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="520" height="360" fill="#232931"/>
+          <g fill="#2B323B"><rect x="20" y="24" width="150" height="96" rx="6"/><rect x="200" y="24" width="120" height="96" rx="6"/><rect x="350" y="24" width="150" height="70" rx="6"/><rect x="20" y="236" width="110" height="104" rx="6"/><rect x="160" y="250" width="70" height="90" rx="6"/><rect x="420" y="236" width="90" height="104" rx="6"/></g>
+          <g fill="#2E3A33"><rect x="350" y="112" width="150" height="40" rx="6"/></g>
+          <g stroke="#3A434E" stroke-width="16" fill="none"><path d="M0 182H520"/><path d="M185 0V360"/><path d="M335 0V182"/><path d="M400 182V360"/></g>
+          <path d="M0 182H520" stroke="#F2C230" stroke-width="2.5" stroke-dasharray="14 12" fill="none"/>
+          <rect x="248" y="206" width="140" height="130" rx="10" fill="#2B323B" stroke="#4A535E" stroke-width="1.5"/>
+          <g stroke="#59616B" stroke-width="1.5"><path d="M268 236h100M268 266h100M268 296h100"/></g>
+          <g fill="#F07C2E"><path d="M262 248l5 10h-10z"/><path d="M300 258l5 10h-10z"/><path d="M324 228l5 10h-10z"/><path d="M348 258l5 10h-10z"/><path d="M276 288l5 10h-10z"/><path d="M348 288l5 10h-10z"/></g>
+          <g transform="translate(232 128)"><path d="M22 0C10 0 2 8.5 2 19.5 2 34 22 52 22 52s20-18 20-32.5C42 8.5 34 0 22 0z" fill="#1D57B0"/><circle cx="22" cy="19.5" r="7" fill="#fff"/></g>
+          <g font-family="Overpass, sans-serif" font-size="13" fill="#C9CED4"><text x="70" y="172">Minta utca</text><text x="276" y="226">Rutinpálya</text><text x="282" y="150" fill="#fff" font-weight="700">Iroda</text></g>
+        </svg>
+        <span class="lbl"><span>Iroda és rutinpálya egy helyen</span><b>Megnyitás a térképen</b></span>
+      </a>
     </div>
   </div>
 </section>
 </main>
 
 <footer>
+  <div class="lane" aria-hidden="true"></div>
   <div class="wrap">
-    <span>Irányjelző Autósiskola, kitalált bemutató iskola. Képző szerv azonosító: 00-0000-00</span>
-    <span>Minta: <a href="https://hozdesigns.com">hozdesigns.com</a></span>
+    <div class="fgrid">
+      <div class="fbrand">
+        <a class="logo" href="#" aria-label="Irányjelző Autósiskola, vissza az oldal tetejére">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#1D57B0"/><path d="M13 31V20.5a4 4 0 0 1 4-4h9" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M23.5 10.5l7 6-7 6z" fill="#F2C230"/></svg>
+          <div><b>Irányjelző</b><span>Autósiskola, Székesfehérvár</span></div>
+        </a>
+        <p>B, A és AM kategóriás képzés, kiszámítható árakkal és saját rutinpályával.</p>
+        <a class="tel2" href="tel:+3622000000">+36 22 000 0000</a>
+      </div>
+      <div>
+        <h4>Képzések</h4>
+        <ul><li><a href="#arak">B kategória</a></li><li><a href="#arak">B automata</a></li><li><a href="#arak">A2 és A motor</a></li><li><a href="#arak">AM segédmotor</a></li></ul>
+      </div>
+      <div>
+        <h4>Iskola</h4>
+        <ul><li><a href="#mutatok">Mutatóink</a></li><li><a href="#menete">A képzés menete</a></li><li><a href="#oktatok">Oktatók és autók</a></li><li><a href="#gyik">Gyakori kérdések</a></li><li><a href="#jelentkezes">Jelentkezés</a></li></ul>
+      </div>
+      <div>
+        <h4>Hivatalos adatok</h4>
+        <ul><li>Képző szerv azonosító: 00-0000-00</li><li><a href="#mutatok">ÁKÓ, KK és VSM mutatók</a></li><li><a href="#">Vállalkozási feltételek</a></li><li><a href="#">Adatkezelési tájékoztató</a></li></ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Irányjelző Autósiskola. Kitalált bemutató iskola.</span>
+      <span>Weboldal: <a href="https://hozdesigns.com">hozdesigns.com</a></span>
+    </div>
   </div>
 </footer>
 
@@ -526,6 +630,12 @@ footer a{color:#fff}
     if($('input[name=th]:checked').value==='isk')document.querySelector('#f-jel input[name=kresz][value=iskolai]').checked=true;
   });
   document.querySelectorAll('[data-from]').forEach(function(e){var c=C[e.dataset.from];e.textContent=ft(c.th+c.h*c.ph+EXAM.kresz+EXAM.forg)+'-tól'});
+  (function(){
+    var n=new Date(),d=n.getDay(),m=n.getHours()*60+n.getMinutes(),H={1:[540,1080],2:[540,1080],3:[540,1080],4:[540,1080],5:[540,900]};
+    document.querySelectorAll('.hours [data-d]').forEach(function(r){if(r.dataset.d.split(',').indexOf(String(d))>-1)r.classList.add('today')});
+    var el=$('[data-now]');if(!el)return;var h=H[d];
+    if(h&&m>=h[0]&&m<h[1]){el.textContent='Most nyitva, '+(h[1]/60)+':00-ig'}else{el.classList.add('off');el.textContent='Az iroda most zárva'}
+  })();
   calc();
   $('#f-jel').addEventListener('submit',function(e){
     e.preventDefault();
