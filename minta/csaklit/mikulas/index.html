@@ -144,6 +144,7 @@
 @media (max-width:1020px){.inc{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.turns{grid-template-columns:1fr}.inc{gap:10px}.inc li{padding:16px}.donebox{padding:24px 18px}.donebox dl{grid-template-columns:1fr}}
 .hint{margin-top:10px;font-size:14px;color:var(--green-2)}
+.baddr{grid-template-columns:minmax(0,.42fr) minmax(0,1fr);margin-top:2px}
 .faqsec{padding:56px 0 72px}
 .faqgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:32px;align-items:start}
 .faqhead h2{font-size:clamp(24px,2.6vw,30px)}
@@ -220,12 +221,17 @@
         <p class="warn" id="capWarn" role="status" style="margin-top:14px" hidden></p>
       </div>
       <div class="bstep form">
-        <h3><b>3</b>A szülő adatai</h3>
-        <label class="field">Szülő neve <input id="pName" name="szulo" autocomplete="name"></label>
+        <h3><b>3</b>A szülő és a számlázás adatai</h3>
         <div class="f2">
+          <label class="field">Szülő neve <input id="pName" name="szulo" autocomplete="name"></label>
           <label class="field">E-mail-cím <input id="pEmail" name="email" type="email" autocomplete="email" placeholder="ide küldjük a visszaigazolást"></label>
-          <label class="field">Telefonszám <input id="pPhone" name="telefon" type="tel" autocomplete="tel" placeholder="+36 30 123 4567"></label>
         </div>
+        <div class="f2 baddr">
+          <label class="field">Irányítószám <input id="pZip" name="iranyitoszam" inputmode="numeric" autocomplete="postal-code" maxlength="10" placeholder="1161"></label>
+          <label class="field">Település <input id="pCity" name="telepules" autocomplete="address-level2" placeholder="Budapest"></label>
+        </div>
+        <label class="field">Utca, házszám <input id="pStreet" name="utca" autocomplete="street-address" placeholder="pl. Fő utca 12., 2. emelet 5."></label>
+        <p class="hint">A számlát a szülő nevére és erre a címre állítjuk ki.</p>
       </div>
       <div class="bstep form">
         <h3><b>4</b>Fizetés és véglegesítés</h3>
@@ -417,7 +423,9 @@
   $('mkForm').addEventListener('submit', function(e){
     e.preventDefault();
     var s = selSlot(), err = '', focus = null;
-    var name = $('pName').value.trim(), email = $('pEmail').value.trim(), phone = $('pPhone').value;
+    var name = $('pName').value.trim(), email = $('pEmail').value.trim();
+    var zip = $('pZip').value.trim(), city = $('pCity').value.trim(), street = $('pStreet').value.trim();
+    var addr = zip + ' ' + city + ', ' + street;
     if(!s){ err='Válassz turnust.'; focus=$('turns').querySelector('.tbtn:not([disabled])'); }
     else if(st.kids.length > s.free){ err='Ebben a turnusban nincs elég szabad hely.'; }
     else {
@@ -428,7 +436,9 @@
     }
     if(!err && !name){ err='Add meg a szülő nevét.'; focus=$('pName'); }
     if(!err && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ err='Adj meg egy érvényes e-mail-címet, ide küldjük a visszaigazolást.'; focus=$('pEmail'); }
-    if(!err && phone.replace(/\D/g,'').length<9){ err='Add meg a telefonszámod.'; focus=$('pPhone'); }
+    if(!err && zip.replace(/\s/g,'').length<4){ err='Add meg a számlázási cím irányítószámát.'; focus=$('pZip'); }
+    if(!err && city.length<2){ err='Add meg a számlázási cím települését.'; focus=$('pCity'); }
+    if(!err && street.length<4){ err='Add meg a számlázási cím utcáját és házszámát.'; focus=$('pStreet'); }
     if(!err && !$('terms').checked){ err='A foglaláshoz fogadd el a részvételi feltételeket és az adatkezelési tájékoztatót.'; focus=$('terms'); }
     $('mkErr').textContent = err;
     if(err){ if(focus) focus.focus(); return; }
@@ -451,14 +461,14 @@
       'Gyermekek': kidsTxt,
       'Szülő neve': name,
       'E-mail': email,
-      'Telefon': phone,
+      'Számlázási cím': addr,
       'Fizetendő': fmt(total),
       'Fizetés': 'Teya (online bankkártya) – a foglalás a sikeres fizetéssel érvényes',
       'Foglalás azonosító': bid,
       'Űrlap': 'Mikulás-foglalás'
     };
     if(CONF_URL){
-      var bj = JSON.stringify({v:1, id:bid, s:s.id, k:st.kids.map(function(k){ return [k.name.trim(), k.age]; }), p:name, e:email, t:phone, a:total});
+      var bj = JSON.stringify({v:1, id:bid, s:s.id, k:st.kids.map(function(k){ return [k.name.trim(), k.age]; }), p:name, e:email, t:addr, a:total});   /* t: számlázási cím (2026-11-17 előtt telefonszám volt) */
       var b64 = btoa(unescape(encodeURIComponent(bj))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
       p['Visszaigazolás – a befizetés ellenőrzése után nyisd meg'] = CONF_URL + '?d=' + b64;
     }
