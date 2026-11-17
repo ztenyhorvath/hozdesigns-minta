@@ -1,2 +1,3 @@
 index.html
 helyi/index.html
+fr/index.html

@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+
+<title>L'Atelier des Pattes</title>
+<meta name="description" content="Salon de toilettage canin à Lyon 6e : bain, tonte, coupe aux ciseaux, épilation. Prenez rendez-vous en ligne.">
+<meta name="theme-color" content="#F6F4EC">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>:root{--paper:#F6F4EC;--card:#FFFFFF;--ink:#14231B;--ink2:#5A6055;--line:#E3E0D2;--acc:#F4C95D;--accd:#EAB93E;--acct:#FBF1CF;--on:#14231B;--aci:#14231B;--pop:#F4C95D;--popink:#14231B;--fh:'Manrope',system-ui,sans-serif;--fb:'Manrope',system-ui,sans-serif;--fhw:700}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none !important;animation:none !important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--fb);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--aci,var(--accd))}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--aci,var(--acc));outline-offset:2px;border-radius:4px}
+h1,h2,h3,h4{font-family:var(--fh);margin:0;line-height:1.08;font-weight:var(--fhw,600);letter-spacing:var(--fhs,-.015em)}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.muted{color:var(--ink2)}
+.ico{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border:1.5px solid var(--acc);border-radius:var(--rb,12px);padding:12px 22px;background:var(--acc);color:var(--on);font-weight:700;cursor:pointer;text-decoration:none;transition:background .18s,border-color .18s}
+.btn:hover{background:var(--accd);border-color:var(--accd)}
+.btn.line{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.line:hover{background:var(--ink);color:var(--paper)}
+.btn[disabled]{background:var(--line);border-color:var(--line);color:var(--ink2);cursor:not-allowed}
+.btn.full{width:100%}
+
+.draft{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:8px 16px}
+.draft a{color:#fff;font-weight:700}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--fh);font-weight:var(--fhw,600);font-size:21px;letter-spacing:var(--fhs,-.015em)}
+.brand img{height:40px;width:auto}
+.top nav{display:flex;align-items:center;gap:2px;font-weight:600;font-size:15px}
+.top nav a{color:var(--ink);text-decoration:none;padding:10px 12px;border-radius:10px}
+.top nav a:hover{background:var(--acct)}
+.top nav a.cta{background:var(--ink);color:var(--paper);margin-left:8px;padding:10px 16px}
+.top nav a.cta:hover{background:var(--accd);color:var(--on)}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 13px;font-size:14px;font-weight:600}
+.chip .ico{width:17px;height:17px;color:var(--aci,var(--acc))}
+.sec{padding-top:56px;padding-bottom:56px}
+.sec>h2,.sech h2{font-size:clamp(28px,3.6vw,42px)}
+.sech{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px 32px;margin-bottom:26px}
+.sech p{max-width:52ch;color:var(--ink2)}
+
+/* forms */
+.form{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.form label{display:grid;gap:5px;font-size:14px;font-weight:700}
+.form input,.form select,.form textarea{width:100%;min-height:48px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);padding:11px 13px;font-size:16px;font-weight:400}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--aci,var(--acc));outline-offset:1px;border-color:transparent}
+.form .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hint{color:#A2332A;font-size:14px;font-weight:600;min-height:0}
+.hint:empty{display:none}
+.back{background:none;border:0;padding:10px 0;font-weight:700;cursor:pointer;color:var(--ink2);text-align:left}
+.done h3{font-size:26px;margin-bottom:8px}
+.done p{margin-top:8px}
+.done small{display:block;margin-top:14px;color:var(--ink2);font-size:13px;line-height:1.5;border-top:1px solid var(--line);padding-top:12px}
+.step{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:999px;background:var(--card)}
+.step button{width:42px;height:42px;border:0;background:none;font-size:20px;cursor:pointer;border-radius:50%}
+.step button:hover{background:var(--acct)}
+.step button:disabled{opacity:.3;cursor:not-allowed}
+.step output{min-width:30px;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+
+/* opening hours + contact */
+.visit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
+.hours{width:100%;border-collapse:collapse;font-size:15px}
+.hours td{padding:10px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.hours tr.now td{color:var(--aci,var(--accd));font-weight:700}
+.hours tr.closed td:last-child{font-weight:400;color:var(--ink2)}
+.clist{display:grid;gap:14px;font-size:16px}
+.clist div{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start}
+.clist .ico{margin-top:3px;color:var(--aci,var(--acc))}
+.clist a{font-weight:700}
+
+/* térkép: csak kattintásra tölt be */
+.mapbox{position:relative;margin-top:24px;min-height:280px;background:var(--acct);overflow:hidden;display:grid;place-items:center;text-align:center;border-radius:var(--rm,0)}
+.mapbox::before{content:"";position:absolute;inset:0;opacity:.5;background:linear-gradient(115deg,transparent 46%,var(--line) 46%,var(--line) 47.2%,transparent 47.2%),linear-gradient(28deg,transparent 58%,var(--line) 58%,var(--line) 59%,transparent 59%),linear-gradient(160deg,transparent 30%,var(--line) 30%,var(--line) 30.8%,transparent 30.8%),linear-gradient(75deg,transparent 70%,var(--line) 70%,var(--line) 70.7%,transparent 70.7%)}
+.mapbox .in{position:relative;max-width:640px;padding:24px}
+.mapbox .in>.ico{width:30px;height:30px;color:var(--aci,var(--acc));margin:0 auto}
+.mapbox b{display:block;font-family:var(--fh);font-size:22px;line-height:1.2;margin-top:8px}
+.mapbox .row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:16px}
+.mapbox .btn{min-height:46px;padding:10px 18px}
+.mapbox small{display:block;color:var(--ink2);font-size:13px;margin:14px auto 0;line-height:1.5;max-width:46ch}
+.mapbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vright{min-width:0;display:flex;flex-direction:column}
+.vright .mapbox{flex:1}
+footer{border-top:1px solid var(--line);margin-top:32px;padding:32px 0 110px;font-size:14px;color:var(--ink2)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 40px}
+footer b{color:var(--ink)}
+
+/* mobile action bar */
+.mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--card);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -8px 24px -16px rgba(0,0,0,.35)}
+.mbar p{font-size:14px;line-height:1.3}
+.mbar b{font-size:16px}
+.mbar .btn{min-height:46px;padding:10px 16px;white-space:nowrap}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:90;background:rgba(12,12,12,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:20px}
+.lb.open{display:flex}
+.lb img{max-width:min(1100px,94vw);max-height:80vh;border-radius:6px}
+.lb p{color:#eee;margin-top:12px;font-size:14px;text-align:center}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:48px;border-radius:50%;font-size:26px;cursor:pointer}
+.lb button:hover{background:rgba(255,255,255,.25)}
+.lb .x{top:16px;right:16px}.lb .l{left:16px;top:50%}.lb .r{right:16px;top:50%}
+[data-lb]{cursor:zoom-in}
+
+/* month calendar (shared) */
+.cal{user-select:none}
+.calhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.calhead b{font-size:16px}
+.calhead button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:18px}
+.calhead button:disabled{opacity:.3;cursor:not-allowed}
+.calgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;text-align:center}
+.calgrid small{font-size:12px;font-weight:700;color:var(--ink2);padding:4px 0}
+.calgrid .day{aspect-ratio:1;border:0;border-radius:10px;background:none;cursor:pointer;font-weight:600;font-variant-numeric:tabular-nums}
+.calgrid .day:hover:not(:disabled){background:var(--acct)}
+.calgrid .day:disabled{color:#B5B2AA;text-decoration:line-through;cursor:not-allowed}
+.calgrid .day.past:disabled{text-decoration:none}
+.calgrid .day.sel{background:var(--acc);color:var(--on)}
+
+@media (max-width:900px){
+  .top nav a:not(.cta){display:none}
+  .visit{grid-template-columns:1fr;gap:28px}
+  .mbar{display:flex}
+  .sec{padding-top:44px;padding-bottom:44px}
+}
+@media (max-width:640px){
+  .wrap{padding:0 18px}
+  .form .two{grid-template-columns:1fr}
+  .brand{font-size:18px}
+}
+.brand .mark{width:42px;height:42px;flex:none;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}.brand:hover .mark{transform:rotate(-12deg) scale(1.06)}
+.dot.off{background:#D64545;box-shadow:0 0 0 4px rgba(214,69,69,.18)}
+/* kutyakozmetika */
+:root{--rb:999px}
+.hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:56px;align-items:center;padding-top:28px;padding-bottom:72px}
+.hero .loc{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink2);margin-bottom:22px}
+.hero .loc .ico{color:var(--aci,var(--acc))}
+.hero h1{font-size:clamp(40px,4.9vw,66px);font-weight:700;letter-spacing:-.03em;line-height:1.06;text-wrap:balance}
+.hero .lead{font-size:clamp(17px,1.5vw,20px);color:var(--ink2);max-width:46ch;margin-top:24px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero .cta .btn{min-height:56px;padding:14px 28px;font-size:17px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;font-size:15px;font-weight:600}
+.hero .meta span{display:inline-flex;align-items:center;gap:8px}
+.hero .meta .ico{color:var(--aci,var(--acc));width:18px;height:18px}
+.dot{width:9px;height:9px;border-radius:50%;background:#2FA36B;box-shadow:0 0 0 4px rgba(47,163,107,.18)}
+.hpic{position:relative;justify-self:end;width:100%;max-width:520px}
+.hpic .a{aspect-ratio:4/5;border-radius:260px 260px 40px 40px;overflow:hidden;background:var(--acct)}
+.hpic .a img{width:100%;height:100%;object-fit:cover}
+.hpic .b{position:absolute;left:-44px;bottom:56px;width:42%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:8px solid var(--paper);background:var(--acct)}
+.hpic .b img{width:100%;height:100%;object-fit:cover}
+.hpic .next{position:absolute;right:-18px;top:17%;background:var(--pop);color:var(--popink);border-radius:20px;padding:14px 18px;font-size:14px;line-height:1.3;font-weight:600;max-width:210px;transform:rotate(3deg)}
+.hpic .next b{display:block;font-family:var(--fh);font-size:21px;letter-spacing:-.02em;margin-top:2px}
+
+/* árak */
+.prices{background:var(--card);border-radius:44px;padding:56px 56px 40px;margin-top:8px}
+.sizes{display:grid;grid-template-columns:repeat(var(--n,4),minmax(0,1fr));gap:8px;background:var(--paper);border-radius:22px;padding:6px}
+.sizes button{border:0;background:none;border-radius:17px;padding:12px 10px;cursor:pointer;text-align:center;line-height:1.25;transition:background .15s}
+.sizes button b{display:block;font-family:var(--fh);font-size:18px;letter-spacing:-.02em}
+.sizes button span{font-size:13px;color:var(--ink2)}
+.sizes button:hover{background:var(--acct)}
+.sizes button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.sizes button[aria-pressed=true] span{color:inherit;opacity:.75}
+.pl{margin-top:34px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 64px}
+.pl h3{font-size:15px;font-family:var(--fb);font-weight:700;letter-spacing:0;color:var(--aci,var(--accd));margin:22px 0 4px;grid-column:1/-1}
+.pl .cat{display:contents}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto 48px;gap:6px 16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.row b{font-size:18px;font-weight:600;letter-spacing:-.01em;font-family:var(--fh)}
+.row small{display:block;color:var(--ink2);font-size:14px;line-height:1.4;margin-top:2px}
+.row .pr{text-align:right;font-weight:700;font-size:17px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.row .pr span{display:block;font-weight:500;font-size:13px;color:var(--ink2)}
+.add{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--ink);background:none;cursor:pointer;display:grid;place-items:center;transition:background .15s,color .15s,transform .15s}
+.add:hover{background:var(--acct)}
+.add .ico{width:20px;height:20px}
+.add[aria-pressed=true]{background:var(--acc);border-color:var(--aci,var(--acc));color:var(--on)}
+.pnote{margin-top:22px;font-size:14px;color:var(--ink2)}
+
+/* foglalás – sötét sáv */
+.bookband{background:var(--ink);color:var(--paper);border-radius:44px;padding:64px 56px;margin:72px auto 0;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:56px;align-items:start}
+.bookband h2{font-size:clamp(34px,4.4vw,56px);letter-spacing:-.03em;font-weight:700}
+.bookband .intro{color:rgba(255,255,255,.72);margin-top:12px;max-width:44ch}
+.bs{margin-top:36px}
+.bs h3{font-size:19px;display:flex;align-items:center;gap:12px;margin-bottom:14px;font-weight:600}
+.bs h3 i{font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--pop);color:var(--popink);display:grid;place-items:center;font-size:15px;font-weight:700;font-family:var(--fb)}
+.bookband .form label{color:rgba(255,255,255,.85)}
+.bookband .form input,.bookband .form textarea{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18);color:#fff}
+.bookband .form input::placeholder,.bookband .form textarea::placeholder{color:rgba(255,255,255,.45)}
+.bookband .form input:focus,.bookband .form textarea:focus{outline-color:var(--pop)}
+.bookband .sizes{background:rgba(255,255,255,.07);margin-top:12px}
+.bookband .sizes button{color:#fff}.bookband .sizes button span{color:rgba(255,255,255,.6)}
+.bookband .sizes button:hover{background:rgba(255,255,255,.1)}
+.bookband .sizes button[aria-pressed=true]{background:var(--paper);color:var(--ink)}
+.picked{display:flex;flex-wrap:wrap;gap:8px}
+.picked span{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border-radius:999px;padding:8px 8px 8px 16px;font-weight:600;font-size:15px}
+.picked button{width:30px;height:30px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;cursor:pointer;display:grid;place-items:center}
+.picked button .ico{width:14px;height:14px}
+.picked a{color:var(--pop);font-weight:700;padding:8px 4px}
+.days{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.3) transparent}
+.days button{flex:none;width:66px;border-radius:18px;border:1.5px solid rgba(255,255,255,.2);background:none;color:#fff;padding:10px 0;cursor:pointer;text-align:center;line-height:1.2}
+.days button small{display:block;font-size:12px;opacity:.7;font-weight:600}
+.days button b{display:block;font-size:21px;font-family:var(--fh)}
+.days button:disabled{opacity:.3;cursor:not-allowed}
+.days button[aria-pressed=true]{background:var(--pop);border-color:var(--pop);color:var(--popink)}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px;margin-top:10px}
+.slots button{min-height:46px;border-radius:999px;border:1.5px solid rgba(255,255,255,.2);background:none;color:#fff;font-weight:700;cursor:pointer;font-variant-numeric:tabular-nums}
+.slots button:hover:not(:disabled){border-color:#fff}
+.slots button:disabled{opacity:.28;text-decoration:line-through;cursor:not-allowed}
+.slots button[aria-pressed=true]{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.slots p{grid-column:1/-1;color:rgba(255,255,255,.7);font-size:15px}
+.bookband .hint{color:#FFB4A8}
+.bookband .btn{background:var(--pop);border-color:var(--pop);color:var(--popink);min-height:58px;font-size:17px;margin-top:6px}
+.bookband .btn:hover{filter:brightness(1.06)}
+.sumcard{position:sticky;top:24px;background:var(--paper);color:var(--ink);border-radius:28px;padding:28px}
+.sumcard h3{font-size:22px;margin-bottom:16px}
+.sumcard dl{margin:0;display:grid;gap:14px}
+.sumcard dt{font-size:13px;font-weight:700;color:var(--ink2)}
+.sumcard dd{margin:2px 0 0;font-weight:600;font-size:16px}
+.sumcard .tot{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);margin-top:18px;padding-top:16px}
+.sumcard .tot b{font-family:var(--fh);font-size:30px;letter-spacing:-.03em}
+.sumcard ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px;font-size:14px;color:var(--ink2)}
+.sumcard li{display:flex;gap:8px;align-items:flex-start}
+.sumcard li .ico{color:var(--aci,var(--acc));width:17px;height:17px;margin-top:2px}
+.bookband .done{grid-column:1/-1;max-width:640px}
+.bookband .done h3{font-size:clamp(30px,4vw,46px);letter-spacing:-.03em}
+.bookband .done small{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.65)}
+
+/* előtte–utána */
+.pairs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.ba{position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:var(--acct);--p:50%}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .af{clip-path:inset(0 0 0 var(--p))}
+.ba::after{content:"";position:absolute;top:0;bottom:0;left:var(--p);width:3px;margin-left:-1.5px;background:#fff}
+.ba .knob{position:absolute;top:50%;left:var(--p);width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:#fff;color:#111;display:grid;place-items:center;font-weight:700;pointer-events:none;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:2}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;z-index:3}
+.ba input:focus-visible~.knob{outline:3px solid var(--aci,var(--acc))}
+.ba .tag{position:absolute;bottom:14px;background:rgba(0,0,0,.6);color:#fff;font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;z-index:1}
+.ba .tag.l{left:14px}.ba .tag.r{right:14px}
+.bacap{margin-top:10px;font-weight:600}
+.works{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.works button{padding:0;border:0;border-radius:24px;overflow:hidden;aspect-ratio:1;background:var(--acct)}
+.works button:nth-child(5n+1){grid-column:span 2;grid-row:span 2}
+.works img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.works button:hover img{transform:scale(1.04)}
+
+/* rólunk + jó tudni */
+.about{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:56px;align-items:center}
+.about .pic{aspect-ratio:1;border-radius:40px 40px 220px 40px;overflow:hidden;background:var(--acct)}
+.about .pic img{width:100%;height:100%;object-fit:cover}
+.about h2{font-size:clamp(30px,3.8vw,46px);letter-spacing:-.035em}
+.about .lead{font-size:18px;color:var(--ink2);margin-top:16px;max-width:56ch}
+.team{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.team div{display:flex;align-items:center;gap:12px;background:var(--card);border-radius:999px;padding:6px 20px 6px 6px}
+.team img,.team i{width:52px;height:52px;border-radius:50%;object-fit:cover;background:var(--acct);display:grid;place-items:center;font-style:normal;font-weight:700;color:var(--accd)}
+.team b{display:block;line-height:1.2}.team span{font-size:13px;color:var(--ink2)}
+.know{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.know div{background:var(--card);border-radius:24px;padding:24px}
+.know .ico{width:26px;height:26px;color:var(--aci,var(--acc));margin-bottom:12px}
+.know b{display:block;font-family:var(--fh);font-size:19px;letter-spacing:-.02em;margin-bottom:6px}
+.know p{color:var(--ink2);font-size:15px}
+.visitbox{background:var(--card);border-radius:44px;padding:48px 56px}
+
+/* kosár-sáv */
+.tray{position:fixed;left:50%;bottom:20px;transform:translate(-50%,140%);z-index:45;background:var(--ink);color:var(--paper);border-radius:999px;padding:8px 8px 8px 26px;display:flex;align-items:center;gap:20px;box-shadow:0 18px 40px -12px rgba(0,0,0,.45);transition:transform .3s cubic-bezier(.2,.8,.2,1);max-width:calc(100vw - 24px)}
+.tray.on{transform:translate(-50%,0)}
+.tray p{font-size:15px;line-height:1.3;white-space:nowrap}
+.tray b{font-size:17px}
+.tray .btn{background:var(--pop);border-color:var(--pop);color:var(--popink);min-height:48px;white-space:nowrap}
+
+@media (max-width:1000px){
+  .hero{grid-template-columns:1fr;gap:44px;padding-bottom:48px}
+  .hpic{justify-self:center;max-width:420px}.hpic .b{left:-14px}.hpic .next{right:-6px}
+  .prices{padding:36px 24px 28px;border-radius:32px}
+  .pl{grid-template-columns:1fr}
+  .bookband{grid-template-columns:1fr;padding:44px 24px;border-radius:32px;gap:32px;margin-top:48px}
+  .sumcard{position:static}
+  .about{grid-template-columns:1fr;gap:32px}.about .pic{max-width:420px}
+  .works{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .visitbox{padding:32px 24px;border-radius:32px}
+}
+@media (max-width:640px){
+  .prices,.bookband,.visitbox{margin-left:-8px;margin-right:-8px}
+  .sizes{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .row{grid-template-columns:minmax(0,1fr) 48px}.row .pr{grid-column:1;grid-row:2;text-align:left}.row .pr span{display:inline;margin-left:8px}.row .add{grid-row:1/3;grid-column:2}
+  .tray{left:12px;right:12px;transform:translateY(140%);bottom:12px;padding-left:20px;justify-content:space-between;max-width:none}
+  .tray.on{transform:none}
+  .mbar.off{display:none}
+  .hpic .next{font-size:13px;padding:10px 14px}.hpic .next b{font-size:18px}
+}
+.bookband>*,.hero>*,.about>*,.visit>*{min-width:0}
+.nw{white-space:nowrap}
+.bookband .sizes button[aria-pressed=true] span{color:var(--ink2);opacity:1}
+/* formaváltozatok (cfg "shape": "iv" | "kerek" | "szogletes") */
+.s-kerek .hpic .a{border-radius:50%;aspect-ratio:1}
+.s-kerek .hpic .b{bottom:-10px}
+.s-kerek .about .pic{border-radius:50%}
+.s-szogletes .hpic .a{border-radius:28px}
+.s-szogletes .about .pic{border-radius:28px}
+.s-szogletes .prices,.s-szogletes .bookband,.s-szogletes .visitbox{border-radius:20px}
+.s-szogletes .sizes{border-radius:14px}.s-szogletes .sizes button{border-radius:10px}
+.s-szogletes{--rb:12px}
+.s-szogletes .add{border-radius:12px}
+
+/* ── matricák, apró részletek ── */
+.dd{width:40px;height:40px;flex:none;stroke:var(--ink);stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round;fill:none;overflow:visible}
+.dd-f{fill:var(--pop)}.dd-w{fill:#fff}.dd-k{fill:var(--ink);stroke:none}
+.scr{position:relative;white-space:nowrap}
+.scr .dd{position:absolute;left:-2%;bottom:-.16em;width:104%;height:.26em;stroke:var(--pop);stroke-width:5;z-index:-1}
+.hero{position:relative;isolation:isolate}
+.hpic .fl{position:absolute;z-index:2}
+.hpic .f1{left:-34px;top:8%;width:72px;height:72px;transform:rotate(-12deg);animation:kfloat 5s ease-in-out infinite}
+.hpic .f2{right:6%;bottom:-22px;width:76px;height:76px;transform:rotate(18deg)}
+.hpic .f3{right:-26px;top:44%;width:44px;height:44px;animation:kfloat 4s ease-in-out -2s infinite}
+@keyframes kfloat{50%{translate:0 -8px}}
+.hpic .say{position:absolute;left:-8%;top:30%;z-index:3;background:var(--card);border:2.2px solid var(--ink);border-radius:22px 22px 22px 4px;padding:12px 16px;font-weight:700;font-size:15px;line-height:1.3;max-width:200px;box-shadow:5px 5px 0 var(--ink);transform:rotate(-4deg)}
+.hpic .spin{position:absolute;left:26%;bottom:-46px;width:132px;height:132px;display:grid;place-items:center;background:var(--pop);border:2.2px solid var(--ink);border-radius:50%;z-index:3;text-decoration:none;transition:transform .3s}
+.hpic .spin:hover{transform:scale(1.06)}
+.hpic .spin>svg:first-child{position:absolute;inset:0;animation:kspin 22s linear infinite}
+.hpic .spin text{font:700 15.5px var(--fb);letter-spacing:.06em;fill:var(--ink)}
+.hpic .spin .dd{width:54px;height:54px}
+@keyframes kspin{to{transform:rotate(360deg)}}
+.hpic .b{left:auto;right:-30px;bottom:auto;top:-18px;width:34%;border:2.2px solid var(--ink);outline:7px solid var(--paper)}
+.hpic .a{border:2.2px solid var(--ink)}
+.hpic .next{right:auto;left:-30px;top:auto;bottom:16%;display:flex;gap:10px;align-items:center;background:var(--card);border:2.2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);color:var(--ink);transform:rotate(2deg);max-width:250px;border-radius:18px;padding:10px 16px 10px 10px;z-index:3}
+.hpic .next .dd{width:42px;height:42px}
+.hpic .next b{font-size:19px;margin-top:0}
+/* futószalag */
+.mq{margin:34px 0 64px;background:var(--pop);border-block:2.2px solid var(--ink);overflow:hidden;transform:rotate(-1.2deg) scale(1.02)}
+.mq .tr{display:flex;align-items:center;gap:26px;width:max-content;padding:14px 0;animation:kmq 46s linear infinite}
+.mq span{font:700 22px var(--fh);letter-spacing:-.02em;color:var(--popink);white-space:nowrap}
+.mq .dd{width:34px;height:34px}.mq .dd-f{fill:#fff}
+@keyframes kmq{to{transform:translateX(-50%)}}
+/* méretválasztó kutyákkal */
+.sizes button{display:grid;justify-items:center;align-content:end;gap:2px;min-height:112px}
+.sizes .dg{height:auto;aspect-ratio:64/48;margin-bottom:4px;transition:transform .25s}
+.sizes button:hover .dg{transform:translateY(-3px) rotate(-3deg)}
+.sizes button[aria-pressed=true] .dg{stroke:var(--ink)}
+.bookband .sizes button{min-height:96px}
+.bookband .sizes .dg{transform:scale(.8);margin-bottom:-2px}
+.bookband .sizes button:not([aria-pressed=true]) .dg{stroke:#fff}
+.bookband .sizes button:not([aria-pressed=true]) .dd-w{fill:transparent}
+.pl h3{display:flex;align-items:center;gap:10px;font-size:17px;color:var(--ink)}
+.pl h3 .dd{width:34px;height:34px}
+.add{border-width:2.2px}
+.add[aria-pressed=true]{animation:kpop .35s cubic-bezier(.3,1.8,.5,1)}
+@keyframes kpop{0%{transform:scale(.7)}100%{transform:scale(1)}}
+/* így telik egy kozmetika */
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(var(--n,5),minmax(0,1fr));gap:20px;position:relative}
+.flow::before{content:"";position:absolute;left:6%;right:6%;top:39px;border-top:2.5px dashed var(--ink);opacity:.35}
+.flow li{position:relative;text-align:center}
+.flow .dd{width:78px;height:78px;background:var(--card);border-radius:50%;padding:14px;border:2.2px solid var(--ink);margin:0 auto 14px;display:block;transition:transform .3s}
+.flow li:hover .dd{transform:rotate(-8deg) scale(1.06)}
+.flow b{display:block;font-family:var(--fh);font-size:19px;letter-spacing:-.02em}
+.flow p{font-size:14.5px;color:var(--ink2);margin-top:4px}
+/* akire külön figyelünk */
+.cares{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.cares div{background:var(--card);border:2.2px solid var(--ink);border-radius:26px;padding:26px;box-shadow:6px 6px 0 var(--ink)}
+.cares div:nth-child(3n+2){background:var(--pop);color:var(--popink)}
+.cares div:nth-child(3n+2) .dd-f{fill:#fff}
+.cares div:nth-child(3n+2) p{color:inherit;opacity:.85}
+.cares .dd{width:56px;height:56px;margin-bottom:12px}
+.cares h3{font-size:23px;letter-spacing:-.02em}
+.cares p{color:var(--ink2);margin-top:8px}
+.know .dd{width:44px;height:44px;margin-bottom:10px}
+.about .pic{position:relative;overflow:visible}
+.about .pic img{border-radius:inherit}
+.about .pic .fl{position:absolute;right:-18px;top:-18px;width:76px;height:76px;transform:rotate(14deg)}
+.team i .dd{width:38px;height:38px}
+/* foglalás: biléta-kártya, pecsét */
+.sumcard{border-radius:28px 28px 28px 28px;padding-top:44px}
+.sumcard .hole{position:absolute;left:50%;top:14px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:var(--ink)}
+.sumcard h3{display:flex;align-items:center;gap:10px}
+.sumcard h3 .dd{width:34px;height:34px}
+.sumcard li .dd{width:24px;height:24px;margin-top:-1px}
+.bs h3 i{border:2.2px solid var(--ink)}
+.ba .knob{border:2.2px solid var(--ink)}
+.ba .knob .dd{width:26px;height:26px}
+.ba{border:2.2px solid var(--ink)}
+.bookband .done{position:relative}
+.stamp{display:inline-block;border:3px solid var(--pop);color:var(--pop);font:700 20px var(--fh);letter-spacing:.14em;text-transform:uppercase;padding:6px 16px;border-radius:10px;transform:rotate(-7deg);margin-bottom:22px}
+/* törzskártya */
+.loy{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.loy h2{font-size:clamp(28px,3.6vw,42px);letter-spacing:-.03em}
+.loy p{color:var(--ink2);font-size:18px;margin-top:12px;max-width:44ch}
+.loy .card{background:var(--pop);color:var(--popink);border:2.2px solid var(--ink);border-radius:26px;padding:26px;box-shadow:8px 8px 0 var(--ink);transform:rotate(2.5deg);max-width:440px;justify-self:center}
+.loy .card b{font-family:var(--fh);font-size:22px}
+.loy .st{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 12px}
+.loy .st i{width:54px;height:54px;border-radius:50%;border:2.2px dashed var(--ink);display:grid;place-items:center}
+.loy .st i .dd{width:34px;height:34px;opacity:.18}
+.loy .st i.on{border-style:solid;background:#fff}.loy .st i.on .dd{opacity:1}
+.loy .st i.gift{background:var(--ink);border-style:solid}.loy .st i.gift .dd{opacity:1;stroke:var(--ink)}
+.loy small{font-weight:700;font-size:13px;letter-spacing:.04em}
+.k-kutya{--rm:24px}
+.k-kutya .mapbox{border:2.2px solid var(--ink)}
+.k-kutya .clist a[href*='google.com/maps'],.k-kutya .clist br{display:none}
+/* lábléc a kikukucskáló kutyával */
+.kfoot{position:relative;background:var(--ink);color:rgba(255,255,255,.75);margin-top:110px;padding:64px 0 0;border-top:0;font-size:15px}
+.kfoot .peek{position:absolute;left:50%;top:-73px;width:150px;height:75px;margin-left:-75px;stroke:var(--ink)}
+.kfoot .wrap{display:block}
+.kfoot .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:56px;align-items:start}
+.kfoot .name{font:700 34px/1.05 var(--fh);letter-spacing:-.03em;color:#fff}
+.kfoot .tagl{margin:8px 0 22px;color:rgba(255,255,255,.65)}
+.kfoot .btn{background:var(--pop);border-color:var(--pop);color:var(--popink)}
+.kfoot h4{font:700 15px var(--fb);color:var(--pop);margin:6px 0 16px;letter-spacing:0}
+.kfoot ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.kfoot a{color:#fff}
+.kfoot .hrs li{display:flex;justify-content:space-between;gap:16px;max-width:240px}
+.kfoot .hrs li span:last-child{color:#fff;font-variant-numeric:tabular-nums}
+.kfoot .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 30px;margin-top:56px;padding:22px 0 28px;border-top:1px solid rgba(255,255,255,.14);font-size:13px;color:rgba(255,255,255,.55)}
+.kfoot .legal a{color:rgba(255,255,255,.8)}
+@media (max-width:1000px){
+  .hpic .say{left:-4px;top:22%;font-size:13.5px;max-width:160px}
+  .hpic .next{left:-6px}
+  .hpic .b{right:-8px}
+  .hpic .f1{left:-10px}.hpic .f3{right:-8px}
+  .hpic{margin-bottom:40px}
+  .mq{margin:20px 0 44px}.mq span{font-size:18px}
+  .flow{grid-template-columns:1fr;gap:18px}.flow::before{left:38px;right:auto;top:20px;bottom:20px;border-top:0;border-left:2.5px dashed var(--ink)}
+  .flow li{display:grid;grid-template-columns:78px 1fr;gap:4px 16px;text-align:left;align-items:center}
+  .flow .dd{grid-row:1/3;margin:0}.flow b{align-self:end}.flow p{align-self:start;margin:0}
+  .loy{grid-template-columns:1fr;gap:28px}
+  .kfoot .cols{grid-template-columns:1fr;gap:0}
+  .kfoot .cols>div:not(.id){border-top:1px solid rgba(255,255,255,.14);padding:22px 0 24px}
+  .kfoot .id{padding-bottom:28px}
+  .kfoot .hrs li{max-width:none}
+  .kfoot .legal{flex-direction:column;margin-top:0;padding-bottom:110px}
+  .cares div{box-shadow:4px 4px 0 var(--ink)}
+}
+@media (max-width:640px){
+  .sizes button{min-height:96px}
+  .hpic .spin{width:104px;height:104px;bottom:-36px;left:8%}.hpic .spin .dd{width:42px;height:42px}.hpic .spin text{font-size:16px}
+}
+.k-kutya main{overflow-x:clip}
+/* emelkedő kártyák */
+.cares div,.know div,.loy .card,.works button,.team div{transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s}
+@media (hover:hover) and (pointer:fine){
+  .cares div:hover{transform:translate(-3px,-7px);box-shadow:10px 12px 0 var(--ink)}
+  .know div:hover{transform:translateY(-6px);box-shadow:0 18px 34px -20px rgba(0,0,0,.4)}
+  .loy .card:hover{transform:rotate(0deg) translateY(-8px);box-shadow:10px 14px 0 var(--ink)}
+  .works button:hover{transform:translateY(-6px);box-shadow:0 18px 34px -20px rgba(0,0,0,.45)}
+  .team div:hover{transform:translateY(-3px)}
+  .cares div:hover .dd,.know div:hover .dd{transform:rotate(-10deg) scale(1.12)}
+}
+.cares .dd,.know .dd{transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.pairs.one{grid-template-columns:minmax(0,480px) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center}
+.baside{position:relative;background:var(--card);border:2.2px solid var(--ink);border-radius:28px;padding:clamp(24px,3vw,40px);box-shadow:8px 8px 0 var(--ink)}
+.baside .bd{position:absolute;top:-22px;right:26px;width:52px;height:52px;transform:rotate(14deg)}
+.baside h3{font-size:clamp(22px,2.4vw,30px);line-height:1.15;margin:0 0 10px}
+.baside p{color:var(--ink2);margin:0 0 16px}
+.baside ul{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:10px}
+.baside li{display:flex;gap:10px;align-items:center;font-weight:600}
+.baside li .dd{width:24px;height:24px;flex:none}
+.baside .meta{font-size:14px;margin-bottom:18px}
+@media (max-width:820px){.pairs.one{grid-template-columns:minmax(0,1fr)}}
+/* ── mobil: mintha telefonra készült volna ── */
+html{overflow-x:hidden}
+.k-kutya main{overflow-x:hidden;overflow-x:clip}
+.k-kutya button,.k-kutya .btn,.k-kutya a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.ba input{touch-action:pan-y}
+@media (max-width:640px){
+  .k-kutya .top{position:sticky;top:0;z-index:35;background:color-mix(in srgb,var(--paper) 88%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding-top:10px;padding-bottom:10px}
+  .k-kutya .brand .mark{width:36px;height:36px}
+  .k-kutya .top nav a.cta{padding:9px 14px;font-size:14px;margin-left:0}
+  .k-kutya .sec{padding-top:36px;padding-bottom:36px}
+  .k-kutya .sech{margin-bottom:18px}
+  .k-kutya .sec>h2,.k-kutya .sech h2,.loy h2{font-size:27px;line-height:1.12}
+  .hero{gap:28px;padding-top:14px;padding-bottom:28px}
+  .hero h1{font-size:clamp(36px,10.6vw,44px);line-height:1.04}
+  .hero .cta{display:grid;grid-template-columns:1fr auto;gap:10px}.hero .cta .btn{min-height:54px;padding:12px 20px;font-size:16px}
+  .hero .meta{gap:8px 16px;font-size:14.5px}
+  .hpic{max-width:none;width:100%;margin-bottom:34px}
+  .mq{margin:8px 0 28px}.mq span{font-size:16px}
+  .prices{padding:26px 18px 18px;border-radius:28px}
+  .bookband{padding:30px 18px 22px;border-radius:28px;margin-top:8px;gap:24px}
+  .bookband h2{font-size:30px;line-height:1.08}
+  .days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;overflow:visible;padding:0}
+  .days button{width:auto;border-radius:12px;padding:7px 0 8px}
+  .days button small{font-size:9.5px;letter-spacing:-.02em;white-space:nowrap;overflow:hidden}
+  .days button small:last-child{display:none}
+  .days button b{font-size:18px}
+  .slots{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.slots button{min-height:44px;font-size:14.5px}
+  .sumcard{padding:22px 18px}
+  .flow{gap:14px}.flow li{grid-template-columns:64px 1fr;gap:2px 14px}.flow::before{left:31px}
+  .pairs{gap:16px}.ba{border-radius:22px}
+  .baside{padding:22px 18px 20px;border-radius:22px;box-shadow:5px 5px 0 var(--ink);margin-top:14px}
+  .baside .btn{width:100%}
+  .works{gap:8px}.works button{border-radius:16px}
+  .cares{gap:12px}
+  .cares div{display:grid;grid-template-columns:48px minmax(0,1fr);gap:2px 14px;align-items:center;padding:16px 18px;border-radius:20px}
+  .cares .dd{width:48px;height:48px;margin:0;grid-row:1/3;align-self:start}
+  .cares h3{font-size:19px}.cares p{margin-top:0;font-size:15px;grid-column:2}
+  .know{grid-template-columns:1fr;gap:10px}
+  .know div{display:grid;grid-template-columns:40px minmax(0,1fr);gap:2px 14px;padding:16px 18px;border-radius:20px}
+  .know .dd,.know .ico{width:40px;height:40px;margin:0;grid-row:1/3}
+  .know b{font-size:17px;margin:0}.know p{grid-column:2}
+  .about{gap:22px}.about .pic{max-width:none}
+  .team{gap:8px;margin-top:18px}.team div{flex:1 1 150px}
+  .loy{gap:22px}.loy p{font-size:16px}
+  .loy .card{transform:rotate(1.2deg);padding:20px;max-width:none;width:100%;box-shadow:5px 5px 0 var(--ink)}
+  .loy .st i{width:46px;height:46px}.loy .st i .dd{width:28px;height:28px}
+  .visitbox{padding:24px 18px;border-radius:28px}
+  .tray{left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));gap:10px;padding:7px 7px 7px 18px}
+  .tray p{min-width:0;font-size:13px;overflow:hidden;text-overflow:ellipsis}.tray b{font-size:16px}
+  .tray .btn{flex:none;min-height:46px;padding:10px 16px;font-size:14.5px}
+}
+@media (max-width:640px){
+  .flow li{grid-template-columns:60px minmax(0,1fr)}.flow .dd{width:60px;height:60px;padding:10px}.flow::before{left:29px}
+  .loy .st{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}.loy .st i{width:auto;height:auto;aspect-ratio:1}
+}
+/* mobil nyitóblokk: hely → cím → fotó → gombok → leírás → adatok */
+@media (max-width:640px){
+  .hero{display:flex;flex-direction:column;gap:0;padding-top:10px;padding-bottom:22px}
+  .hero>div:first-child{display:contents}
+  .hero .loc{order:1;margin-bottom:10px;font-size:14.5px}
+  .hero h1{order:2;font-size:clamp(35px,10.4vw,43px)}
+  .hpic{order:3;margin:22px 0 0;max-width:none;justify-self:stretch}
+  .hpic .a{aspect-ratio:5/4;border-radius:120px 120px 26px 26px}
+  .hpic .a img{object-position:50% 38%}
+  .hpic .b{width:27%;right:-4px;top:-12px;outline-width:5px}
+  .hpic .say{left:-6px;top:auto;bottom:34%;font-size:13px;padding:9px 12px;max-width:150px;box-shadow:4px 4px 0 var(--ink)}
+  .hpic .next{left:auto;right:10px;bottom:-22px;transform:rotate(-1.5deg);padding:8px 14px 8px 8px;font-size:12.5px;max-width:220px;box-shadow:4px 4px 0 var(--ink)}
+  .hpic .next .dd{width:36px;height:36px}.hpic .next b{font-size:17px}
+  .hpic .spin,.hpic .f2,.hpic .f3{display:none}
+  .hpic .f1{left:-6px;top:-10px;width:50px;height:50px}
+  .hero .cta{order:4;margin-top:44px;grid-template-columns:minmax(0,1fr) auto}
+  .hero .lead{order:5;margin-top:20px;font-size:16.5px;max-width:none}
+  .hero .meta{order:6;margin-top:18px;display:grid;gap:0;background:var(--card);border-radius:18px;padding:4px 16px;font-size:15px}
+  .hero .meta>*{padding:12px 0;border-top:1px solid var(--line)}.hero .meta>*:first-child{border-top:0}
+}
+@media (max-width:640px){.hero{align-items:stretch}.hpic .say{bottom:22%}}
+.hero .meta{gap:10px 20px;font-size:14.5px}
+.hero .meta>*{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;color:var(--ink);text-decoration:none}
+.hero .meta a:hover{text-decoration:underline}
+.hero .meta .dot{margin:0 4.5px;flex:none}
+.hero .meta .ico{flex:none}
+@media (min-width:1001px){
+  .hero .loc{margin-bottom:26px}
+  .hero .lead{font-size:clamp(18px,1.55vw,21px);margin-top:28px}
+  .hero .cta{margin-top:38px}
+  .hero .meta{flex-direction:column;align-items:flex-start;gap:0;margin-top:40px;font-size:16px;max-width:400px}
+  .hero .meta>*{width:100%;padding:13px 0;border-top:1px solid var(--line)}
+  .hero .meta>*:last-child{border-bottom:1px solid var(--line)}
+  .hpic .say{left:-17%;top:50%}
+}
+@media (min-width:641px){
+  .k-kutya .top{position:sticky;top:0;z-index:35;background:var(--paper);box-shadow:0 0 0 100vmax var(--paper);clip-path:inset(0 -100vmax);padding-top:12px;padding-bottom:12px}
+  .k-kutya section[id]{scroll-margin-top:84px !important}
+}
+.kfoot .name{display:flex;align-items:center;gap:12px}
+.kfoot .name .mark{width:46px;height:46px;flex:none}
+@media (max-width:640px){
+  .hero .meta{padding:0 16px}
+  .hero .meta>*{display:flex;align-items:center;min-height:50px;padding:0;line-height:1.2}
+  .hero .meta .ico,.hero .meta .dot{align-self:center}
+}
+@media (max-width:640px){.hero .meta{gap:0}.hero .meta>*{min-height:52px}}
+</style>
+</head>
+<body class="k-kutya s-alap t-alap">
+<div class="draft" role="note">Maquette de démonstration pour salons de toilettage, site non officiel. Réalisée par <a href="https://hozdesigns.com">hozdesigns.com</a></div>
+<header class="wrap top">
+  <a class="brand" href="#" aria-label="L'Atelier des Pattes, accueil"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22.6" fill="var(--pop)" stroke="var(--ink)" stroke-width="2.4"/><g transform="translate(24 24) scale(.66) translate(-24 -25)"><g fill="var(--ink)" transform="rotate(-10 24 24)"><ellipse cx="11.6" cy="20.4" rx="4.3" ry="5.6" transform="rotate(-24 11.6 20.4)"/><ellipse cx="19.4" cy="12.4" rx="4.6" ry="6.1" transform="rotate(-8 19.4 12.4)"/><ellipse cx="28.9" cy="12.4" rx="4.6" ry="6.1" transform="rotate(8 28.9 12.4)"/><ellipse cx="36.6" cy="20.4" rx="4.3" ry="5.6" transform="rotate(24 36.6 20.4)"/><path d="M24.1 21.6c6.6 0 12.9 6.6 12.9 12.4 0 4.3-3.3 6.2-6.6 6.2-2.6 0-4-1.5-6.3-1.5s-3.7 1.5-6.3 1.5c-3.300 0-6.600-1.900-6.600-6.200 0-5.800 6.300-12.400 12.900-12.400z"/></g></g></svg>L'Atelier des Pattes</a>
+  <nav aria-label="Menu principal"><a href="#arak">Tarifs</a><a href="#munkaink">Avant / après</a><a href="#kapcsolat">Contact</a><a class="cta" href="#foglalas">Réserver</a></nav>
+</header>
+<main>
+<section class="wrap hero" data-shot="hero">
+  <div>
+    <p class="loc"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Lyon 6e, quartier des Brotteaux</p>
+    <h1>Le salon de toilettage où votre chien vient <span class="scr">volontiers<svg class="dd" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><use href="#d-scribble"/></svg></span></h1>
+    <p class="lead">Bain, tonte et épilation en douceur, un seul chien à la fois. Les tarifs selon la taille sont affichés à l'avance, et vous réservez votre créneau en deux minutes.</p>
+    <div class="cta"><a class="btn" href="#foglalas">Prendre rendez-vous</a><a class="btn line" href="#arak">Tarifs</a></div>
+    <div class="meta"><span><i class="dot"></i><span data-open></span></span><a href="tel:+33478000000"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>04 78 00 00 00</a><span><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg>Stationnement facile dans la rue</span></div>
+  </div>
+  <div class="hpic"><div class="a"><img src="img/u49.jpg" alt="Après le bain, dans sa serviette" width="1200" height="1718"></div><div class="b"><img src="img/u15.jpg" alt="Caniche après la coupe" width="1200" height="1800"></div><p class="say">Ouaf ! Ici, personne ne me presse.</p><a class="spin" href="#foglalas" aria-label="Prendre rendez-vous"><svg viewBox="0 0 200 200" aria-hidden="true"><defs><path id="spinp" d="M100 100m-74 0a74 74 0 1 1 148 0a74 74 0 1 1-148 0"/></defs><text><textPath href="#spinp" textLength="455" lengthAdjust="spacing">RDV EN LIGNE • EN DEUX MINUTES •</textPath></text></svg><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-dogface"/></svg></a><p class="next"><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-clock"/></svg><span>Prochain créneau libre<b data-next></b></span></p><svg class="dd fl f1" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bubbles"/></svg><svg class="dd fl f2" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg><svg class="dd fl f3" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-star"/></svg></div>
+</section>
+<div class="mq" aria-hidden="true"><div class="tr"><span>Bain et séchage</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg><span>Bain et tonte</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-scissors"/></svg><span>Bain et coupe aux ciseaux</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bubbles"/></svg><span>Épilation</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bow"/></svg><span>Coupe des griffes</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-star"/></svg><span>Nettoyage des oreilles</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-ball"/></svg><span>Détartrage aux ultrasons</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-comb"/></svg><span>Démêlage</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-heart"/></svg><span>Bain et séchage</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg><span>Bain et tonte</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-scissors"/></svg><span>Bain et coupe aux ciseaux</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bubbles"/></svg><span>Épilation</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bow"/></svg><span>Coupe des griffes</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-star"/></svg><span>Nettoyage des oreilles</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-ball"/></svg><span>Détartrage aux ultrasons</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-comb"/></svg><span>Démêlage</span><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-heart"/></svg></div></div>
+
+<section class="wrap" id="arak" style="scroll-margin-top:16px">
+  <div class="prices" data-shot="offer">
+    <div class="sech"><h2>Les tarifs selon la taille de votre chien</h2><p>Choisissez la taille pour voir les prix exacts. Avec le bouton ＋, composez directement votre prestation.</p></div>
+    <div class="sizes" role="group" aria-label="Taille du chien" data-sizes></div>
+    <div class="pl" data-pl></div>
+    <p class="pnote">Tarifs indicatifs : pour un pelage très emmêlé ou très fourni, le prix peut varier. Nous en parlons toujours avant de commencer.</p>
+  </div>
+</section>
+
+<section class="wrap sec"><div class="sech"><h2>Comment se passe un toilettage chez nous</h2></div><ol class="flow" style="--n:5"><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-heart"/></svg><b>Faire connaissance</b><p>Quelques minutes de reniflage et de caresses avant de commencer.</p></li><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-tub"/></svg><b>Le bain</b><p>Eau tiède, shampooing doux pour la peau, nettoyage des oreilles.</p></li><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-dryer"/></svg><b>Le séchage</b><p>Avec patience, et plus doucement pour les chiens craintifs.</p></li><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-scissors"/></svg><b>La coupe</b><p>À la tondeuse ou aux ciseaux, selon la race.</p></li><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-treat"/></svg><b>La friandise</b><p>Tout le monde en reçoit une à la fin. Le maître peut être fier aussi.</p></li></ol></section>
+
+<section class="wrap" id="foglalas" style="scroll-margin-top:8px">
+  <div class="bookband" data-shot="book">
+    <form class="form" data-form data-bookbody novalidate>
+      <h2 data-hello>Prenez rendez-vous</h2>
+      <p class="intro">Deux minutes suffisent. Les créneaux libres s'affichent tout de suite, inutile d'appeler.</p>
+      <div class="bs"><h3><i>1</i>Votre chien</h3>
+        <div class="two"><label>Son nom<input name="kutya" required autocomplete="off"></label><label>Sa race<input name="fajta" required autocomplete="off" placeholder="ex. caniche, croisé"></label></div>
+        <div class="sizes" role="group" aria-label="Taille du chien" data-sizes></div>
+      </div>
+      <div class="bs"><h3><i>2</i>Quelle prestation ?</h3><div class="picked" data-picked aria-live="polite"></div></div>
+      <div class="bs"><h3><i>3</i>Quand ?</h3>
+        <div class="days" role="group" aria-label="Jour" data-days></div>
+        <div class="slots" role="group" aria-label="Créneau" data-slots></div>
+      </div>
+      <div class="bs"><h3><i>4</i>Vos coordonnées</h3>
+        <label>Votre nom<input name="nev" required autocomplete="name"></label>
+        <div class="two" style="margin-top:12px"><label>Téléphone<input name="tel" type="tel" required autocomplete="tel" placeholder="06 12 34 56 78"></label><label>E-mail<input name="email" type="email" required autocomplete="email"></label></div>
+        <label style="margin-top:12px">Remarque (facultatif)<textarea name="megj" rows="2" placeholder="ex. a peur du séchoir, peau sensible"></textarea></label>
+      </div>
+      <p class="hint" data-hint role="alert"></p>
+      <button class="btn full" type="submit">Confirmer le rendez-vous</button>
+    </form>
+    <aside class="sumcard" data-bookbody aria-live="polite">
+      <span class="hole" aria-hidden="true"></span>
+      <h3><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-tag"/></svg>Votre réservation</h3>
+      <dl>
+        <div><dt>Pour qui</dt><dd data-s-dog></dd></div>
+        <div><dt>Quoi</dt><dd data-s-what></dd></div>
+        <div><dt>Quand</dt><dd data-s-when></dd></div>
+      </dl>
+      <div class="tot"><span>À régler sur place</span><b data-s-total>–</b></div>
+      <ul><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg>Confirmation par e-mail</li><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg>Rappel la veille du rendez-vous</li><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg>Annulation en un clic</li></ul>
+    </aside>
+    <div class="done" data-done hidden tabindex="-1">
+      <span class="stamp" aria-hidden="true">Réservé</span>
+      <h3 data-done-h></h3>
+      <p data-done-p></p>
+      <p>Vous recevez la confirmation par e-mail, et un rappel la veille du rendez-vous.</p>
+      <small>Démonstration : aucun e-mail n'est envoyé depuis cette maquette, et les créneaux occupés sont fictifs. En production, le salon est prévenu immédiatement et le créneau est bloqué dans l'agenda.</small>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec" id="munkaink"><div class="sech"><h2>Avant et après</h2><p>Faites glisser le curseur : à gauche l'arrivée, à droite le départ.</p></div><div class="pairs one"><figure style="margin:0"><div class="ba"><img src="img/p1a.jpg" alt="Avant" width="1200" height="1490" loading="lazy"><img src="img/p1b.jpg" alt="Après" width="1200" height="1490" loading="lazy" class="af"><span class="tag l">Avant</span><span class="tag r">Après</span><input type="range" min="0" max="100" value="50" aria-label="Comparaison avant / après : caniche, bain et coupe aux ciseaux"><span class="knob" aria-hidden="true"><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-scissors"/></svg></span></div><figcaption class="bacap">Caniche : bain et coupe aux ciseaux</figcaption></figure><div class="baside"><svg class="dd bd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-scissors"/></svg><h3>Le même chien, deux heures et demie plus tard</h3><p>Il n'avait pas été toiletté depuis six mois, les poils lui tombaient sur les yeux. Voilà comment il est reparti.</p><ul><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg><span>Bain au shampooing doux</span></li><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg><span>Séchage et brossage complet</span></li><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg><span>Coupe aux ciseaux, tête nounours</span></li><li><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg><span>Griffes et oreilles</span></li></ul><p class="meta">Taille moyenne · environ 2 h 30</p><a class="btn" href="#foglalas">Prendre rendez-vous</a></div></div><div class="works" style="margin-top:20px"><button type="button" data-lb="u6" aria-label="Shih tzu fraîchement coiffé, agrandir"><img src="img/u6.jpg" alt="Shih tzu fraîchement coiffé" width="1200" height="1200" loading="lazy"></button><button type="button" data-lb="u106" aria-label="Samoyède après bain et séchage, agrandir"><img src="img/u106.jpg" alt="Samoyède après bain et séchage" width="1200" height="1500" loading="lazy"></button><button type="button" data-lb="u38" aria-label="Yorkshire terrier, agrandir"><img src="img/u38.jpg" alt="Yorkshire terrier" width="1200" height="1500" loading="lazy"></button><button type="button" data-lb="u39" aria-label="Croisé caniche après la coupe, agrandir"><img src="img/u39.jpg" alt="Croisé caniche après la coupe" width="1200" height="1200" loading="lazy"></button><button type="button" data-lb="u37" aria-label="Shih tzu, agrandir"><img src="img/u37.jpg" alt="Shih tzu" width="1200" height="1200" loading="lazy"></button></div></section>
+<section class="wrap sec"><div class="sech"><h2>Ceux pour qui nous prenons encore plus de soin</h2></div><div class="cares"><div><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-treat"/></svg><h3>Les chiots</h3><p>La première fois, on fait connaissance : une séance courte et ludique, pour qu'il revienne avec plaisir.</p></div><div><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-heart"/></svg><h3>Les chiens craintifs</h3><p>Plus de pauses, des appareils plus silencieux, et le maître peut rester si besoin.</p></div><div><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-clock"/></svg><h3>Les chiens âgés</h3><p>Table antidérapante, moins de temps debout, autant de pauses que nécessaire.</p></div></div></section>
+<section class="wrap sec"><div class="about"><div class="pic"><img src="img/u0.jpg" alt="Pendant la coupe aux ciseaux" width="1200" height="800" loading="lazy"><svg class="dd fl" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-heart"/></svg></div><div><h2>Un seul chien à la fois, et tout le temps qu'il faut</h2><p class="lead">Ici, pas de travail à la chaîne : votre chien n'attend pas en cage, la toiletteuse s'occupe de lui du début à la fin. Les chiens craintifs et âgés ont droit à plus de pauses.</p><div class="team"><div><i><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-dogface"/></svg></i><span><b>Camille</b><span>toiletteuse canine</span></span></div><div><i><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-dogface"/></svg></i><span><b>Léa</b><span>toiletteuse canine</span></span></div></div></div></div></section>
+<section class="wrap sec"><div class="loy"><div><h2>Le sixième bain est offert</h2><p>Un tampon sur votre carte de fidélité après chaque toilettage. Au bout de cinq, le sixième bain est pour nous.</p></div><div class="card" aria-hidden="true"><b>L'Atelier des Pattes</b><div class="st"><i class="on"><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg></i><i class="on"><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg></i><i class="on"><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg></i><i class=""><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg></i><i class=""><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg></i><i class="gift"><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-treat"/></svg></i></div><small>carte de fidélité</small></div></div></section>
+<section class="wrap sec"><div class="sech"><h2>Bon à savoir avant de venir</h2></div><div class="know"><div><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-tag"/></svg><b>Carnet de santé</b><p>Pensez à apporter le carnet de vaccination lors de la première visite.</p></div><div><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-ball"/></svg><b>Arrivée</b><p>Venez 5 minutes en avance, après une petite promenade.</p></div><div><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-bone"/></svg><b>Paiement</b><p>Espèces et carte bancaire acceptées.</p></div></div></section>
+
+<section class="wrap sec" id="kapcsolat">
+  <div class="visitbox">
+    <div class="sech"><h2>Où nous trouver</h2></div>
+    <div class="visit"><table class="hours"><tbody><tr><td>Lundi</td><td>9h–19h</td></tr><tr><td>Mardi</td><td>9h–19h</td></tr><tr><td>Mercredi</td><td>9h–19h</td></tr><tr><td>Jeudi</td><td>9h–19h</td></tr><tr><td>Vendredi</td><td>9h–19h</td></tr><tr><td>Samedi</td><td>9h–17h</td></tr><tr class="closed"><td>Dimanche</td><td>Fermé</td></tr></tbody></table><div class="vright"><div class="clist"><div><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>12 rue de l'Exemple, 69006 Lyon<br><a href="https://www.google.com/maps/search/?api=1&amp;query=12+rue+de+l%27Exemple,+69006+Lyon" target="_blank" rel="noopener">Itinéraire</a></span></div><div><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+33478000000">04 78 00 00 00</a></div><div><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:bonjour@atelierdespattes.example">bonjour@atelierdespattes.example</a></div></div><div class="mapbox"><div class="in"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><b>12 rue de l'Exemple, 69006 Lyon</b><div class="row"><button type="button" class="btn" data-map="12 rue de l'Exemple, 69006 Lyon">Afficher la carte</button><a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=12+rue+de+l%27Exemple,+69006+Lyon" target="_blank" rel="noopener">Itinéraire</a></div><small>La carte est fournie par Google. Elle ne se charge qu'après un clic, Google peut alors déposer des cookies.</small></div></div></div></div>
+  </div>
+</section>
+
+<div class="tray" data-tray><p data-tray-txt></p><a class="btn" href="#foglalas">Choisir un créneau</a></div>
+</main>
+<div class="mbar"><p><b>Dès 8 €</b><br><span class="muted">créneaux libres en direct</span></p><a class="btn" href="#foglalas">Prendre rendez-vous</a></div>
+<footer class="kfoot">
+  <svg class="dd peek" viewBox="0 0 120 60" aria-hidden="true"><use href="#d-peek"/></svg>
+  <div class="wrap">
+    <div class="cols">
+      <div class="id"><p class="name"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22.6" fill="var(--pop)" stroke="var(--ink)" stroke-width="2.4"/><g transform="translate(24 24) scale(.66) translate(-24 -25)"><g fill="var(--ink)" transform="rotate(-10 24 24)"><ellipse cx="11.6" cy="20.4" rx="4.3" ry="5.6" transform="rotate(-24 11.6 20.4)"/><ellipse cx="19.4" cy="12.4" rx="4.6" ry="6.1" transform="rotate(-8 19.4 12.4)"/><ellipse cx="28.9" cy="12.4" rx="4.6" ry="6.1" transform="rotate(8 28.9 12.4)"/><ellipse cx="36.6" cy="20.4" rx="4.3" ry="5.6" transform="rotate(24 36.6 20.4)"/><path d="M24.1 21.6c6.6 0 12.9 6.6 12.9 12.4 0 4.3-3.3 6.2-6.6 6.2-2.6 0-4-1.5-6.3-1.5s-3.7 1.5-6.3 1.5c-3.300 0-6.600-1.900-6.600-6.200 0-5.800 6.300-12.400 12.900-12.400z"/></g></g></svg>L'Atelier des Pattes</p><p class="tagl">Toilettage canin à Lyon, en douceur.</p><a class="btn" href="#foglalas">Prendre rendez-vous</a></div>
+      <div><h4>Horaires</h4><ul class="hrs"><li><span>Lundi</span><span>9h–19h</span></li><li><span>Mardi</span><span>9h–19h</span></li><li><span>Mercredi</span><span>9h–19h</span></li><li><span>Jeudi</span><span>9h–19h</span></li><li><span>Vendredi</span><span>9h–19h</span></li><li><span>Samedi</span><span>9h–17h</span></li><li><span>Dimanche</span><span>fermé</span></li></ul></div>
+      <div><h4>Contact</h4><ul><li>12 rue de l'Exemple, 69006 Lyon</li><li><a href="tel:+33478000000">04 78 00 00 00</a></li><li><a href="mailto:bonjour@atelierdespattes.example">bonjour@atelierdespattes.example</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© L'Atelier des Pattes</span><span>Photos : Unsplash ; la paire avant / après est une illustration générée par IA, images d'exemple</span><span>Maquette du site : <a href="https://hozdesigns.com">hozdesigns.com</a></span></div>
+  </div>
+</footer>
+<div class="lb" role="dialog" aria-modal="true" aria-label="Photos" data-lbox>
+  <img alt="">
+  <button class="x" type="button" aria-label="Fermer">×</button>
+  <button class="l" type="button" aria-label="Photo précédente">‹</button>
+  <button class="r" type="button" aria-label="Photo suivante">›</button>
+  <p></p>
+</div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="d-bone" viewBox="0 0 48 48"><path class="dd-f" d="M15.770 21H32.230A5 5 0 1 1 39.2 24A5 5 0 1 1 32.230 27H15.770A5 5 0 1 1 8.8 24A5 5 0 1 1 15.770 21Z"/></symbol>
+<symbol id="d-bubbles" viewBox="0 0 48 48"><circle class="dd-w" cx="18" cy="28" r="11"/><circle class="dd-f" cx="35" cy="17" r="7"/><circle class="dd-w" cx="36" cy="36" r="4.5"/><path d="M12 25a7 7 0 0 1 5-4M31.5 14.500a4 4 0 0 1 3-1.5" fill="none"/></symbol>
+<symbol id="d-scissors" viewBox="0 0 48 48"><circle class="dd-f" cx="13" cy="14" r="6"/><circle class="dd-f" cx="13" cy="34" r="6"/><path class="dd-w" d="M18 17.500L41 31.5 43 36 18.5 21.500ZM18 30.500L41 16.5 43 12 18.5 26.500Z"/><circle class="dd-k" cx="24" cy="24" r="1.6"/></symbol>
+<symbol id="d-comb" viewBox="0 0 48 48"><rect class="dd-f" x="6" y="12" width="36" height="10" rx="4"/><path class="dd-w" d="M9 22h4v13a2 2 0 0 1-4 0zM16 22h4v13a2 2 0 0 1-4 0zM23 22h4v13a2 2 0 0 1-4 0zM30 22h4v13a2 2 0 0 1-4 0zM37 22h3v9a1.5 1.5 0 0 1-3 0z"/></symbol>
+<symbol id="d-tub" viewBox="0 0 48 48"><circle class="dd-w" cx="16" cy="17" r="5"/><circle class="dd-w" cx="25" cy="14" r="6"/><circle class="dd-w" cx="33" cy="18" r="4.5"/><path class="dd-f" d="M5 22h38v4a12 12 0 0 1-12 12H17A12 12 0 0 1 5 26z"/><path d="M14 38l-2 4M34 38l2 4" fill="none"/></symbol>
+<symbol id="d-dryer" viewBox="0 0 48 48"><path class="dd-w" d="M20 27h8l-1 14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/><path class="dd-f" d="M8 12a8 8 0 0 1 8-6h12a10 10 0 0 1 0 22H16a8 8 0 0 1-8-6z"/><circle class="dd-w" cx="28" cy="17" r="4.5"/><path d="M40 12l4-2M41 17h5M40 22l4 2" fill="none"/></symbol>
+<symbol id="d-bow" viewBox="0 0 48 48"><path class="dd-f" d="M22 24L8 14a2 2 0 0 0-3 2v16a2 2 0 0 0 3 2zM26 24l14-10a2 2 0 0 1 3 2v16a2 2 0 0 1-3 2z"/><rect class="dd-w" x="19.5" y="18.5" width="9" height="11" rx="3"/></symbol>
+<symbol id="d-ball" viewBox="0 0 48 48"><circle class="dd-f" cx="24" cy="24" r="15"/><path d="M11 17c8 2 12 8 11 21M37 31c-8-2-12-8-11-21" fill="none"/></symbol>
+<symbol id="d-bottle" viewBox="0 0 48 48"><rect class="dd-w" x="19" y="5" width="10" height="6" rx="1.5"/><path class="dd-f" d="M15 17a6 6 0 0 1 6-6h6a6 6 0 0 1 6 6v22a4 4 0 0 1-4 4H19a4 4 0 0 1-4-4z"/><rect class="dd-w" x="15" y="22" width="18" height="11"/><path d="M21 27.500h6" fill="none"/></symbol>
+<symbol id="d-tag" viewBox="0 0 48 48"><circle class="dd-w" cx="24" cy="9" r="4.5"/><path class="dd-f" d="M24 14l13 8v13a8 8 0 0 1-8 8H19a8 8 0 0 1-8-8V22z"/><circle class="dd-w" cx="24" cy="22" r="2.5"/><path d="M19 31h10M19 36h6" fill="none"/></symbol>
+<symbol id="d-heart" viewBox="0 0 48 48"><path class="dd-f" d="M24 40S7 30 7 18a8.5 8.5 0 0 1 17-2.500A8.5 8.5 0 0 1 41 18c0 12-17 22-17 22z"/><path d="M13 17a4 4 0 0 1 4-4" fill="none"/></symbol>
+<symbol id="d-treat" viewBox="0 0 48 48"><path class="dd-f" d="M10 16c3-6 9-8 14-5 5-3 11-1 14 5 3 7-1 16-14 23C11 32 7 23 10 16z"/><circle class="dd-k" cx="18" cy="19" r="1.4"/><circle class="dd-k" cx="30" cy="19" r="1.4"/><circle class="dd-k" cx="24" cy="27" r="1.4"/></symbol>
+<symbol id="d-star" viewBox="0 0 48 48"><path class="dd-f" d="M24 5c1.5 10 6 14.5 16 16-10 1.5-14.5 6-16 16-1.5-10-6-14.5-16-16 10-1.5 14.5-6 16-16z"/></symbol>
+<symbol id="d-clock" viewBox="0 0 48 48"><circle class="dd-f" cx="24" cy="25" r="15"/><circle class="dd-w" cx="24" cy="25" r="10.5"/><path d="M24 18v7l5 3M14 8l-5 4M34 8l5 4" fill="none"/></symbol>
+<symbol id="d-dogface" viewBox="0 0 48 48"><path class="dd-f" d="M11 12c-6 1-8 9-5 17 2 4 6 3 7-1zM37 12c6 1 8 9 5 17-2 4-6 3-7-1z"/><path class="dd-w" d="M11 22a13 13 0 0 1 26 0v6a13 13 0 0 1-26 0z"/><circle class="dd-k" cx="19" cy="23" r="1.8"/><circle class="dd-k" cx="29" cy="23" r="1.8"/><ellipse class="dd-k" cx="24" cy="29" rx="3" ry="2.2"/><path d="M24 31v3M20 35c2 2 6 2 8 0" fill="none"/></symbol>
+<symbol id="d-dog" viewBox="0 0 64 48"><path d="M11 24C6 21 4 15 6 9" fill="none"/><rect class="dd-w" x="13" y="29" width="6.5" height="15" rx="3.2"/><rect class="dd-w" x="33" y="29" width="6.5" height="15" rx="3.2"/><rect class="dd-w" x="9" y="19" width="34" height="15" rx="7.5"/><rect class="dd-w" x="48" y="14" width="13" height="9" rx="4.5"/><circle class="dd-w" cx="45" cy="16" r="9.5"/><ellipse class="dd-f" cx="40.5" cy="15" rx="4" ry="7.5" transform="rotate(18 40.5 15)"/><circle class="dd-k" cx="48.5" cy="14" r="1.5"/><ellipse class="dd-k" cx="60" cy="16.5" rx="1.8" ry="1.5"/></symbol>
+<symbol id="d-peek" viewBox="0 0 120 60"><path class="dd-f" d="M28 30c-12-2-20 6-20 22l14 6zM92 30c12-2 20 6 20 22l-14 6z"/><path class="dd-w" d="M26 60V40a34 34 0 0 1 68 0v20z"/><circle class="dd-k" cx="46" cy="38" r="3.4"/><circle class="dd-k" cx="74" cy="38" r="3.4"/><ellipse class="dd-k" cx="60" cy="50" rx="6.5" ry="4.5"/><path d="M40 29c3-3 8-3 11 0M69 29c3-3 8-3 11 0" fill="none"/></symbol>
+<symbol id="d-scribble" viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M3 13c30-9 60-9 92-4 34 5 66 3 102-5" fill="none" stroke-width="5"/></symbol>
+</defs></svg>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.500C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.500l4.5 4.500L19 7.5"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.500l2.6 5.4 5.9.800-4.3 4.1 1 5.900L12 16.900l-5.2 2.8 1-5.900L3.5 9.700l5.9-.800z"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.800a3.5 3.5 0 0 1 0 6.400M18 14.500a6 6 0 0 1 3.5 5.5"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+<symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6.5" r="2.5"/><circle cx="6" cy="17.5" r="2.5"/><path d="M8 8l12 9M8 16l12-9"/></symbol>
+<symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3c.600 4.5 2.5 6.4 7 7-4.5.600-6.4 2.5-7 7-.600-4.5-2.5-6.4-7-7 4.5-.600 6.4-2.5 7-7zM19 16.500c.200 1.5.900 2.2 2.4 2.4-1.5.200-2.2.900-2.4 2.4-.200-1.5-.900-2.2-2.4-2.4 1.5-.200 2.2-.900 2.4-2.400z"/></symbol>
+<symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 10 5 20 4c0 10-5 15-13 15zM5 19c2-5 5-8 9-10"/></symbol>
+<symbol id="i-paw" viewBox="0 0 24 24"><circle cx="7" cy="9" r="1.8"/><circle cx="12" cy="6.5" r="1.8"/><circle cx="17" cy="9" r="1.8"/><path d="M7.5 17c0-3 2-5 4.5-5s4.5 2 4.5 5c0 1.5-1.2 2.5-2.5 2.5-1 0-1.3-.500-2-.500s-1 .500-2 .500c-1.3 0-2.5-1-2.5-2.500z"/></symbol>
+<symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-4l2-5h12l2 5v4M4 16h16v2H4zM4 12h16"/><circle cx="7.5" cy="16" r="1.5"/><circle cx="16.5" cy="16" r="1.5"/></symbol>
+<symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10.500h18"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.600A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol>
+<symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 8h4l2-3h6l2 3h4v12H3z"/><circle cx="12" cy="13.5" r="4"/></symbol>
+<symbol id="i-glass" viewBox="0 0 24 24"><path d="M7 3h10c0 6-1.5 9.5-5 9.500S7 9 7 3zM12 12.500V20M8 20.500h8"/></symbol>
+<symbol id="i-grape" viewBox="0 0 24 24"><circle cx="9" cy="10" r="2.3"/><circle cx="14.5" cy="10" r="2.3"/><circle cx="11.8" cy="14.5" r="2.3"/><circle cx="11.8" cy="19" r="2"/><path d="M12 7.500V4c2 0 3.5-.500 4.5-1.5"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><path d="M2.5 6h11v10h-11zM13.5 9.500h4l3 3.500v3h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10H4zM10 20v-6h4v6"/></symbol>
+<symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></symbol>
+<symbol id="i-gift" viewBox="0 0 24 24"><path d="M4 12v9h16v-9M2.5 7.500h19V12h-19zM12 21V7.500M12 7.500H8a2.5 2.5 0 1 1 0-5c3 0 4 5 4 5zM12 7.500h4a2.5 2.5 0 1 0 0-5c-3 0-4 5-4 5z"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></symbol>
+<symbol id="i-wifi" viewBox="0 0 24 24"><path d="M3 9.500a13 13 0 0 1 18 0M6 13a9 9 0 0 1 12 0M9 16.500a4.5 4.5 0 0 1 6 0"/><circle cx="12" cy="19.5" r=".800"/></symbol>
+<symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8zM9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
+</defs></svg>
+
+<script type="application/json" id="hzdata">{"sizes": [{"name": "Petit", "note": "jusqu'à 10 kg"}, {"name": "Moyen", "note": "10–25 kg"}, {"name": "Grand", "note": "25–40 kg"}, {"name": "Géant", "note": "plus de 40 kg"}], "cats": [{"cat": "Toilettage complet", "items": [{"name": "Bain et séchage", "desc": "Shampooing doux pour la peau, brossage, nettoyage des oreilles", "min": [45, 60, 75, 90], "price": [32, 42, 55, 70], "id": "s0"}, {"name": "Bain et tonte", "desc": "Tonte courte ou à la forme, selon la race", "min": [75, 90, 120, 150], "price": [45, 58, 72, 95], "id": "s1"}, {"name": "Bain et coupe aux ciseaux", "desc": "Coupe façonnée à la main, pour caniches et bichons", "min": [90, 120, 150, 180], "price": [55, 68, 85, 110], "from": true, "id": "s2"}, {"name": "Épilation (trimming)", "desc": "Pour les races à poil dur, à la main", "min": [90, 120, 150, 150], "price": [58, 72, 90, 90], "from": true, "id": "s3"}], "dd": "scissors"}, {"cat": "En complément", "items": [{"name": "Coupe des griffes", "min": 10, "price": 10, "id": "s4"}, {"name": "Nettoyage des oreilles", "desc": "Avec un nettoyant doux, épilation des poils si nécessaire", "min": 10, "price": 8, "id": "s5"}, {"name": "Détartrage aux ultrasons", "desc": "Sans anesthésie, pour les chiens calmes", "min": 30, "price": 45, "id": "s6"}, {"name": "Démêlage, débourrage", "desc": "Facturé par quart d'heure", "min": 15, "price": 12, "from": true, "id": "s7"}, {"name": "Premier toilettage chiot", "desc": "Jusqu'à 5 mois, à son rythme", "min": 45, "price": 30, "id": "s8"}], "dd": "star"}], "step": 30, "size0": 1, "demoDog": null, "demoBreed": null, "slug": "demo-toilettage", "gal": [["u49", "Après le bain, dans sa serviette"], ["u15", "Caniche après la coupe"], ["u6", "Shih tzu fraîchement coiffé"], ["u106", "Samoyède après bain et séchage"], ["u38", "Yorkshire terrier"], ["u39", "Croisé caniche après la coupe"], ["u37", "Shih tzu"], ["u0", "Pendant la coupe aux ciseaux"]], "hours": [["9:00", "19:00"], ["9:00", "19:00"], ["9:00", "19:00"], ["9:00", "19:00"], ["9:00", "19:00"], ["9:00", "17:00"], null]}</script>
+<script>/* közös segédek a szolgáltatós demókhoz (kutyakozmetika, esküvő, borászat) */
+var HZ = (function () {
+  var D = JSON.parse(document.getElementById('hzdata').textContent);
+  var $ = function (s, r) { return (r || document).querySelector(s) }, $$ = function (s, r) { return [].slice.call((r || document).querySelectorAll(s)) };
+  var MON = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+  var DAY = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'], DSH = ['dim.', 'lun.', 'mar.', 'mer.', 'jeu.', 'ven.', 'sam.'];
+  var NB = ' ';
+  function ft(n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, NB) + NB + '€' }
+  function dur(m) { var h = Math.floor(m / 60), r = m % 60; return h ? h + NB + 'h' + (r ? NB + ('0' + r).slice(-2) : '') : r + NB + 'min' }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c] }) }
+  function d0(d) { var x = new Date(d); x.setHours(0, 0, 0, 0); return x }
+  function addDays(d, n) { var x = new Date(d); x.setDate(x.getDate() + n); return x }
+  function longDate(d) { return DAY[d.getDay()] + ' ' + d.getDate() + ' ' + MON[d.getMonth()] + ' ' + d.getFullYear() }
+  function hash(s) { var h = 7; for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 100003; return h }
+  function hm(s) { var p = s.split(':'); return +p[0] * 60 + +p[1] }
+  function hhmm(m) { return Math.floor(m / 60) + 'h' + ('0' + m % 60).slice(-2) }
+  function hfr(t) { var p = t.split(':'); return +p[0] + 'h' + (p[1] === '00' ? '' : p[1]) }
+  function ico(n) { return '<svg class="ico" aria-hidden="true"><use href="#i-' + n + '"/></svg>' }
+
+  /* nagyító */
+  var lb = $('[data-lbox]'), li = 0, L = D.gal || [];
+  function lbShow(i) { li = (i + L.length) % L.length; lb.querySelector('img').src = 'img/' + L[li][0] + '.jpg'; lb.querySelector('img').alt = L[li][1] || ''; lb.querySelector('p').textContent = (L[li][1] ? L[li][1] + ' · ' : '') + (li + 1) + ' / ' + L.length }
+  if (lb) {
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-lb]'); if (!b) return;
+      var k = b.getAttribute('data-lb'), i = L.findIndex(function (x) { return x[0] === k }); if (i < 0) return;
+      lbShow(i); lb.classList.add('open'); lb.querySelector('.x').focus();
+    });
+    lb.querySelector('.x').onclick = function () { lb.classList.remove('open') };
+    lb.querySelector('.l').onclick = function () { lbShow(li - 1) }; lb.querySelector('.r').onclick = function () { lbShow(li + 1) };
+    lb.addEventListener('click', function (e) { if (e.target === lb) lb.classList.remove('open') });
+    document.addEventListener('keydown', function (e) { if (!lb.classList.contains('open')) return; if (e.key === 'Escape') lb.classList.remove('open'); if (e.key === 'ArrowLeft') lbShow(li - 1); if (e.key === 'ArrowRight') lbShow(li + 1) });
+  }
+
+  /* nyitvatartás: a mai nap kiemelése + „most nyitva” */
+  var isOpen = false;
+  function openNow() {
+    var h = D.hours; if (!h) return null; var n = new Date(), i = (n.getDay() + 6) % 7, t = h[i], m = n.getHours() * 60 + n.getMinutes();
+    var row = $$('.hours tr')[i]; if (row) row.classList.add('now');
+    if (t && m >= hm(t[0]) && m < hm(t[1])) { isOpen = true; return 'Ouvert jusqu\'à ' + hfr(t[1]) + ' aujourd\'hui' }
+    for (var k = (t && m < hm(t[0])) ? 0 : 1; k < 8; k++) { var j = (i + k) % 7; if (h[j]) return 'Ouvert ' + (k === 0 ? 'aujourd\'hui' : k === 1 ? 'demain' : DAY[(j + 1) % 7]) + ' dès ' + hfr(h[j][0]) }
+    return null;
+  }
+  var st = openNow(); $$('[data-open]').forEach(function (e) { if (st) { e.textContent = st; var d = e.parentNode.querySelector('.dot'); if (d) d.classList.toggle('off', !isOpen) } else e.hidden = true });
+
+  /* térkép: külső beágyazás csak kattintásra (addig nincs Google-kérés) */
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-map]'); if (!b) return; var box = b.closest('.mapbox'), f = document.createElement('iframe');
+    f.src = 'https://www.google.com/maps?q=' + encodeURIComponent(b.getAttribute('data-map')) + '&output=embed'; f.title = 'Carte'; f.loading = 'lazy'; f.referrerPolicy = 'no-referrer-when-downgrade';
+    box.innerHTML = ''; box.appendChild(f);
+  });
+
+  /* űrlap-ellenőrzés: az első hibás mezőre áll, a hibát szövegesen kiírja */
+  function check(form, hint) {
+    var bad = null, msg = '';
+    $$('[required]', form).some(function (f) {
+      var v = f.value.trim();
+      if (!v) { bad = f; msg = 'Champ obligatoire : ' + f.closest('label').firstChild.textContent.trim(); return true }
+      if (f.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { bad = f; msg = 'Indiquez une adresse e-mail valide, nous y envoyons la confirmation.'; return true }
+      if (f.type === 'tel' && v.replace(/\D/g, '').length < 9) { bad = f; msg = 'Indiquez un numéro de téléphone pour vous joindre.'; return true }
+    });
+    hint.textContent = msg; if (bad) bad.focus(); return !bad;
+  }
+
+  /* havi naptár: opts {el, min, max, disabled(d)->bool|'past', onPick(d), sel} */
+  function calendar(o) {
+    var view = new Date(o.start || o.min); view.setDate(1); var sel = o.sel || null;
+    function draw() {
+      var y = view.getFullYear(), m = view.getMonth(), first = (new Date(y, m, 1).getDay() + 6) % 7, n = new Date(y, m + 1, 0).getDate();
+      var h = '<div class="calhead"><button type="button" data-p aria-label="Mois précédent"' + (new Date(y, m, 1) <= o.min ? ' disabled' : '') + '>‹</button><b>' + MON[m] + ' ' + y + '</b><button type="button" data-n aria-label="Mois suivant"' + (new Date(y, m + 1, 1) > o.max ? ' disabled' : '') + '>›</button></div><div class="calgrid">';
+      ['L', 'M', 'M', 'J', 'V', 'S', 'D'].forEach(function (d) { h += '<small>' + d + '</small>' });
+      for (var i = 0; i < first; i++) h += '<span></span>';
+      for (var d = 1; d <= n; d++) {
+        var dt = new Date(y, m, d), past = dt < o.min || dt > o.max, dis = past || o.disabled(dt);
+        h += '<button type="button" class="day' + (past ? ' past' : '') + (sel && +dt === +sel ? ' sel' : '') + '" data-d="' + d + '"' + (dis ? ' disabled' : '') + ' aria-label="' + longDate(dt) + (dis && !past ? ', complet' : '') + '">' + d + '</button>';
+      }
+      o.el.innerHTML = h + '</div>';
+    }
+    o.el.addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b || b.disabled) return;
+      if (b.hasAttribute('data-p')) view.setMonth(view.getMonth() - 1); else if (b.hasAttribute('data-n')) view.setMonth(view.getMonth() + 1);
+      else { sel = new Date(view.getFullYear(), view.getMonth(), +b.getAttribute('data-d')); o.onPick(sel) }
+      draw();
+    });
+    draw();
+    return { set: function (d) { sel = d; if (d) { view = new Date(d); view.setDate(1) } draw() }, get: function () { return sel } };
+  }
+  return { D: D, $: $, $$: $$, ft: ft, dur: dur, esc: esc, d0: d0, addDays: addDays, longDate: longDate, hash: hash, hm: hm, hhmm: hhmm, ico: ico, MON: MON, DAY: DAY, DSH: DSH, NB: NB, check: check, calendar: calendar };
+})();
+
+(function () {
+  var H = HZ, D = H.D, $ = H.$, $$ = H.$$, S = D.sizes, items = {};
+  D.cats.forEach(function (c) { c.items.forEach(function (it) { items[it.id] = it }) });
+  var st = { size: Math.min(D.size0 || 0, S.length - 1), picked: [], day: null, slot: null };
+  var val = function (v, i) { return Array.isArray(v) ? v[Math.min(i, v.length - 1)] : v };
+  function price(it) { return val(it.price, st.size) } function mins(it) { return val(it.min, st.size) }
+  function total() { var p = 0, m = 0, from = false, ask = false; st.picked.forEach(function (id) { var it = items[id], pr = price(it); if (pr == null) ask = true; else p += pr; m += mins(it) || 0; if (it.from) from = true }); return { p: p, m: m, from: from, ask: ask } }
+  function ptxt(it) { var p = price(it); return p == null ? 'Prix sur devis' : (it.from ? 'dès ' : '') + H.ft(p) }
+
+  /* méretválasztó (árlista + foglalás, szinkronban) */
+  function drawSizes() {
+    $$('[data-sizes]').forEach(function (el) {
+      el.style.setProperty('--n', S.length);
+      el.innerHTML = S.map(function (s, i) { return '<button type="button" data-size="' + i + '" aria-pressed="' + (i === st.size) + '"><svg class="dd dg" viewBox="0 0 64 48" style="width:' + Math.round(34 + 46 * (S.length > 1 ? i / (S.length - 1) : .5)) + 'px" aria-hidden="true"><use href="#d-dog"/></svg><b>' + H.esc(s.name) + '</b><span>' + H.esc(s.note || '') + '</span></button>' }).join('');
+    });
+  }
+  function drawList() {
+    $('[data-pl]').innerHTML = D.cats.map(function (c) {
+      return '<div class="cat"><h3><svg class="dd" viewBox="0 0 48 48" aria-hidden="true"><use href="#d-' + (c.dd || 'bone') + '"/></svg>' + H.esc(c.cat) + '</h3>' + c.items.map(function (it) {
+        var on = st.picked.indexOf(it.id) >= 0, m = mins(it);
+        return '<div class="row"><div><b>' + H.esc(it.name) + '</b>' + (it.desc ? '<small>' + H.esc(it.desc) + '</small>' : '') + '</div><div class="pr">' + ptxt(it) + (m ? '<span>env. ' + H.dur(m) + '</span>' : '') + '</div>' +
+          '<button type="button" class="add" data-add="' + it.id + '" aria-pressed="' + on + '" aria-label="' + H.esc(it.name) + (on ? ', retirer de la réservation' : ', ajouter à la réservation') + '">' + H.ico(on ? 'check' : 'plus') + '</button></div>';
+      }).join('') + '</div>';
+    }).join('');
+  }
+
+  /* napok és időpontok */
+  var today = H.d0(new Date()), dayEls = $('[data-days]'), slotEls = $('[data-slots]');
+  function open(d) { return D.hours[(d.getDay() + 6) % 7] }
+  function iso(d) { return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() }
+  function slotsFor(d, need) {
+    var h = open(d), out = []; if (!h) return out;
+    var now = new Date(), nm = +H.d0(now) === +d ? now.getHours() * 60 + now.getMinutes() + 60 : 0;
+    for (var m = H.hm(h[0]); m + need <= H.hm(h[1]); m += D.step || 30) out.push({ m: m, free: m >= nm && H.hash(D.slug + iso(d) + m) % 5 > 1 });
+    return out;
+  }
+  function drawDays() {
+    var h = ''; for (var i = 0; i < 21; i++) {
+      var d = H.addDays(today, i), cl = !open(d);
+      h += '<button type="button" data-day="' + i + '"' + (cl ? ' disabled' : '') + ' aria-pressed="' + (st.day === i) + '" aria-label="' + H.longDate(d) + (cl ? ', fermé' : '') + '"><small>' + (i === 0 ? 'Auj.' : i === 1 ? 'Dem.' : H.DSH[d.getDay()]) + '</small><b>' + d.getDate() + '</b><small>' + H.MON[d.getMonth()].slice(0, 3) + '.</small></button>';
+    } dayEls.innerHTML = h;
+  }
+  function drawSlots() {
+    if (st.day == null) { slotEls.innerHTML = '<p>Choisissez un jour pour voir les créneaux libres.</p>'; return }
+    var t = total(), sl = slotsFor(H.addDays(today, st.day), Math.max(t.m, 30));
+    if (!sl.some(function (s) { return s.free })) { st.slot = null; slotEls.innerHTML = '<p>Pas de créneau assez long ce jour-là. Choisissez un autre jour.</p>'; return }
+    if (st.slot != null && !sl.some(function (s) { return s.m === st.slot && s.free })) st.slot = null;
+    slotEls.innerHTML = sl.map(function (s) { return '<button type="button" data-slot="' + s.m + '"' + (s.free ? '' : ' disabled') + ' aria-pressed="' + (st.slot === s.m) + '">' + H.hhmm(s.m) + '</button>' }).join('');
+  }
+
+  function drawSum() {
+    var t = total(), n = st.picked.length, dog = ($('[name=kutya]').value || '').trim();
+    $('[data-picked]').innerHTML = n ? st.picked.map(function (id) { return '<span>' + H.esc(items[id].name) + '<button type="button" data-rm="' + id + '" aria-label="' + H.esc(items[id].name) + ', retirer">' + H.ico('x') + '</button></span>' }).join('') + '<a href="#arak">+ autre prestation</a>' : '<a href="#arak">Choisissez une prestation dans les tarifs</a>';
+    var tt = n ? (t.ask && !t.p ? 'Sur devis' : (t.from || t.ask ? 'dès ' : '') + H.ft(t.p)) : '–';
+    $('[data-s-dog]').textContent = (dog || 'Votre chien') + ' · ' + S[st.size].name.toLowerCase();
+    $('[data-s-what]').textContent = n ? st.picked.map(function (id) { return items[id].name }).join(' + ') + (t.m ? ' (env. ' + H.dur(t.m) + ')' : '') : 'Rien de choisi pour l\'instant';
+    $('[data-s-when]').textContent = st.day != null && st.slot != null ? H.longDate(H.addDays(today, st.day)) + ', ' + H.hhmm(st.slot) : 'Choisissez un jour et un créneau';
+    $('[data-s-total]').textContent = tt;
+    var tray = $('[data-tray]'), vis = n > 0 && !inBook && !$('[data-done]').offsetParent;
+    tray.classList.toggle('on', vis); $('.mbar').classList.toggle('off', vis);
+    $('[data-tray-txt]').innerHTML = '<b>' + tt + '</b><br>' + n + ' prestation' + (n > 1 ? 's' : '') + (t.m ? ' · ' + H.dur(t.m) : '');
+  }
+  function redraw() { drawSizes(); drawList(); drawDays(); drawSlots(); drawSum() }
+
+  var inBook = false;
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { inBook = e[0].isIntersecting; drawSum() }, { rootMargin: '-25% 0px -25% 0px' }).observe($('#foglalas'));
+
+  document.addEventListener('click', function (e) {
+    var b;
+    if ((b = e.target.closest('[data-size]'))) { var par = b.parentNode; st.size = +b.getAttribute('data-size'); redraw(); var same = par.querySelector('[aria-pressed=true]'); if (same) same.focus() }
+    else if ((b = e.target.closest('[data-add]'))) { var id = b.getAttribute('data-add'), i = st.picked.indexOf(id); if (i < 0) st.picked.push(id); else st.picked.splice(i, 1); drawList(); drawSlots(); drawSum(); var nb = $('[data-add="' + id + '"]'); if (nb) nb.focus() }
+    else if ((b = e.target.closest('[data-rm]'))) { st.picked.splice(st.picked.indexOf(b.getAttribute('data-rm')), 1); drawList(); drawSlots(); drawSum() }
+    else if ((b = e.target.closest('[data-day]')) && !b.disabled) { st.day = +b.getAttribute('data-day'); st.slot = null; drawDays(); drawSlots(); drawSum() }
+    else if ((b = e.target.closest('[data-slot]')) && !b.disabled) { st.slot = +b.getAttribute('data-slot'); drawSlots(); drawSum() }
+  });
+  var hello = $('[data-hello]'), hello0 = hello ? hello.textContent : '';
+  function greet() { var d = $('[name=kutya]').value.trim(); if (hello) hello.textContent = d ? 'Bonjour ' + d + ' ! On se voit quand ?' : hello0 }
+  $('[name=kutya]').addEventListener('input', function () { drawSum(); greet() });
+
+  var form = $('[data-form]'), hint = $('[data-hint]');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!st.picked.length) { hint.textContent = 'Choisissez au moins une prestation dans la liste des tarifs.'; location.hash = '#arak'; return }
+    if (st.day == null || st.slot == null) { hint.textContent = 'Choisissez un jour et un créneau.'; dayEls.scrollIntoView({ block: 'center' }); return }
+    if (!H.check(form, hint)) return;
+    var dog = $('[name=kutya]').value.trim();
+    $('[data-done-h]').textContent = 'C\'est noté, à bientôt ' + dog + ' !';
+    $('[data-done-p]').textContent = $('[data-s-when]').textContent + ' · ' + $('[data-s-what]').textContent + ' · ' + $('[data-s-total]').textContent;
+    $$('[data-bookbody]').forEach(function (x) { x.hidden = true }); var dn = $('[data-done]'); dn.hidden = false; dn.focus(); drawSum();
+    $('#foglalas').scrollIntoView({ block: 'start' });
+  });
+
+  /* előtte–utána csúszka */
+  $$('.ba input').forEach(function (r) { r.addEventListener('input', function () { r.parentNode.style.setProperty('--p', r.value + '%') }) });
+
+  /* legközelebbi szabad időpont a nyitóképen */
+  (function () {
+    var el = $('[data-next]'); if (!el) return;
+    for (var i = 0; i < 21; i++) { var d = H.addDays(today, i), f = slotsFor(d, 60).filter(function (s) { return s.free })[0]; if (f) { el.textContent = (i === 0 ? 'aujourd\'hui' : i === 1 ? 'demain' : H.DAY[d.getDay()]) + ' à ' + H.hhmm(f.m); return } }
+    el.closest('.next').hidden = true;
+  })();
+
+  redraw();
+  /* előnézeti képekhez: kitöltött állapot */
+  window.hzDemo = function () {
+    st.size = Math.min(1, S.length - 1); var ids = Object.keys(items); st.picked = ids.slice(0, Math.min(2, ids.length));
+    $('[name=kutya]').value = D.demoDog || 'Noisette'; $('[name=fajta]').value = D.demoBreed || 'caniche';
+    for (var i = 1; i < 21; i++) { var f = slotsFor(H.addDays(today, i), Math.max(total().m, 30)).filter(function (s) { return s.free }); if (f.length > 2) { st.day = i; st.slot = f[1].m; break } }
+    redraw(); greet();
+  };
+})();
+</script>
+</body>
+</html>
