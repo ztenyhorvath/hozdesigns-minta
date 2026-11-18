@@ -114,7 +114,7 @@ header.top{position:sticky;top:0;z-index:20;background:rgba(28,33,39,.96);backdr
 .prices{background:var(--asph);color:#fff;padding:96px 0}
 .prices .muted{color:#AEB5BD}
 .pgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;margin-top:40px;align-items:start}
-.cats{display:grid;gap:10px}
+.cats{display:grid;gap:10px;position:sticky;top:92px}
 .cat{display:grid;grid-template-columns:72px 1fr auto;gap:18px;align-items:center;padding:18px 20px;border:1px solid #3A424C;border-radius:14px;background:var(--asph2);cursor:pointer;text-align:left;width:100%;color:#fff;transition:border-color .15s,background .15s}
 .cat:hover{border-color:#6B7480}
 .cat[aria-pressed=true]{border-color:var(--mark);background:#2E353E}
@@ -268,7 +268,7 @@ footer .lane{height:6px}
   .st p{grid-column:2}
   .tgrid{grid-template-columns:1fr 1fr}
   .fleet{grid-column:1/-1}
-  .calc{position:static}
+  .calc,.cats{position:static}
   .vgrid{grid-template-columns:1fr 1fr}
   .map{grid-column:1/-1;min-height:300px}
   .fgrid{grid-template-columns:1fr 1fr}
