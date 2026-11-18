@@ -271,21 +271,21 @@ h2{font-size:clamp(40px,5vw,64px);line-height:1}
     <div class="pkg-grid">
       <div class="pkg">
         <small>Site vitrine</small>
-        <span class="price">790 €</span>
+        <span class="price">1 190 €</span>
         <p>Une page claire, où l'on trouve tout l'essentiel.</p>
         <ul><li>Présentation, horaires, carte</li><li>Prestations, offre ou tarifs</li><li>Galerie photo, réseaux sociaux</li><li>Adapté au mobile</li></ul>
         <a class="btn btn-dark" href="/minta/fr/?formule=vitrine#contact">Je choisis cette formule →</a>
       </div>
       <div class="pkg dark">
         <small>Site complet</small>
-        <span class="price">1 290 €</span>
+        <span class="price">1 790 €</span>
         <p>Plusieurs pages, rendez-vous ou réservation.</p>
         <ul><li>Tout le site vitrine</li><li>Prise de rendez-vous ou réservation en ligne</li><li>Tarifs détaillés, avant / après</li><li>Plusieurs pages, site bilingue possible</li></ul>
         <a class="btn btn-light" href="/minta/fr/?formule=complet#contact">Je choisis cette formule →</a>
       </div>
       <div class="pkg">
         <small>Suivi mensuel</small>
-        <span class="price">49 €<i> / mois</i></span>
+        <span class="price">69 €<i> / mois</i></span>
         <p>Vous payez 2 heures de travail, l'hébergement est offert.</p>
         <ul><li>Modifications, nouvelles photos, nouveaux tarifs</li><li>Maintenance et assistance</li><li>Nom de domaine, hébergement, mises à jour : offerts</li></ul>
         <a class="btn btn-dark" href="/minta/fr/?formule=suivi#contact">J'ai une question →</a>
@@ -312,7 +312,7 @@ h2{font-size:clamp(40px,5vw,64px);line-height:1}
       <p>Je prépare les premières maquettes, on les revoit ensemble, et on les affine jusqu'à ce que chaque texte, photo et fonction soit à sa place.</p>
     </li>
     <li class="dark">
-      <div class="n"><b>03</b><span>49 € / mois</span></div>
+      <div class="n"><b>03</b><span>69 € / mois</span></div>
       <h3>Mise en ligne et suivi</h3>
       <p>Je connecte votre nom de domaine et je m'occupe du site. Chaque mois, 2 heures de travail : mises à jour, modifications, nouvelles photos, offres de saison.</p>
     </li>
@@ -360,7 +360,7 @@ h2{font-size:clamp(40px,5vw,64px);line-height:1}
   var q = new URLSearchParams(location.search);
   var form = document.getElementById('devis');
   var ta = form.querySelector('textarea'), sel = form.querySelector('select');
-  var formule = { vitrine: 'Le site vitrine (790 €) m\'intéresse.', complet: 'Le site complet (1 290 €) m\'intéresse.', suivi: 'J\'ai une question sur le suivi mensuel (49 € / mois).' };
+  var formule = { vitrine: 'Le site vitrine (1 190 €) m\'intéresse.', complet: 'Le site complet (1 790 €) m\'intéresse.', suivi: 'J\'ai une question sur le suivi mensuel (69 € / mois).' };
   if (formule[q.get('formule')]) ta.value = formule[q.get('formule')];
   if (q.get('demo') === 'toilettage') { sel.value = 'Toilettage'; if (!ta.value) ta.value = 'La démo toilettage m\'a plu, je voudrais un site comme celui-ci pour mon salon.'; }
   var btn = form.querySelector('button'), err = form.querySelector('.err'), ok = document.querySelector('.contact .ok');
