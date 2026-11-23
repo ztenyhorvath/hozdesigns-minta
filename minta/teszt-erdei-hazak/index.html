@@ -260,12 +260,12 @@ footer h4{margin:0 0 12px;font:700 15px var(--fd);color:var(--mist);font-variati
 footer p,footer a{font:16.5px/1.6 var(--fd)}
 footer a{text-decoration:none;border-bottom:1px solid rgba(220,225,218,.35)}
 footer .base{margin-top:64px;padding-top:22px;border-top:1px solid var(--pine3);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:14px var(--fd);color:#8E9A91}
-footer .g>div:nth-child(1){grid-area:1/1}footer .g>div:nth-child(2){grid-area:1/2}footer .g>div:nth-child(3){grid-area:1/3}
-footer .social{grid-area:1/2;align-self:end;display:flex;gap:12px}
+footer .social{display:flex;gap:12px;margin-top:20px}
+footer .social.s-m{display:none}
 footer .social a{width:44px;height:44px;border:1px solid rgba(220,225,218,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#E8EAE4;transition:background .2s,border-color .2s,color .2s}
 footer .social a:hover{background:var(--amber);border-color:var(--amber);color:#1A1307}
 footer .social svg{width:20px;height:20px}
-@media (max-width:860px){footer .g{grid-template-columns:1fr;gap:32px}footer .g>div:nth-child(n),footer .social{grid-area:auto}footer .social{margin-top:-12px}}
+@media (max-width:860px){footer .g{grid-template-columns:1fr;gap:32px}footer .social.s-d{display:none}footer .social.s-m{display:flex;margin-top:18px}}
 
 @media (max-width:700px){
   body{font-size:18px}
@@ -287,6 +287,10 @@ footer .social svg{width:20px;height:20px}
   .fogveil,.mist{display:none}
   .reveal{filter:none;opacity:1;transform:none}
 }
+.pics.n1{grid-template-columns:1fr;grid-template-rows:1fr}.pics.n2{grid-template-rows:1fr}.pics.n1 figure:first-child,.pics.n2 figure:first-child{grid-row:auto}
+.faq.solo .g{grid-template-columns:1fr;gap:20px}.faq.solo .mapbox iframe{aspect-ratio:21/8}
+@media (max-width:700px){.faq.solo .mapbox iframe{aspect-ratio:4/3.4}}
+
 </style>
 </head>
 <body>
@@ -295,19 +299,17 @@ footer .social svg{width:20px;height:20px}
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Ködvölgy – az oldal teteje">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 4 27h24L16 3Z" fill="none" stroke="#E6A23C" stroke-width="2.4" stroke-linejoin="round"/><path d="M12.5 27v-7h7v7" fill="#E6A23C"/></svg>
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 4 27h24L16 3Z" fill="none" stroke="var(--amber)" stroke-width="2.4" stroke-linejoin="round"/><path d="M12.5 27v-7h7v7" fill="var(--amber)"/></svg>
       KÖDVÖLGY
     </a>
-    <nav aria-label="Fő menü">
-      <a href="#hazak">Házak</a><a href="#elmenyek">Élmények</a><a href="#kornyek">Környék</a><a href="#kerdesek">Kérdések</a>
-    </nav>
+    <nav aria-label="Fő menü"><a href="#hazak">Házak</a><a href="#elmenyek">Élmények</a><a href="#kornyek">Környék</a><a href="#kerdesek">Kérdések</a></nav>
     <a class="btn" href="#foglalas">Foglalás</a>
   </div>
 </header>
 
 <main id="top">
 <section class="hero" aria-label="Nyitókép">
-  <img class="poster" src="img/nyito.jpg" alt="Fekete fa erdei ház üvegfallal, előtte gőzölgő dézsa a ködös bükkösben" width="1920" height="1080" fetchpriority="high">
+  <img class="poster" src="img/nyito.jpg" alt="Fekete fa erdei ház üvegfallal, előtte gőzölgő dézsa a ködös bükkösben" width="2400" height="1371" fetchpriority="high">
   <video id="hv" muted playsinline preload="none" aria-hidden="true" data-src="https://d8j0ntlcm91z4.cloudfront.net/user_3Lvl0qANCKz9H2hBq1UFFhRwu3J/hf_20261123_142809_60e73b4f-75e8-4ad0-b0fa-094132a0e23c.mp4"></video>
   <div class="mist"></div>
   <div class="fogveil"></div>
@@ -323,7 +325,7 @@ footer .social svg{width:20px;height:20px}
         <label>Távozás<input type="date" id="qb-out" required></label>
       </div>
       <label>Vendégek
-        <select id="qb-g"><option value="2">2 fő</option><option value="3">3 fő</option><option value="4">4 fő</option><option value="1">1 fő</option></select>
+        <select id="qb-g"><option value="2">2 fő</option><option value="1">1 fő</option><option value="3">3 fő</option><option value="4">4 fő</option></select>
       </label>
       <button class="btn" type="submit">Szabad időpontok</button>
       <p class="note">Közvetlen foglalásnál 10%-kal olcsóbb, mint a foglalási portálokon.</p>
@@ -331,61 +333,43 @@ footer .social svg{width:20px;height:20px}
   </div>
 </section>
 
-
 <section class="houses" id="hazak">
   <div class="wrap">
     <h2>A házak</h2>
 
     <article class="house">
       <div class="pics">
-        <figure><img class="reveal" src="img/vorosfenyo-kint.jpg" alt="Vörösfenyő burkolatú kis ház bükkfák között, ösvénnyel" loading="lazy" width="900" height="1200"></figure>
-        <figure><img class="reveal" src="img/vorosfenyo-furdo.jpg" alt="Szabadon álló kőkád nagy ablak előtt, kilátással az erdőre" loading="lazy" width="900" height="1200"></figure>
-        <figure><img class="reveal" src="img/vorosfenyo-nappali.jpg" alt="Világos nappali kályhával és nagy ablakkal" loading="lazy" width="900" height="1200"></figure>
+        <figure><img class="reveal" src="img/vorosfenyo-kint.jpg" alt="Vörösfenyő burkolatú kis ház bükkfák között, ösvénnyel" width="1200" height="1645" loading="lazy"></figure>
+        <figure><img class="reveal" src="img/vorosfenyo-furdo.jpg" alt="Szabadon álló kőkád nagy ablak előtt, kilátással az erdőre" width="1200" height="1645" loading="lazy"></figure>
+        <figure><img class="reveal" src="img/vorosfenyo-nappali.jpg" alt="Világos nappali kályhával és nagy ablakkal" width="1200" height="1645" loading="lazy"></figure>
       </div>
       <div class="hinfo">
         <h3>Vörösfenyő ház</h3>
         <p>Kisebb és csendesebb, a telek legmagasabb pontján. Kettőnek tervezték: kád az ablak előtt, kályha, és egy terasz, ahová délután is besüt a nap.</p>
-        <ul class="spec">
-          <li><span>Alapterület</span><span>42 m²</span></li>
-          <li><span>Férőhely</span><span>2 fő</span></li>
-          <li><span>Háló</span><span>franciaágy, panorámaablak</span></li>
-          <li><span>Saját</span><span>dézsa, kád, kályha</span></li>
-        </ul>
-        <div class="price"><b>54 000 Ft</b><span>/ éj 2 főre, hétköznap</span></div>
-        <a class="btn" href="#foglalas" data-house="vorosfenyo">Ezt a házat foglalom</a>
+        <ul class="spec"><li><span>Alapterület</span><span>42 m²</span></li><li><span>Férőhely</span><span>2 fő</span></li><li><span>Háló</span><span>franciaágy, panorámaablak</span></li><li><span>Saját</span><span>dézsa, kád, kályha</span></li></ul>
+        <div class="price"><b>54 000 Ft</b><span>/ éj 2 főre, hétköznap</span></div>
+        <a class="btn" href="#foglalas" data-house="vorosfenyo">Ezt foglalom</a>
       </div>
     </article>
-
     <aside class="info" aria-label="A szállásról röviden">
       <div class="info-t">
         <h3>Reggel a köd ül a völgyben, este a dézsából nézni a csillagokat.</h3>
         <p>A két ház egy hat hektáros erdei telken áll, 150 méterre egymástól. Mindkettőhöz saját terasz és fával fűtött dézsa tartozik, a szaunát közösen használják. Eger tizenöt perc autóval, a noszvaji pincesor öt, a turistaút a kertkaputól indul.</p>
       </div>
-      <div class="facts">
-        <div><b>2</b><span>ház, egymástól 150 méterre</span></div>
-        <div><b>4 fő</b><span>legfeljebb, házanként</span></div>
-        <div><b>38 °C</b><span>a dézsa, egész évben</span></div>
-        <div><b>9,7</b><span>a vendégek értékelése a Bookingon</span></div>
-      </div>
+      <div class="facts"><div><b>2</b><span>ház, egymástól 150 méterre</span></div><div><b>4 fő</b><span>legfeljebb, házanként</span></div><div><b>38 °C</b><span>a dézsa, egész évben</span></div><div><b>9,7</b><span>a vendégek értékelése a Bookingon</span></div></div>
     </aside>
-
     <article class="house flip">
       <div class="pics">
-        <figure><img class="reveal" src="img/fekete-kint.jpg" alt="A Fekete ház üvegfalas homlokzata ködben, előtte a dézsa" loading="lazy" width="1600" height="900"></figure>
-        <figure><img class="reveal" src="img/fekete-nappali.jpg" alt="Galériás nappali kályhával és üvegfallal az erdőre" loading="lazy" width="900" height="1200"></figure>
-        <figure><img class="reveal" src="img/fekete-haloszoba.jpg" alt="Hálószoba ággyal a panorámaablak előtt" loading="lazy" width="900" height="1200"></figure>
+        <figure><img class="reveal" src="img/fekete-kint.jpg" alt="A Fekete ház üvegfalas homlokzata ködben, előtte a dézsa" width="1200" height="1490" loading="lazy"></figure>
+        <figure><img class="reveal" src="img/fekete-nappali.jpg" alt="Galériás nappali kályhával és üvegfallal az erdőre" width="1200" height="1645" loading="lazy"></figure>
+        <figure><img class="reveal" src="img/fekete-haloszoba.jpg" alt="Hálószoba ággyal a panorámaablak előtt" width="1200" height="1645" loading="lazy"></figure>
       </div>
       <div class="hinfo">
         <h3>Fekete ház</h3>
         <p>Égetett fa burkolat, hétméteres üvegfal a völgy felé. Lent nappali kályhával és konyhával, fent galériás háló, ahonnan az ágyból is látni az erdőt.</p>
-        <ul class="spec">
-          <li><span>Alapterület</span><span>58 m²</span></li>
-          <li><span>Férőhely</span><span>2 + 2 fő</span></li>
-          <li><span>Hálók</span><span>1 galéria, 1 kanapéágy</span></li>
-          <li><span>Saját</span><span>dézsa, kályha, terasz</span></li>
-        </ul>
-        <div class="price"><b>64 000 Ft</b><span>/ éj 2 főre, hétköznap</span></div>
-        <a class="btn" href="#foglalas" data-house="fekete">Ezt a házat foglalom</a>
+        <ul class="spec"><li><span>Alapterület</span><span>58 m²</span></li><li><span>Férőhely</span><span>2 + 2 fő</span></li><li><span>Hálók</span><span>1 galéria, 1 kanapéágy</span></li><li><span>Saját</span><span>dézsa, kályha, terasz</span></li></ul>
+        <div class="price"><b>64 000 Ft</b><span>/ éj 2 főre, hétköznap</span></div>
+        <a class="btn" href="#foglalas" data-house="fekete">Ezt foglalom</a>
       </div>
     </article>
   </div>
@@ -399,15 +383,15 @@ footer .social svg{width:20px;height:20px}
     </div>
     <div class="cards">
       <figure>
-        <div class="ph"><img src="img/dezsa.jpg" alt="Gőzölgő cédrus dézsa a teraszon alkonyatkor" loading="lazy" width="900" height="1200"></div>
+        <div class="ph"><img src="img/dezsa.jpg" alt="Gőzölgő cédrus dézsa a teraszon alkonyatkor" width="1200" height="1645" loading="lazy"></div>
         <figcaption><h3>Dézsa</h3><p>Fával fűtött cédrusdézsa a saját teraszon, egész évben 38 fokon.</p><span class="tag">Az árban benne van</span></figcaption>
       </figure>
       <figure>
-        <div class="ph"><img src="img/szauna.jpg" alt="Finn szauna nagy ablakkal a ködös völgyre" loading="lazy" width="900" height="1200"></div>
+        <div class="ph"><img src="img/szauna.jpg" alt="Finn szauna nagy ablakkal a ködös völgyre" width="1200" height="1645" loading="lazy"></div>
         <figcaption><h3>Szauna</h3><p>Finn szauna ablakkal a völgyre. Két órára csak a tiéd, törölközővel, fürdőköpennyel.</p><span class="tag">9 000 Ft / alkalom</span></figcaption>
       </figure>
       <figure>
-        <div class="ph"><img src="img/reggeli.jpg" alt="Reggelikosár kenyérrel, sajttal, lekvárral és kávéval a teraszon" loading="lazy" width="900" height="1200"></div>
+        <div class="ph"><img src="img/reggeli.jpg" alt="Reggelikosár kenyérrel, sajttal, lekvárral és kávéval a teraszon" width="1200" height="1645" loading="lazy"></div>
         <figcaption><h3>Reggelikosár</h3><p>Kovászos kenyér, noszvaji kecskesajt, házi baracklekvár, tojás és kávé, reggel nyolcra a teraszra.</p><span class="tag">8 500 Ft / 2 fő</span></figcaption>
       </figure>
     </div>
@@ -415,7 +399,7 @@ footer .social svg{width:20px;height:20px}
 </section>
 
 <section class="winter" aria-labelledby="tel-t">
-  <img src="img/tel.jpg" alt="A Fekete ház hóban, kék órában, kivilágított ablakokkal" loading="lazy" width="1920" height="1080">
+  <img src="img/tel.jpg" alt="A Fekete ház hóban, kék órában, kivilágított ablakokkal" width="2400" height="1371" loading="lazy">
   <div class="wrap">
     <h2 id="tel-t">Télen a legszebb.</h2>
     <p>A kályhához fát készítünk, a dézsa hóesésben is 38 fokos. Decemberre és a két ünnep közé még van szabad hétvége.</p>
@@ -439,10 +423,7 @@ footer .social svg{width:20px;height:20px}
     </div>
     <div class="bk">
       <div class="panel">
-        <div class="pick" role="radiogroup" aria-label="Ház">
-          <label><input type="radio" name="haz" value="fekete" checked><span><b>Fekete ház</b>2–4 fő, 64 000 Ft-tól</span></label>
-          <label><input type="radio" name="haz" value="vorosfenyo"><span><b>Vörösfenyő ház</b>2 fő, 54 000 Ft-tól</span></label>
-        </div>
+        <div class="pick" role="radiogroup" aria-label="Szállásegység"><label><input type="radio" name="haz" value="vorosfenyo"><span><b>Vörösfenyő ház</b>2 fő, 54 000 Ft-tól</span></label><label><input type="radio" name="haz" value="fekete" checked><span><b>Fekete ház</b>2–4 fő, 64 000 Ft-tól</span></label></div>
         <div class="cal-h">
           <button type="button" id="prev" aria-label="Előző hónap">‹</button>
           <span class="ui" id="hint">Válaszd ki az érkezés napját</span>
@@ -459,16 +440,12 @@ footer .social svg{width:20px;height:20px}
       </div>
 
       <form class="panel sum" id="bf" novalidate>
-        <h3 id="s-house">Fekete ház</h3>
+        <h3 id="s-house"></h3>
         <div id="s-empty" class="empty">Jelöld ki a naptárban az érkezés és a távozás napját, itt rögtön látod a végösszeget.</div>
         <div class="lines" id="s-lines" hidden></div>
         <div class="ctl">
           <label>Vendégek<select id="g"></select></label>
-          <div class="ext" role="group" aria-label="Kérhető extrák">
-            <label><input type="checkbox" id="x-sz"> Szauna, 2 óra (9 000 Ft / alkalom, egyszer)</label>
-            <label><input type="checkbox" id="x-rg"> Reggelikosár minden reggel (8 500 Ft / 2 fő)</label>
-            <label><input type="checkbox" id="x-ku"> Kutyával jövünk (6 000 Ft / tartózkodás)</label>
-          </div>
+          <div class="ext" role="group" aria-label="Kérhető extrák"><label><input type="checkbox" id="x-sz"> Szauna, 2 óra (9 000 Ft / alkalom, egyszer)</label><label><input type="checkbox" id="x-rg"> Reggelikosár minden reggel (8 500 Ft / 2 fő)</label><label><input type="checkbox" id="x-ku"> Kutyával jövünk (6 000 Ft / tartózkodás)</label></div>
           <div class="g2">
             <label>Név<input id="n" autocomplete="name" required></label>
             <label>Telefon<input id="t" type="tel" autocomplete="tel" required></label>
@@ -486,31 +463,18 @@ footer .social svg{width:20px;height:20px}
 <section class="rev" aria-labelledby="rev-t">
   <div class="wrap">
     <h2 id="rev-t" style="margin-bottom:28px">Akik már jártak itt</h2>
-    <div class="top">
-      <div class="chip"><b>9,7</b>Booking.com, 214 értékelés</div>
-      <div class="chip"><b>4,97</b>Airbnb, 131 értékelés</div>
-      <div class="chip"><b>5,0</b>Google, 88 értékelés</div>
-    </div>
-    <div class="quotes">
-      <blockquote>„Reggel kinyitottuk a függönyt, és a köd a ház körül állt. Egész nap ki sem mozdultunk, csak a dézsa és a kályha között.”<cite>Kata és Bence, Budapest</cite></blockquote>
-      <blockquote>„Minden ott volt, ahol keresni kellett. A reggelikosárban a kecskesajt felejthetetlen.”<cite>Dóra, Debrecen</cite></blockquote>
-      <blockquote>„Hóesésben ültünk a dézsában. Jövőre ugyanerre a hétvégére jövünk vissza.”<cite>Ádám, Győr</cite></blockquote>
-    </div>
+    <div class="top"><div class="chip"><b>9,7</b>Booking.com, 214 értékelés</div><div class="chip"><b>4,97</b>Airbnb, 131 értékelés</div><div class="chip"><b>5,0</b>Google, 88 értékelés</div></div>
+    <div class="quotes"><blockquote>„Reggel kinyitottuk a függönyt, és a köd a ház körül állt. Egész nap ki sem mozdultunk, csak a dézsa és a kályha között.”<cite>Kata és Bence, Budapest</cite></blockquote><blockquote>„Minden ott volt, ahol keresni kellett. A reggelikosárban a kecskesajt felejthetetlen.”<cite>Dóra, Debrecen</cite></blockquote><blockquote>„Hóesésben ültünk a dézsában. Jövőre ugyanerre a hétvégére jövünk vissza.”<cite>Ádám, Győr</cite></blockquote></div>
     <p class="cap">Minta: a valódi oldalon itt a szállás saját Booking-, Airbnb- és Google-értékelései jelennek meg.</p>
   </div>
 </section>
 
 <section class="area" id="kornyek">
   <div class="wrap g">
-    <div class="ph"><img class="reveal" src="img/taj.jpg" alt="Szőlődombok és falu a Bükkalján naplementekor, ködben" loading="lazy" width="1920" height="1080"></div>
+    <div class="ph"><img class="reveal" src="img/taj.jpg" alt="Szőlődombok és falu a Bükkalján naplementekor, ködben" width="1400" height="800" loading="lazy"></div>
     <div>
       <h2>A környék</h2>
-      <ul class="near">
-        <li><b>0<small>perc</small></b><span>A kék túraút a kertkaputól indul a Bükki Nemzeti Park felé.</span></li>
-        <li><b>5<small>perc</small></b><span>Noszvaj: barlanglakások, pincesor, borkóstolók.</span></li>
-        <li><b>15<small>perc</small></b><span>Eger: a vár, a belváros és a Szépasszony-völgy.</span></li>
-        <li><b>25<small>perc</small></b><span>Egerszalók: termálfürdő a sódomb mellett.</span></li>
-      </ul>
+      <ul class="near"><li><b>0<small>perc</small></b><span>A kék túraút a kertkaputól indul a Bükki Nemzeti Park felé.</span></li><li><b>5<small>perc</small></b><span>Noszvaj: barlanglakások, pincesor, borkóstolók.</span></li><li><b>15<small>perc</small></b><span>Eger: a vár, a belváros és a Szépasszony-völgy.</span></li><li><b>25<small>perc</small></b><span>Egerszalók: termálfürdő a sódomb mellett.</span></li></ul>
     </div>
   </div>
 </section>
@@ -527,7 +491,7 @@ footer .social svg{width:20px;height:20px}
       <details><summary>Mi történik, ha le kell mondanunk?</summary><p>Érkezés előtt 14 nappal az előleget visszafizetjük, vagy egy éven belül másik időpontra átírjuk.</p></details>
     </div>
     <div class="mapbox">
-      <iframe title="Ködvölgy helye a térképen, Noszvaj" src="https://maps.google.com/maps?q=Noszvaj&amp;z=12&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe title="Ködvölgy Erdei Házak helye a térképen" src="https://maps.google.com/maps?q=Noszvaj&amp;z=12&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <p>3325 Noszvaj, Ködvölgy dűlő 4. Az utolsó 600 méter murvás erdei út, kisautóval is járható.</p>
     </div>
   </div>
@@ -543,18 +507,22 @@ footer .social svg{width:20px;height:20px}
       </div>
       <div>
         <h4>Elérhetőség</h4>
-        <p>3325 Noszvaj, Ködvölgy dűlő 4.<br><a href="tel:+3636000000">+36 36 000 0000</a><br><a href="mailto:foglalas@kodvolgy.example">foglalas@kodvolgy.example</a></p>
+        <p>3325 Noszvaj, Ködvölgy dűlő 4.<br><a href="tel:+36360000000">+36 36 000 0000</a><br><a href="mailto:foglalas@kodvolgy.example">foglalas@kodvolgy.example</a></p>
+      <div class="social s-d" aria-label="Közösségi oldalak">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.5-1 .9-1H17V2.3L14.1 2.3C10.9 2.3 10.2 4.7 10.2 6.3v2.2H8v3.7h2.2V22H14v-9.8h2.8l.4-3.7H14Z" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg></a>
+      </div>
       </div>
       <div>
         <h4>Szálláshely</h4>
         <p>NTAK-regisztrációs szám: MA00000000</p>
-      </div>
-      <div class="social" aria-label="Közösségi oldalak">
+      <div class="social s-m" aria-label="Közösségi oldalak">
         <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.5-1 .9-1H17V2.3L14.1 2.3C10.9 2.3 10.2 4.7 10.2 6.3v2.2H8v3.7h2.2V22H14v-9.8h2.8l.4-3.7H14Z" fill="currentColor"/></svg></a>
         <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg></a>
       </div>
+      </div>
     </div>
-    <div class="base"><span>© 2026 Ködvölgy Erdei Házak – kitalált szálláshely, bemutató célra</span><span>Weboldal: <a href="https://hozdesigns.com">hozdesigns.com</a></span></div>
+    <div class="base"><span>© 2026 Ködvölgy Erdei Házak</span><span>Bemutató tervezet: <a href="https://hozdesigns.com">hozdesigns.com</a></span></div>
   </div>
 </footer>
 
@@ -565,16 +533,18 @@ footer .social svg{width:20px;height:20px}
   <button class="nx" type="button" aria-label="Következő kép">›</button>
   <p class="cap" id="lb-cap"></p>
 </div>
+<script>window.HZ={"units": {"vorosfenyo": {"name": "Vörösfenyő ház", "wd": 54000, "we": 66000, "max": 2, "base": 2, "extra": 0}, "fekete": {"name": "Fekete ház", "wd": 64000, "we": 78000, "max": 4, "base": 2, "extra": 9000}}, "first": "fekete", "ifa": 500, "discount": 10, "min_nights": 2, "extras": [{"key": "sz", "label": "Szauna, 2 óra (9 000 Ft / alkalom, egyszer)", "short": "Szauna", "price": 9000, "unit": "alkalom"}, {"key": "rg", "label": "Reggelikosár minden reggel (8 500 Ft / 2 fő)", "short": "Reggelikosár", "price": 8500, "unit": "ej_2fo"}, {"key": "ku", "label": "Kutyával jövünk (6 000 Ft / tartózkodás)", "short": "Kutya", "price": 6000, "unit": "tartozkodas"}]};</script>
 <script>
+/* Prémium szállás-sablon (gen_premium.py) – a beállításokat a window.HZ adja (egységek, árak, extrák, IFA, kedvezmény). */
 (function(){
+  const HZ=window.HZ||{};
   const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
   const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* nyitóvideó: csak ha van és nem kér csökkentett mozgást */
   /* nyitóvideó: széles képernyőn, ha nem kér csökkentett mozgást és nem adattakarékos; a végén áttűnés a kezdőképre */
   const v=$('#hv'), po=$('.poster'), hero=$('.hero');
   const save=navigator.connection&&navigator.connection.saveData;
-  if(v && !RM && !save && matchMedia('(min-width: 900px)').matches){
+  if(v && v.dataset.src && !RM && !save && matchMedia('(min-width: 900px)').matches){
     v.src=v.dataset.src; v.preload='auto';
     v.addEventListener('canplaythrough',()=>{hero.classList.add('vid');v.play().then(()=>{po.style.opacity=0;}).catch(()=>{});},{once:true});
     v.addEventListener('timeupdate',()=>{ if(v.duration && v.currentTime>v.duration-1.1) po.style.opacity=1; });
@@ -586,8 +556,7 @@ footer .social svg{width:20px;height:20px}
   const io=('IntersectionObserver' in window)&&!RM ? new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}}),{threshold:.25}) : null;
   $$('.reveal').forEach(el=>io?io.observe(el):el.classList.add('on'));
 
-
-  /* képnagyító a házak képeihez */
+  /* képnagyító az egységek képeihez */
   const lb=$('#lb'), lbi=$('#lb-img'), lbc=$('#lb-cap'); let set=[], idx=0, last=null;
   function show(i){ idx=(i+set.length)%set.length; const im=set[idx]; lbi.src=im.currentSrc||im.src; lbi.alt=im.alt; lbc.innerHTML=''; lbc.append(im.alt); const n=document.createElement('span'); n.style.cssText='margin-left:14px;opacity:.65'; n.textContent=(idx+1)+'/'+set.length; lbc.append(n); }
   function openLb(list,i){ set=list; last=document.activeElement; show(i); lb.hidden=false; requestAnimationFrame(()=>lb.classList.add('open')); document.body.style.overflow='hidden'; lb.querySelector('.x').focus(); }
@@ -602,26 +571,23 @@ footer .social svg{width:20px;height:20px}
   lb.addEventListener('touchend',e=>{ if(tx==null) return; const d=e.changedTouches[0].clientX-tx; if(Math.abs(d)>50) show(idx+(d<0?1:-1)); tx=null; });
 
   /* ── foglalási naptár ── */
-  const HOUSES={
-    fekete:{name:'Fekete ház',wd:64000,we:78000,max:4,extra:9000},
-    vorosfenyo:{name:'Vörösfenyő ház',wd:54000,we:66000,max:2,extra:0}
-  };
-  const IFA=500, PORTAL=1/0.9; // portálár ≈ közvetlen ár / 0,9
-  const fmt=n=>String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'\u202f')+' Ft';
+  const U=HZ.units||{}, KEYS=Object.keys(U); if(!KEYS.length) return;
+  const IFA=HZ.ifa||0, DISC=HZ.discount||0, MIN=HZ.min_nights||1, EXT=HZ.extras||[];
+  const PORTAL=DISC?1/(1-DISC/100):1;
+  const fmt=n=>String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' Ft';
   const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
   const today=new Date(); today.setHours(0,0,0,0);
-  let house='fekete', start=null, end=null, view=new Date(today.getFullYear(),today.getMonth(),1);
+  let unit=HZ.first||KEYS[0], start=null, end=null, view=new Date(today.getFullYear(),today.getMonth(),1);
 
-  // determinisztikus „foglalt” napok házanként (a valódi oldalon a Booking/Airbnb naptárából)
+  // determinisztikus „foglalt” napok egységenként (mintaadat; a valódi oldalon a Booking/Airbnb naptárából)
   function booked(h,d){
-    const k=d.getFullYear()*400+d.getMonth()*32+d.getDate()+(h==='fekete'?7:19);
+    const k=d.getFullYear()*400+d.getMonth()*32+d.getDate()+7+KEYS.indexOf(h)*12;
     const x=Math.sin(k*12.9898)*43758.5453; const r=x-Math.floor(x);
     const fri=d.getDay()===5||d.getDay()===6;
     return r < (fri?0.42:0.16);
   }
   const isWeekendNight=d=>d.getDay()===5||d.getDay()===6;
-
-  function rangeFree(a,b){ for(let d=new Date(a);d<b;d.setDate(d.getDate()+1)) if(booked(house,d)) return false; return true; }
+  function rangeFree(a,b){ for(let d=new Date(a);d<b;d.setDate(d.getDate()+1)) if(booked(unit,d)) return false; return true; }
 
   function render(){
     const box=$('#months'); box.innerHTML='';
@@ -636,8 +602,7 @@ footer .social svg{width:20px;height:20px}
       for(let i=1;i<=days;i++){
         const d=new Date(first.getFullYear(),first.getMonth(),i);
         const b=document.createElement('button'); b.type='button'; b.textContent=i; b.dataset.d=iso(d);
-        const past=d<today, bk=booked(house,d);
-        // távozási nap lehet foglalt éjszaka is, ha előtte szabad
+        const past=d<today, bk=booked(unit,d);
         const asEnd = start && d>start && (end ? iso(d)===iso(end) : rangeFree(start,d));
         if(past){b.disabled=true;b.classList.add('past');} else if(bk && !asEnd){b.disabled=true;b.classList.add('bk');}
         if(isWeekendNight(d)) b.classList.add('wk');
@@ -653,78 +618,83 @@ footer .social svg{width:20px;height:20px}
     $('#prev').disabled = view<=new Date(today.getFullYear(),today.getMonth(),1);
     $('#hint').textContent = !start ? 'Válaszd ki az érkezés napját' : (!end ? 'Most a távozás napját' : 'Kiválasztva – módosításhoz kattints újra');
   }
-
   function pick(d){
     if(!start || end || d<=start){ start=d; end=null; }
     else {
       const n=Math.round((d-start)/864e5);
-      if(n<2){ $('#hint').textContent='Legalább 2 éjszakát lehet foglalni'; return; }
+      if(n<MIN){ $('#hint').textContent='Legalább '+MIN+' éjszakát lehet foglalni'; return; }
       if(!rangeFree(start,d)){ start=d; end=null; }
       else end=d;
     }
     render(); calc();
   }
-
   function guests(){
-    const s=$('#g'), max=HOUSES[house].max, cur=+s.value||2;
+    const s=$('#g'), max=U[unit].max, cur=+s.value||Math.min(2,max);
     s.innerHTML=''; for(let i=1;i<=max;i++){const o=document.createElement('option');o.value=i;o.textContent=i+' fő';s.appendChild(o);}
     s.value=Math.min(cur,max);
   }
-
+  function extraCost(x,g,nights){
+    if(!$('#x-'+x.key) || !$('#x-'+x.key).checked) return 0;
+    if(x.unit==='ej') return x.price*nights;
+    if(x.unit==='ej_2fo') return x.price*Math.ceil(g/2)*nights;
+    if(x.unit==='fo_ej') return x.price*g*nights;
+    return x.price; // alkalom | tartozkodas
+  }
   function calc(){
-    const H=HOUSES[house]; $('#s-house').textContent=H.name;
+    const H=U[unit]; $('#s-house').textContent=H.name;
     const L=$('#s-lines');
     if(!(start&&end)){ L.hidden=true; $('#s-empty').hidden=false; setSave(null); return; }
     const g=+$('#g').value; let nights=0, wd=0, we=0, room=0;
     for(let d=new Date(start);d<end;d.setDate(d.getDate()+1)){ nights++; if(isWeekendNight(d)){we++;room+=H.we;}else{wd++;room+=H.wd;} }
-    const extraPpl=Math.max(0,g-2)*H.extra*nights;
-    const sz=$('#x-sz').checked?9000:0, rg=$('#x-rg').checked?8500*Math.ceil(g/2)*nights:0, ku=$('#x-ku').checked?6000:0;
+    const extraPpl=Math.max(0,g-(H.base||2))*(H.extra||0)*nights;
+    const xs=EXT.map(x=>[x,extraCost(x,g,nights)]).filter(p=>p[1]);
     const ifa=IFA*g*nights;
-    const tot=room+extraPpl+sz+rg+ku+ifa;
+    const tot=room+extraPpl+xs.reduce((a,p)=>a+p[1],0)+ifa;
     const portal=Math.round((room+extraPpl)*PORTAL/1000)*1000;
     const rows=[
       [start.toLocaleDateString('hu-HU',{month:'short',day:'numeric'})+' – '+end.toLocaleDateString('hu-HU',{month:'short',day:'numeric'}), nights+' éj'],
-      ['Szállás'+(we?' ('+wd+' hétköznap, '+we+' hétvégi éj)':''), fmt(room)],
-      extraPpl?['Pótágy, '+(g-2)+' fő',fmt(extraPpl)]:null,
-      sz?['Szauna',fmt(sz)]:null, rg?['Reggelikosár',fmt(rg)]:null, ku?['Kutya',fmt(ku)]:null,
-      ['Idegenforgalmi adó ('+IFA+' Ft/fő/éj)',fmt(ifa)],
-      ['Ugyanez a szállás portálon', fmt(portal)],
-      ['Ennyit spórolsz', '−'+fmt(portal-room-extraPpl), 'disc'],
-      ['Végösszeg', fmt(tot), 'tot']
-    ].filter(Boolean);
+      ['Szállás'+(we&&wd?' ('+wd+' hétköznap, '+we+' hétvégi éj)':''), fmt(room)],
+      extraPpl?['Pótágy, '+(g-(H.base||2))+' fő',fmt(extraPpl)]:null
+    ].concat(xs.map(p=>[p[0].short||p[0].label,fmt(p[1])]))
+     .concat([ ifa?['Idegenforgalmi adó ('+IFA+' Ft/fő/éj)',fmt(ifa)]:null,
+      DISC?['Ugyanez a szállás portálon', fmt(portal)]:null,
+      DISC?['Ennyit spórolsz', '−'+fmt(portal-room-extraPpl), 'disc']:null,
+      ['Végösszeg', fmt(tot), 'tot'] ]).filter(Boolean);
     L.innerHTML=rows.map(r=>'<div class="'+(r[2]||'')+'"><span>'+r[0]+'</span><span>'+r[1]+'</span></div>').join('');
     L.hidden=false; $('#s-empty').hidden=true;
     setSave(portal-room-extraPpl, nights);
   }
   function setSave(v,n){
-    if(v==null){ $('#sv-1').textContent='Itt közvetlenül foglalsz, jutalék nélkül.'; $('#sv-2').textContent='Ugyanez a szállás a foglalási portálokon 10%-kal többe kerül.'; $('#sv-p').textContent='−10%'; return; }
+    if(!DISC || !$('#sv-p')) return;
+    if(v==null){ $('#sv-1').textContent='Itt közvetlenül foglalsz, jutalék nélkül.'; $('#sv-2').textContent='Ugyanez a szállás a foglalási portálokon '+DISC+'%-kal többe kerül.'; $('#sv-p').textContent='−'+DISC+'%'; return; }
     $('#sv-p').textContent='−'+Math.round(v/1000)+' e Ft';
     $('#sv-1').textContent='Ennyit spórolsz ezen a '+n+' éjszakán, ha itt foglalsz.';
     $('#sv-2').textContent='A foglalási portálokon ugyanez az időszak ennyivel többe kerülne, mert ott jutalékot is fizetsz.';
   }
-
-  $$('input[name=haz]').forEach(r=>r.addEventListener('change',()=>{house=r.value;start=end=null;guests();render();calc();}));
-  ['#g','#x-sz','#x-rg','#x-ku'].forEach(s=>$(s).addEventListener('change',calc));
+  $$('input[name=haz]').forEach(r=>r.addEventListener('change',()=>{unit=r.value;start=end=null;guests();render();calc();}));
+  ['#g'].concat(EXT.map(x=>'#x-'+x.key)).forEach(s=>$(s)&&$(s).addEventListener('change',calc));
   $('#prev').addEventListener('click',()=>{view=new Date(view.getFullYear(),view.getMonth()-1,1);render();});
   $('#next').addEventListener('click',()=>{view=new Date(view.getFullYear(),view.getMonth()+1,1);render();});
-  $$('[data-house]').forEach(a=>a.addEventListener('click',()=>{const r=$('input[name=haz][value='+a.dataset.house+']');r.checked=true;r.dispatchEvent(new Event('change'));}));
+  $$('[data-house]').forEach(a=>a.addEventListener('click',()=>{const r=$('input[name=haz][value="'+a.dataset.house+'"]'); if(r){r.checked=true;r.dispatchEvent(new Event('change'));}}));
 
   /* gyors keresés a nyitóképen → naptár */
   const qi=$('#qb-in'), qo=$('#qb-out');
-  const t1=new Date(today); t1.setDate(t1.getDate()+((5-t1.getDay()+7)%7||7)); const t2=new Date(t1); t2.setDate(t2.getDate()+2);
-  qi.value=iso(t1); qo.value=iso(t2); qi.min=qo.min=iso(today);
-  $('#qb').addEventListener('submit',e=>{
-    e.preventDefault();
-    const a=new Date(qi.value+'T00:00'), b=new Date(qo.value+'T00:00');
-    $('#g').value=Math.min(+$('#qb-g').value,HOUSES[house].max);
-    if(a>=today && b>a){
-      view=new Date(a.getFullYear(),a.getMonth(),1);
-      if(rangeFree(a,b) && (b-a)/864e5>=2){ start=a; end=b; } else { start=null; end=null; $('#hint').textContent='Erre az időszakra ez a ház foglalt, válassz másikat'; }
-    }
-    render(); calc();
-    if(!start) $('#hint').textContent='Erre az időszakra ez a ház foglalt – a naptárban látod a szabad napokat';
-    document.getElementById('foglalas').scrollIntoView({behavior:RM?'auto':'smooth'});
-  });
+  if(qi){
+    const t1=new Date(today); t1.setDate(t1.getDate()+((5-t1.getDay()+7)%7||7)); const t2=new Date(t1); t2.setDate(t2.getDate()+Math.max(2,MIN));
+    qi.value=iso(t1); qo.value=iso(t2); qi.min=qo.min=iso(today);
+    $('#qb').addEventListener('submit',e=>{
+      e.preventDefault();
+      const a=new Date(qi.value+'T00:00'), b=new Date(qo.value+'T00:00');
+      $('#g').value=Math.min(+$('#qb-g').value,U[unit].max);
+      if(a>=today && b>a){
+        view=new Date(a.getFullYear(),a.getMonth(),1);
+        if(rangeFree(a,b) && (b-a)/864e5>=MIN){ start=a; end=b; } else { start=null; end=null; }
+      }
+      render(); calc();
+      if(!start) $('#hint').textContent='Erre az időszakra nincs szabad hely – a naptárban látod a szabad napokat';
+      document.getElementById('foglalas').scrollIntoView({behavior:RM?'auto':'smooth'});
+    });
+  }
 
   $('#bf').addEventListener('submit',e=>{
     e.preventDefault();
@@ -735,8 +705,12 @@ footer .social svg{width:20px;height:20px}
     ok.textContent='Köszönjük, '+$('#n').value.trim().split(' ').slice(-1)[0]+'! A valódi oldalon itt menne el a foglalási kérés, és 24 órán belül visszaigazolnák. Ez egy bemutató, ezért most nem küldtünk el semmit.';
   });
 
+  /* képernyőképhez: kitöltött állapot (shot_premium.js hívja) */
+  window.hzDemo=function(){ const bs=[...document.querySelectorAll('#months button:not([disabled])')]; if(bs[4]){ pick(new Date(bs[4].dataset.d+'T00:00')); const rest=[...document.querySelectorAll('#months button:not([disabled])')]; for(const b of rest){ const d=new Date(b.dataset.d+'T00:00'); if(d>start && (d-start)/864e5>=MIN){ pick(d); if(end) break; } } } };
+
   guests(); render(); calc();
 })();
+
 </script>
 </body>
 </html>
