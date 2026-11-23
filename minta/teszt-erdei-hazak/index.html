@@ -150,7 +150,7 @@ section[id]{scroll-margin-top:72px}
 .save b{grid-row:1/3;font:800 clamp(44px,5vw,64px)/1 var(--fd);font-variation-settings:"wdth" 75;color:var(--amber)}
 .save .l1{font:650 19px/1.3 var(--fd);font-variation-settings:"wdth" 88}
 .save .l2{font:15.5px/1.4 var(--fd);color:var(--mist)}
-.bk{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:start}
+.bk{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(340px,.7fr);gap:28px;align-items:start}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px}
 .pick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
 .pick label{position:relative;display:block;cursor:pointer}
@@ -163,15 +163,15 @@ section[id]{scroll-margin-top:72px}
 .cal-h .ui{color:var(--ink2)}
 .cal-h button{border:1px solid var(--line);background:#fff;border-radius:999px;width:38px;height:38px;cursor:pointer;font:18px var(--fd)}
 .cal-h button:disabled{opacity:.35;cursor:default}
-.months{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.months{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px}
 .month h4{margin:0 0 10px;font:700 17px var(--fd);font-variation-settings:"wdth" 88}
-.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;font-family:var(--fd)}
+.grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;font-family:var(--fd)}
 .grid .dw{font-size:12.5px;color:var(--ink2);text-align:center;padding:4px 0}
-.grid button{aspect-ratio:1;border:0;border-radius:6px;background:#fff;font-size:15px;cursor:pointer;font-variant-numeric:tabular-nums;position:relative}
-.grid button:hover:not(:disabled){background:var(--fog2)}
+.grid button{height:42px;min-width:0;padding:0;display:flex;align-items:center;justify-content:center;border:0;border-radius:8px;background:#fff;font-size:15px;line-height:1;cursor:pointer;font-variant-numeric:tabular-nums;position:relative}
+.grid button:hover:not(:disabled):not(.s):not(.e){background:var(--fog2)}
 .grid button:disabled{background:transparent;color:#A7AEA6;cursor:not-allowed}
-.grid button.bk{text-decoration:line-through;color:#9AA299}
-.grid button.past{color:#BFC5BD}
+.grid button.bk{background:repeating-linear-gradient(135deg,#E1E4DD 0 3px,#EDEFEA 3px 7px);color:#98A097;text-decoration:line-through}
+.grid button.past{color:#C2C7BF;background:transparent}
 .grid button.wk{font-weight:650}
 .grid button.in{background:#DDE3D6;border-radius:0}
 .grid button.s,.grid button.e{background:var(--ink);color:#fff;font-weight:700}
@@ -227,7 +227,7 @@ section[id]{scroll-margin-top:72px}
 
 /* ── kérdések ── */
 .faq{padding:110px 0}
-.faq .g{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
+.faq .g{display:grid;grid-template-columns:260px minmax(0,1fr);gap:56px;max-width:960px}
 .faq details{border-top:1px solid var(--line);padding:4px 0}
 .faq details:last-child{border-bottom:1px solid var(--line)}
 .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;padding:16px 0;font:650 19px/1.3 var(--fd);font-variation-settings:"wdth" 88}
@@ -437,7 +437,7 @@ footer .base{margin-top:64px;padding-top:22px;border-top:1px solid var(--pine3);
         <div class="legend">
           <span><i style="background:#fff;border:1px solid var(--line)"></i>szabad</span>
           <span><i style="background:var(--ink)"></i>kiválasztva</span>
-          <span><i style="background:transparent;border:1px dashed #A7AEA6"></i>foglalt</span>
+          <span><i style="background:repeating-linear-gradient(135deg,#D5D9D1 0 2px,#EDEFEA 2px 5px)"></i>foglalt</span>
           <span><b style="font-weight:650">Félkövér</b>: péntek és szombat éj</span>
         </div>
         <p class="sync">Legalább 2 éj. Érkezés 15 órától, távozás 11 óráig.</p>
@@ -562,7 +562,7 @@ footer .base{margin-top:64px;padding-top:22px;border-top:1px solid var(--pine3);
     vorosfenyo:{name:'Vörösfenyő ház',wd:54000,we:66000,max:2,extra:0}
   };
   const IFA=500, PORTAL=1/0.9; // portálár ≈ közvetlen ár / 0,9
-  const fmt=n=>n.toLocaleString('hu-HU').replace(/ /g,' ')+' Ft';
+  const fmt=n=>String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'\u202f')+' Ft';
   const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
   const today=new Date(); today.setHours(0,0,0,0);
   let house='fekete', start=null, end=null, view=new Date(today.getFullYear(),today.getMonth(),1);
@@ -593,7 +593,7 @@ footer .base{margin-top:64px;padding-top:22px;border-top:1px solid var(--pine3);
         const b=document.createElement('button'); b.type='button'; b.textContent=i; b.dataset.d=iso(d);
         const past=d<today, bk=booked(house,d);
         // távozási nap lehet foglalt éjszaka is, ha előtte szabad
-        const asEnd = start && !end && d>start && rangeFree(start,d);
+        const asEnd = start && d>start && (end ? iso(d)===iso(end) : rangeFree(start,d));
         if(past){b.disabled=true;b.classList.add('past');} else if(bk && !asEnd){b.disabled=true;b.classList.add('bk');}
         if(isWeekendNight(d)) b.classList.add('wk');
         if(start && iso(d)===iso(start)) b.classList.add('s');
