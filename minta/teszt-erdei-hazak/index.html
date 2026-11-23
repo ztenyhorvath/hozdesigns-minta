@@ -83,22 +83,19 @@ section[id]{scroll-margin-top:72px}
 @media (max-width:900px){.hero .in{grid-template-columns:1fr}.qb{width:100%;max-width:440px}}
 
 /* ── bevezető ── */
-.intro{padding:120px 0 90px}
-.intro .g{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:start}
-.intro h2{font-size:clamp(36px,4.4vw,60px)}
-.intro p{font-size:21px;color:#2E3832}
-.intro p+p{margin-top:16px}
-.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:72px;border-top:1px solid var(--line)}
-.facts div{padding:22px 20px 0 0}
-.facts b{display:block;font:800 clamp(40px,4.4vw,60px)/1 var(--fd);font-variation-settings:"wdth" 75;letter-spacing:-.02em}
-.facts span{font:15px/1.35 var(--fd);color:var(--ink2);display:block;margin-top:8px;max-width:18ch}
-@media (max-width:860px){.intro .g{grid-template-columns:1fr;gap:28px}.facts{grid-template-columns:1fr 1fr;row-gap:22px}}
+.info{max-width:1000px;margin:64px auto;padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.info h3{font-size:clamp(24px,2.3vw,30px);font-variation-settings:"wdth" 80;line-height:1.05}
+.info p{margin-top:12px;font-size:17.5px;color:#2E3832}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px}
+.facts b{display:block;font:800 clamp(30px,3vw,40px)/1 var(--fd);font-variation-settings:"wdth" 75;letter-spacing:-.02em}
+.facts span{font:14px/1.35 var(--fd);color:var(--ink2);display:block;margin-top:5px;max-width:20ch}
+@media (max-width:860px){.info{grid-template-columns:1fr;gap:22px;margin:44px auto;padding:24px 0}}
 
 /* ── házak ── */
-.houses{padding:30px 0 110px}
-.houses>.wrap>h2{margin-bottom:56px}
+.houses{padding:72px 0 88px}
+.houses>.wrap>h2{margin-bottom:36px}
 .house{display:grid;grid-template-columns:1.35fr .65fr;gap:56px;align-items:end}
-.house+.house{margin-top:110px}
+.house+.house{margin-top:72px}
 .house.flip{grid-template-columns:.65fr 1.35fr}
 .house.flip .pics{order:2}
 .pics{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:12px;aspect-ratio:16/10}
@@ -119,7 +116,7 @@ section[id]{scroll-margin-top:72px}
 @media (max-width:900px){.house,.house.flip{grid-template-columns:1fr;gap:28px}.house.flip .pics{order:0}.pics{aspect-ratio:4/3.4}}
 
 /* ── élmények ── */
-.exp{background:var(--pine);color:#E8EAE4;padding:110px 0}
+.exp{background:var(--pine);color:#E8EAE4;padding:88px 0}
 .exp .head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:56px}
 .exp .head p{color:var(--mist);font-size:20px}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -143,7 +140,7 @@ section[id]{scroll-margin-top:72px}
 .winter .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
 
 /* ── foglalás ── */
-.book{padding:120px 0}
+.book{padding:88px 0}
 .book .head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:48px}
 .book .head p{font-size:20px;color:#2E3832}
 .save{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:center;background:var(--pine);color:#E8EAE4;border-radius:12px;padding:22px 26px;margin-bottom:28px}
@@ -203,7 +200,7 @@ section[id]{scroll-margin-top:72px}
 @media (max-width:640px){.months{grid-template-columns:1fr}.months .month+.month{display:none}}
 
 /* ── vélemények ── */
-.rev{padding:20px 0 110px}
+.rev{padding:0 0 88px}
 .rev .top{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:34px}
 .chip{display:flex;align-items:baseline;gap:10px;border:1px solid var(--line);border-radius:999px;padding:10px 18px;font:15px var(--fd);background:var(--card)}
 .chip b{font:800 24px var(--fd);font-variation-settings:"wdth" 78}
@@ -214,7 +211,7 @@ section[id]{scroll-margin-top:72px}
 @media (max-width:860px){.quotes{grid-template-columns:1fr;gap:28px}}
 
 /* ── környék ── */
-.area{background:var(--fog2);padding:110px 0}
+.area{background:var(--fog2);padding:88px 0}
 .area .g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .area .ph{border-radius:4px;overflow:hidden;aspect-ratio:4/3.2}
 .area .ph img{width:100%;height:100%;object-fit:cover}
@@ -226,7 +223,7 @@ section[id]{scroll-margin-top:72px}
 @media (max-width:900px){.area .g{grid-template-columns:1fr;gap:32px}}
 
 /* ── kérdések ── */
-.faq{padding:110px 0}
+.faq{padding:88px 0}
 .faq .g{display:grid;grid-template-columns:260px minmax(0,1fr);gap:56px;max-width:960px}
 .faq details{border-top:1px solid var(--line);padding:4px 0}
 .faq details:last-child{border-bottom:1px solid var(--line)}
@@ -253,9 +250,8 @@ footer .base{margin-top:64px;padding-top:22px;border-top:1px solid var(--pine3);
   .hero .in{padding-top:46vh;padding-bottom:28px;gap:26px}
   .hero::after{background:linear-gradient(180deg,rgba(13,20,16,.05) 0%,rgba(13,20,16,.2) 30%,rgba(13,20,16,.78) 52%,rgba(13,20,16,.94) 100%)}
   .hero .poster,.hero video{height:62%;bottom:auto}
-  .intro{padding:72px 0 56px}.intro p{font-size:19px}.facts{margin-top:44px}
-  .houses{padding:10px 0 72px}.houses>.wrap>h2{margin-bottom:32px}.house+.house{margin-top:72px}
-  .exp,.area,.faq,.book{padding:72px 0}.exp .head{margin-bottom:32px}
+  .houses{padding:48px 0 64px}.houses>.wrap>h2{margin-bottom:24px}.house+.house{margin-top:56px}
+  .exp,.area,.faq,.book{padding:60px 0}.exp .head{margin-bottom:32px}
   .winter{min-height:560px}.winter .wrap{padding-bottom:48px}
   .rev{padding:0 0 72px}.quotes blockquote{font-size:20px}
   .panel{padding:18px}.pick{grid-template-columns:1fr}
@@ -312,23 +308,6 @@ footer .base{margin-top:64px;padding-top:22px;border-top:1px solid var(--pine3);
   </div>
 </section>
 
-<section class="intro">
-  <div class="wrap">
-    <div class="g">
-      <h2>Reggel a köd ül a völgyben, este a dézsából nézni a csillagokat.</h2>
-      <div>
-        <p>A két ház egy hat hektáros erdei telken áll, százötven méterre egymástól. Mindkettőhöz saját terasz és fával fűtött dézsa tartozik, a szaunát közösen használják.</p>
-        <p>Eger tizenöt perc autóval, a noszvaji pincesor öt. A turistaút a kertkaputól indul.</p>
-      </div>
-    </div>
-    <div class="facts">
-      <div><b>2</b><span>ház, egymástól 150 méterre</span></div>
-      <div><b>4 fő</b><span>legfeljebb, házanként</span></div>
-      <div><b>38 °C</b><span>a dézsa, egész évben</span></div>
-      <div><b>9,7</b><span>a vendégek értékelése a Bookingon</span></div>
-    </div>
-  </div>
-</section>
 
 <section class="houses" id="hazak">
   <div class="wrap">
@@ -353,6 +332,19 @@ footer .base{margin-top:64px;padding-top:22px;border-top:1px solid var(--pine3);
         <a class="btn" href="#foglalas" data-house="fekete">Ezt a házat foglalom</a>
       </div>
     </article>
+
+    <aside class="info" aria-label="A szállásról röviden">
+      <div class="info-t">
+        <h3>Reggel a köd ül a völgyben, este a dézsából nézni a csillagokat.</h3>
+        <p>A két ház egy hat hektáros erdei telken áll, 150 méterre egymástól. Mindkettőhöz saját terasz és fával fűtött dézsa tartozik, a szaunát közösen használják. Eger tizenöt perc autóval, a noszvaji pincesor öt, a turistaút a kertkaputól indul.</p>
+      </div>
+      <div class="facts">
+        <div><b>2</b><span>ház, egymástól 150 méterre</span></div>
+        <div><b>4 fő</b><span>legfeljebb, házanként</span></div>
+        <div><b>38 °C</b><span>a dézsa, egész évben</span></div>
+        <div><b>9,7</b><span>a vendégek értékelése a Bookingon</span></div>
+      </div>
+    </aside>
 
     <article class="house flip">
       <div class="pics">
