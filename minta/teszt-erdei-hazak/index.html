@@ -224,7 +224,10 @@ section[id]{scroll-margin-top:72px}
 
 /* ── kérdések ── */
 .faq{padding:88px 0}
-.faq .g{display:grid;grid-template-columns:260px minmax(0,1fr);gap:56px;max-width:960px}
+.faq .g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.faq h2{margin-bottom:22px}
+.mapbox iframe{display:block;width:100%;aspect-ratio:4/3.4;border:0;border-radius:6px;filter:grayscale(.35) contrast(1.02);background:var(--fog2)}
+.mapbox p{margin-top:12px;font:15px/1.45 var(--fd);color:var(--ink2)}
 .faq details{border-top:1px solid var(--line);padding:4px 0}
 .faq details:last-child{border-bottom:1px solid var(--line)}
 .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;padding:16px 0;font:650 19px/1.3 var(--fd);font-variation-settings:"wdth" 88}
@@ -315,21 +318,21 @@ footer .base{margin-top:64px;padding-top:22px;border-top:1px solid var(--pine3);
 
     <article class="house">
       <div class="pics">
-        <figure><img class="reveal" src="img/fekete-kint.jpg" alt="A Fekete ház üvegfalas homlokzata ködben, előtte a dézsa" loading="lazy" width="1600" height="900"></figure>
-        <figure><img class="reveal" src="img/fekete-nappali.jpg" alt="Galériás nappali kályhával és üvegfallal az erdőre" loading="lazy" width="900" height="1200"></figure>
-        <figure><img class="reveal" src="img/fekete-haloszoba.jpg" alt="Hálószoba ággyal a panorámaablak előtt" loading="lazy" width="900" height="1200"></figure>
+        <figure><img class="reveal" src="img/vorosfenyo-kint.jpg" alt="Vörösfenyő burkolatú kis ház bükkfák között, ösvénnyel" loading="lazy" width="900" height="1200"></figure>
+        <figure><img class="reveal" src="img/vorosfenyo-furdo.jpg" alt="Szabadon álló kőkád nagy ablak előtt, kilátással az erdőre" loading="lazy" width="900" height="1200"></figure>
+        <figure><img class="reveal" src="img/vorosfenyo-nappali.jpg" alt="Világos nappali kályhával és nagy ablakkal" loading="lazy" width="900" height="1200"></figure>
       </div>
       <div class="hinfo">
-        <h3>Fekete ház</h3>
-        <p>Égetett fa burkolat, hétméteres üvegfal a völgy felé. Lent nappali kályhával és konyhával, fent galériás háló, ahonnan az ágyból is látni az erdőt.</p>
+        <h3>Vörösfenyő ház</h3>
+        <p>Kisebb és csendesebb, a telek legmagasabb pontján. Kettőnek tervezték: kád az ablak előtt, kályha, és egy terasz, ahová délután is besüt a nap.</p>
         <ul class="spec">
-          <li><span>Alapterület</span><span>58 m²</span></li>
-          <li><span>Férőhely</span><span>2 + 2 fő</span></li>
-          <li><span>Hálók</span><span>1 galéria, 1 kanapéágy</span></li>
-          <li><span>Saját</span><span>dézsa, kályha, terasz</span></li>
+          <li><span>Alapterület</span><span>42 m²</span></li>
+          <li><span>Férőhely</span><span>2 fő</span></li>
+          <li><span>Háló</span><span>franciaágy, panorámaablak</span></li>
+          <li><span>Saját</span><span>dézsa, kád, kályha</span></li>
         </ul>
-        <div class="price"><b>64 000 Ft</b><span>/ éj 2 főre, hétköznap</span></div>
-        <a class="btn" href="#foglalas" data-house="fekete">Ezt a házat foglalom</a>
+        <div class="price"><b>54 000 Ft</b><span>/ éj 2 főre, hétköznap</span></div>
+        <a class="btn" href="#foglalas" data-house="vorosfenyo">Ezt a házat foglalom</a>
       </div>
     </article>
 
@@ -348,21 +351,21 @@ footer .base{margin-top:64px;padding-top:22px;border-top:1px solid var(--pine3);
 
     <article class="house flip">
       <div class="pics">
-        <figure><img class="reveal" src="img/vorosfenyo-kint.jpg" alt="Vörösfenyő burkolatú kis ház bükkfák között, ösvénnyel" loading="lazy" width="900" height="1200"></figure>
-        <figure><img class="reveal" src="img/vorosfenyo-furdo.jpg" alt="Szabadon álló kőkád nagy ablak előtt, kilátással az erdőre" loading="lazy" width="900" height="1200"></figure>
-        <figure><img class="reveal" src="img/vorosfenyo-nappali.jpg" alt="Világos nappali kályhával és nagy ablakkal" loading="lazy" width="900" height="1200"></figure>
+        <figure><img class="reveal" src="img/fekete-kint.jpg" alt="A Fekete ház üvegfalas homlokzata ködben, előtte a dézsa" loading="lazy" width="1600" height="900"></figure>
+        <figure><img class="reveal" src="img/fekete-nappali.jpg" alt="Galériás nappali kályhával és üvegfallal az erdőre" loading="lazy" width="900" height="1200"></figure>
+        <figure><img class="reveal" src="img/fekete-haloszoba.jpg" alt="Hálószoba ággyal a panorámaablak előtt" loading="lazy" width="900" height="1200"></figure>
       </div>
       <div class="hinfo">
-        <h3>Vörösfenyő ház</h3>
-        <p>Kisebb és csendesebb, a telek legmagasabb pontján. Kettőnek tervezték: kád az ablak előtt, kályha, és egy terasz, ahová délután is besüt a nap.</p>
+        <h3>Fekete ház</h3>
+        <p>Égetett fa burkolat, hétméteres üvegfal a völgy felé. Lent nappali kályhával és konyhával, fent galériás háló, ahonnan az ágyból is látni az erdőt.</p>
         <ul class="spec">
-          <li><span>Alapterület</span><span>42 m²</span></li>
-          <li><span>Férőhely</span><span>2 fő</span></li>
-          <li><span>Háló</span><span>franciaágy, panorámaablak</span></li>
-          <li><span>Saját</span><span>dézsa, kád, kályha</span></li>
+          <li><span>Alapterület</span><span>58 m²</span></li>
+          <li><span>Férőhely</span><span>2 + 2 fő</span></li>
+          <li><span>Hálók</span><span>1 galéria, 1 kanapéágy</span></li>
+          <li><span>Saját</span><span>dézsa, kályha, terasz</span></li>
         </ul>
-        <div class="price"><b>54 000 Ft</b><span>/ éj 2 főre, hétköznap</span></div>
-        <a class="btn" href="#foglalas" data-house="vorosfenyo">Ezt a házat foglalom</a>
+        <div class="price"><b>64 000 Ft</b><span>/ éj 2 főre, hétköznap</span></div>
+        <a class="btn" href="#foglalas" data-house="fekete">Ezt a házat foglalom</a>
       </div>
     </article>
   </div>
@@ -494,14 +497,18 @@ footer .base{margin-top:64px;padding-top:22px;border-top:1px solid var(--pine3);
 
 <section class="faq" id="kerdesek">
   <div class="wrap g">
-    <h2>Kérdések</h2>
     <div>
+      <h2>Kérdések</h2>
       <details><summary>Mikor lehet érkezni és távozni?</summary><p>Érkezés 15 órától, távozás 11 óráig. Ha a napon nincs másik vendég, a késői távozás díjtalan, csak írjanak előtte.</p></details>
       <details><summary>Hogyan lehet fizetni?</summary><p>A visszaigazolás után 30% előleget kérünk átutalással vagy SZÉP-kártyával. A többit érkezéskor lehet rendezni készpénzzel, kártyával vagy SZÉP-kártyával.</p></details>
       <details><summary>Miért olcsóbb itt, mint a Bookingon?</summary><p>A foglalási portálok 15–18% jutalékot vonnak le minden foglalásból. Ha közvetlenül nálunk foglal, ezt nem kell beépítenünk az árba, ezért itt 10%-kal olcsóbban adjuk ugyanazt.</p></details>
       <details><summary>Hozhatunk kutyát?</summary><p>A Fekete házba igen, előzetes egyeztetéssel. A kert be van kerítve, tál és fekhely is van.</p></details>
       <details><summary>Gyerekkel is jó választás?</summary><p>A Fekete ház négy főig ajánlott, a galéria lépcsője miatt inkább iskolás kortól. A dézsát felnőtt felügyelettel lehet használni.</p></details>
       <details><summary>Mi történik, ha le kell mondanunk?</summary><p>Érkezés előtt 14 nappal az előleget visszafizetjük, vagy egy éven belül másik időpontra átírjuk.</p></details>
+    </div>
+    <div class="mapbox">
+      <iframe title="Ködvölgy helye a térképen, Noszvaj" src="https://maps.google.com/maps?q=Noszvaj&amp;z=12&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p>3325 Noszvaj, Ködvölgy dűlő 4. Az utolsó 600 méter murvás erdei út, kisautóval is járható.</p>
     </div>
   </div>
 </section>
