@@ -310,7 +310,7 @@ footer .social svg{width:20px;height:20px}
 <main id="top">
 <section class="hero" aria-label="Nyitókép">
   <img class="poster" src="img/nyito.jpg" alt="Fekete fa erdei ház üvegfallal, előtte gőzölgő dézsa a ködös bükkösben" width="2400" height="1371" fetchpriority="high">
-  <video id="hv" muted playsinline preload="none" aria-hidden="true" data-src="img/nyito.mp4"></video>
+  <video id="hv" muted playsinline preload="none" aria-hidden="true" data-src="img/nyito-hd.mp4" data-mob="img/nyito-mobil.mp4"></video>
   <div class="mist"></div>
   <div class="fogveil"></div>
   <div class="wrap in">
@@ -541,15 +541,18 @@ footer .social svg{width:20px;height:20px}
   const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
   const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* nyitóvideó: széles képernyőn, ha nem kér csökkentett mozgást és nem adattakarékos; a végén áttűnés a kezdőképre */
+  /* nyitóvideó: gépen HD, mobilon könnyű változat; csökkentett mozgásnál és adattakarékosnál nincs; a végén áttűnés a kezdőképre */
   const v=$('#hv'), po=$('.poster'), hero=$('.hero');
   const save=navigator.connection&&navigator.connection.saveData;
-  if(v && v.dataset.src && !RM && !save && matchMedia('(min-width: 900px)').matches){
-    v.src=v.dataset.src; v.preload='auto';
-    v.addEventListener('canplaythrough',()=>{hero.classList.add('vid');v.play().then(()=>{po.style.opacity=0;}).catch(()=>{});},{once:true});
+  if(v && v.dataset.src && !RM && !save){
+    const mob=!matchMedia('(min-width: 900px)').matches;
+    v.src=(mob&&v.dataset.mob)?v.dataset.mob:v.dataset.src; v.preload='auto'; v.muted=true; v.playsInline=true;
+    v.addEventListener('playing',()=>{hero.classList.add('vid');po.style.opacity=0;},{once:true});
     v.addEventListener('timeupdate',()=>{ if(v.duration && v.currentTime>v.duration-1.1) po.style.opacity=1; });
     v.addEventListener('ended',()=>{ v.currentTime=0; v.play().then(()=>setTimeout(()=>{po.style.opacity=0;},200)).catch(()=>{}); });
     v.addEventListener('error',()=>{hero.classList.remove('vid');po.style.opacity=1;});
+    const go=()=>v.play().catch(()=>{});
+    v.addEventListener('canplay',go,{once:true}); go();
   }
 
   /* ködből előtűnő képek */
